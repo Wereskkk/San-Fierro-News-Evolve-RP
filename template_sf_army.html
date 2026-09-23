@@ -27,7 +27,7 @@ color:var(--ink);font-family:"PT Serif",Georgia,"Times New Roman",serif;-webkit-
 .mono{font-family:"Space Mono",ui-monospace,"Courier New",monospace}
 .sheet{max-width:66rem;margin:0 auto;background:linear-gradient(180deg,var(--paper),var(--paper2));border:1px solid #a9a289;box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 0 6px rgba(240,234,214,.06);padding:2.2rem 1.6rem 3rem;position:relative}
 .sheet::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(38,48,31,.25);pointer-events:none}
-.stamp{position:absolute;top:26px;right:26px;transform:rotate(7deg);border:3px double var(--stamp);color:var(--stamp);padding:.45rem .8rem;font-family:"Black Ops One",sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;text-align:center;line-height:1.5;background:rgba(221,216,194,.4)}
+.stamp{display:inline-block;transform:rotate(-4deg);border:3px double var(--stamp);color:var(--stamp);padding:.45rem .8rem;font-family:"Black Ops One",sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;text-align:center;line-height:1.5;background:rgba(221,216,194,.4);margin:0 auto 1.1rem}
 .masthead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-bottom:3px double var(--ink60);padding-bottom:1rem}
 .brand{font-family:"Black Ops One",sans-serif;font-size:1.05rem;letter-spacing:.22em;text-transform:uppercase}
 .tagline{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink60);white-space:nowrap}
@@ -35,7 +35,8 @@ color:var(--ink);font-family:"PT Serif",Georgia,"Times New Roman",serif;-webkit-
 h1{margin:.9rem 0 0;font-family:"Black Ops One",sans-serif;font-weight:400;font-size:clamp(1.7rem,4.2vw,2.8rem);line-height:1.18;text-transform:uppercase;letter-spacing:.02em;max-width:50rem}
 .dossier{margin:1.1rem 0 0;font-size:.7rem;letter-spacing:.08em;color:var(--ink80);border-left:3px solid var(--olive);padding-left:.9rem;line-height:1.9;text-transform:uppercase}
 .lead{margin-top:1.2rem;font-size:1.02rem;line-height:1.75;color:var(--ink80);max-width:48rem}
-.tabs{display:flex;flex-wrap:wrap;gap:.55rem;margin:2.2rem 0 1.6rem}
+.tabs{display:flex;flex-wrap:wrap;gap:.55rem;margin:0 0 1.6rem}
+.toctitle{margin:2.2rem 0 .7rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink60);border-bottom:1px solid var(--ink60);padding-bottom:.5rem}
 .tab{font-family:"Black Ops One",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--olive);color:var(--khaki);border:1px solid var(--olive-d);padding:.6rem .95rem;cursor:pointer;clip-path:polygon(0 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%);transition:background .2s,color .2s}
 .tab small{display:block;font-family:"Space Mono",monospace;font-size:.56rem;letter-spacing:.14em;opacity:.75;margin-top:.15rem}
 .tab:hover{background:#5b6549}
@@ -74,16 +75,16 @@ footer .copy{margin-top:1.4rem;font-size:.64rem;letter-spacing:.14em;color:var(-
 </head>
 <body>
 <article class="sheet">
-  <div class="stamp">Допуск разрешён<br>SFN · полевая пресс-служба</div>
   <header class="masthead">
     <div class="brand">San Fierro News</div>
-    <div class="tagline mono">Экстренный спецвыпуск · San Fierro · 23.09.2026</div>
+    <div class="tagline mono">Ежедневный выпуск · San Fierro · 23.09.2026</div>
   </header>
   <div class="kicker mono">Секретно снято · Репортаж с закрытой территории · Jonny Wilde &amp; Purosangue Sao</div>
   <h1>За стеной «San Fierro Army»: один день внутри гарнизона</h1>
   <p class="dossier mono">Объект: база San Fierro Army · Съёмка: Jonny Wilde, Purosangue Sao · 15 кадров с закрытой территории · Формат: репортаж в пяти разделах</p>
   <p class="lead">Впервые в истории базы ворота <strong>San Fierro Army</strong> открылись для прессы. Наш специальный корреспондент <strong>Jonny Wilde</strong> и сотрудник редакции <strong>Purosangue Sao</strong> — которому, к слову, дали настоящий урок стрельбы — прошли путь от КПП с вышками до дока с подводной лодкой. Перед вами большой репортаж в пяти разделах: открывайте раздел за разделом и пройдите базу вместе с нами.</p>
 
+  <div class="toctitle mono">Оглавление · Ежедневный выпуск · 23.09.2026 · 5 разделов · 15 кадров</div>
   <nav class="tabs" role="tablist">
     <button class="tab active" data-tab="t1" role="tab">Штаб и КПП<small>2 кадра</small></button>
     <button class="tab" data-tab="t2" role="tab">Казармы и быт<small>3 кадра</small></button>
@@ -193,6 +194,7 @@ footer .copy{margin-top:1.4rem;font-size:.64rem;letter-spacing:.14em;color:var(-
 
   <div class="stars">★ ★ ★</div>
   <footer>
+    <div class="stamp">Допуск разрешён<br>SFN · полевая пресс-служба</div>
     <p>Репортаж подготовлен редакцией <strong>San Fierro News</strong>: Jonny Wilde и Purosangue Sao — с закрытой территории базы <strong>San Fierro Army</strong>.</p>
     <p class="copy mono">© 2026 SF News Corp. · Полевая пресс-служба</p>
   </footer>
