@@ -43,6 +43,11 @@ footer p{font-size:.92rem;line-height:1.65;color:var(--ink80)}
 .hubbtn{display:inline-block;padding:.65rem 1.1rem;border:1px solid currentColor;color:var(--ink);opacity:.85;text-decoration:none;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;transition:.2s}
 .hubbtn:hover{opacity:1;transform:translateY(-2px)}
 .copy{margin-top:1.5rem;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink60);padding-bottom:3rem}
+
+.hubbtn{position:relative;color:#35b89a;border-color:#35b89a;box-shadow:0 0 16px -4px #35b89a,0 0 34px -10px #35b89a}
+.hubbtn::after{content:"";position:absolute;left:10%;right:10%;bottom:-12px;height:7px;border-radius:50%;background:#35b89a;filter:blur(7px);opacity:.55;pointer-events:none}
+.hubbtn:hover{box-shadow:0 0 24px -4px #35b89a,0 0 48px -10px #35b89a;opacity:1}
+.hubbtn:hover::after{opacity:.9}
 </style>
 </head>
 <body>

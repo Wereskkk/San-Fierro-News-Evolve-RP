@@ -50,6 +50,11 @@ footer .copy{margin-top:1.8rem;font-size:.68rem;letter-spacing:.12em;color:var(-
 .hubline{margin-top:1.7rem}
 .hubbtn{display:inline-block;padding:.65rem 1.1rem;border:1px solid currentColor;opacity:.8;text-decoration:none;font-family:"Space Mono",ui-monospace,"Courier New",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;transition:opacity .2s,transform .2s}
 .hubbtn:hover{opacity:1;transform:translateY(-2px)}
+
+.hubbtn{position:relative;color:#d4af37;border-color:#d4af37;box-shadow:0 0 16px -4px #d4af37,0 0 34px -10px #d4af37}
+.hubbtn::after{content:"";position:absolute;left:10%;right:10%;bottom:-12px;height:7px;border-radius:50%;background:#d4af37;filter:blur(7px);opacity:.55;pointer-events:none}
+.hubbtn:hover{box-shadow:0 0 24px -4px #d4af37,0 0 48px -10px #d4af37;opacity:1}
+.hubbtn:hover::after{opacity:.9}
 </style>
 </head>
 <body>

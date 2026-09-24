@@ -63,6 +63,11 @@ footer p{font-size:.92rem;line-height:1.65;color:var(--ink80)}
  .duo>article:last-child{padding-left:2.2rem}
 }
 .afterduo{margin-top:2.4rem}
+
+.hubbtn{position:relative;color:#a32620;border-color:#a32620;box-shadow:0 0 16px -4px #a32620,0 0 34px -10px #a32620}
+.hubbtn::after{content:"";position:absolute;left:10%;right:10%;bottom:-12px;height:7px;border-radius:50%;background:#a32620;filter:blur(7px);opacity:.55;pointer-events:none}
+.hubbtn:hover{box-shadow:0 0 24px -4px #a32620,0 0 48px -10px #a32620;opacity:1}
+.hubbtn:hover::after{opacity:.9}
 </style>
 </head>
 <body>
