@@ -37,6 +37,8 @@ figure{margin:2.2rem 0 0}
 .fig{overflow:hidden;border:1px solid var(--line);box-shadow:0 0 0 4px rgba(242,163,60,.12),0 14px 34px rgba(0,0,0,.45)}
 .fig img{width:100%;height:20rem;object-fit:cover;object-position:top right;transition:transform .7s cubic-bezier(.4,0,.2,1)}
 figure:hover .fig img{transform:scale(1.04)}
+.fig.tight img{transform:scale(2.4);transform-origin:54% 46%}
+figure:hover .fig.tight img{transform:scale(2.55)}
 figcaption{margin-top:.7rem;font-size:.86rem;line-height:1.65;font-style:italic;color:var(--ink70)}
 figcaption .num{display:block;font-style:normal;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-d);margin-bottom:.3rem}
 .quote{margin:2.6rem auto;text-align:center;max-width:36rem}
@@ -64,12 +66,12 @@ footer .copy{margin-top:1.6rem;font-size:.64rem;letter-spacing:.14em;color:var(-
 <body>
 <header class="masthead">
   <div class="brand">San Fierro News</div>
-  <div class="tag mono">Ежедневный выпуск · San Fierro · 25.09.2026</div>
+  <div class="tag mono">Ежедневный выпуск · San Fierro · 24.09.2026</div>
 </header>
 <main class="wrap">
   <div class="kicker mono">Статья · Дневник патруля · Специальный корреспондент Jonny Wilde</div>
   <h1 class="oswald">Позывной «Falks»: одна смена с лучшим семейным патрулём San Fierro</h1>
-  <div class="byline mono">Текст и фото: <b>Jonny Wilde</b> ·San Fierro, 25.09.2026</div>
+  <div class="byline mono">Текст и фото: <b>Jonny Wilde</b> ·San Fierro, 24.09.2026</div>
   <p class="lead">В рядах SFPD есть пара, которую диспетчеры вызывают одним позывным — «Falks». <strong>Yulia Falk</strong> и <strong>Rauf Falk</strong> познакомились на службе: совместный вызов, две патрульные машины и одно рукопожатие под дождём, с которого всё и началось. Теперь они муж и жена, которые не представляют смены порознь. Спецкор San Fierro News провёл с семейным патрулём один день — от площади с монументом до последнего пешеходного перехода.</p>
 
   <figure>
@@ -77,11 +79,11 @@ footer .copy{margin-top:1.6rem;font-size:.64rem;letter-spacing:.14em;color:var(-
     <figcaption><span class="num mono">Кадр 1</span>«Смена начинается у монумента: патрульный 7436, проверка снаряжения и рации — и город входит в эфир вместе с ними.»</figcaption>
   </figure>
 
-  <p class="prose">Первое же происшествие дня нашлось без рации: красный спорткар без номерных знаков наперерез потоку. Rauf прижимает патрульный к обочине, пока Yulia разговаривает с водителем — спокойно, как умеет только она. Штраф выписан за минуту: за отсутствие номеров в этом городе не спорят, особенно когда на пустую рамку багажника смотрит офицер Falk.</p>
+  <p class="prose">Первое же происшествие дня нашлось без рации: красный спорткар без номерных знаков наперерез потоку. Yulia удерживает патрульный у обочины, а Rauf выходит к окну спорткара и разговаривает с водителем — спокойно, как умеют только Falk'и. Штраф выписан за минуту: за отсутствие номеров в этом городе не спорят, особенно когда офицер Falk смотрит на пустую рамку багажника.</p>
 
   <figure>
     <div class="fig"><img src="{{F2}}" alt="Красный спорткар без номеров остановлен, офицер Falk выписывает штраф"></div>
-    <figcaption><span class="num mono">Кадр 2</span>«Красный спорткар без номерных знаков остановлен у обочины: пока офицер Falk оформляет штраф, водитель ещё пытается спорить — но пустая рамка вместо номеров спорит хуже всяких слов.»</figcaption>
+    <figcaption><span class="num mono">Кадр 2</span>«Красный спорткар без номерных знаков остановлен у обочины: Yulia остаётся за рулём патрульного, а Rauf Falk общается с водителем и оформляет штраф — пустая рамка вместо номеров спорит хуже всяких слов.»</figcaption>
   </figure>
 
   <p class="prose">Между вызовами — пятнадцать минут тишины у Cluckin' Bell и два стаканчика кофе. Именно здесь, у этих пластиковых стульев, несколько лет назад и закончился их первый совместный вызов: мокрая ночь, двое уставших офицеров и фраза «вы хоть кофе когда-нибудь пьёте?» с которой начинается любая хорошая история. С тех пор диспетчеры даже не пытаются ставить их в разные смены.</p>
@@ -123,7 +125,7 @@ footer .copy{margin-top:1.6rem;font-size:.64rem;letter-spacing:.14em;color:var(-
   <p class="prose">Финальный кадр смены снимается не на рацию и не в гараже. У пешеходного перехода в жилом квартале Yulia замечает пожилую женщину, которая не решается ступить на разметку. Минута — и офицер Falk уже рядом, под локоть, через четыре полосы. За это не выписывают наград и не ставят отметок в сводке. Но именно с таких моментов, если честно, и начинается вся служба.</p>
 
   <figure>
-    <div class="fig"><img src="{{F8}}" alt="Офицер Falk помогает пожилой женщине перейти дорогу в жилом квартале"></div>
+    <div class="fig tight"><img src="{{F8}}" alt="Офицер Falk помогает пожилой женщине перейти дорогу в жилом квартале"></div>
     <figcaption><span class="num mono">Кадр 8</span>«Последний кадр смены: офицер Falk помогает пожилой женщине перейти дорогу. За это не выписывают наград — но именно за это, если подумать, и стоит вся служба.»</figcaption>
   </figure>
 
