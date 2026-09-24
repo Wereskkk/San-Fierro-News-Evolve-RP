@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Fierro News — Атлас штата: карта мест, где рождались наши выпуски</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#e9f3e4;--paper:#efe7d2;--ink:#2a2620;--ink80:rgba(42,38,32,.82);--ink60:rgba(42,38,32,.6);--green:#2c5a31;--green-l:#7fae83;--bordeaux:#6d2836;--water:#cfdfe0}
+body{background:radial-gradient(1000px 420px at 50% -60px, rgba(127,174,131,.25), transparent 70%), var(--bg);color:var(--ink);font-family:"PT Serif",Georgia,serif;padding-bottom:4rem}
+.mono{font-family:"Space Mono",ui-monospace,monospace}
+.oswald{font-family:"Oswald","Arial Narrow",sans-serif}
+.masthead{background:linear-gradient(180deg,var(--green),#234b28);color:#f2f8ee;border-bottom:4px solid var(--green-l)}
+.mastinner{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.2rem 1.5rem;max-width:70rem;margin:0 auto}
+.brand{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.25em;font-size:1rem}
+.brand em{font-style:normal;color:#bfe3b4}
+.tagline{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#bfe3b4;white-space:nowrap}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+.kicker{margin-top:2rem;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green)}
+h1{margin:.8rem 0 0;font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.15;max-width:46rem}
+.lead{margin-top:.9rem;font-size:1rem;line-height:1.75;color:var(--ink80);max-width:48rem}
+.mapsheet{margin-top:1.8rem;background:var(--paper);border:1px solid rgba(42,38,32,.35);box-shadow:0 18px 50px rgba(42,38,32,.25);padding:1rem;position:relative}
+.mapsheet svg{width:100%;height:auto;display:block}
+.pin{cursor:pointer}
+.pin .head{fill:var(--bordeaux);stroke:#2a1216;stroke-width:1.5;transition:transform .2s;transform-origin:center bottom}
+.pin .dot{fill:#f6f2e6}
+.pin:hover .head,.pin:focus .head{transform:scale(1.25)}
+.pinlabel{opacity:0;transition:opacity .2s;pointer-events:none}
+.pin:hover .pinlabel,.pin:focus .pinlabel{opacity:1}
+.pinlabel rect{fill:#141210;opacity:.92}
+.pinlabel text{fill:#f2ead8;font-family:"Space Mono",monospace;font-size:11px}
+.pinlabel .t2{fill:#e0b64f}
+.city{font-family:"Oswald",sans-serif;font-size:15px;letter-spacing:2px;fill:var(--ink);text-transform:uppercase}
+.geo{font-family:"Space Mono",monospace;font-size:10px;fill:rgba(42,38,32,.55);letter-spacing:1px}
+.legend{margin-top:1rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;font-size:.72rem;color:var(--ink60)}
+.legend .sw{display:inline-block;width:.8rem;height:.8rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--bordeaux);margin-right:.4rem;vertical-align:-1px}
+.index{margin-top:2.4rem;display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:48rem){.index{grid-template-columns:repeat(3,1fr)}}
+.idx h2{font-family:"Oswald",sans-serif;font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;color:var(--green);border-bottom:2px solid var(--green-l);padding-bottom:.4rem;margin-bottom:.7rem}
+.idx li{list-style:none;margin-bottom:.55rem;font-size:.88rem;line-height:1.5}
+.idx a{color:var(--ink80);text-decoration:none;border-bottom:1px dotted var(--bordeaux)}
+.idx a:hover{color:var(--bordeaux)}
+.idx .pl{display:block;font-size:.8rem;font-style:italic;color:var(--ink60)}
+.back{margin-top:2.6rem;text-align:center}
+.back a{display:inline-block;padding:.7rem 1.2rem;border:1px solid var(--green);color:var(--green);text-decoration:none;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 16px -6px var(--green)}
+.back a:hover{background:var(--green);color:#f2f8ee}
+footer{margin-top:3rem;background:var(--green);color:#dcebd4}
+.footinner{max-width:70rem;margin:0 auto;padding:1.8rem 1.5rem 3rem;text-align:center}
+footer p{font-size:.9rem;line-height:1.6}
+.copy{margin-top:1.1rem;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#bfe3b4}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="mastinner">
+    <div class="brand">San Fierro <em>News</em></div>
+    <div class="tagline mono">Атлас штата · специальная карта редакции</div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="kicker mono">Интерактивная карта · 14 мест · 11 выпусков</div>
+  <h1 class="oswald">Атлас штата San Andreas: где рождались наши выпуски</h1>
+  <p class="lead">Каждая полоса San Fierro News начиналась с командировки: редакция отмечает булавкой каждое место, где работал наш спецкор. Нажмите на булавку — и откроется выпуск, снятый там. Три города, одиннадцать номеров, четырнадцать точек на старой газетной гравюре.</p>
+
+  <div class="mapsheet">
+  <svg viewBox="0 0 1000 640" role="img" aria-label="Карта штата San Andreas с булавками мест съёмок">
+    <defs>
+      <pattern id="waves" width="26" height="10" patternUnits="userSpaceOnUse">
+        <path d="M0 6 Q 6.5 0 13 6 T 26 6" fill="none" stroke="rgba(42,38,32,.18)" stroke-width="1"/>
+      </pattern>
+      <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(42,38,32,.16)" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="1000" height="640" fill="var(--water)"/>
+    <rect x="0" y="0" width="1000" height="640" fill="url(#waves)"/>
+    <!-- суша -->
+    <path d="M60 90 Q 200 40 360 70 Q 520 40 700 60 Q 880 70 950 140 L 950 470 Q 900 560 760 590 Q 600 620 460 590 Q 300 610 180 560 Q 70 520 60 420 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+    <!-- залив San Fierro -->
+    <path d="M60 200 Q 160 210 210 260 Q 250 300 230 350 Q 200 390 120 380 Q 70 370 60 330 Z" fill="var(--water)" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="60" y="200" width="180" height="180" fill="url(#waves)" opacity=".7"/>
+    <!-- горы на северо-западе -->
+    <g stroke="var(--ink)" stroke-width="1.6" fill="url(#hatch)">
+      <path d="M150 150 l26 -40 l26 40 z"/><path d="M196 156 l22 -34 l22 34 z"/><path d="M120 168 l20 -30 l20 30 z"/>
+    </g>
+    <text x="185" y="105" class="geo">MOUNT CHILIAD</text>
+    <!-- пустыня на северо-востоке -->
+    <g fill="rgba(42,38,32,.35)">
+      <circle cx="760" cy="120" r="1.6"/><circle cx="800" cy="140" r="1.6"/><circle cx="840" cy="110" r="1.6"/><circle cx="870" cy="150" r="1.6"/><circle cx="780" cy="170" r="1.6"/><circle cx="830" cy="185" r="1.6"/><circle cx="880" cy="200" r="1.6"/><circle cx="750" cy="210" r="1.6"/>
+    </g>
+    <text x="800" y="95" class="geo">BONE COUNTY · ПУСТОШЬ</text>
+    <!-- дороги -->
+    <g stroke="rgba(42,38,32,.5)" stroke-width="2" stroke-dasharray="7 6" fill="none">
+      <path d="M280 250 Q 480 160 690 170"/>
+      <path d="M280 280 Q 420 420 620 480"/>
+      <path d="M700 200 Q 720 340 680 470"/>
+    </g>
+    <!-- города -->
+    <g>
+      <rect x="252" y="238" width="10" height="10" fill="var(--ink)"/><rect x="266" y="232" width="8" height="16" fill="var(--ink)"/><rect x="278" y="240" width="10" height="8" fill="var(--ink)"/>
+      <text x="252" y="272" class="city">San Fierro</text>
+      <rect x="622" y="470" width="10" height="10" fill="var(--ink)"/><rect x="636" y="464" width="8" height="16" fill="var(--ink)"/><rect x="648" y="472" width="10" height="8" fill="var(--ink)"/>
+      <text x="620" y="504" class="city">Los Santos</text>
+      <rect x="682" y="150" width="10" height="10" fill="var(--ink)"/><rect x="696" y="144" width="8" height="16" fill="var(--ink)"/><rect x="708" y="152" width="10" height="8" fill="var(--ink)"/>
+      <text x="680" y="134" class="city">Las Venturas</text>
+    </g>
+    <!-- картуш -->
+    <g>
+      <rect x="380" y="540" width="240" height="70" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="386" y="546" width="228" height="58" fill="none" stroke="var(--ink)" stroke-width="1"/>
+      <text x="500" y="568" text-anchor="middle" class="city" style="font-size:14px">АТЛАС ШТАТА</text>
+      <text x="500" y="586" text-anchor="middle" class="geo">SAN FIERRO NEWS · СЕНТЯБРЬ 2026</text>
+      <text x="500" y="600" text-anchor="middle" class="geo">ГРАВЮРА РЕДАКЦИОННОЙ ГЕОГРАФИИ</text>
+    </g>
+    <!-- роза ветров -->
+    <g transform="translate(905,545)" stroke="var(--ink)" fill="var(--paper)">
+      <circle r="26" fill="var(--paper)" stroke-width="2"/>
+      <path d="M0 -22 L6 0 L0 22 L-6 0 Z" fill="var(--bordeaux)" stroke-width="1"/>
+      <path d="M-22 0 L0 -6 L22 0 L0 6 Z" fill="var(--paper)" stroke-width="1"/>
+      <text y="-30" text-anchor="middle" class="geo" style="font-size:12px">N</text>
+    </g>
+
+    <!-- БУЛАВКИ: San Fierro -->
+    <a class="pin" href="wedding-ozzy-gulnara.html" transform="translate(225,195)"><title>Церковь San Fierro — свадьба года</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Церковь · свадьба года</text><text x="0" y="-42" text-anchor="middle" class="t2">«Два крыла, одна клятва»</text></g></a>
+    <a class="pin" href="sfpd-precinct.html" transform="translate(262,222)"><title>Участок SFPD — пресс-тур</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-100" y="-70" width="200" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Участок SFPD · пресс-тур</text><text x="0" y="-42" text-anchor="middle" class="t2">«Под звездой департамента»</text></g></a>
+    <a class="pin" href="sf-police-raid.html" transform="translate(300,247)"><title>Департамент полиции — учения-штурм</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-105" y="-70" width="210" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Департамент · учения-штурм</text><text x="0" y="-42" text-anchor="middle" class="t2">«День, когда учения стали боем»</text></g></a>
+    <a class="pin" href="sf-army-base.html" transform="translate(205,262)"><title>База San Fierro Army</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">База San Fierro Army</text><text x="0" y="-42" text-anchor="middle" class="t2">«За стеной — досье в 5 разделах»</text></g></a>
+    <a class="pin" href="daily-24-09-2026.html" transform="translate(247,288)"><title>Офис San Fierro News — траурный номер</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-105" y="-70" width="210" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Офис SFN · траурный номер</text><text x="0" y="-42" text-anchor="middle" class="t2">«Убит Главный редактор»</text></g></a>
+    <a class="pin" href="sfpd-patrol-falk.html" transform="translate(300,205)"><title>Маршрут патруля четы Falk</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Маршрут патруля Falk</text><text x="0" y="-42" text-anchor="middle" class="t2">«Позывной „Falks“»</text></g></a>
+
+    <!-- Булавки: Los Santos -->
+    <a class="pin" href="index.html" transform="translate(612,462)"><title>Казино Chinatown</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Казино Chinatown</text><text x="0" y="-42" text-anchor="middle" class="t2">«Ваша удача заняла стол»</text></g></a>
+    <a class="pin" href="driving-school.html" transform="translate(652,482)"><title>Driving School</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Driving School</text><text x="0" y="-42" text-anchor="middle" class="t2">«Больше скорости — меньше суеты»</text></g></a>
+    <a class="pin" href="all-saints-hospital.html" transform="translate(692,458)"><title>All Saints General Hospital</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">All Saints Hospital</text><text x="0" y="-42" text-anchor="middle" class="t2">«Белый форпост города»</text></g></a>
+    <a class="pin" href="wedding-ozzy-gulnara.html" transform="translate(632,540)"><title>Пирс Santa Maria — клуб Malibu</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-100" y="-70" width="200" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Пирс Santa Maria · Malibu</text><text x="0" y="-42" text-anchor="middle" class="t2">свадебное празднование</text></g></a>
+    <a class="pin" href="daily-24-09-2026.html" transform="translate(700,522)"><title>Los Santos — подрыв авто и авторынок</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-105" y="-70" width="210" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Подрыв авто · авторынок</text><text x="0" y="-42" text-anchor="middle" class="t2">траурный номер от 24.09</text></g></a>
+    <a class="pin" href="opg-leader-interview.html" transform="translate(580,516)"><title>Кварталы банд — интервью с Падре</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Кварталы банд · док</text><text x="0" y="-42" text-anchor="middle" class="t2">«Зовите меня просто Аноним»</text></g></a>
+
+    <!-- Булавка: Las Venturas -->
+    <a class="pin" href="caligulas-casino.html" transform="translate(700,168)"><title>Казино Caligula's</title><path class="head" d="M0 0 C -9 -14 -14 -20 -14 -28 A 14 14 0 1 1 14 -28 C 14 -20 9 -14 0 0 Z"/><circle class="dot" cy="-28" r="5"/><g class="pinlabel"><rect x="-95" y="-70" width="190" height="34" rx="4"/><text x="0" y="-56" text-anchor="middle">Казино Caligula's</text><text x="0" y="-42" text-anchor="middle" class="t2">«Империя удачи»</text></g></a>
+  </svg>
+  <div class="legend mono"><span><span class="sw"></span>булавка — место съёмки выпуска</span><span>нажмите на булавку — откроется полоса</span><span>наведите — название места и заголовок</span></div>
+  </div>
+
+  <div class="index">
+    <div class="idx">
+      <h2>San Fierro</h2>
+      <ul>
+        <li><a href="wedding-ozzy-gulnara.html">Церковь на холме<span class="pl">свадьба Ozzy &amp; Gulnara, 24.09</span></a></li>
+        <li><a href="sfpd-precinct.html">Участок SFPD<span class="pl">пресс-тур с майором Felix Akana, 24.09</span></a></li>
+        <li><a href="sf-police-raid.html">Департамент полиции и мост<span class="pl">хроника учений-штурма, 23.09</span></a></li>
+        <li><a href="sf-army-base.html">База San Fierro Army<span class="pl">досье в пяти разделах, 23.09</span></a></li>
+        <li><a href="daily-24-09-2026.html">Офис редакции<span class="pl">траурный номер, 24.09</span></a></li>
+        <li><a href="sfpd-patrol-falk.html">Маршрут патруля 7436<span class="pl">смена четы Falk, 24.09</span></a></li>
+      </ul>
+    </div>
+    <div class="idx">
+      <h2>Los Santos</h2>
+      <ul>
+        <li><a href="index.html">Казино Chinatown<span class="pl">рекламный репортаж, 23.09</span></a></li>
+        <li><a href="driving-school.html">Driving School<span class="pl">рекламный репортаж, 23.09</span></a></li>
+        <li><a href="all-saints-hospital.html">All Saints General Hospital<span class="pl">день в госпитале, 23.09</span></a></li>
+        <li><a href="wedding-ozzy-gulnara.html">Пирс Santa Maria, клуб Malibu<span class="pl">празднование свадьбы, 24.09</span></a></li>
+        <li><a href="daily-24-09-2026.html">Улица подрыва и авторынок<span class="pl">траурный номер, 24.09</span></a></li>
+        <li><a href="opg-leader-interview.html">Кварталы банд и военный док<span class="pl">интервью с Падре, 24.09</span></a></li>
+      </ul>
+    </div>
+    <div class="idx">
+      <h2>Las Venturas</h2>
+      <ul>
+        <li><a href="caligulas-casino.html">Казино Caligula's<span class="pl">«Империя удачи», 23.09</span></a></li>
+      </ul>
+      <h2 style="margin-top:1.4rem">Вне карты</h2>
+      <ul>
+        <li><a href="newsroom.html">Архив редакции<span class="pl">все выпуски, письма и радио</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="back"><a class="mono" href="newsroom.html">← В подшивку редакции</a></div>
+</main>
+<footer>
+  <div class="footinner">
+    <p>Атлас ведёт редакция <strong>San Fierro News</strong>: каждая новая командировка добавляет булавку на карту штата.</p>
+    <p class="copy mono">© 2026 SF News Corp. · Ежедневный выпуск · San Fierro — Los Santos — Las Venturas</p>
+  </div>
+</footer>
+</body>
+</html>
