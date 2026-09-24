@@ -171,17 +171,16 @@ footer p{font-size:.92rem;line-height:1.65;color:var(--ink80)}
     <p>Номер подготовлен редакцией <strong>San Fierro News</strong>. Материалы: Jonny Wilde и полевая группа редакции.</p>
     <div class="hubline"><a class="hubbtn mono" href="newsroom.html">← Посмотреть все выпуски редакции</a></div>
     <p class="copy mono">© 2026 SF News Corp. · Ежедневный выпуск</p>
-  <div class="sfn-ledger" style="--neon:#a32620" data-page="daily-24-09-2026">
-    <div class="ll mono">Читательский формуляр · San Fierro News</div>
-    <div class="odometer mono"><span>0</span><span>0</span><span>0</span><span>0</span></div>
-    <div class="lmeta mono">Открытий номера на этом устройстве: <b class="lv">—</b> · Первое чтение: <b class="lf">—</b></div>
-    <div class="lmeta mono" style="margin-top:.5rem">Чтений по всей сети: <img class="gbadge" src="https://visitor-badge.laobi.icu/badge?page_id=sfn-evolve-2026.daily-24-09-2026&title=%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B9&left_color=%23101010&right_color=%23A32620" alt="Счётчик чтений по сети" onerror="this.style.display='none'"></div>
+  <div class="sfn-ledger" style="--neon:#a32620" data-page="sfn-evolve-2026.daily-24-09-2026">
+    <div class="ll mono">Чтений по всей сети</div>
+    <div class="odometer mono"><span>·</span><span>·</span><span>·</span><span>·</span></div>
+    <img class="gbadge" alt="Счётчик чтений по сети" style="display:none;margin-top:.6rem">
+    <div class="lmeta mono">Счётчик прокручивается, когда любой читатель газеты открывает этот выпуск</div>
   </div>
 </footer>
 </article>
 <script>
-(function(){var el=document.querySelector('.sfn-ledger');if(!el)return;var p=el.getAttribute('data-page')||'page';var k='sfn_'+p;var n=0;try{n=parseInt(localStorage.getItem(k)||'0',10)||0}catch(e){} n+=1; try{localStorage.setItem(k,String(n));var f=localStorage.getItem(k+'_f');if(!f){f=new Date().toLocaleDateString('ru-RU');localStorage.setItem(k+'_f',f);}}catch(e){var f='—';}
-var s=String(n);while(s.length<4)s='0'+s;var ods=el.querySelectorAll('.odometer span');for(var i=0;i<ods.length;i++){ods[i].textContent=s.charAt(i);}var lv=el.querySelector('.lv');if(lv)lv.textContent=n;var lf=el.querySelector('.lf');if(lf)lf.textContent=f;})();
+(function(){var el=document.querySelector('.sfn-ledger');if(!el)return;var pid=el.getAttribute('data-page');var hex='A32620';var badge='https://visitor-badge.laobi.icu/badge?page_id='+pid+'&title=%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B9&left_color=%23101010&right_color=%23'+hex;var img=el.querySelector('.gbadge');var od=el.querySelector('.odometer');function show(n){var s=String(n);while(s.length<4)s='0'+s;od.innerHTML=s.split('').map(function(c){return '<span>'+c+'</span>';}).join('');}function parse(t){var m=t.match(/>(\d+)</g);if(!m)return null;var a=m.map(function(x){return parseInt(x.replace(/\D/g,''),10);});return Math.max.apply(null,a);}function tf(u){return fetch(u,{mode:'cors'}).then(function(r){if(!r.ok)throw 0;return r.text();});}var enc=encodeURIComponent(badge);tf('https://api.allorigins.win/raw?url='+enc).catch(function(){return tf('https://api.codetabs.com/v1/proxy?quest='+enc);}).then(function(t){var n=parse(t);if(n==null)throw 0;show(n);}).catch(function(){od.style.display='none';img.src=badge;img.style.display='inline-block';});})();
 </script>
 </body>
 </html>
