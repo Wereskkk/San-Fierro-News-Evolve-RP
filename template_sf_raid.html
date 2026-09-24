@@ -55,6 +55,14 @@ footer .copy{margin-top:1.8rem;font-size:.68rem;letter-spacing:.12em;color:var(-
 .hubbtn::after{content:"";position:absolute;left:10%;right:10%;bottom:-12px;height:7px;border-radius:50%;background:#e63946;filter:blur(7px);opacity:.55;pointer-events:none}
 .hubbtn:hover{box-shadow:0 0 24px -4px #e63946,0 0 48px -10px #e63946;opacity:1}
 .hubbtn:hover::after{opacity:.9}
+
+.sfn-ledger{margin:2.2rem auto 0;max-width:36rem;border:1px solid currentColor;padding:1.05rem 1.2rem 1rem;text-align:center;box-shadow:0 0 20px -6px var(--neon,#888);background:rgba(0,0,0,.045);position:relative}
+.sfn-ledger::after{content:"";position:absolute;left:14%;right:14%;bottom:-11px;height:6px;border-radius:50%;background:var(--neon,#888);filter:blur(7px);opacity:.5;pointer-events:none}
+.sfn-ledger .ll{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;opacity:.72}
+.odometer{display:flex;gap:5px;justify-content:center;margin:.75rem 0 .6rem}
+.odometer span{background:#101010;color:#f4e9d0;font-size:1.15rem;padding:.4rem .5rem;border-radius:4px;box-shadow:0 0 12px -2px var(--neon,#888), inset 0 0 0 1px rgba(244,233,208,.14)}
+.sfn-ledger .lmeta{font-size:.66rem;letter-spacing:.06em;opacity:.7}
+.sfn-ledger .lmeta b{color:var(--neon,#888)}
 </style>
 </head>
 <body>
@@ -100,6 +108,15 @@ footer .copy{margin-top:1.8rem;font-size:.68rem;letter-spacing:.12em;color:var(-
   <p class="dim">Следите за обновлениями: мы публикуем новые подробности, как только они будут подтверждены нашими источниками.</p>
   <p class="copy mono">© 2026 SF News Corp.</p>
 <div class="hubline"><a class="hubbtn" href="newsroom.html">← Посмотреть все выпуски редакции</a></div>
+<div class="sfn-ledger" style="--neon:#e63946" data-page="sf-police-raid">
+    <div class="ll mono">Читательский формуляр · San Fierro News</div>
+    <div class="odometer mono"><span>0</span><span>0</span><span>0</span><span>0</span></div>
+    <div class="lmeta mono">Открытий номера на этом устройстве: <b class="lv">—</b> · Первое чтение: <b class="lf">—</b></div>
+  </div>
 </footer>
+<script>
+(function(){var el=document.querySelector('.sfn-ledger');if(!el)return;var p=el.getAttribute('data-page')||'page';var k='sfn_'+p;var n=0;try{n=parseInt(localStorage.getItem(k)||'0',10)||0}catch(e){} n+=1; try{localStorage.setItem(k,String(n));var f=localStorage.getItem(k+'_f');if(!f){f=new Date().toLocaleDateString('ru-RU');localStorage.setItem(k+'_f',f);}}catch(e){var f='—';}
+var s=String(n);while(s.length<4)s='0'+s;var ods=el.querySelectorAll('.odometer span');for(var i=0;i<ods.length;i++){ods[i].textContent=s.charAt(i);}var lv=el.querySelector('.lv');if(lv)lv.textContent=n;var lf=el.querySelector('.lf');if(lf)lf.textContent=f;})();
+</script>
 </body>
 </html>
