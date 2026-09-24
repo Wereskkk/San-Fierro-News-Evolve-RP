@@ -83,6 +83,7 @@ footer p{font-size:.93rem;line-height:1.65;color:var(--ink80)}
 .sfn-ledger .lmeta{font-size:.66rem;letter-spacing:.06em;opacity:.7}
 .sfn-ledger .lmeta b{color:var(--neon,#888)}
 .gbadge{display:inline-block;vertical-align:-5px;border-radius:3px;box-shadow:0 0 10px -2px var(--neon,#888)}
+.gbadge2{display:block;margin:1.15rem auto 1.05rem;transform:scale(1.9);border-radius:4px;filter:drop-shadow(0 0 8px var(--neon,#888)) drop-shadow(0 0 24px var(--neon,#888))}
 </style>
 </head>
 <body>
@@ -166,16 +167,11 @@ footer p{font-size:.93rem;line-height:1.65;color:var(--ink80)}
     <p>Репортаж подготовлен редакцией <strong>San Fierro News</strong>: Jonny Wilde — из церкви San Fierro и с пирса пляжа Santa Maria в Los Santos. Редакция поздравляет молодожёнов и желает им полных залов счастья.</p>
     <div class="hubline"><a class="hubbtn mono" href="newsroom.html">← Посмотреть все выпуски редакции</a></div>
     <p class="copy mono">© 2026 SF News Corp. · Ежедневный выпуск</p>
-  <div class="sfn-ledger" style="--neon:#b98a2e" data-page="sfn-evolve-2026.wedding-ozzy-gulnara">
-    <div class="ll mono">Чтений по всей сети</div>
-    <div class="odometer mono"><span>·</span><span>·</span><span>·</span><span>·</span></div>
-    <img class="gbadge" alt="Счётчик чтений по сети" style="display:none;margin-top:.6rem">
-    <div class="lmeta mono">Счётчик прокручивается, когда любой читатель газеты открывает этот выпуск</div>
+  <div class="sfn-ledger" style="--neon:#b98a2e">
+    <img class="gbadge2" alt="Счётчик читателей выпуска" src="https://visitor-badge.laobi.icu/badge?page_id=sfn-evolve-2026.wedding-ozzy-gulnara&title=%D0%A7%D0%98%D0%A2%D0%90%D0%A2%D0%95%D0%9B%D0%95%D0%99&left_color=%23101010&right_color=%23B98A2E" onerror="this.closest('.sfn-ledger').style.display='none'">
   </div>
 </footer>
 </article>
-<script>
-(function(){var el=document.querySelector('.sfn-ledger');if(!el)return;var pid=el.getAttribute('data-page');var hex='B98A2E';var badge='https://visitor-badge.laobi.icu/badge?page_id='+pid+'&title=%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B9&left_color=%23101010&right_color=%23'+hex;var img=el.querySelector('.gbadge');var od=el.querySelector('.odometer');function show(n){var s=String(n);while(s.length<4)s='0'+s;od.innerHTML=s.split('').map(function(c){return '<span>'+c+'</span>';}).join('');}function parse(t){var m=t.match(/>(\d+)</g);if(!m)return null;var a=m.map(function(x){return parseInt(x.replace(/\D/g,''),10);});return Math.max.apply(null,a);}function tf(u){return fetch(u,{mode:'cors'}).then(function(r){if(!r.ok)throw 0;return r.text();});}var enc=encodeURIComponent(badge);tf('https://api.allorigins.win/raw?url='+enc).catch(function(){return tf('https://api.codetabs.com/v1/proxy?quest='+enc);}).then(function(t){var n=parse(t);if(n==null)throw 0;show(n);}).catch(function(){od.style.display='none';img.src=badge;img.style.display='inline-block';});})();
-</script>
+
 </body>
 </html>
