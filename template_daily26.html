@@ -71,6 +71,8 @@ footer p{color:var(--mut);font-size:.92rem;line-height:1.7}
  .mg figure:nth-child(1){grid-column:span 4}.mg figure:nth-child(2){grid-column:span 2}
  .mg figure:nth-child(3),.mg figure:nth-child(4),.mg figure:nth-child(5){grid-column:span 2}
  .mg figure:nth-child(1) img{height:22rem}
+ .mg.four figure{grid-column:span 3}
+ .mg.four figure img{height:17rem}
 }
 @media (min-width:56rem){
  .hero{grid-template-columns:1.02fr .98fr;align-items:center}
@@ -95,7 +97,7 @@ footer p{color:var(--mut);font-size:.92rem;line-height:1.7}
   <div class="hero">
     <div class="herotext">
       <div class="kchip">Главный материал · Ежедневный выпуск</div>
-      <h1>Босиком, но со служебным: как SFPD проходило медосмотр в Los Santos</h1>
+      <h1>В строю в шортах и с пистолетом за спиной: как прошёл медосмотр SFPD в Los Santos</h1>
       <p>Плановый медосмотр сотрудников SFPD превратился в самое дисциплинированное мероприятие штата: строй обследуемых в форменных синих шортах, табельное оружие за спиной — и врачи, которые в этот день работали буквально на крыльях. San Fierro News провели в госпитале Los Santos весь день.</p>
       <div class="byline mono">Текст и фото: Jonny Wilde · госпиталь Los Santos</div>
     </div>
@@ -106,16 +108,20 @@ footer p{color:var(--mut);font-size:.92rem;line-height:1.7}
   </div>
 
   <section>
-    <div class="sechead"><span class="ghost">01</span><h2>Хроника осмотра: шесть кадров изнутри</h2><span class="rule"></span></div>
+    <div class="sechead"><span class="ghost">01</span><h2>Хроника осмотра: кадры изнутри</h2><span class="rule"></span></div>
     <div class="art">
       <p>Регистрация шла у доски объявлений: инспекторы с чемоданами, офицеры в бронежилетах и врачи в белом выстроили живой коридор, в конце которого каждого ждали койка с ширмой и пробирка. Нарколог-психиатр работал без пауз: <b>«Проходите, садитесь. Сейчас проверим на наличие запрещённых веществ»</b>.</p>
       <p>К полудню строй у CONFERENCE ROOM получил справки, а оружие вернулось в кобуры. Администрация госпиталя поблагодарила департамент за образцовое поведение: «Ни одной попытки пройти осмотр в берцах».</p>
     </div>
-    <div class="mg">
-      <figure><div class="ph"><img src="{{D2}}" alt="Врач Alena_Shot у койки с обследуемым"></div><figcaption><b>Кадр 02</b>«Держите ватку минут пять. Если почувствуете слабость — сразу скажите», — врач Alena_Shot у койки.</figcaption></figure>
+    <figure>
+      <div class="fullimg"><img src="{{D5}}" alt="Групповое фото комиссии, офицеров SFPD и администрации госпиталя"></div>
+      <figcaption class="imgcap">Общий кадр осмотра: врачебная комиссия, офицеры SFPD и администрация госпиталя у стойки HOSPITAL. Именно этот строй войдёт в отчёт департамента.</figcaption>
+    </figure>
+    <div class="mg four">
+      <figure><div class="ph"><img src="{{D2}}" alt="Врач Alena Shot у койки с обследуемым"></div><figcaption><b>Кадр 02</b>«Держите ватку минут пять. Если почувствуете слабость — сразу скажите», — врач Alena Shot у койки.</figcaption></figure>
       <figure><div class="ph"><img src="{{D3}}" alt="Нарколог-психиатр за проверкой обследуемого"></div><figcaption><b>Кадр 03</b>Нарколог-психиатр за работой: проверка и забор крови — строго по расписанию.</figcaption></figure>
-      <figure><div class="ph"><img src="{{D4}}" alt="Врач Lisa_Akana и обследуемый Rauf_Falk"></div><figcaption><b>Кадр 04</b>Врач Lisa_Akana снимает стетоскоп: вердикт «годен». Крылья осмотру не помеха.</figcaption></figure>
-      <figure><div class="ph"><img src="{{D5}}" alt="Групповое фото комиссии, офицеров и администрации"></div><figcaption><b>Кадр 05</b>Групповое фото у стойки HOSPITAL: комиссия, офицеры и администрация. Осмотр завершён.</figcaption></figure>
+      <figure><div class="ph"><img src="{{D4}}" alt="Врач Lisa Akana и обследуемый Rauf_Falk"></div><figcaption><b>Кадр 04</b>Врач Lisa Akana снимает стетоскоп: вердикт «годен». Крылья осмотру не помеха.</figcaption></figure>
+      
       <figure><div class="ph"><img src="{{D6}}" alt="Финальный строй у CONFERENCE ROOM"></div><figcaption><b>Кадр 06</b>Финальный строй у CONFERENCE ROOM: справки выданы, оружие в кобурах, крылья сложены.</figcaption></figure>
     </div>
     <div class="pull">
@@ -128,7 +134,7 @@ footer p{color:var(--mut);font-size:.92rem;line-height:1.7}
     <div class="sechead"><span class="ghost">02</span><h2>Вертолёты на тротуаре: парковка The Four Dragons вне закона</h2><span class="rule"></span></div>
     <div class="art">
       <p>Парковка казино <b>The Four Dragons</b> в Las Venturas переполнена настолько, что автомобили встают по диагонали прямо на тротуаре, а два вертолёта припаркованы на пешеходной плитке у золотого кольца входа. Сотрудников LVPD рядом не видно.</p>
-      <p>Почему: не хватает людей, или всем пофигу? Редакция направила официальный запрос в департамент и будет публиковать каждый пункт ответа — или каждое его отсутствие.</p>
+      <p>Почему департамент не замечает того, что видно из каждого окна? Редакция направила официальный запрос в LVPD: нехватка людей не должна становиться оправданием бездействию, и каждый пункт ответа — или каждое его отсутствие — будет опубликовано.</p>
     </div>
     <figure>
       <div class="fullimg"><img src="{{D7}}" alt="The Four Dragons сверху: вертолёты на тротуаре и машины поперёк разметки"></div>
@@ -152,16 +158,13 @@ footer p{color:var(--mut);font-size:.92rem;line-height:1.7}
     <div class="sechead"><span class="ghost">04</span><h2>«Sugar 24-7» ушёл на аукцион: предыдущая ставка — $400.000</h2><span class="rule"></span></div>
     <div class="art">
       <p>На государственный аукцион выставлен бизнес: круглосуточный магазин <b>«Sugar 24-7»</b>. Табличка у входа сообщает предыдущую ставку — $400.000, и торги, судя по всему, только начинаются.</p>
-      <p>Редакция советует потенциальным покупателям оценивать не только цифру: круглосуточный сахар — товар особый, а соседи у лота, по слухам, ещё особеннее.</p>
+      <p>Редакция советует потенциальным покупателям оценивать не только сумму ставки: в этом аукционе важна не только вывеска «Sugar 24-7», но и соседи, которые окружают лот.</p>
     </div>
     <figure>
       <div class="fullimg"><img src="{{D9}}" alt="Табличка аукциона: Sugar 24-7, предыдущая ставка $400.000"></div>
       <figcaption class="imgcap">Табличка аукциона: «Sugar 24-7. Предыдущая ставка: $400.000». Магазин меняет владельца — торги открыты.</figcaption>
     </figure>
-    <div class="closing">
-      <h3>Редакция держит руку на пульсе</h3>
-      <p>Ответ LVPD о парковке, ход расследования убийства офицера и результаты аукциона Sugar 24-7 — три сюжета, за которыми San Fierro News будет следить ежедневно. Следующий номер выйдет, как всегда, утром. Или раньше, если новости не будут ждать.</p>
-    </div>
+
   </section>
 
   <footer>
