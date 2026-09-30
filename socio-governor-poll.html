@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Fierro News — Социологическое исследование: «Вы довольны новым губернатором?» (сервер Saint-Louis)</title>
+<meta name="description" content="Социсследование редакции San Fierro: 24 интервью, 100% возвратов. Таблицы, диаграммы и дословные цитаты респондентов сервера Saint-Louis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#edf0f3;--card:#fbfcfd;--ink:#141c26;--mut:#5b6673;--line:#d3dae1;--blue:#1f4e79;--pos:#2e7d4f;--neg:#c0392b;--neu:#7a8494}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:repeating-linear-gradient(0deg,rgba(31,78,121,.06) 0 1px,transparent 1px 30px),repeating-linear-gradient(90deg,rgba(31,78,121,.06) 0 1px,transparent 1px 30px),var(--paper);color:var(--ink);font-family:"PT Serif",Georgia,serif}
+.mono{font-family:"PT Mono",ui-monospace,monospace}
+.osw{font-family:"Oswald","Arial Narrow",sans-serif}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.topbar{background:var(--ink);color:#e8edf2;padding:.6rem 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+.topbar b{color:#8fd0a4}
+.mast{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.5rem 0;border-bottom:3px double var(--ink)}
+.mastleft{display:flex;align-items:center;gap:1rem}
+.monogram{width:58px;height:58px;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:"Oswald",sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.06em;box-shadow:4px 4px 0 var(--ink);flex:none}
+.mastname{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:.16em;text-transform:uppercase}
+.mastsub{font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-top:.3rem}
+.chip{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(31,78,121,.4);background:rgba(31,78,121,.06);border-radius:999px;padding:.45rem .9rem;white-space:nowrap}
+.kchip{display:inline-flex;margin-top:3rem;font-family:"PT Mono",monospace;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:var(--blue);padding:.5rem 1rem;border-radius:4px}
+h1{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(1.9rem,4.6vw,3.2rem);line-height:1.12;margin:1.2rem 0 0;max-width:52rem;text-transform:uppercase;letter-spacing:.01em}
+h1 span{color:var(--blue)}
+.lead{margin-top:1.4rem;font-size:1.05rem;line-height:1.85;color:var(--mut);max-width:56rem}
+.lead b{color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:2.6rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--blue);padding:1.2rem 1.3rem;box-shadow:0 10px 26px -18px rgba(20,28,38,.5)}
+.kpi .n{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.5rem;line-height:1}
+.kpi .l{margin-top:.5rem;font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);line-height:1.7}
+.kpi.g{border-top-color:var(--pos)}.kpi.r{border-top-color:var(--neg)}.kpi.s{border-top-color:var(--neu)}
+.sec{display:flex;align-items:center;gap:1rem;margin:4.2rem 0 1.6rem}
+.sec .no{font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.2em;color:#fff;background:var(--ink);padding:.4rem .6rem;border-radius:4px}
+.sec h2{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.35rem;text-transform:uppercase;letter-spacing:.06em}
+.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid2{display:grid;grid-template-columns:1fr;gap:2.4rem}
+.panel{background:var(--card);border:1px solid var(--line);padding:1.6rem 1.6rem 1.4rem;box-shadow:0 14px 34px -22px rgba(20,28,38,.5)}
+.panel h3{font-family:"Oswald",sans-serif;font-weight:600;font-size:.95rem;text-transform:uppercase;letter-spacing:.1em;color:var(--blue)}
+.figcap{margin-top:1.1rem;font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.tblwrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);text-align:left;padding:.6rem .8rem;border-bottom:2px solid var(--ink)}
+td{padding:.7rem .8rem;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(31,78,121,.05)}
+td.num,th.num{text-align:right;font-family:"PT Mono",monospace}
+.g{display:inline-block;font-family:"PT Mono",monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-radius:4px;padding:.24rem .5rem;white-space:nowrap}
+.g.pos{background:var(--pos)}.g.neg{background:var(--neg)}.g.neu{background:var(--neu)}
+.q{font-style:italic;color:var(--ink)}
+.fn{color:var(--mut);font-size:.8rem;font-style:italic}
+.donutwrap{position:relative;width:250px;max-width:70%;margin:1.4rem auto 0}
+.donut{width:100%;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--pos) 0 45.8%,var(--neg) 45.8% 70.8%,var(--neu) 70.8% 100%);-webkit-mask:radial-gradient(circle,transparent 57%,#000 58%);mask:radial-gradient(circle,transparent 57%,#000 58%)}
+.donutc{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.donutc .n{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.6rem;line-height:1}
+.donutc .l{font-family:"PT Mono",monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-top:.3rem}
+.legend{margin:1.4rem auto 0;max-width:22rem;display:grid;gap:.55rem}
+.legend .row{display:flex;align-items:center;gap:.7rem;font-size:.88rem}
+.legend .sw{width:.85rem;height:.85rem;border-radius:3px;flex:none}
+.legend .row b{margin-left:auto;font-family:"PT Mono",monospace;font-size:.8rem}
+.bars{margin-top:1.4rem;display:grid;gap:1rem}
+.bar .top{display:flex;justify-content:space-between;font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.4rem}
+.bar .track{height:26px;background:rgba(20,28,38,.07);border:1px solid var(--line);position:relative}
+.bar .fill{height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem;color:#fff;font-family:"PT Mono",monospace;font-size:.66rem}
+.stack{display:flex;height:40px;margin-top:1.4rem;border:1px solid var(--line)}
+.stack div{display:grid;place-items:center;color:#fff;font-family:"PT Mono",monospace;font-size:.66rem}
+.cards3{display:grid;grid-template-columns:1fr;gap:1.6rem;margin-top:1.8rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c);padding:1.5rem 1.5rem 1.4rem;box-shadow:0 14px 34px -22px rgba(20,28,38,.5)}
+.pcard .big{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.2rem;color:var(--c);line-height:1}
+.pcard .sub{font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-top:.4rem}
+.pcard blockquote{margin-top:1.1rem;font-style:italic;font-size:.95rem;line-height:1.75;color:var(--ink)}
+.pcard .who{margin-top:.7rem;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.note{margin-top:2rem;border-left:5px solid var(--blue);background:var(--card);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.5rem 1.7rem}
+.note p{font-size:.98rem;line-height:1.85;color:var(--mut)}
+.note p b{color:var(--ink)}
+.method{margin-top:1.6rem;font-family:"PT Mono",monospace;font-size:.7rem;line-height:2;color:var(--mut);letter-spacing:.04em}
+.method b{color:var(--ink)}
+.hubline{margin:3.6rem 0 3.8rem;text-align:center}
+.hubbtn{display:inline-block;padding:.8rem 1.5rem;border:1px solid var(--blue);color:var(--blue);border-radius:999px;text-decoration:none;font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;position:relative;box-shadow:0 0 22px -6px var(--blue);transition:.25s;background:var(--card)}
+.hubbtn::after{content:"";position:absolute;left:12%;right:12%;bottom:-10px;height:6px;border-radius:50%;background:var(--blue);filter:blur(8px);opacity:.45}
+.hubbtn:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+footer{background:var(--ink);color:#c6d0da;padding:2.2rem 0 3rem;text-align:center}
+footer p{font-size:.9rem;line-height:1.7}
+footer .copy{margin-top:1.2rem;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#8794a2}
+@media(min-width:52rem){
+ .kpis{grid-template-columns:repeat(4,1fr)}
+ .grid2{grid-template-columns:1fr 1fr}
+ .cards3{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Социологическое исследование · полевой опрос</span><span>Сервер: <b>Saint-Louis</b> · возврат 100%</span></div></div>
+<div class="wrap">
+<header class="mast">
+  <div class="mastleft">
+    <div class="monogram osw">SFN</div>
+    <div><div class="mastname">San Fierro News</div><div class="mastsub">Отдел социологии редакции</div></div>
+  </div>
+  <div class="chip">Спецвыпуск · 30.09.2026</div>
+</header>
+
+<div class="kchip mono">Опрос проводит: Редакция San Fierro</div>
+<h1>«Вы довольны <span>новым губернатором</span>?»</h1>
+<p class="lead">Редакция San Fierro вышла на улицы сервера <b>Saint-Louis</b> с одним вопросом и вернулась с полным протоколом: <b>24 интервью, 24 ответа, возврат 100%</b>. Ниже — вся фактура без купюр: сводные таблицы, диаграммы распределения и дословные цитаты респондентов, от восторженного «конечно, я сам за него голосовал» до честного «не знаю, кто он».</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="n">24</div><div class="l">проведено опросов</div></div>
+  <div class="kpi g"><div class="n">24</div><div class="l">получено ответов · возврат 100%</div></div>
+  <div class="kpi r"><div class="n">3</div><div class="l">группы ответов: да / нет / уклончивые</div></div>
+  <div class="kpi s"><div class="n">2</div><div class="l">повторных ответа в протоколе</div></div>
+</div>
+
+<div class="sec"><span class="no">01</span><h2>Сводка</h2></div>
+<div class="grid2">
+  <div class="panel">
+    <h3>Таблица 1 · Распределение ответов</h3>
+    <div class="tblwrap" style="margin-top:1rem">
+    <table>
+      <thead><tr><th>Группа</th><th class="num">Ответов</th><th class="num">Доля</th><th class="num">Округл.</th></tr></thead>
+      <tbody>
+        <tr><td><span class="g pos">Положительные</span><br><span class="fn">Да / доволен</span></td><td class="num">11</td><td class="num">45,8%</td><td class="num">≈46%</td></tr>
+        <tr><td><span class="g neg">Отрицательные</span><br><span class="fn">Нет / не доволен</span></td><td class="num">6</td><td class="num">25,0%</td><td class="num">25%</td></tr>
+        <tr><td><span class="g neu">Уклончивые</span><br><span class="fn">нейтральные / «не знаю»</span></td><td class="num">7</td><td class="num">29,2%</td><td class="num">≈29%</td></tr>
+        <tr><td><b>Итого</b></td><td class="num"><b>24</b></td><td class="num"><b>100,0%</b></td><td class="num"><b>100%</b></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="figcap">Таблица 1 · доли считаются от 24 полученных ответов</div>
+  </div>
+  <div class="panel">
+    <h3>Рис. 1 · Структура ответов</h3>
+    <div class="donutwrap"><div class="donut"></div><div class="donutc"><div class="n">24</div><div class="l">ответа</div></div></div>
+    <div class="legend">
+      <div class="row"><span class="sw" style="background:var(--pos)"></span>Довольны<span><b>11 · 45,8%</b></span></div>
+      <div class="row"><span class="sw" style="background:var(--neg)"></span>Не довольны<span><b>6 · 25,0%</b></span></div>
+      <div class="row"><span class="sw" style="background:var(--neu)"></span>Уклончивые<span><b>7 · 29,2%</b></span></div>
+    </div>
+    <div class="figcap">Рис. 1 · кольцевая диаграмма, % от всех ответов</div>
+  </div>
+</div>
+
+<div class="sec"><span class="no">02</span><h2>Диаграммы</h2></div>
+<div class="grid2">
+  <div class="panel">
+    <h3>Рис. 2 · Группы в штуках</h3>
+    <div class="bars">
+      <div class="bar"><div class="top"><span>Положительные</span><span>11</span></div><div class="track"><div class="fill" style="width:45.8%;background:var(--pos)">45,8%</div></div></div>
+      <div class="bar"><div class="top"><span>Отрицательные</span><span>6</span></div><div class="track"><div class="fill" style="width:25%;background:var(--neg)">25,0%</div></div></div>
+      <div class="bar"><div class="top"><span>Уклончивые</span><span>7</span></div><div class="track"><div class="fill" style="width:29.2%;background:var(--neu)">29,2%</div></div></div>
+    </div>
+    <div class="figcap">Рис. 2 · длина полосы = доля группы</div>
+  </div>
+  <div class="panel">
+    <h3>Рис. 3 · Единая лента ответов (100%)</h3>
+    <div class="stack">
+      <div style="width:45.8%;background:var(--pos)">46%</div>
+      <div style="width:25%;background:var(--neg)">25%</div>
+      <div style="width:29.2%;background:var(--neu)">29%</div>
+    </div>
+    <h3 style="margin-top:2rem">Таблица 2 · Почему молчат уклончивые</h3>
+    <div class="tblwrap" style="margin-top:.9rem">
+    <table>
+      <thead><tr><th>Причина (кодировка редакции)</th><th class="num">Ответов</th></tr></thead>
+      <tbody>
+        <tr><td>Недавно в штате, не успел ознакомиться</td><td class="num">2</td></tr>
+        <tr><td>Не знает, кто такой губернатор</td><td class="num">3</td></tr>
+        <tr><td>Идейная позиция («за власть коммунистам»)</td><td class="num">1</td></tr>
+        <tr><td>Ответ без однозначной оценки («могу»)</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="figcap">Рис. 3 и таблица 2 · лента 100% сверху; кодировка цитат — оценка редакции</div>
+  </div>
+</div>
+
+<div class="sec"><span class="no">03</span><h2>Реестр ответов · дословно</h2></div>
+<div class="panel">
+  <h3>Таблица 3 · Протокол опроса, все 24 записи</h3>
+  <div class="tblwrap" style="margin-top:1rem">
+  <table>
+    <thead><tr><th class="num">№</th><th>Респондент</th><th>Цитата</th><th>Группа</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Serg Richardson</td><td class="q">«Да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">2</td><td>Win Holland</td><td class="q">«Да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">3</td><td>Mika Garcia</td><td class="q">«Да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">4</td><td>Rayan Krause</td><td class="q">«Да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">5</td><td>Viktor Ewergarden</td><td class="q">«Допустим»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">6</td><td>Alex Severniy</td><td class="q">«Да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">7</td><td>Lesha Lauren</td><td class="q">«Da»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">8</td><td>Tania Vilock</td><td class="q">«Да, очень довольна»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">9</td><td>Artem Stoun</td><td class="q">«Конечно»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">10</td><td>Otto Wachter</td><td class="q">«Конечно! Я сам за него голосовал. Это пацан, на которого можно положиться»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">11</td><td>Martin Corse</td><td class="q">«Конечно, да»</td><td><span class="g pos">да</span></td></tr>
+      <tr><td class="num">12</td><td>Feitan Broodfather</td><td class="q">«Нет»</td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">13</td><td>Gigi Pump</td><td class="q">«Нет, не доволен»</td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">14</td><td>Mister Cooper</td><td class="q">«Нет, не доволен оперативный человек...»</td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">15</td><td>Milis Aliev</td><td class="q">«Нет» <span class="fn">(с нецензурным комментарием; брань опущена редакцией)</span></td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">16</td><td>Neon</td><td class="q">«Не особо»</td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">17</td><td>Mister Cooper</td><td class="q">«Нет не доволен отрицательный человек и его руководство» <span class="fn">(повторный ответ)</span></td><td><span class="g neg">нет</span></td></tr>
+      <tr><td class="num">18</td><td>Неизвестный</td><td class="q">«Не знаю кто он»</td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">19</td><td>Неизвестный</td><td class="q">«Не знаю кто он» <span class="fn">(повтор)</span></td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">20</td><td>Mory</td><td class="q">«Могу»</td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">21</td><td>Michael German</td><td class="q">«Не, я за власть коммунистам!»</td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">22</td><td>Mailo Solovyev</td><td class="q">«Не знаю его»</td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">23</td><td>Mustafa Mokrani</td><td class="q">«Да, я недавно приехал, не знаю»</td><td><span class="g neu">уклонч.</span></td></tr>
+      <tr><td class="num">24</td><td>Dan Mellow</td><td class="q">«Незнаю, я не давно приехал в штат»</td><td><span class="g neu">уклонч.</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="figcap">Таблица 3 · орфография цитат сохранена по протоколу опроса</div>
+</div>
+
+<div class="sec"><span class="no">04</span><h2>Портреты групп</h2></div>
+<div class="cards3">
+  <div class="pcard" style="--c:var(--pos)"><div class="big">46%</div><div class="sub">11 ответов · «да»</div><blockquote>«Конечно! Я сам за него голосовал. Это пацан, на которого можно положиться.»</blockquote><div class="who">— Otto Wachter, респондент №10</div></div>
+  <div class="pcard" style="--c:var(--neg)"><div class="big">25%</div><div class="sub">6 ответов · «нет»</div><blockquote>«Нет не доволен отрицательный человек и его руководство.»</blockquote><div class="who">— Mister Cooper, респондент №17 (повторно)</div></div>
+  <div class="pcard" style="--c:var(--neu)"><div class="big">29%</div><div class="sub">7 ответов · уклончивые</div><blockquote>«Незнаю, я не давно приехал в штат.»</blockquote><div class="who">— Dan Mellow, респондент №24</div></div>
+</div>
+
+<div class="note">
+  <p><b>Примечание редакции.</b> Большинство опрошенных (<b>46%</b>) довольны новым губернатором. Четверть (<b>25%</b>) — недовольны. Почти треть (<b>29%</b>) воздержалась от оценки: в основном это жители, недавно приехавшие в штат и не успевшие ознакомиться с политической ситуацией. Редакция продолжит замер: следующая волна опроса — после первого отчёта губернатора о ста днях работы.</p>
+  <div class="method">Методика: уличный полевой опрос, сервер <b>Saint-Louis</b> · инструмент: личное интервью с записью ответа · выборка: <b>24</b> респондента, возврат <b>100%</b> · повторные ответы (№17, №19) учтены протоколом как отдельные записи · нецензурная лексика (№15) в публикацию не включена · кодировка таблицы 2 — экспертная оценка редакции.</div>
+</div>
+
+<div class="hubline"><a class="hubbtn" href="newsroom.html">← Посмотреть все выпуски редакции</a></div>
+</div>
+<footer>
+  <p>Исследование подготовлено отделом социологии редакции <strong>San Fierro News</strong>. Опрос проводит: Редакция San Fierro. Сервер: Saint-Louis.</p>
+  <p class="copy">© 2026 SF News Corp. · Спецвыпуск · 30.09.2026 · данные протокола опубликованы без изменений</p>
+</footer>
+</body>
+</html>
