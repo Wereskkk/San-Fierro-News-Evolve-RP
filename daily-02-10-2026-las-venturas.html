@@ -758,7 +758,9 @@ function startRoll(){
 /* карман поймал шарик: пружинное успокоение + колесо докручивает до указателя */
 function startLock(wvNow){
   phase='lock';
-  idx=mod(Math.round(relDeg/STEP),37);
+  var kRaw=Math.round(relDeg/STEP);
+  idx=mod(kRaw,37);
+  relDeg=idx*STEP+(relDeg-kRaw*STEP);
   relV=(Math.random()-0.5)*8;
   SZ=reduced?0.6:0.32;
   var d0=mod(-idx*STEP-wheelDeg,360);
