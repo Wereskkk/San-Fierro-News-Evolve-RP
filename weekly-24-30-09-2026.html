@@ -42,16 +42,30 @@ figure{margin:0}
 .tfig img{width:100%;height:16rem;object-fit:cover;object-position:top right;filter:saturate(.96) contrast(1.03)}
 .tfig figcaption{padding:.75rem .5rem .35rem;font-size:.84rem;line-height:1.65;color:var(--ink60);font-style:italic}
 .tfig figcaption b{display:block;font-style:normal;font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green-d);margin-bottom:.3rem}
-.srclink{display:inline-block;margin-top:.55rem;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green-d);text-decoration:none;border-bottom:1px dotted var(--green)}
-.srclink:hover{color:var(--red);border-color:var(--red)}
-.timeline{margin-top:2rem;background:var(--paper);border:1px solid var(--line);padding:1.8rem 1.8rem 1.4rem;box-shadow:0 14px 34px -22px rgba(28,43,28,.4)}
-.tl{position:relative;margin-left:.6rem;padding-left:1.8rem;border-left:2px solid var(--green-l)}
-.tl .day{position:relative;padding-bottom:1.5rem}
-.tl .day::before{content:"";position:absolute;left:-2.32rem;top:.32rem;width:.85rem;height:.85rem;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--paper),0 0 0 5px var(--green-l)}
-.tl .d{font-family:"Oswald",sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green-d)}
-.tl ul{margin:.5rem 0 0 1.1rem;font-size:.92rem;line-height:1.9;color:var(--ink80)}
-.tl a{color:var(--green-d);text-decoration:none;border-bottom:1px dotted var(--green-l)}
-.tl a:hover{color:var(--red)}
+.srclink{display:inline-block;margin-top:.75rem;font-family:"Space Mono",monospace;font-size:.62rem;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#eef7ea;background:var(--green-d);border-radius:999px;padding:.5rem 1.1rem;text-decoration:none;box-shadow:0 8px 18px -10px rgba(44,90,49,.85);transition:background .18s,transform .18s}
+.srclink:hover{background:var(--red);transform:translateX(3px)}
+.chronlead{max-width:54rem;font-size:1rem;line-height:1.85;color:var(--ink80)}
+.chronlead b{color:var(--green-d)}
+.day{margin-top:2.6rem}
+.dayhead{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
+.dayhead::after{content:"";flex:1;min-width:2rem;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.daynum{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.7rem;line-height:1;color:#fff;background:linear-gradient(160deg,var(--green),var(--green-d));border-radius:12px;padding:.55rem .75rem .6rem;box-shadow:0 10px 22px -12px rgba(44,90,49,.7)}
+.dayname{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.05rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink)}
+.daycount{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);border:1px solid var(--green);background:var(--paper);border-radius:999px;padding:.42rem .9rem;white-space:nowrap}
+.igrid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.15rem}
+.igrid.one{grid-template-columns:minmax(0,36rem)}
+.icard{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--stripe);padding:1.1rem 1.3rem 1.2rem;text-decoration:none;box-shadow:0 12px 28px -22px rgba(28,43,28,.55);transition:transform .18s ease,box-shadow .18s ease}
+.icard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 55%,rgba(127,174,131,.16));opacity:0;transition:opacity .2s;pointer-events:none}
+.icard:hover{transform:translateY(-3px);box-shadow:0 22px 40px -18px rgba(28,43,28,.5)}
+.icard:hover::after{opacity:1}
+.icard:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.ibadge{font-family:"Space Mono",monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bcolor);border:1.5px solid var(--bcolor);border-radius:999px;padding:.27rem .72rem}
+.imeta{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink60)}
+.imeta b{color:var(--green-d)}
+.ititle{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.14rem;line-height:1.24;text-transform:uppercase;letter-spacing:.015em;color:var(--ink)}
+.idesc{font-size:.86rem;line-height:1.62;color:var(--ink80)}
+.igo{margin-top:.35rem;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#eef7ea;background:var(--green-d);border-radius:999px;padding:.52rem 1.1rem;box-shadow:0 8px 18px -10px rgba(44,90,49,.85);transition:background .18s,transform .18s}
+.icard:hover .igo{background:var(--red);transform:translateX(3px)}
 .quotes{margin:3.4rem 0 0;display:grid;grid-template-columns:1fr;gap:1.6rem}
 .qq{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green);padding:1.4rem 1.6rem;box-shadow:0 12px 30px -22px rgba(28,43,28,.45)}
 .qq q{quotes:none;font-style:italic;font-size:1.05rem;line-height:1.7}
@@ -81,7 +95,8 @@ footer p{font-size:.92rem;line-height:1.7;max-width:46rem;margin:0 auto}
 .hubbtn{display:inline-block;padding:.75rem 1.4rem;border:1px solid #bfe3b4;color:#bfe3b4;border-radius:999px;text-decoration:none;font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 20px -6px #bfe3b4;transition:.25s}
 .hubbtn:hover{background:#bfe3b4;color:var(--green-d);transform:translateY(-2px)}
 .copy{margin-top:1.5rem;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#9dc49a}
-@media(min-width:52rem){.tgrid.t2{grid-template-columns:1fr 1fr}.tgrid.t3{grid-template-columns:repeat(3,1fr)}.quotes{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:52rem){.tgrid.t2{grid-template-columns:1fr 1fr}.tgrid.t3{grid-template-columns:repeat(3,1fr)}.quotes{grid-template-columns:repeat(3,1fr)}.igrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:67rem){.igrid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -100,44 +115,202 @@ footer p{font-size:.92rem;line-height:1.7;max-width:46rem;margin:0 auto}
 <section class="hero">
   <div class="kicker mono">Еженедельник редакции · большой сюжет недели</div>
   <h1>Семь дней, которые не согнули редакцию</h1>
-  <p class="herosub">Неделя началась выстрелом у нашего собственного офиса и закончилась танцполом благотворительного вечера. Между ними уместились свадьба года, расследование под грифом «зона 51», два аукциона-рекорда, перестрелка в банке и двадцать два выпуска, которые редакция отдала городу день за днём. Этот еженедельник собирает неделю в один сюжет — пять нитей, одна газета.</p>
+  <p class="herosub">Неделя началась выстрелом у нашего собственного офиса и закончилась танцполом благотворительного вечера. Между ними уместились свадьба года, расследование под грифом «зона 51», два аукциона-рекорда, перестрелка в банке и двадцать один выпуск, который редакция отдала городу день за днём. Этот еженедельник собирает неделю в один сюжет — пять нитей, одна газета.</p>
   <div class="weekstats">
-    <span class="wchip">22 выпуска за неделю</span>
-    <span class="wchip">115 кадров в подшивке</span>
+    <span class="wchip">21 выпуск за неделю</span>
+    <span class="wchip">157 кадров в подшивке</span>
     <span class="wchip"><b>1</b> траур и <b>1</b> свадьба</span>
     <span class="wchip">2 аукциона-рекорда</span>
     <span class="wchip">3 города · 5 нитей сюжета</span>
   </div>
 </section>
 
-<div class="sec"><span class="no">Хроника</span><h2>Неделя по дням</h2></div>
-<div class="timeline"><div class="tl">
-  <div class="day"><div class="d">24 сентября · четверг</div><ul>
-    <li><a href="daily-24-09-2026.html">Траурный номер</a> — у офиса редакции убит Главный редактор; дело открыто</li>
-    <li><a href="sfpd-patrol-falk.html">«Позывной Falks»</a> — смена семейного патруля SFPD</li>
-    <li><a href="sfpd-precinct.html">Пресс-тур SFPD</a> — участок, тиры и КПЗ изнутри</li>
-    <li><a href="wedding-ozzy-gulnara.html">Свадьба года</a> — Ozzy Ozzborne и Gulnara Elfie, церковь и Malibu</li>
-  </ul></div>
-  <div class="day"><div class="d">25 сентября · пятница</div><ul>
-    <li><a href="zone51-investigation.html">Дело 51-Z</a> — ночное расследование базы армии Las Venturas</li>
-    <li><a href="opg-leader-interview.html">«Зовите меня просто Аноним»</a> — день с Падре на условии анонимности</li>
-  </ul></div>
-  <div class="day"><div class="d">26 сентября · суббота</div><ul>
-    <li><a href="daily-26-09-2026.html">Медосмотр SFPD</a>, вертолёты на тротуаре The Four Dragons, убийство офицера LVPD и аукцион Sugar 24-7</li>
-  </ul></div>
-  <div class="day"><div class="d">27 сентября · воскресенье</div><ul>
-    <li><a href="daily-27-09-2026.html">Espo 24-7 за $8.100.000</a>, техобслуживание Four Dragons, полный зал Caligula's, потасовка у Ammu-Nation</li>
-  </ul></div>
-  <div class="day"><div class="d">28 сентября · понедельник</div><ul>
-    <li><a href="daily-28-09-2026.html">День, когда город не спал</a>: перестрелка в банке, оцепление, убийство медика, АвтоБазар</li>
-  </ul></div>
-  <div class="day"><div class="d">29 сентября · вторник</div><ul>
-    <li>Восемь фоторепортажей: <a href="fotoreport-comedy-club.html">Comedy Club</a>, <a href="fotoreport-tierra-robada.html">Tierra Robada</a>, <a href="fotoreport-warlocks-mc.html">Warlocks MC</a>, <a href="fotoreport-avtobazar-lv.html">АвтоБазар</a>, <a href="fotoreport-city-hall.html">City Hall</a>, <a href="fotoreport-four-dragons.html">Four Dragons</a>, <a href="fotoreport-evolve-hotel.html">Evolve Hotel</a>, <a href="fotoreport-abandoned-airport.html">кладбище самолётов</a></li>
-  </ul></div>
-  <div class="day"><div class="d">30 сентября · среда</div><ul>
-    <li><a href="daily-30-09-2026.html">Семь адресов San Fierro</a> · <a href="article-lisa-akana.html">смена главврача Lisa Akana</a> · <a href="daily-30-09-2026-los-santos.html">Los Santos в десяти открытках</a> · <a href="socio-governor-poll.html">опрос о губернаторе</a></li>
-  </ul></div>
-</div></div>
+<div class="sec"><span class="no">Хроника</span><h2>Неделя по дням: 21 окно — 21 выпуск</h2></div>
+<p class="chronlead">Вся неделя перед вами, день за днём. <b>Каждое окно — прямой переход к полному выпуску</b>: карточка кликабельна целиком, а зелёная кнопка «Открыть выпуск» ведёт на полную полосу. Цвет полосы и бейдж — те же, что в общем архиве редакции.</p>
+<div class="chronicle">
+  <div class="day">
+    <div class="dayhead"><span class="daynum">24</span><span class="dayname">сентября · четверг</span><span class="daycount">5 выпусков за день</span></div>
+    <div class="igrid">
+    <a class="icard" style="--stripe:#a32620;--bcolor:#16283c" href="daily-24-09-2026.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
+      <span class="ititle">Траурный номер: убит Главный редактор</span>
+      <span class="idesc">Резонансное убийство у офиса редакции, подрыв автомобиля в Los Santos и лихорадка авторынка: аналитика игромании с советом редакции.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#16283c;--bcolor:#16283c" href="sfpd-precinct.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
+      <span class="ititle">Под звездой департамента</span>
+      <span class="idesc">Пресс-тур по участку SFPD с майором Felix Akana: Детективное Бюро, камеры, тир и автопарк — 19 кадров дела SFN-2609-24.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#f2a33c;--bcolor:#b23a34" href="sfpd-patrol-falk.html">
+      <span class="ibadge">Статья</span>
+      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
+      <span class="ititle">Позывной «Falks»</span>
+      <span class="idesc">Одна смена с семейным патрулём SFPD Yulia и Rauf Falk: штраф без номеров, задержание с оружием, кофе у Cluckin' Bell и пешеходный переход.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#35b89a;--bcolor:#b23a34" href="opg-leader-interview.html">
+      <span class="ibadge">Статья</span>
+      <span class="imeta"><b>24.09.2026</b> · Los Santos</span>
+      <span class="ititle">«Зовите меня просто Аноним»</span>
+      <span class="idesc">Один день с Падре ОПГ на условии анонимности: стены территорий, склад, такси за наличные и деловой разговор на грани.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#6d2836;--bcolor:#3f7d44" href="wedding-ozzy-gulnara.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
+      <span class="ititle">Два крыла, одна клятва</span>
+      <span class="idesc">Свадьба года: церемония в церкви San Fierro и празднование в клубе Malibu на пирсе пляжа Santa Maria (Los Santos) — все 12 кадров торжества.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">25</span><span class="dayname">сентября · пятница</span><span class="daycount">1 выпуск за день</span></div>
+    <div class="igrid one">
+    <a class="icard" style="--stripe:#d4483e;--bcolor:#16283c" href="zone51-investigation.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>25.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Зона 51: что скрыто под пустыней</span>
+      <span class="idesc">Ночное расследование Jonny Wilde: 20 кадров закрытой базы армии Las Venturas — от парадной дорожки до операционных под землёй.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">26</span><span class="dayname">сентября · суббота</span><span class="daycount">1 выпуск за день</span></div>
+    <div class="igrid one">
+    <a class="icard" style="--stripe:#a32620;--bcolor:#16283c" href="daily-26-09-2026.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>26.09.2026</b> · Los Santos · Las Venturas</span>
+      <span class="ititle">Медосмотр, хаос и аукцион</span>
+      <span class="idesc">Медосмотр SFPD в госпитале Los Santos, вертолёты на тротуаре у The Four Dragons, убийство офицера LVPD и торги за Sugar 24-7.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">27</span><span class="dayname">сентября · воскресенье</span><span class="daycount">1 выпуск за день</span></div>
+    <div class="igrid one">
+    <a class="icard" style="--stripe:#12a5c9;--bcolor:#16283c" href="daily-27-09-2026.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>27.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Espo 24-7: $8.100.000 с молотка</span>
+      <span class="idesc">Рекордный аукцион, техобслуживание The Four Dragons, полный зал Caligula's, потасовка у заправки и убийство-ограбление у казино.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">28</span><span class="dayname">сентября · понедельник</span><span class="daycount">1 выпуск за день</span></div>
+    <div class="igrid one">
+    <a class="icard" style="--stripe:#ff3d81;--bcolor:#16283c" href="daily-28-09-2026.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>28.09.2026</b> · Los Santos — Las Venturas</span>
+      <span class="ititle">День, когда город не спал</span>
+      <span class="idesc">Перестрелка в банке и оцепление с погибшим, убийство медика у борта 42, тело посреди улицы и кровавая сделка на АвтоБазаре.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">29</span><span class="dayname">сентября · вторник</span><span class="daycount">8 выпусков за день</span></div>
+    <div class="igrid">
+    <a class="icard" style="--stripe:#d9a05b;--bcolor:#3f7d44" href="fotoreport-abandoned-airport.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Кладбище самолётов пустыни</span>
+      <span class="idesc">Заброшенный аэропорт Las Venturas: фюзеляжи среди скал, пустые ангары и аванпост со сторожевой вышкой.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#ff3d81;--bcolor:#3f7d44" href="fotoreport-comedy-club.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Смех под лазерами</span>
+      <span class="idesc">Один вечер в Comedy Club: лазеры, сцена за сеткой и бар, где смех — за счёт заведения.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#59c7de;--bcolor:#3f7d44" href="fotoreport-tierra-robada.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Tierra Robada</span>
+      <span class="ititle">Округ, который не включает свет</span>
+      <span class="idesc">Ночная Tierra Robada: склады у воды, трейлер-парк, гавань с маяком и пустые перекрёстки под луной.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#e07a3f;--bcolor:#3f7d44" href="fotoreport-warlocks-mc.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Пустошь</span>
+      <span class="ititle">Где моторы громче слов</span>
+      <span class="idesc">Внутри байк-клуба Warlocks MC: комната собраний, колонна на закате, концерт за сеткой и бар для своих.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#f2b23c;--bcolor:#3f7d44" href="fotoreport-avtobazar-lv.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Главный автобазар штата</span>
+      <span class="idesc">Las Venturas Car Market: сервисная зона, бирюзовые навесы, офис менеджера и aerial-разметка зон.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#4fb3a5;--bcolor:#3f7d44" href="fotoreport-city-hall.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Los Santos</span>
+      <span class="ititle">Офис города изнутри</span>
+      <span class="idesc">City Hall: приёмная под баннером, биржа труда, стена мониторинга и архив за сеткой.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#e0483e;--bcolor:#3f7d44" href="fotoreport-four-dragons.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Драконы проснулись</span>
+      <span class="idesc">The Four Dragons после техобслуживания: арка PLAY AGAIN SOON, ночная пагода, ресторан, slot-машины и бар.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#6fd6e8;--bcolor:#3f7d44" href="fotoreport-evolve-hotel.html">
+      <span class="ibadge">Фоторепортаж</span>
+      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
+      <span class="ititle">Пять звёзд над городом</span>
+      <span class="idesc">Evolve Five Stars Hotel: башня The Visage, неоновый паркинг, люкс с алмазной панелью и мраморное лобби.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+  <div class="day">
+    <div class="dayhead"><span class="daynum">30</span><span class="dayname">сентября · среда</span><span class="daycount">4 выпуска за день</span></div>
+    <div class="igrid">
+    <a class="icard" style="--stripe:#59e3ff;--bcolor:#16283c" href="daily-30-09-2026.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>30.09.2026</b> · San Fierro</span>
+      <span class="ititle">Семь адресов San Fierro</span>
+      <span class="idesc">Городской спецвыпуск с высоты: автосалон Wang Cars и башня редакции, банк под зелёными куполами, автовокзал, база Army на пирсе, участок SFPD и здание FBI.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#c8102e;--bcolor:#c8102e" href="article-lisa-akana.html">
+      <span class="ibadge">Статья</span>
+      <span class="imeta"><b>30.09.2026</b> · Los Santos</span>
+      <span class="ititle">Главврач с крыльями феи</span>
+      <span class="idesc">Одна смена Lisa Akana: приёмный покой Hospital San Andreas, смотровые и борт 42 на вызове — до благотворительного вечера в Malibu.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#c8402f;--bcolor:#c8402f" href="daily-30-09-2026-los-santos.html">
+      <span class="ibadge">Ежедневная газета</span>
+      <span class="imeta"><b>30.09.2026</b> · Los Santos</span>
+      <span class="ititle">Los Santos в десяти открытках</span>
+      <span class="idesc">Вечерняя почта с юга: надпись Vinewood, башня City Hall, штаб LSPD и All Saints, банк на углу CB, Ammu-Nation, Victim, южный отель, башни Los Santos News и ферма на окраине — со ссылками на прошлые выпуски.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    <a class="icard" style="--stripe:#1f4e79;--bcolor:#1f4e79" href="socio-governor-poll.html">
+      <span class="ibadge">Спецвыпуск</span>
+      <span class="imeta"><b>30.09.2026</b> · штат San Andreas</span>
+      <span class="ititle">«Вы довольны новым губернатором?»</span>
+      <span class="idesc">Полное социологическое исследование редакции: 24 интервью, учтён 22 уникальный ответ (повторы исключены). 50% довольны новым губернатором, ≈23% — нет, ≈27% воздержались. Введение, методология, таблицы, диаграммы, дословный реестр цитат, выводы и рекомендации.</span>
+      <span class="igo">Открыть выпуск →</span>
+    </a>
+    </div>
+  </div>
+</div>
 
 <div class="sec"><span class="no">Нить 1</span><h2>Траур и правда</h2></div>
 <p class="threadlead">Неделя открылась выстрелом у собственного порога: Главный редактор погиб на парковке за зданием редакции, на крыше собственного автомобиля. Редакция сделала то, что он завещал, — <b>не остановила печатный станок</b>: траурный номер вышел в срок, в полдень пресса замерла на минуту молчания, а выпускную службу до назначения нового Главреда возглавил генеральный директор Danek Scammingshit.</p>
