@@ -18,7 +18,7 @@
 
 ## 3. Карта файлов
 - **Хаб/архив**: `newsroom.html` (источник `template_newsroom.html`, токен `{{HERO}}`).
-- **Выпуски в корне** (дата → файл): 23.09 — `index.html` (казино Chinatown), `driving-school.html`, `caligulas-casino.html`, `all-saints-hospital.html`, `sf-police-raid.html`, `sf-army-base.html`; 24.09 — `sfpd-precinct.html`, `sfpd-patrol-falk.html`, `daily-24-09-2026.html` (траурный: убийство Главреда), `opg-leader-interview.html` (Падре), `wedding-ozzy-gulnara.html`; 25.09 — `zone51-investigation.html`; 26.09 — `daily-26-09-2026.html`; 27.09 — `daily-27-09-2026.html`; 28.09 — `daily-28-09-2026.html`; 29.09 — `fotoreport-comedy-club/tierra-robada/warlocks-mc/avtobazar-lv/city-hall/four-dragons/evolve-hotel/abandoned-airport.html`; 30.09 — `daily-30-09-2026.html` (7 адресов SF), `article-lisa-akana.html`, `daily-30-09-2026-los-santos.html` (открытки), `socio-governor-poll.html` (спецвыпуск-опрос).
+- **Выпуски в корне** (дата → файл): 23.09 — `index.html` (казино Chinatown), `driving-school.html`, `caligulas-casino.html`, `all-saints-hospital.html`, `sf-police-raid.html`, `sf-army-base.html`; 24.09 — `sfpd-precinct.html`, `sfpd-patrol-falk.html`, `daily-24-09-2026.html` (траурный: убийство Главреда), `opg-leader-interview.html` (Падре), `wedding-ozzy-gulnara.html`; 25.09 — `zone51-investigation.html`; 26.09 — `daily-26-09-2026.html`; 27.09 — `daily-27-09-2026.html`; 28.09 — `daily-28-09-2026.html`; 29.09 — `fotoreport-comedy-club/tierra-robada/warlocks-mc/avtobazar-lv/city-hall/four-dragons/evolve-hotel/abandoned-airport.html`; 30.09 — `daily-30-09-2026.html` (7 адресов SF), `article-lisa-akana.html`, `daily-30-09-2026-los-santos.html` (открытки), `socio-governor-poll.html` (спецвыпуск-опрос); 02.10 — `daily-02-10-2026-las-venturas.html` (Las Venturas, «Casino Noir»: газетный номер — рубрики, лиды, 3 абзаца на адрес, хроника дня; в шапке интерактивная рулетка — кнопка «Крутить», шарик отскакивает от бортиков и между цифрами, останавливается на числе; источник `template_lv_daily.html`, движок колеса — inline-JS).
 - **Шаблоны**: `template_*.html` с токенами `{{A1}}…`; сборка — python: base64-вставка картинок.
 - **assets/**: оригиналы кадров + `assets/fonts/` (RussoOne, BebasNeue, MarckScript, PT_Sans-Narrow-Web-Bold — для PIL-плакатов).
 - **flyers/**: PNG-листовки/постеры (формула конкурентов Las Venturas News): автосервис SF, Burger Shot LS, Ammu-Nation LS, Cluckin' Bell SF, Mount Chiliad, `radio-poster-sfn.png`; генератор `flyers/make_flyers_4.py`.
@@ -49,6 +49,7 @@
 - PIL-листовки/постеры: 1600×2000, формула конкурентов (бумага/коллаж/brush-ленты/иконки), логотип Evolve рисовать векторно, текст только своими шрифтами поверх (в картинке текста не генерировать).
 
 ## 8. Текущее состояние на момент памятки
-- Последний коммит: `dc1e374` (фикс видимости «50%» в KPI соцопроса).
-- Открытых задач нет; пользователь может прислать новые партии фото, правки или новый формат (листовка/постер/опрос).
-- Незакрытые идеи пользователя (отклонены/отложены): карта-атлас штата (удалена), счётчики посещений (закрыты), «кто есть кто», хроника, BBCode-пакет — не начинать без явного запроса.
+- Опубликован еженедельник №1 `weekly-24-30-09-2026.html` (с draft-плашкой «Черновой тираж», в хаб НЕ вшит — ждать команды «вшивай»; эталон и план — `WEEKLY_REFERENCE.md`).
+- Еженедельник №2 (28.09–04.10, `weekly-28-09-04-10-2026.html`) — ждёт материала дней 01–04.10 и команды «приступай».
+- Выпуск 02.10 Las Venturas перевёрстан в газетный формат v2 (большие статьи + интерактивная рулетка) по правке пользователя: фоторепортажный формат ежедневников не устраивает — в ежедневниках всегда давать полноценные статьи (рубрика, лид, 2–3+ абзаца, подпись кадра), а не только фотокарточки.
+- Незакрытые идеи пользователя (отклонены/отложены): карта-атлас штата (удалена), счётчики посещений (закрыты), «кто есть кто», BBCode-пакет — не начинать без явного запроса.
