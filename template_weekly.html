@@ -6,361 +6,310 @@
 <title>San Fierro News Weekly — Семь дней, которые не согнули редакцию · 24–30.09.2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Mono&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#e9f3e4;--bg2:#dcebd4;--paper:#fbfdf9;--ink:#1c2b1c;--ink80:rgba(28,43,28,.82);--ink60:rgba(28,43,28,.6);--green:#3f7d44;--green-d:#2c5a31;--green-l:#7fae83;--line:rgba(44,90,49,.28);--red:#b23a34;--gold:#b98a2e}
+:root{--bg:#0a120d;--bg2:#0e1811;--panel:rgba(143,214,148,.055);--panel2:rgba(143,214,148,.09);--line:rgba(143,214,148,.22);--line2:rgba(143,214,148,.4);--neon:#8fd694;--neon2:#59e37f;--ink:#e8f4e8;--mut:#9fbca3;--red:#ff5d5d;--gold:#e8c15a}
 *{box-sizing:border-box;margin:0;padding:0}
 img{display:block;max-width:100%}
-body{background:radial-gradient(1000px 460px at 50% -80px,rgba(127,174,131,.3),transparent 70%),repeating-linear-gradient(0deg,rgba(63,125,68,.05) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(63,125,68,.05) 0 1px,transparent 1px 46px),var(--bg);color:var(--ink);font-family:"PT Serif",Georgia,serif;-webkit-font-size-adjust:100%}
-.mono{font-family:"Space Mono",ui-monospace,monospace}
-.oswald{font-family:"Oswald","Arial Narrow",sans-serif}
-.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
-.draft{position:fixed;top:22px;right:-64px;transform:rotate(38deg);z-index:50;background:rgba(178,58,52,.94);color:#fff;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;padding:.5rem 4.2rem;box-shadow:0 8px 24px rgba(0,0,0,.25);pointer-events:none}
-.masthead{background:linear-gradient(180deg,var(--green-d),#234b28);color:#f2f8ee;border-bottom:4px solid var(--green-l)}
-.mastinner{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 1.5rem;max-width:70rem;margin:0 auto;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.9rem}
-.brand svg{width:54px;height:54px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
-.brandname{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:1.05rem}
-.brandname span{display:block;font-family:"Space Mono",monospace;font-weight:400;font-size:.56rem;letter-spacing:.26em;color:#bfe3b4;margin-top:.3rem}
-.mastmeta{text-align:right;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#bfe3b4;line-height:1.9}
-.hero{padding:3.4rem 0 1rem;text-align:center}
-.kicker{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--green-d)}
-h1{margin:1.1rem auto 0;font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,5.4vw,3.6rem);line-height:1.12;max-width:44rem;text-transform:uppercase}
-.herosub{margin:1.2rem auto 0;max-width:46rem;font-size:1.05rem;line-height:1.85;color:var(--ink80)}
-.weekstats{margin:2.2rem auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem}
-.wchip{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:.5rem .95rem;color:var(--green-d)}
-.wchip b{color:var(--red)}
-.sec{display:flex;align-items:center;gap:1rem;margin:4.4rem 0 1.6rem}
-.sec .no{font-family:"Oswald",sans-serif;font-style:normal;font-size:1.05rem;color:#fff;background:var(--green);border-radius:6px;padding:.3rem .6rem;letter-spacing:.08em}
-.sec h2{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(1.2rem,2.8vw,1.7rem);text-transform:uppercase;letter-spacing:.05em}
-.sec::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
-.threadlead{max-width:52rem;font-size:1.02rem;line-height:1.9;color:var(--ink80)}
-.threadlead b{color:var(--ink)}
-.tgrid{display:grid;grid-template-columns:1fr;gap:1.8rem;margin-top:2rem}
-figure{margin:0}
-.tfig{background:var(--paper);border:1px solid var(--line);padding:.6rem;box-shadow:0 14px 34px -20px rgba(28,43,28,.45)}
-.tfig img{width:100%;height:16rem;object-fit:cover;object-position:top right;filter:saturate(.96) contrast(1.03)}
-.tfig figcaption{padding:.75rem .5rem .35rem;font-size:.84rem;line-height:1.65;color:var(--ink60);font-style:italic}
-.tfig figcaption b{display:block;font-style:normal;font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green-d);margin-bottom:.3rem}
-.srclink{display:inline-block;margin-top:.75rem;font-family:"Space Mono",monospace;font-size:.62rem;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#eef7ea;background:var(--green-d);border-radius:999px;padding:.5rem 1.1rem;text-decoration:none;box-shadow:0 8px 18px -10px rgba(44,90,49,.85);transition:background .18s,transform .18s}
-.srclink:hover{background:var(--red);transform:translateX(3px)}
-.chronlead{max-width:54rem;font-size:1rem;line-height:1.85;color:var(--ink80)}
-.chronlead b{color:var(--green-d)}
-.day{margin-top:2.6rem}
-.dayhead{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
-.dayhead::after{content:"";flex:1;min-width:2rem;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
-.daynum{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.7rem;line-height:1;color:#fff;background:linear-gradient(160deg,var(--green),var(--green-d));border-radius:12px;padding:.55rem .75rem .6rem;box-shadow:0 10px 22px -12px rgba(44,90,49,.7)}
-.dayname{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.05rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink)}
-.daycount{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-d);border:1px solid var(--green);background:var(--paper);border-radius:999px;padding:.42rem .9rem;white-space:nowrap}
-.igrid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.15rem}
-.igrid.one{grid-template-columns:minmax(0,36rem)}
-.icard{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--stripe);padding:1.1rem 1.3rem 1.2rem;text-decoration:none;box-shadow:0 12px 28px -22px rgba(28,43,28,.55);transition:transform .18s ease,box-shadow .18s ease}
-.icard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 55%,rgba(127,174,131,.16));opacity:0;transition:opacity .2s;pointer-events:none}
-.icard:hover{transform:translateY(-3px);box-shadow:0 22px 40px -18px rgba(28,43,28,.5)}
+body{background:var(--bg);color:var(--ink);font-family:"PT Serif",Georgia,serif;-webkit-font-size-adjust:100%;position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+ radial-gradient(1100px 520px at 78% -12%,rgba(89,227,127,.14),transparent 62%),
+ radial-gradient(900px 480px at 6% 34%,rgba(143,214,148,.08),transparent 60%),
+ radial-gradient(1200px 600px at 50% 118%,rgba(89,227,127,.07),transparent 62%),
+ repeating-linear-gradient(0deg,rgba(143,214,148,.05) 0 1px,transparent 1px 54px),
+ repeating-linear-gradient(90deg,rgba(143,214,148,.05) 0 1px,transparent 1px 54px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 2px,transparent 2px 5px);opacity:.35}
+.mono{font-family:"PT Mono",ui-monospace,monospace}
+.disp{font-family:"Unbounded",sans-serif}
+.osw{font-family:"Oswald","Arial Narrow",sans-serif}
+.wrap{max-width:88rem;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.draft{position:fixed;top:26px;right:-70px;transform:rotate(38deg);z-index:60;background:rgba(255,93,93,.92);color:#160b0b;font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 4.4rem;box-shadow:0 0 26px rgba(255,93,93,.5);pointer-events:none}
+/* ticker */
+.ticker{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(89,227,127,.07);overflow:hidden}
+.tickwrap{display:inline-flex;white-space:nowrap;animation:tick 40s linear infinite;padding:.55rem 0}
+.tickwrap span{font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--neon);padding-right:3.4rem}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;padding:1.5rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:1rem}
+.brand .logo{width:58px;height:58px;flex:none;border:1px solid var(--line2);border-radius:12px;display:grid;place-items:center;background:var(--panel);box-shadow:0 0 22px -6px rgba(89,227,127,.5),inset 0 0 18px rgba(89,227,127,.12)}
+.brand .logo svg{width:38px;height:38px}
+.bname{font-family:"Unbounded",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase}
+.bname em{font-style:normal;color:var(--neon2)}
+.bsub{margin-top:.3rem;font-family:"PT Mono",monospace;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+.mastmeta{font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);text-align:right;line-height:2.1}
+.mastmeta b{color:var(--neon)}
+.live{display:inline-flex;align-items:center;gap:.45rem;color:var(--neon2)}
+.live i{width:.5rem;height:.5rem;border-radius:50%;background:var(--neon2);animation:pulse 1.4s steps(2,start) infinite;box-shadow:0 0 10px var(--neon2)}
+@keyframes pulse{50%{opacity:.15}}
+/* hero */
+.hero{padding:4.6rem 0 1rem;display:grid;grid-template-columns:1fr;gap:2.6rem}
+.kicker{font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--neon2)}
+h1{margin:1.3rem 0 0;font-family:"Unbounded",sans-serif;font-weight:900;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;letter-spacing:-.01em;max-width:46rem}
+h1 .glow{color:var(--neon2);text-shadow:0 0 18px rgba(89,227,127,.55),0 0 60px rgba(89,227,127,.25)}
+.herosub{margin-top:1.6rem;font-size:1.06rem;line-height:1.9;color:var(--mut);max-width:58rem}
+.herosub b{color:var(--ink)}
+.herometa{margin-top:2rem;display:flex;gap:.7rem;flex-wrap:wrap}
+.hchip{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--neon);border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:.5rem 1rem}
+/* panels & sections */
+.glass{background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.brk{position:relative}
+.brk::before,.brk::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none}
+.brk::before{top:-1px;left:-1px;border-top:2px solid var(--neon2);border-left:2px solid var(--neon2)}
+.brk::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--neon2);border-right:2px solid var(--neon2)}
+.sec{display:flex;align-items:center;gap:1.1rem;margin:5rem 0 1.8rem;flex-wrap:wrap}
+.sec .no{font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.2em;color:var(--bg);background:var(--neon2);padding:.42rem .65rem;border-radius:5px;box-shadow:0 0 18px -4px var(--neon2)}
+.sec h2{font-family:"Unbounded",sans-serif;font-weight:600;font-size:clamp(1.15rem,2.6vw,1.8rem);text-transform:uppercase;letter-spacing:.02em}
+.sec .rule{flex:1;min-width:3rem;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+.secsub{max-width:60rem;font-size:1rem;line-height:1.85;color:var(--mut)}
+.secsub b{color:var(--ink)}
+/* numbers band */
+.band{margin-top:2.4rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(89,227,127,.06),rgba(89,227,127,.02));padding:2.6rem 0}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.stat{padding:1.2rem 1.3rem;border:1px solid var(--line);background:rgba(10,18,13,.55);position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sc,var(--neon2));box-shadow:0 0 14px var(--sc,var(--neon2))}
+.stat .n{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1;color:var(--sc,var(--neon2));text-shadow:0 0 16px color-mix(in srgb,var(--sc,var(--neon2)) 55%,transparent)}
+.stat .l{margin-top:.7rem;font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);line-height:1.9}
+/* case / person / column */
+.case{display:grid;grid-template-columns:1fr;gap:2.4rem;margin-top:2.2rem}
+.cbox{padding:1.9rem 2rem}
+.cbox h3{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.15rem;text-transform:uppercase;letter-spacing:.08em;color:var(--neon)}
+.cbox p{margin-top:1rem;font-size:.98rem;line-height:1.9;color:var(--mut)}
+.cbox p b{color:var(--ink)}
+.find{margin-top:1.3rem;display:grid;gap:.8rem}
+.find li{list-style:none;position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.7;color:var(--ink)}
+.find li::before{content:"▸";position:absolute;left:0;top:0;color:var(--neon2);text-shadow:0 0 8px var(--neon2)}
+.pullq{margin-top:1.6rem;border-left:3px solid var(--neon2);padding:.4rem 0 .4rem 1.2rem;font-style:italic;font-size:1.08rem;line-height:1.75;color:var(--ink)}
+.pullq .who{display:block;margin-top:.7rem;font-style:normal;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.gobtn{display:inline-block;margin-top:1.5rem;font-family:"PT Mono",monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);background:var(--neon2);border-radius:999px;padding:.62rem 1.25rem;text-decoration:none;box-shadow:0 0 22px -6px var(--neon2);transition:.2s}
+.gobtn:hover{background:var(--red);color:#fff;box-shadow:0 0 22px -4px var(--red);transform:translateY(-2px)}
+/* chronicle cards */
+.igrid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:2rem}
+.icard{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;background:rgba(10,18,13,.6);border:1px solid var(--line);padding:1.15rem 1.25rem 1.25rem;text-decoration:none;overflow:hidden;transition:transform .18s,box-shadow .18s,border-color .18s}
+.icard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stripe);box-shadow:0 0 14px var(--stripe)}
+.icard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 58%,color-mix(in srgb,var(--stripe) 16%,transparent));opacity:0;transition:opacity .2s;pointer-events:none}
+.icard:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 22px 44px -20px rgba(0,0,0,.8),0 0 26px -12px var(--stripe)}
 .icard:hover::after{opacity:1}
-.icard:focus-visible{outline:3px solid var(--green);outline-offset:2px}
-.ibadge{font-family:"Space Mono",monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bcolor);border:1.5px solid var(--bcolor);border-radius:999px;padding:.27rem .72rem}
-.imeta{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink60)}
-.imeta b{color:var(--green-d)}
-.ititle{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.14rem;line-height:1.24;text-transform:uppercase;letter-spacing:.015em;color:var(--ink)}
-.idesc{font-size:.86rem;line-height:1.62;color:var(--ink80)}
-.igo{margin-top:.35rem;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#eef7ea;background:var(--green-d);border-radius:999px;padding:.52rem 1.1rem;box-shadow:0 8px 18px -10px rgba(44,90,49,.85);transition:background .18s,transform .18s}
-.icard:hover .igo{background:var(--red);transform:translateX(3px)}
-.quotes{margin:3.4rem 0 0;display:grid;grid-template-columns:1fr;gap:1.6rem}
-.qq{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green);padding:1.4rem 1.6rem;box-shadow:0 12px 30px -22px rgba(28,43,28,.45)}
-.qq q{quotes:none;font-style:italic;font-size:1.05rem;line-height:1.7}
-.qq .who{margin-top:.8rem;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink60)}
-.game{margin-top:2rem;background:var(--paper);border:2px solid var(--green);padding:2rem 1.8rem 2.2rem;box-shadow:0 18px 44px -24px rgba(28,43,28,.5);position:relative}
-.game::before{content:"";position:absolute;inset:8px;border:1px dashed var(--green-l);pointer-events:none}
-.game h3{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:.06em;color:var(--green-d)}
-.game .gsub{margin-top:.6rem;font-size:.92rem;line-height:1.7;color:var(--ink60);max-width:46rem}
-.q{margin-top:1.7rem}
-.q .qt{font-weight:700;font-size:.98rem;line-height:1.6}
-.q .qt .qn{font-family:"Space Mono",monospace;color:var(--green);margin-right:.5rem}
-.opts{margin-top:.8rem;display:grid;gap:.5rem}
-.opt{ text-align:left;font-family:"PT Serif",serif;font-size:.94rem;padding:.6rem .9rem;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;transition:.15s;line-height:1.5}
-.opt:hover{border-color:var(--green);background:var(--bg2)}
-.opt.sel{border-color:var(--green-d);background:var(--bg2);box-shadow:inset 0 0 0 1px var(--green-d)}
-.opt.ok{border-color:var(--green);background:#e2f1dd;box-shadow:inset 0 0 0 2px var(--green)}
-.opt.bad{border-color:var(--red);background:#f7e4e2;box-shadow:inset 0 0 0 2px var(--red)}
-.gbtns{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
-.gbtn{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.75rem 1.4rem;border-radius:999px;border:1px solid var(--green-d);background:var(--green-d);color:#f2f8ee;cursor:pointer;transition:.2s}
-.gbtn.ghost{background:transparent;color:var(--green-d)}
-.gbtn:hover{transform:translateY(-2px)}
-.result{margin-top:1.6rem;display:none;border:2px solid var(--green-d);background:var(--bg2);padding:1.2rem 1.4rem;font-family:"Space Mono",monospace;font-size:.8rem;line-height:1.9;letter-spacing:.06em}
-.result .stamp{display:inline-block;margin-top:.6rem;border:3px double var(--red);color:var(--red);padding:.4rem .9rem;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-3deg)}
-footer{margin-top:4.6rem;background:var(--green-d);color:#dcebd4;padding:2.4rem 1.5rem 3.2rem;text-align:center}
-footer p{font-size:.92rem;line-height:1.7;max-width:46rem;margin:0 auto}
-.hubline{margin-top:1.6rem}
-.hubbtn{display:inline-block;padding:.75rem 1.4rem;border:1px solid #bfe3b4;color:#bfe3b4;border-radius:999px;text-decoration:none;font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 20px -6px #bfe3b4;transition:.25s}
-.hubbtn:hover{background:#bfe3b4;color:var(--green-d);transform:translateY(-2px)}
-.copy{margin-top:1.5rem;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#9dc49a}
-@media(min-width:52rem){.tgrid.t2{grid-template-columns:1fr 1fr}.tgrid.t3{grid-template-columns:repeat(3,1fr)}.quotes{grid-template-columns:repeat(3,1fr)}.igrid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:67rem){.igrid{grid-template-columns:repeat(3,1fr)}}
+.ibadge{font-family:"PT Mono",monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bc);border:1px solid var(--bc);border-radius:999px;padding:.28rem .7rem}
+.imeta{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.imeta b{color:var(--neon)}
+.ititle{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.08rem;line-height:1.28;text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.idesc{font-size:.85rem;line-height:1.62;color:var(--mut)}
+.igo{margin-top:.5rem;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bg);background:var(--neon2);border-radius:999px;padding:.5rem 1.05rem;box-shadow:0 0 16px -5px var(--neon2);transition:.18s}
+.icard:hover .igo{background:var(--red);color:#fff;transform:translateX(3px)}
+/* figures */
+.tgrid{display:grid;grid-template-columns:1fr;gap:1.6rem;margin-top:2.2rem}
+.tfig{background:rgba(10,18,13,.6);border:1px solid var(--line);padding:.6rem;position:relative}
+.tfig::before,.tfig::after{content:"";position:absolute;width:20px;height:20px;pointer-events:none}
+.tfig::before{top:5px;left:5px;border-top:2px solid var(--neon2);border-left:2px solid var(--neon2)}
+.tfig::after{bottom:5px;right:5px;border-bottom:2px solid var(--neon2);border-right:2px solid var(--neon2)}
+.tfig img{width:100%;height:17rem;object-fit:cover;object-position:top right;filter:saturate(1.02) contrast(1.05)}
+.tfig figcaption{padding:.9rem .5rem .4rem;font-size:.85rem;line-height:1.7;color:var(--mut);font-style:italic}
+.tfig figcaption b{display:block;font-style:normal;font-family:"PT Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--neon2);margin-bottom:.4rem}
+.srclink{display:block;width:max-content;margin-top:.9rem;font-family:"PT Mono",monospace;font-size:.62rem;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--neon2);border-radius:999px;padding:.5rem 1.1rem;text-decoration:none;box-shadow:0 0 16px -5px var(--neon2);transition:.18s}
+.srclink:hover{background:var(--red);color:#fff;transform:translateX(3px)}
+/* quotes */
+.quotes{display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:2rem}
+.qq{padding:1.5rem 1.7rem;border:1px solid var(--line);background:rgba(10,18,13,.55);border-left:4px solid var(--neon2)}
+.qq q{quotes:none;font-style:italic;font-size:1.02rem;line-height:1.75;color:var(--ink)}
+.qq .who{margin-top:.9rem;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+/* games */
+.game{margin-top:2.2rem;padding:2.2rem 2.2rem 2.4rem;border:1px solid var(--line2);background:rgba(10,18,13,.7);position:relative}
+.game::before{content:"";position:absolute;inset:7px;border:1px dashed var(--line);pointer-events:none}
+.game h3{font-family:"Unbounded",sans-serif;font-weight:600;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;color:var(--neon)}
+.gsub{margin-top:.8rem;font-size:.94rem;line-height:1.8;color:var(--mut);max-width:52rem}
+.q{margin-top:1.8rem}
+.qt{font-weight:700;font-size:.98rem;line-height:1.6;color:var(--ink)}
+.qt .qn{font-family:"PT Mono",monospace;color:var(--neon2);margin-right:.55rem}
+.opts{margin-top:.85rem;display:grid;gap:.55rem}
+.opt{text-align:left;font-family:"PT Serif",serif;font-size:.93rem;padding:.62rem .95rem;border:1px solid var(--line);background:rgba(143,214,148,.05);border-radius:8px;cursor:pointer;transition:.15s;line-height:1.5;color:var(--ink)}
+.opt:hover{border-color:var(--neon2);background:rgba(89,227,127,.12)}
+.opt.sel{border-color:var(--neon2);background:rgba(89,227,127,.16);box-shadow:inset 0 0 0 1px var(--neon2)}
+.opt.ok{border-color:var(--neon2);background:rgba(89,227,127,.25);box-shadow:inset 0 0 0 2px var(--neon2)}
+.opt.bad{border-color:var(--red);background:rgba(255,93,93,.18);box-shadow:inset 0 0 0 2px var(--red)}
+.gbtns{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap}
+.gbtn{font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:.75rem 1.4rem;border-radius:999px;border:1px solid var(--neon2);background:var(--neon2);color:var(--bg);cursor:pointer;transition:.2s}
+.gbtn.ghost{background:transparent;color:var(--neon2)}
+.gbtn:hover{transform:translateY(-2px);box-shadow:0 0 20px -6px var(--neon2)}
+.result{margin-top:1.7rem;display:none;border:1px solid var(--line2);background:rgba(89,227,127,.08);padding:1.2rem 1.4rem;font-family:"PT Mono",monospace;font-size:.8rem;line-height:1.9;letter-spacing:.06em;color:var(--ink)}
+.result .stamp{display:inline-block;margin-top:.7rem;border:3px double var(--red);color:var(--red);padding:.4rem .95rem;font-size:.84rem;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-3deg);text-shadow:0 0 12px rgba(255,93,93,.5)}
+/* fakes game */
+.frow{margin-top:1.1rem;padding:1rem 1.2rem;border:1px solid var(--line);background:rgba(143,214,148,.04);display:grid;grid-template-columns:1fr;gap:.8rem;align-items:center}
+.ftext{font-size:.95rem;line-height:1.6;color:var(--ink)}
+.fbtns{display:flex;gap:.6rem}
+.fbtn{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .95rem;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--mut);cursor:pointer;transition:.15s}
+.fbtn:hover{color:var(--neon);border-color:var(--neon)}
+.fbtn.sel{color:var(--bg);background:var(--neon2);border-color:var(--neon2)}
+.frow.ok{border-color:var(--neon2);box-shadow:inset 0 0 0 1px var(--neon2)}
+.frow.bad{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.frow .verdict{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase}
+.frow.ok .verdict{color:var(--neon2)}
+.frow.bad .verdict{color:var(--red)}
+@media(min-width:44rem){.stats{grid-template-columns:repeat(2,1fr)}.igrid{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:repeat(2,1fr)}.quotes{grid-template-columns:repeat(3,1fr)}.frow{grid-template-columns:1fr auto}.case{grid-template-columns:1fr 1fr}}
+@media(min-width:66rem){.stats{grid-template-columns:repeat(4,1fr)}.igrid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1.35fr .8fr;align-items:end}}
+@media(min-width:82rem){.igrid{grid-template-columns:repeat(4,1fr)}.tgrid.t3{grid-template-columns:repeat(3,1fr)}}
+/* footer */
+footer{margin-top:5.5rem;border-top:1px solid var(--line);background:rgba(89,227,127,.05);padding:2.8rem 0 3.6rem;text-align:center;position:relative;z-index:1}
+footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;margin:0 auto}
+.hubline{margin-top:1.8rem}
+.hubbtn{display:inline-block;padding:.8rem 1.6rem;border:1px solid var(--neon2);color:var(--neon2);border-radius:999px;text-decoration:none;font-family:"PT Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;position:relative;box-shadow:0 0 24px -6px var(--neon2);transition:.25s;background:rgba(10,18,13,.6)}
+.hubbtn::after{content:"";position:absolute;left:12%;right:12%;bottom:-10px;height:6px;border-radius:50%;background:var(--neon2);filter:blur(8px);opacity:.5}
+.hubbtn:hover{background:var(--neon2);color:var(--bg);transform:translateY(-2px)}
+.copy{margin-top:1.8rem;font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(159,188,163,.7)}
 </style>
 </head>
 <body>
-<div class="draft">Не для печати · ждёт одобрения главреда</div>
-<header class="masthead">
-  <div class="mastinner">
-    <div class="brand">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#8fd694" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="28" stroke-width="2.6"/><circle cx="32" cy="32" r="22.5" stroke-width="1.4"/><path d="M40 12.5 L51.5 24" stroke-width="1.4"/><text x="32" y="38.5" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" font-weight="700" letter-spacing="1" fill="#8fd694" stroke="none">SFN</text></g></svg>
-      <div class="brandname">San Fierro News<span>Еженедельный выпуск · неделя №1</span></div>
-    </div>
-    <div class="mastmeta">24 — 30 сентября 2026<br>штат San Andreas · Evolve Role Play</div>
-  </div>
-</header>
+<div class="draft">Черновой тираж · ждёт одобрения главреда</div>
+<div class="ticker"><div class="tickwrap">
+<span>/// SFN WEEKLY · неделя №1 · 24—30.09.2026 /// 21 выпуск · 157 кадров · 3 города /// $8.500.000 суммарных ставок двух аукционов /// 50% штата довольны губернатором /// дело 51-Z: ответ армии не получен /// свадьба года и минута молчания в одну неделю ///</span>
+<span>/// SFN WEEKLY · неделя №1 · 24—30.09.2026 /// 21 выпуск · 157 кадров · 3 города /// $8.500.000 суммарных ставок двух аукционов /// 50% штата довольны губернатором /// дело 51-Z: ответ армии не получен /// свадьба года и минута молчания в одну неделю ///</span>
+</div></div>
 <div class="wrap">
+<header class="mast">
+  <div class="brand">
+    <div class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#8fd694" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="28" stroke-width="2.6"/><circle cx="32" cy="32" r="22.5" stroke-width="1.4"/><path d="M40 12.5 L51.5 24" stroke-width="1.4"/><text x="32" y="38.5" text-anchor="middle" font-family="Oswald, sans-serif" font-size="15" font-weight="700" letter-spacing="1" fill="#8fd694" stroke="none">SFN</text></g></svg></div>
+    <div><div class="bname">San Fierro <em>News</em> Weekly</div><div class="bsub">Еженедельный выпуск · неделя №1</div></div>
+  </div>
+  <div class="mastmeta">24 — 30 сентября 2026 · штат San Andreas<br><span class="live"><i></i>электронная полоса активна</span> · Evolve Role Play</div>
+</header>
 
 <section class="hero">
-  <div class="kicker mono">Еженедельник редакции · большой сюжет недели</div>
-  <h1>Семь дней, которые не согнули редакцию</h1>
-  <p class="herosub">Неделя началась выстрелом у нашего собственного офиса и закончилась танцполом благотворительного вечера. Между ними уместились свадьба года, расследование под грифом «зона 51», два аукциона-рекорда, перестрелка в банке и двадцать один выпуск, который редакция отдала городу день за днём. Этот еженедельник собирает неделю в один сюжет — пять нитей, одна газета.</p>
-  <div class="weekstats">
-    <span class="wchip">21 выпуск за неделю</span>
-    <span class="wchip">157 кадров в подшивке</span>
-    <span class="wchip"><b>1</b> траур и <b>1</b> свадьба</span>
-    <span class="wchip">2 аукциона-рекорда</span>
-    <span class="wchip">3 города · 5 нитей сюжета</span>
+  <div>
+    <div class="kicker">Большой сюжет недели · собран редакцией из 21 выпуска</div>
+    <h1>Семь дней, которые <span class="glow">не согнули</span> редакцию</h1>
+    <p class="herosub">Эта неделя началась выстрелом у нашего собственного порога и закончилась танцполом благотворительного вечера. Между ними — свадьба года, ночное проникновение в закрытую военную зону, два аукциона-рекорда, перестрелка в банке и смена главврача, которая больше похожа на маленький роман. Ниже — не оглавление, а <b>сборка недели</b>: её цифры, её дело, её человек, её голоса и пять нитей, которыми все двадцать один выпуск связаны в одну историю.</p>
+    <div class="herometa">
+      <span class="hchip">Собрано: отдел спецпроектов SFN</span>
+      <span class="hchip">Кадры: Anna Malboro</span>
+      <span class="hchip">Фоторедактор: Sonya Malboro</span>
+      <span class="hchip">Текст: Jonny Wilde</span>
+    </div>
+  </div>
+  <div class="glass brk" style="padding:1.6rem 1.7rem">
+    <div class="mono" style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--neon)">Сводка недели · статус</div>
+    <div style="margin-top:1.1rem;display:grid;gap:.75rem;font-family:'PT Mono',monospace;font-size:.72rem;line-height:1.7;color:var(--mut)">
+      <div>▸ выпусков за неделю: <b style="color:var(--neon2)">21</b></div>
+      <div>▸ кадров в подшивке: <b style="color:var(--neon2)">157</b></div>
+      <div>▸ городов охвата: <b style="color:var(--neon2)">3</b></div>
+      <div>▸ расследований: <b style="color:var(--neon2)">2</b> (дело 51-Z, банк LS)</div>
+      <div>▸ социсследований: <b style="color:var(--neon2)">1</b> (губернатор, 22 ответа)</div>
+      <div>▸ свадеб: <b style="color:var(--neon2)">1</b> · минутов молчания: <b style="color:var(--neon2)">1</b></div>
+      <div>▸ ответов департаментов получено: <b style="color:var(--red)">0</b></div>
+    </div>
   </div>
 </section>
+</div>
 
-<div class="sec"><span class="no">Хроника</span><h2>Неделя по дням: 21 окно — 21 выпуск</h2></div>
-<p class="chronlead">Вся неделя перед вами, день за днём. <b>Каждое окно — прямой переход к полному выпуску</b>: карточка кликабельна целиком, а зелёная кнопка «Открыть выпуск» ведёт на полную полосу. Цвет полосы и бейдж — те же, что в общем архиве редакции.</p>
-<div class="chronicle">
-  <div class="day">
-    <div class="dayhead"><span class="daynum">24</span><span class="dayname">сентября · четверг</span><span class="daycount">5 выпусков за день</span></div>
-    <div class="igrid">
-    <a class="icard" style="--stripe:#a32620;--bcolor:#16283c" href="daily-24-09-2026.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
-      <span class="ititle">Траурный номер: убит Главный редактор</span>
-      <span class="idesc">Резонансное убийство у офиса редакции, подрыв автомобиля в Los Santos и лихорадка авторынка: аналитика игромании с советом редакции.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#16283c;--bcolor:#16283c" href="sfpd-precinct.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
-      <span class="ititle">Под звездой департамента</span>
-      <span class="idesc">Пресс-тур по участку SFPD с майором Felix Akana: Детективное Бюро, камеры, тир и автопарк — 19 кадров дела SFN-2609-24.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#f2a33c;--bcolor:#b23a34" href="sfpd-patrol-falk.html">
-      <span class="ibadge">Статья</span>
-      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
-      <span class="ititle">Позывной «Falks»</span>
-      <span class="idesc">Одна смена с семейным патрулём SFPD Yulia и Rauf Falk: штраф без номеров, задержание с оружием, кофе у Cluckin' Bell и пешеходный переход.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#35b89a;--bcolor:#b23a34" href="opg-leader-interview.html">
-      <span class="ibadge">Статья</span>
-      <span class="imeta"><b>24.09.2026</b> · Los Santos</span>
-      <span class="ititle">«Зовите меня просто Аноним»</span>
-      <span class="idesc">Один день с Падре ОПГ на условии анонимности: стены территорий, склад, такси за наличные и деловой разговор на грани.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#6d2836;--bcolor:#3f7d44" href="wedding-ozzy-gulnara.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>24.09.2026</b> · San Fierro</span>
-      <span class="ititle">Два крыла, одна клятва</span>
-      <span class="idesc">Свадьба года: церемония в церкви San Fierro и празднование в клубе Malibu на пирсе пляжа Santa Maria (Los Santos) — все 12 кадров торжества.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
+<div class="band"><div class="wrap">
+  <div class="sec" style="margin-top:0"><span class="no">01</span><h2>Неделя в цифрах</h2><span class="rule"></span></div>
+  <div class="stats">
+    <div class="stat" style="--sc:var(--neon2)"><div class="n">21</div><div class="l">выпуск вышел за семь дней · пресс-станок не останавливался ни разу</div></div>
+    <div class="stat" style="--sc:var(--gold)"><div class="n">157</div><div class="l">кадров снято фотокорреспондентом Anna Malboro в трёх городах</div></div>
+    <div class="stat" style="--sc:var(--gold)"><div class="n">$8,5M</div><div class="l">суммарные предыдущие ставки аукционов: Sugar 24-7 ($400.000) и Espo 24-7 ($8.100.000)</div></div>
+    <div class="stat" style="--sc:var(--neon2)"><div class="n">50%</div><div class="l">штата довольны новым губернатором · 22 уникальных ответа опроса</div></div>
+    <div class="stat" style="--sc:var(--red)"><div class="n">20</div><div class="l">кадров зоны 51: лаборатории, операционные и дата-центр под пустыней</div></div>
+    <div class="stat" style="--sc:var(--neon2)"><div class="n">12</div><div class="l">кадров свадьбы года: от церкви San Fierro до пирса Santa Maria</div></div>
+    <div class="stat" style="--sc:var(--red)"><div class="n">60 сек</div><div class="l">молчания в полдень 24.09: печатный станок замер за Главного редактора</div></div>
+    <div class="stat" style="--sc:var(--gold)"><div class="n">8</div><div class="l">фоторепортажей ночной серии 29.09 — рекорд одного дня в истории редакции</div></div>
   </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">25</span><span class="dayname">сентября · пятница</span><span class="daycount">1 выпуск за день</span></div>
-    <div class="igrid one">
-    <a class="icard" style="--stripe:#d4483e;--bcolor:#16283c" href="zone51-investigation.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>25.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Зона 51: что скрыто под пустыней</span>
-      <span class="idesc">Ночное расследование Jonny Wilde: 20 кадров закрытой базы армии Las Venturas — от парадной дорожки до операционных под землёй.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
+</div></div>
+
+<div class="wrap">
+<div class="sec"><span class="no">02</span><h2>Дело недели: зона 51</h2><span class="rule"></span></div>
+<p class="secsub">Главное расследование недели редакция вела ночью и в одиночку: Jonny Wilde и Anna Malboro прошли периметр закрытой базы армии Las Venturas и вернулись с двадцатью кадрами того, чего нет ни на одной карте штата. Коротко о том, что установлено достоверно.</p>
+<div class="case">
+  <div class="cbox glass brk">
+    <h3>Что зафиксировано камерами</h3>
+    <ul class="find">
+      <li>Подземные лаборатории с операционными столами за стеклом — столы застелены, значит, ими пользуются.</li>
+      <li>Дата-центр с розовыми индикаторами: колонны серверов гудят круглосуточно, чьи данные — неизвестно.</li>
+      <li>Погрузочная зона LOADING ZONE: ящики приходят ночью и не возвращаются — обратных накладных нет.</li>
+      <li>Наземная витрина: кладбище фюзеляжей, арочные ангары и сторожевая вышка у края поля.</li>
+    </ul>
+    <a class="gobtn" href="zone51-investigation.html">Открыть полное дело 51-Z</a>
   </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">26</span><span class="dayname">сентября · суббота</span><span class="daycount">1 выпуск за день</span></div>
-    <div class="igrid one">
-    <a class="icard" style="--stripe:#a32620;--bcolor:#16283c" href="daily-26-09-2026.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>26.09.2026</b> · Los Santos · Las Venturas</span>
-      <span class="ititle">Медосмотр, хаос и аукцион</span>
-      <span class="idesc">Медосмотр SFPD в госпитале Los Santos, вертолёты на тротуаре у The Four Dragons, убийство офицера LVPD и торги за Sugar 24-7.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
-  </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">27</span><span class="dayname">сентября · воскресенье</span><span class="daycount">1 выпуск за день</span></div>
-    <div class="igrid one">
-    <a class="icard" style="--stripe:#12a5c9;--bcolor:#16283c" href="daily-27-09-2026.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>27.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Espo 24-7: $8.100.000 с молотка</span>
-      <span class="idesc">Рекордный аукцион, техобслуживание The Four Dragons, полный зал Caligula's, потасовка у заправки и убийство-ограбление у казино.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
-  </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">28</span><span class="dayname">сентября · понедельник</span><span class="daycount">1 выпуск за день</span></div>
-    <div class="igrid one">
-    <a class="icard" style="--stripe:#ff3d81;--bcolor:#16283c" href="daily-28-09-2026.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>28.09.2026</b> · Los Santos — Las Venturas</span>
-      <span class="ititle">День, когда город не спал</span>
-      <span class="idesc">Перестрелка в банке и оцепление с погибшим, убийство медика у борта 42, тело посреди улицы и кровавая сделка на АвтоБазаре.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
-  </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">29</span><span class="dayname">сентября · вторник</span><span class="daycount">8 выпусков за день</span></div>
-    <div class="igrid">
-    <a class="icard" style="--stripe:#d9a05b;--bcolor:#3f7d44" href="fotoreport-abandoned-airport.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Кладбище самолётов пустыни</span>
-      <span class="idesc">Заброшенный аэропорт Las Venturas: фюзеляжи среди скал, пустые ангары и аванпост со сторожевой вышкой.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#ff3d81;--bcolor:#3f7d44" href="fotoreport-comedy-club.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Смех под лазерами</span>
-      <span class="idesc">Один вечер в Comedy Club: лазеры, сцена за сеткой и бар, где смех — за счёт заведения.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#59c7de;--bcolor:#3f7d44" href="fotoreport-tierra-robada.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Tierra Robada</span>
-      <span class="ititle">Округ, который не включает свет</span>
-      <span class="idesc">Ночная Tierra Robada: склады у воды, трейлер-парк, гавань с маяком и пустые перекрёстки под луной.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#e07a3f;--bcolor:#3f7d44" href="fotoreport-warlocks-mc.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Пустошь</span>
-      <span class="ititle">Где моторы громче слов</span>
-      <span class="idesc">Внутри байк-клуба Warlocks MC: комната собраний, колонна на закате, концерт за сеткой и бар для своих.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#f2b23c;--bcolor:#3f7d44" href="fotoreport-avtobazar-lv.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Главный автобазар штата</span>
-      <span class="idesc">Las Venturas Car Market: сервисная зона, бирюзовые навесы, офис менеджера и aerial-разметка зон.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#4fb3a5;--bcolor:#3f7d44" href="fotoreport-city-hall.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Los Santos</span>
-      <span class="ititle">Офис города изнутри</span>
-      <span class="idesc">City Hall: приёмная под баннером, биржа труда, стена мониторинга и архив за сеткой.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#e0483e;--bcolor:#3f7d44" href="fotoreport-four-dragons.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Драконы проснулись</span>
-      <span class="idesc">The Four Dragons после техобслуживания: арка PLAY AGAIN SOON, ночная пагода, ресторан, slot-машины и бар.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#6fd6e8;--bcolor:#3f7d44" href="fotoreport-evolve-hotel.html">
-      <span class="ibadge">Фоторепортаж</span>
-      <span class="imeta"><b>29.09.2026</b> · Las Venturas</span>
-      <span class="ititle">Пять звёзд над городом</span>
-      <span class="idesc">Evolve Five Stars Hotel: башня The Visage, неоновый паркинг, люкс с алмазной панелью и мраморное лобби.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
-  </div>
-  <div class="day">
-    <div class="dayhead"><span class="daynum">30</span><span class="dayname">сентября · среда</span><span class="daycount">4 выпуска за день</span></div>
-    <div class="igrid">
-    <a class="icard" style="--stripe:#59e3ff;--bcolor:#16283c" href="daily-30-09-2026.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>30.09.2026</b> · San Fierro</span>
-      <span class="ititle">Семь адресов San Fierro</span>
-      <span class="idesc">Городской спецвыпуск с высоты: автосалон Wang Cars и башня редакции, банк под зелёными куполами, автовокзал, база Army на пирсе, участок SFPD и здание FBI.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#c8102e;--bcolor:#c8102e" href="article-lisa-akana.html">
-      <span class="ibadge">Статья</span>
-      <span class="imeta"><b>30.09.2026</b> · Los Santos</span>
-      <span class="ititle">Главврач с крыльями феи</span>
-      <span class="idesc">Одна смена Lisa Akana: приёмный покой Hospital San Andreas, смотровые и борт 42 на вызове — до благотворительного вечера в Malibu.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#c8402f;--bcolor:#c8402f" href="daily-30-09-2026-los-santos.html">
-      <span class="ibadge">Ежедневная газета</span>
-      <span class="imeta"><b>30.09.2026</b> · Los Santos</span>
-      <span class="ititle">Los Santos в десяти открытках</span>
-      <span class="idesc">Вечерняя почта с юга: надпись Vinewood, башня City Hall, штаб LSPD и All Saints, банк на углу CB, Ammu-Nation, Victim, южный отель, башни Los Santos News и ферма на окраине — со ссылками на прошлые выпуски.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    <a class="icard" style="--stripe:#1f4e79;--bcolor:#1f4e79" href="socio-governor-poll.html">
-      <span class="ibadge">Спецвыпуск</span>
-      <span class="imeta"><b>30.09.2026</b> · штат San Andreas</span>
-      <span class="ititle">«Вы довольны новым губернатором?»</span>
-      <span class="idesc">Полное социологическое исследование редакции: 24 интервью, учтён 22 уникальный ответ (повторы исключены). 50% довольны новым губернатором, ≈23% — нет, ≈27% воздержались. Введение, методология, таблицы, диаграммы, дословный реестр цитат, выводы и рекомендации.</span>
-      <span class="igo">Открыть выпуск →</span>
-    </a>
-    </div>
+  <div class="cbox glass brk">
+    <h3>Позиция редакции</h3>
+    <p>Запрос о комментарии направлен пресс-службе армии Las Venturas в ночь публикации. <b>Ответ не получен до сих пор</b> — молчание департамента мы расцениваем как часть картины, а не как её отсутствие.</p>
+    <p>Редакция не публикует координаты аванпоста и лица сторожа: некоторым сюжетам ранняя огласка стоит жизней. Дело 51-Z остаётся <b>открытым</b>; следующие материалы серии выйдут, когда сторож сам решит, что пора.</p>
+    <div class="pullq">«Аэропорт умирает дважды: сначала улетает последний самолёт, потом уходить забывает последний человек.»<span class="who">— сторож аванпоста, не назвавший имени</span></div>
   </div>
 </div>
 
-<div class="sec"><span class="no">Нить 1</span><h2>Траур и правда</h2></div>
-<p class="threadlead">Неделя открылась выстрелом у собственного порога: Главный редактор погиб на парковке за зданием редакции, на крыше собственного автомобиля. Редакция сделала то, что он завещал, — <b>не остановила печатный станок</b>: траурный номер вышел в срок, в полдень пресса замерла на минуту молчания, а выпускную службу до назначения нового Главреда возглавил генеральный директор Danek Scammingshit.</p>
-<p class="threadlead" style="margin-top:1rem">Нить правды продолжилась на следующий день делом 51-Z: ночные кадры подземных лабораторий армии Las Venturas стали ответом редакции на главный вопрос недели — <b>за что молчат те, у кого есть форма и печать</b>. Убийство Главреда и зона 51 встали в один ряд: оба сюжета о том, что молчание в этом штате — тоже оружие.</p>
-<div class="tgrid t2">
-  <figure><div class="tfig"><img src="{{W1}}" alt="Следователь у автомобиля Главного редактора на парковке редакции"><figcaption><b>Нить 1 · кадр</b>Парковка за редакцией, утро 24.09: следователь Donald_Heathfield у машины, на крыше которой нашли Главного редактора.<a class="srclink" href="daily-24-09-2026.html">Читать траурный номер →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W2}}" alt="Фюзеляж среди скал заброшенного аэродрома зоны 51"><figcaption><b>Нить 1 · кадр</b>Зона 51: фюзеляж среди скал — наземная витрина того, что прячется под пустыней.<a class="srclink" href="zone51-investigation.html">Читать дело 51-Z →</a></figcaption></div></figure>
+<div class="sec"><span class="no">03</span><h2>Человек недели: Lisa Akana</h2><span class="rule"></span></div>
+<div class="case">
+  <div class="cbox glass brk">
+    <h3>Почему она</h3>
+    <p>На этой неделе в штате погибли Главный редактор, офицер LVPD и бригадир скорой — форма и белые халаты стали мишенями. И всё же человеком недели редакция выбирает не жертву, а того, кто <b>продолжает спасать</b>: главврач больницы Los Santos Lisa Akana отработала смену от приёмного покоя до борта 42, а вечером вышла на сцену благотворительного вечера в Malibu — с крыльями феи и сбором на мониторы для смотровых.</p>
+    <p>Её принцип, записанный нашим корреспондентом между вызовами, стал девизом всей недели редакции:</p>
+    <div class="pullq">«Крылья — не украшение. Это просто привычка быть рядом с пациентом чуть быстрее, чем боль.»<span class="who">— Lisa Akana, главный врач больницы Los Santos</span></div>
+    <a class="gobtn" href="article-lisa-akana.html">Открыть материал о смене главврача</a>
+  </div>
+  <div class="cbox glass brk">
+    <h3>Колонка редакции</h3>
+    <p><b>О трауре.</b> Неделя открылась гибелью Главного редактора на нашей собственной парковке. Мы не стали останавливать станок — его последняя воля была иной: полоса сдаётся при любых обстоятельствах. Траурный номер вышел в срок, и это лучший памятник, который газета умеет ставить.</p>
+    <p><b>О прозрачности.</b> Две вещи на этой неделе власть имущие предпочли бы не видеть в печати: подземелья зоны 51 и результаты опроса о губернаторе, где половина штата ещё не определилась. Мы напечатали и то, и другое — с цифрами, таблицами и дословными цитатами.</p>
+    <p><b>О жизни.</b> Между трауром и расследованием город женился, танцевал, торговался на аукционах и смеялся в Comedy Club. Газета — зеркало штата: в нём хватает и крови, и конфетти. Мы обязаны показывать оба слоя, иначе зеркало врёт.</p>
+    <div class="pullq">«Печатный станок не остановится: по воле самого Главного редактора полоса сдаётся при любых обстоятельствах.»<span class="who">— из траурного номера, 24.09</span></div>
+  </div>
 </div>
 
-<div class="sec"><span class="no">Нить 2</span><h2>Форма и мундир</h2></div>
-<p class="threadlead">Пока редакция хоронила своего, город жил формой: SFPD пустила прессу за кулисы участка, семейный патруль Falk отработал смену «штраф — задержание — бабушка на переходе», а департамент Los Santos выстроил офицеров на медосмотр <b>босиком, но со служебным оружием за спиной</b>. К концу недели форма оказалась и в трауре: на шоссе Las Venturas убит офицер LVPD, а у банка Los Santos — оцепление и погибший клиент.</p>
+<div class="sec"><span class="no">04</span><h2>Хроника: 21 окно недели</h2><span class="rule"></span></div>
+<p class="secsub">Каждое окно ниже — <b>прямой переход к полному выпуску</b>: карточка кликабельна целиком, а кнопка «Открыть выпуск» стоит отдельной строкой под текстом. Цвет полосы и бейдж совпадают с общим архивом редакции.</p>
+<div class="igrid">
+{{CHRONICLE}}
+</div>
+
+<div class="sec"><span class="no">05</span><h2>Пять нитей сюжета</h2><span class="rule"></span></div>
+<p class="secsub">Неделя держится на пяти нитях: траур и правда, форма и мундир, праздник города, деньги и молоток аукциона, голоса улиц. Кадры ниже — узлы этих нитей; кнопка под каждым кадром ведёт к полному выпуску.</p>
 <div class="tgrid t3">
-  <figure><div class="tfig"><img src="{{W3}}" alt="Майор Felix Akana у карты на брифинге SFPD"><figcaption><b>Нить 2 · кадр</b>Брифинг SFPD: майор Felix Akana у карты города — пресс-тур, ставший витриной департамента.<a class="srclink" href="sfpd-precinct.html">Пресс-тур участка →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W4}}" alt="Патруль Falk у монумента в начале смены"><figcaption><b>Нить 2 · кадр</b>Патруль 7436 у монумента: смена четы Falk начинается с кофе и заканчивается переходом за руку.<a class="srclink" href="sfpd-patrol-falk.html">Смена Falk →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W5}}" alt="Строй обследуемых SFPD у вывески HOSPITAL SAN ANDREAS"><figcaption><b>Нить 2 · кадр</b>Медосмотр SFPD в Los Santos: строй у вывески HOSPITAL SAN ANDREAS, табельное — за спиной.<a class="srclink" href="daily-26-09-2026.html">Выпуск 26.09 →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W1}}" alt="Следователь у автомобиля Главного редактора на парковке редакции"><figcaption><b>Нить 1 · траур и правда</b>Парковка за редакцией, утро 24.09: следователь Donald_Heathfield у машины, на крыше которой нашли Главного редактора.<a class="srclink" href="daily-24-09-2026.html">Читать траурный номер →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W2}}" alt="Фюзеляж среди скал заброшенного аэродрома зоны 51"><figcaption><b>Нить 1 · траур и правда</b>Зона 51: фюзеляж среди скал — наземная витрина того, что прячется под пустыней.<a class="srclink" href="zone51-investigation.html">Читать дело 51-Z →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W3}}" alt="Майор Felix Akana у карты на брифинге SFPD"><figcaption><b>Нить 2 · форма и мундир</b>Брифинг SFPD: майор Felix Akana у карты города — пресс-тур, ставший витриной департамента.<a class="srclink" href="sfpd-precinct.html">Пресс-тур участка →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W4}}" alt="Патруль Falk у монумента в начале смены"><figcaption><b>Нить 2 · форма и мундир</b>Патруль 7436 у монумента: смена четы Falk начинается с кофе и заканчивается переходом за руку.<a class="srclink" href="sfpd-patrol-falk.html">Смена Falk →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W5}}" alt="Строй обследуемых SFPD у вывески HOSPITAL SAN ANDREAS"><figcaption><b>Нить 2 · форма и мундир</b>Медосмотр SFPD в Los Santos: строй у вывески HOSPITAL SAN ANDREAS, табельное — за спиной.<a class="srclink" href="daily-26-09-2026.html">Выпуск 26.09 →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W6}}" alt="Свадебная процессия в церкви San Fierro"><figcaption><b>Нить 3 · праздник города</b>Церковь San Fierro: процессия идёт по проходу, офицер держит праздничную вахту.<a class="srclink" href="wedding-ozzy-gulnara.html">Свадебный номер →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W7}}" alt="Танцпол клуба Malibu во время благотворительного вечера"><figcaption><b>Нить 3 · праздник города</b>Malibu, вечер 30.09: танцпол благотворительного вечера, закрывшего смену главврача Akana.<a class="srclink" href="article-lisa-akana.html">Смена главврача →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W8}}" alt="Табличка аукциона Sugar 24-7 с предыдущей ставкой"><figcaption><b>Нить 4 · деньги и молоток</b>Первая табличка недели: Sugar 24-7, предыдущая ставка $400.000.<a class="srclink" href="daily-26-09-2026.html">Выпуск 26.09 →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W9}}" alt="Переполненная платная зона авторынка"><figcaption><b>Нить 4 · деньги и молоток</b>«Платная зона» авторынка: ряды ценников удвоились за неделю игромании.<a class="srclink" href="daily-24-09-2026.html">Аналитика игромании →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W10}}" alt="Зал казино с полными столами"><figcaption><b>Нить 4 · деньги и молоток</b>Зал казино в вечер закрытия Four Dragons: чужие клиенты достались соседям.<a class="srclink" href="daily-27-09-2026.html">Выпуск 27.09 →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W11}}" alt="Падре у бирюзовой стены Varrios Los Aztecas"><figcaption><b>Нить 5 · голоса улиц</b>Падре у перекрашенной стены: результат ночного рейда с баллончиком.<a class="srclink" href="opg-leader-interview.html">Интервью с Падре →</a></figcaption></div></figure>
+  <figure><div class="tfig"><img src="{{W12}}" alt="Сцена Comedy Club во время вечернего выступления"><figcaption><b>Нить 5 · голоса улиц</b>Comedy Club, Las Venturas: смех под лазерами — за счёт заведения.<a class="srclink" href="fotoreport-comedy-club.html">Фоторепортаж →</a></figcaption></div></figure>
 </div>
 
-<div class="sec"><span class="no">Нить 3</span><h2>Праздник города</h2></div>
-<p class="threadlead">В тот же день, когда редакция опустила флаги, город поднял бокалы: <b>свадьба года</b> — Ozzy Ozzborne и Gulnara Elfie, церковь San Fierro с крыльями над скамьями и празднование на пирсе Santa Maria. Неделя закрылась вторым праздником — благотворительным вечером в Malibu, где главврач Lisa Akana танцевала с крыльями феи, а сбор вечера ушёл на мониторы для смотровых. Траур и праздник в одну неделю — это и есть San Andreas.</p>
-<div class="tgrid t2">
-  <figure><div class="tfig"><img src="{{W6}}" alt="Свадебная процессия в церкви San Fierro"><figcaption><b>Нить 3 · кадр</b>Церковь San Fierro: процессия идёт по проходу, офицер держит праздничную вахту.<a class="srclink" href="wedding-ozzy-gulnara.html">Свадебный номер →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W7}}" alt="Танцпол клуба Malibu во время благотворительного вечера"><figcaption><b>Нить 3 · кадр</b>Malibu, вечер 30.09: танцпол благотворительного вечера, закрывшего смену главврача Akana.<a class="srclink" href="article-lisa-akana.html">Смена главврача →</a></figcaption></div></figure>
-</div>
-
-<div class="sec"><span class="no">Нить 4</span><h2>Деньги и молоток аукциона</h2></div>
-<p class="threadlead">Экономическая нить недели — две таблички с цифрами: <b>Sugar 24-7 за $400.000</b> и <b>Espo 24-7 за $8.100.000</b>. Формат «круглосуточный магазин» стал главным лотом сезона, пока авторынок штата лихорадило: граждане продавали машины ради фишек казино, а «платная зона» росла рядами ценников. На этом фоне The Four Dragons закрылась на техобслуживание после вертолётов на тротуаре — и открылась под вывеской PLAY AGAIN SOON, отдав залы Caligula's.</p>
-<div class="tgrid t3">
-  <figure><div class="tfig"><img src="{{W8}}" alt="Табличка аукциона Sugar 24-7 с предыдущей ставкой"><figcaption><b>Нить 4 · кадр</b>Первая табличка недели: Sugar 24-7, предыдущая ставка $400.000.<a class="srclink" href="daily-26-09-2026.html">Выпуск 26.09 →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W9}}" alt="Переполненная платная зона авторынка"><figcaption><b>Нить 4 · кадр</b>«Платная зона» авторынка: ряды ценников удвоились за неделю игромании.<a class="srclink" href="daily-24-09-2026.html">Аналитика игромании →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W10}}" alt="Зал казино с полными столами"><figcaption><b>Нить 4 · кадр</b>Зал казино в вечер закрытия Four Dragons: чужие клиенты достались соседям.<a class="srclink" href="daily-27-09-2026.html">Выпуск 27.09 →</a></figcaption></div></figure>
-</div>
-
-<div class="sec"><span class="no">Нить 5</span><h2>Голоса улиц</h2></div>
-<p class="threadlead">Пятая нить — сами жители штата. Падре, которого город зовёт лидером, пустил редакцию в свою ночь: закраска вражеских граффити, док, рэкет таксистов и закладка у здания правительства. В Comedy Club смеялись под лазерами, в Tierra Robada ночь говорила водой и маяком, а соцопрос редакции подвёл итог недели цифрами: <b>50% довольны новым губернатором, ≈23% — нет, ≈27% ещё не решили</b>. Улицы говорят — газета слушает.</p>
-<div class="tgrid t2">
-  <figure><div class="tfig"><img src="{{W11}}" alt="Падре у бирюзовой стены Varrios Los Aztecas"><figcaption><b>Нить 5 · кадр</b>Падре у перекрашенной стены: результат ночного рейда с баллончиком.<a class="srclink" href="opg-leader-interview.html">Интервью с Падре →</a></figcaption></div></figure>
-  <figure><div class="tfig"><img src="{{W12}}" alt="Сцена Comedy Club во время вечернего выступления"><figcaption><b>Нить 5 · кадр</b>Comedy Club, Las Venturas: смех под лазерами — за счёт заведения.<a class="srclink" href="fotoreport-comedy-club.html">Фоторепортаж →</a></figcaption></div></figure>
-</div>
-
-<div class="sec"><span class="no">Цитаты</span><h2>Голоса недели</h2></div>
+<div class="sec"><span class="no">06</span><h2>Голоса недели</h2><span class="rule"></span></div>
 <div class="quotes">
-  <div class="qq"><q>Печатный станок не остановится: по воле самого Главного редактора полоса сдаётся при любых обстоятельствах.</q><div class="who">— траурный номер, 24.09</div></div>
   <div class="qq"><q>Краска на стенах громче любых заявлений. Но за своё слово я отвечаю именем — даже если от вас я его скрыл.</q><div class="who">— Падре, интервью 24.09</div></div>
-  <div class="qq"><q>Крылья — не украшение. Это просто привычка быть рядом с пациентом чуть быстрее, чем боль.</q><div class="who">— Lisa Akana, 30.09</div></div>
+  <div class="qq"><q>Конечно! Я сам за него голосовал. Это пацан, на которого можно положиться.</q><div class="who">— Otto Wachter, опрос о губернаторе</div></div>
+  <div class="qq"><q>Держите ватку минут пять. Если почувствуете слабость — сразу скажите.</q><div class="who">— Alena Shot, медосмотр SFPD</div></div>
 </div>
 
-<div class="sec"><span class="no">Игра</span><h2>Экзамен Главреда: читал ли ты неделю?</h2></div>
-<div class="game">
+<div class="sec"><span class="no">07</span><h2>Следующая неделя: под наблюдением</h2><span class="rule"></span></div>
+<div class="case">
+  <div class="cbox glass brk">
+    <h3>Что мы ждём от города</h3>
+    <ul class="find">
+      <li>Ответ LVPD на запрос о вертолётах на тротуаре The Four Dragons — молчание департамента продолжается с 27.09.</li>
+      <li>Комментарий пресс-службы армии Las Venturas по делу 51-Z: запрос отправлен, срок ответа истёк.</li>
+      <li>Итоги аукциона Espo 24-7: предыдущая ставка $8.100.000 — редакция следит за молотком.</li>
+      <li>Вторая волна опроса о губернаторе — после его первых ста дней; методика сохранена для сравнимости.</li>
+    </ul>
+  </div>
+  <div class="cbox glass brk">
+    <h3>Что мы обещаем читателю</h3>
+    <ul class="find">
+      <li>Ни одной полосы без имён: все цитаты недели и следующей публикуются дословно, с указанием респондента.</li>
+      <li>Повторы и дубли в опросах исключаются из статистики — с пояснением в методике, как в социсследовании о губернаторе.</li>
+      <li>Траурная минута молчания в полдень 24.09 становится ежегодной редакционной традицией.</li>
+      <li>Каждое расследование получает статус: «открыто», «ждёт ответа» или «закрыто» — читатель всегда знает, где мы застряли.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec"><span class="no">08</span><h2>Игра 1 · Экзамен Главреда</h2><span class="rule"></span></div>
+<div class="game brk">
   <h3>Восемь вопросов по семи дням</h3>
-  <p class="gsub">Выберите ответ в каждом вопросе и нажмите «Проверить». Восемь из восьми — и редакция вручит вам печать «Главред недели»; промахнетесь везде — отправим перечитывать подшивку с 23.09.</p>
+  <p class="gsub">Выберите ответ в каждом вопросе и нажмите «Проверить». Восемь из восьми — и редакция вручит вам печать «Главред недели»; промахнётесь везде — отправим перечитывать подшивку с 23.09.</p>
   <div id="quiz"></div>
   <div class="gbtns">
     <button class="gbtn" id="check">Проверить ответы</button>
@@ -369,8 +318,20 @@ footer p{font-size:.92rem;line-height:1.7;max-width:46rem;margin:0 auto}
   <div class="result" id="result"></div>
 </div>
 
+<div class="sec"><span class="no">09</span><h2>Игра 2 · Детектор фейков</h2><span class="rule"></span></div>
+<div class="game brk">
+  <h3>Правда или фейк: шесть заголовков недели</h3>
+  <p class="gsub">Редакция перемешала настоящие заголовки недели с выдуманными. Отметьте для каждого: правда это или фейк, затем нажмите «Включить детектор». Шесть из шести — звание «Детектор недели».</p>
+  <div id="fakes"></div>
+  <div class="gbtns">
+    <button class="gbtn" id="fcheck">Включить детектор</button>
+    <button class="gbtn ghost" id="fretry">Сбросить</button>
+  </div>
+  <div class="result" id="fresult"></div>
+</div>
+
 <footer>
-  <p>Еженедельный выпуск собран редакцией <strong>San Fierro News</strong> из собственных полос за 24–30 сентября 2026 года. Все кадры и цитаты — из архива редакции; все ссылки ведут на полные выпуски недели.</p>
+  <p>Еженедельный выпуск собран редакцией <strong>San Fierro News</strong> из собственных полос за 24–30 сентября 2026 года. Все кадры, цифры и цитаты — из архива редакции; каждое окно и каждая кнопка ведут к полным выпускам недели.</p>
   <div class="hubline"><a class="hubbtn" href="newsroom.html">← Посмотреть все выпуски редакции</a></div>
   <p class="copy">© 2026 SF News Corp. · Еженедельник · неделя №1 · черновой тираж, ждёт одобрения</p>
 </footer>
@@ -400,16 +361,14 @@ QS.forEach(function(item,i){
 });
 document.getElementById('check').onclick=function(){
   var score=0;
-  var qs=document.querySelectorAll('.q');
-  qs.forEach(function(qEl,i){
+  document.querySelectorAll('.q').forEach(function(qEl,i){
     var opts=qEl.querySelectorAll('.opt');
     opts.forEach(function(o){o.classList.remove('ok','bad')});
     var sel=qEl.querySelector('.opt.sel');
-    if(sel){
-      var idx=parseInt(sel.dataset.i,10);
+    if(sel){var idx=parseInt(sel.dataset.i,10);
       if(idx===QS[i].a){sel.classList.add('ok');score++;}
       else{sel.classList.add('bad');opts[QS[i].a].classList.add('ok');}
-    } else { opts[QS[i].a].classList.add('ok'); }
+    } else {opts[QS[i].a].classList.add('ok');}
   });
   var r=document.getElementById('result');
   var verdict = score===8?'Главред недели':(score>=6?'Редактор отдела':(score>=4?'Корреспондент':'Стажёр: перечитать неделю'));
@@ -420,6 +379,46 @@ document.getElementById('check').onclick=function(){
 document.getElementById('retry').onclick=function(){
   document.querySelectorAll('.opt').forEach(function(o){o.classList.remove('ok','bad','sel')});
   document.getElementById('result').style.display='none';
+};
+var FS=[
+ {t:"Казино The Four Dragons закрылось на техобслуживание после вертолётов на тротуаре.",a:1},
+ {t:"Губернатор утвердил редакцию San Fierro News официальным печатным органом штата.",a:0},
+ {t:"Предыдущая ставка аукциона за бизнес Espo 24-7 достигла $8.100.000.",a:1},
+ {t:"Lisa Akana назначена министром здравоохранения штата San Andreas.",a:0},
+ {t:"На медосмотре SFPD офицеры стояли в строю босиком, но со служебным оружием за спиной.",a:1},
+ {t:"Казино Caligula's объявило о банкротстве из-за техобслуживания соседнего Four Dragons.",a:0}
+];
+var fbox=document.getElementById('fakes');
+FS.forEach(function(item,i){
+  var row=document.createElement('div');row.className='frow';row.dataset.a=item.a;
+  row.innerHTML='<div class="ftext"><span class="mono" style="color:var(--neon2);font-size:.62rem;letter-spacing:.16em">'+String(i+1).padStart(2,'0')+'</span> · '+item.t+'</div>'+
+  '<div class="fbtns"><button class="fbtn" type="button" data-v="1">Правда</button><button class="fbtn" type="button" data-v="0">Фейк</button><span class="verdict"></span></div>';
+  row.querySelectorAll('.fbtn').forEach(function(b){
+    b.onclick=function(){row.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');};
+  });
+  fbox.appendChild(row);
+});
+document.getElementById('fcheck').onclick=function(){
+  var score=0;
+  document.querySelectorAll('.frow').forEach(function(row){
+    row.classList.remove('ok','bad');
+    var v=row.querySelector('.fbtn.sel');
+    var verdict=row.querySelector('.verdict');
+    if(v){var ok=parseInt(v.dataset.v,10)===parseInt(row.dataset.a,10);
+      row.classList.add(ok?'ok':'bad');
+      verdict.textContent= ok?'✓ верно':(parseInt(row.dataset.a,10)===1?'это правда':'это фейк');
+      if(ok)score++;
+    } else {verdict.textContent='нет ответа';row.classList.add('bad');}
+  });
+  var r=document.getElementById('fresult');
+  var verdict = score===6?'Детектор недели':(score>=4?'Редакционная бдительность':(score>=2?'Читатель слухов':'Жёлтая пресса ведёт вас'));
+  r.style.display='block';
+  r.innerHTML='Распознано: <b>'+score+' из '+FS.length+'</b>.<br><span class="stamp">'+verdict+'</span>';
+  r.scrollIntoView({behavior:'smooth',block:'nearest'});
+};
+document.getElementById('fretry').onclick=function(){
+  document.querySelectorAll('.frow').forEach(function(row){row.classList.remove('ok','bad');row.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('sel')});row.querySelector('.verdict').textContent='';});
+  document.getElementById('fresult').style.display='none';
 };
 </script>
 </body>
