@@ -194,6 +194,7 @@ figure{margin-top:28px}
  box-shadow:0 20px 44px rgba(0,0,0,.6),0 10px 34px color-mix(in srgb,var(--acc) 26%,transparent)}
 .frame img{display:block;width:100%;height:auto}
 .plateline{display:flex;justify-content:center;margin-top:-16px;position:relative;z-index:2}
+.plateline.mapplate{margin-top:12px;z-index:1}
 .plate{width:max-content;max-width:92%;padding:7px 26px;border-radius:8px;text-align:center;
  font-family:'BebasNeue',sans-serif;letter-spacing:2.5px;font-size:.98rem;color:#241604;
  background:linear-gradient(180deg,#f6d98a,#d9a94a);border:1px solid #8a6a25;
@@ -427,8 +428,31 @@ footer b{color:var(--gold)}
 .hocard.ho-min .sidehead{margin-bottom:9px}
 .hochev{display:inline-block;margin-left:7px;font-style:normal;color:var(--turq);transition:transform .45s ease}
 .hocard.ho-min .hochev{transform:rotate(-90deg)}
+/* -- от 1280px: погода и гороскоп «прилипают» к верху экрана и висят по бокам, пока читаешь номер -- */
+@media(min-width:1280px){
+ .wrap{max-width:min(88rem,calc(100vw - 490px))}
+ .sidestrip{display:contents}
+ .wxcard{position:fixed;left:10px;top:134px;width:182px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:14px 12px}
+ .hocard{position:fixed;right:10px;top:134px;width:208px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:15px 13px}
+ .wxmain{gap:10px}
+ .wxtmp{font-size:1.9rem}
+ .wxico{font-size:1.8rem}
+ .wxrange{font-size:.7rem}
+ .wxcond{font-size:.88rem}
+ .wxgrid{grid-template-columns:1fr;gap:6px}
+ .wxhours{grid-template-columns:repeat(2,1fr)}
+ .wxdays{grid-template-columns:1fr}
+ .hosky{font-size:.82rem}
+ .hosel{grid-template-columns:repeat(4,1fr);gap:5px}
+ .hbtn u{font-size:.46rem;letter-spacing:.3px}
+ .hoview{padding:12px 12px 11px;min-height:140px}
+ .hotext{font-size:.88rem;line-height:1.62}
+}
 /* -- широкие экраны: колонки встают по бокам -- */
 @media(min-width:1920px){
+ .wrap{max-width:min(88rem,calc(100vw - 620px))}
  .sidestrip{display:contents}
  .wxcard{position:fixed;left:16px;top:134px;width:214px;max-height:calc(100vh - 158px);
   overflow-y:auto;z-index:4;padding:15px 14px}
@@ -437,6 +461,11 @@ footer b{color:var(--gold)}
  .wxmain{gap:10px}
  .wxtmp{font-size:2.2rem}
  .wxico{font-size:2rem}
+ .wxrange{font-size:.78rem}
+ .wxcond{font-size:.95rem}
+ .wxgrid{grid-template-columns:1fr 1fr}
+ .wxhours{grid-template-columns:repeat(4,1fr)}
+ .wxdays{grid-template-columns:repeat(2,1fr)}
  .hosel{grid-template-columns:repeat(4,1fr)}
  .hosky{font-size:.92rem}
  .hbtn{padding:7px 2px 5px}
@@ -609,7 +638,7 @@ footer b{color:var(--gold)}
       <svg class="lvmapsvg" viewBox="0 0 1600 1080" role="img" aria-label="Карта Las Venturas с восемью точками адресов этого выпуска"><g opacity=".9"><line x1="945" y1="190" x2="945" y2="102" stroke="#f6c453" stroke-width="4.5"/><polygon points="945,76 932,102 958,102" fill="#f6c453"/><text x="945" y="228" text-anchor="middle" font-family="BebasNeue,sans-serif" font-size="32" fill="#f6c453">С</text></g><g class="pin" data-t="s01" tabindex="0" role="button" aria-label="Офис Las Venturas News: перейти к полосе номера"><circle class="halo" cx="1434.5" cy="810.0" r="44" fill="#f6c453"/><circle class="core" cx="1434.5" cy="810.0" r="26"/><text class="pnum" x="1434.5" y="812.0">01</text><text class="plab" x="1434.5" y="764.0">Офис Las Venturas News</text></g><g class="pin" data-t="s02" tabindex="0" role="button" aria-label="Автомастерская: перейти к полосе номера"><circle class="halo" cx="984.0" cy="344.4" r="44" fill="#f6c453"/><circle class="core" cx="984.0" cy="344.4" r="26"/><text class="pnum" x="984.0" y="346.4">02</text><text class="plab" x="984.0" y="298.4">Автомастерская</text></g><g class="pin" data-t="s03" tabindex="0" role="button" aria-label="LVPD: перейти к полосе номера"><circle class="halo" cx="1278.0" cy="239.8" r="44" fill="#f6c453"/><circle class="core" cx="1278.0" cy="239.8" r="26"/><text class="pnum" x="1278.0" y="241.8">03</text><text class="plab" x="1278.0" y="193.8">LVPD</text></g><g class="pin" data-t="s04" tabindex="0" role="button" aria-label="Банк города: перейти к полосе номера"><circle class="halo" cx="1309.8" cy="310.7" r="44" fill="#f6c453"/><circle class="core" cx="1309.8" cy="310.7" r="26"/><text class="pnum" x="1309.8" y="312.7">04</text><text class="plab" x="1309.8" y="264.7">Банк города</text></g><g class="pin" data-t="s05" tabindex="0" role="button" aria-label="Авторынок: перейти к полосе номера"><circle class="halo" cx="1110.2" cy="1039.8" r="44" fill="#f6c453"/><circle class="core" cx="1110.2" cy="1039.8" r="26"/><text class="pnum" x="1110.2" y="1041.8">05</text><text class="plab" x="1110.2" y="993.8">Авторынок</text></g><g class="pin" data-t="s06" tabindex="0" role="button" aria-label="Автовокзал: перейти к полосе номера"><circle class="halo" cx="1517.8" cy="766.2" r="44" fill="#f6c453"/><circle class="core" cx="1517.8" cy="766.2" r="26"/><text class="pnum" x="1517.8" y="768.2">06</text><text class="plab" x="1517.8" y="720.2">Автовокзал</text></g><g class="pin" data-t="s07" tabindex="0" role="button" aria-label="Казино Caligula: перейти к полосе номера"><circle class="halo" cx="1228.4" cy="606.2" r="44" fill="#f6c453"/><circle class="core" cx="1228.4" cy="606.2" r="26"/><text class="pnum" x="1228.4" y="608.2">07</text><text class="plab" x="1228.4" y="560.2">Казино Caligula</text></g><g class="pin" data-t="s08" tabindex="0" role="button" aria-label="Армия · лагерь в пустыне: перейти к полосе номера"><circle class="halo" cx="322.4" cy="480.5" r="44" fill="#f6c453"/><circle class="core" cx="322.4" cy="480.5" r="26"/><text class="pnum" x="322.4" y="482.5">08</text><text class="plab" x="322.4" y="434.5">Армия · лагерь в пустыне</text></g></svg>
       <div class="pinprev" id="pinprev" aria-hidden="true"><img alt=""><div class="pvbody"><div class="pvplate"></div><div class="pvtitle"></div><div class="pvhint">клик — раскрыть полосу</div></div></div>
     </div>
-    <div class="plateline"><div class="plate">LAS VENTURAS · ГОРОДСКАЯ ЧЕРТА · 8 АДРЕСОВ НОМЕРА</div></div>
+    <div class="plateline mapplate"><div class="plate">LAS VENTURAS · ГОРОДСКАЯ ЧЕРТА · 8 АДРЕСОВ НОМЕРА</div></div>
     <div class="lvlegend"><button type="button" data-t="s01"><b>01</b><span>Офис Las Venturas News — полоса «Башня родственных перьев»</span></button><button type="button" data-t="s02"><b>02</b><span>Автомастерская — полоса «Там, где машинам возвращают вторую жизнь»</span></button><button type="button" data-t="s03"><b>03</b><span>LVPD — полоса «Ход королевы»</span></button><button type="button" data-t="s04"><b>04</b><span>Банк города — полоса «Деньги любят тишину»</span></button><button type="button" data-t="s05"><b>05</b><span>Авторынок — полоса «Витрина под открытым небом»</span></button><button type="button" data-t="s06"><b>06</b><span>Автовокзал — полоса «Ворота города»</span></button><button type="button" data-t="s07"><b>07</b><span>Казино Caligula — полоса «Главная люстра города»</span></button><button type="button" data-t="s08"><b>08</b><span>Армия · лагерь в пустыне — полоса «Прикрытие неона»</span></button></div>
     <p class="mapnote">Схема: городская карта Las Venturas из редакционного архива, восемь адресов обведены редактором вручную. Метки сверены по кадрам Anna Malboro и ориентирам города — Strip, аэропорт, гольф-клуб и даунтаун. Метка 08 обведена широким контуром: армейский лагерь раскинулся в пустыне за городской чертой, и редакция отметила весь район базирования.</p>
   </div>
@@ -1263,7 +1292,7 @@ render(6);
 var ho=document.getElementById('hocard');
 var zone=document.querySelector('header');
 if(!ho||!zone){return;}
-var mq=window.matchMedia('(min-width:1920px)');
+var mq=window.matchMedia('(min-width:1280px)');
 var isMin=null;
 function apply(v){
  if(isMin===v){return;}
