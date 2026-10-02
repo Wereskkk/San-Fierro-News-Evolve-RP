@@ -6,7 +6,7 @@
 set -e
 cd "$(git rev-parse --show-toplevel)"
 MODE="${1:-dry}"
-for f in $(git ls-files '*.html' | grep -v '^template' | sort); do
+for f in $(git ls-files '*.html' | grep -v '^template' | grep -v '^worktmp/' | sort); do
   sha=$(git log --diff-filter=A --format=%H -- "$f" | tail -1)
   [ -z "$sha" ] && continue
   tag="v-$(echo "$f" | sed 's/\.html$//')"
