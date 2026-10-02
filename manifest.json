@@ -2,7 +2,7 @@
  "generated": "2026-10-02",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 30,
+ "issues": 31,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -13,6 +13,11 @@
    "file": "article-lisa-akana.html",
    "bytes": 1050982,
    "sha256": "12049db84acb5000dfe2cd3613e4acaf0a84d1b2a19e2c9db27a4d89ba3d1e08"
+  },
+  {
+   "file": "article-novaya-zhizn-shahtera-sf.html",
+   "bytes": 2698946,
+   "sha256": "10f25450cf6d0dbc26bb4f043c05efb3893f49a3263c651802c2a8be03fab395"
   },
   {
    "file": "caligulas-casino.html",
@@ -106,8 +111,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 261030,
-   "sha256": "2c2b2755e5c11825b9b3a9325445e869949ff89fde119a67df626a0e3551b830"
+   "bytes": 261973,
+   "sha256": "309b292a11eb32218625f3ff51e7c4180adabcaba03ec240fca95dfc17dfd268"
   },
   {
    "file": "opg-leader-interview.html",

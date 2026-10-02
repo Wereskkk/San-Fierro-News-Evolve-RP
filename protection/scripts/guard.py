@@ -73,7 +73,8 @@ if os.path.exists(hub):
 
 # ---- изменяемые файлы относительно origin/main ----
 diff = sh('git', 'diff', '--name-only', 'origin/main').split() + \
-       sh('git', 'diff', '--cached', '--name-only', 'origin/main').split()
+       sh('git', 'diff', '--cached', '--name-only', 'origin/main').split() + \
+       sh('git', 'ls-files', '--others', '--exclude-standard').split()
 changed = sorted(set(x for x in diff if x.endswith('.html')))
 
 # ---- G4/G5/G6 по изменённым ----
