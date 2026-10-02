@@ -342,6 +342,96 @@ footer b{color:var(--gold)}
 .pvtitle{margin-top:4px;font-family:'PTSN',sans-serif;font-weight:700;font-size:.95rem;line-height:1.35;color:#f4ecf7}
 .pvhint{margin-top:8px;font-family:'BebasNeue',sans-serif;font-size:.7rem;letter-spacing:1.5px;color:var(--mut)}
 .sec{scroll-margin-top:16px}
+
+/* ---- боковые колонки: погода + гороскоп (номер 02.10.2026) ---- */
+.sidestrip{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:66rem;margin:30px auto 0}
+@media(max-width:860px){.sidestrip{grid-template-columns:1fr}}
+.wxcard,.hocard{position:relative;border:1px solid var(--line);border-radius:14px;padding:18px;
+ background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+ box-shadow:0 12px 34px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+ scrollbar-width:thin;scrollbar-color:rgba(246,196,83,.4) transparent}
+.wxcard::-webkit-scrollbar,.hocard::-webkit-scrollbar{width:6px}
+.wxcard::-webkit-scrollbar-thumb,.hocard::-webkit-scrollbar-thumb{background:rgba(246,196,83,.4);border-radius:3px}
+.wxcard::-webkit-scrollbar-track,.hocard::-webkit-scrollbar-track{background:transparent}
+.sidehead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+ padding-bottom:10px;margin-bottom:13px;border-bottom:1px dashed rgba(246,196,83,.35)}
+.sidettl{font-family:'BebasNeue',sans-serif;letter-spacing:2.5px;font-size:1.05rem;color:var(--gold);
+ text-shadow:0 0 10px rgba(246,196,83,.45)}
+.sidesub{font-family:'BebasNeue',sans-serif;letter-spacing:1.5px;font-size:.72rem;color:var(--mut);text-align:right;line-height:1.45}
+.sidefoot{margin-top:13px;padding-top:9px;border-top:1px dashed rgba(246,196,83,.25);
+ font-size:.7rem;line-height:1.5;color:var(--mut)}
+/* -- погода -- */
+.wxmain{display:flex;align-items:center;gap:16px}
+.wxico{font-size:2.5rem;line-height:1;color:var(--gold);text-shadow:0 0 16px rgba(246,196,83,.55)}
+.wxtmp{font-family:'RussoOne',sans-serif;font-weight:400;font-size:2.7rem;line-height:1;color:#fff5fa;
+ text-shadow:0 0 16px rgba(47,232,200,.45)}
+.wxrange{margin-top:5px;font-family:'BebasNeue',sans-serif;letter-spacing:1.5px;font-size:.78rem;color:var(--mut)}
+.wxcond{margin-top:11px;font-size:.95rem;line-height:1.55;color:#e7daec}
+.wxgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px 14px;margin-top:14px}
+.wxrow{display:flex;justify-content:space-between;gap:8px;font-size:.84rem;line-height:1.4;
+ border-bottom:1px dotted rgba(179,157,189,.2);padding-bottom:4px}
+.wxrow b{font-weight:400;color:#f4eaf7}
+.wxrow span{color:var(--mut)}
+.wxlab{font-family:'BebasNeue',sans-serif;letter-spacing:2px;font-size:.72rem;color:var(--turq);
+ margin:15px 0 8px;text-shadow:0 0 8px rgba(47,232,200,.4)}
+.wxhours{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wxdays{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.wxh,.wxd{text-align:center;border:1px solid rgba(246,196,83,.18);border-radius:10px;
+ padding:7px 2px 6px;background:rgba(255,255,255,.02)}
+.wxd{border-color:rgba(155,107,255,.25);background:rgba(155,107,255,.05)}
+.wxh u,.wxd u{display:block;text-decoration:none;font-family:'BebasNeue',sans-serif;
+ letter-spacing:1px;font-size:.7rem;color:var(--mut)}
+.wxh em,.wxd em{display:block;font-style:normal;font-size:1.05rem;margin:2px 0;color:var(--gold)}
+.wxh b,.wxd b{display:block;font-weight:400;font-size:.9rem;color:#f4eaf7}
+.wxd i{display:block;font-style:normal;font-size:.62rem;color:var(--mut);margin-top:1px}
+/* -- гороскоп -- */
+.hosky{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;line-height:1.55;color:#e7daec;
+ border-left:2px solid var(--mag);padding:2px 0 2px 10px;margin-bottom:13px}
+.hosky b{color:var(--gold);font-weight:400}
+.hosky>span:first-child{color:var(--mag);text-shadow:0 0 8px rgba(255,46,136,.55)}
+.hosel{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px}
+.hbtn{appearance:none;-webkit-appearance:none;border:1px solid rgba(246,196,83,.25);border-radius:9px;
+ background:rgba(255,255,255,.03);color:var(--mut);cursor:pointer;padding:6px 1px 4px;text-align:center;
+ transition:transform .15s,color .15s,border-color .15s,box-shadow .15s;font-family:'PTSN',sans-serif}
+.hbtn em{display:block;font-style:normal;font-size:1.05rem;line-height:1.1}
+.hbtn u{display:block;text-decoration:none;font-family:'BebasNeue',sans-serif;font-size:.5rem;letter-spacing:.5px;margin-top:2px}
+.hbtn:hover{color:var(--gold);border-color:rgba(246,196,83,.7);transform:translateY(-1px);
+ box-shadow:0 0 10px rgba(246,196,83,.25)}
+.hbtn.on{color:#241604;background:linear-gradient(180deg,#f6d98a,#d9a94a);border-color:#8a6a25;
+ box-shadow:0 0 14px rgba(246,196,83,.55)}
+.hoview{border:1px solid rgba(255,46,136,.2);border-radius:12px;padding:13px 14px 12px;
+ background:rgba(255,46,136,.045);min-height:150px}
+.hotop{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.honame{font-family:'RussoOne',sans-serif;font-weight:400;font-size:1.08rem;color:#fff5fa;
+ text-shadow:0 0 10px rgba(255,46,136,.55)}
+.hodates{font-family:'BebasNeue',sans-serif;letter-spacing:1px;font-size:.68rem;color:var(--mut)}
+.hostars{margin:7px 0 8px;font-size:.95rem;letter-spacing:2px;color:var(--gold);text-shadow:0 0 8px rgba(246,196,83,.5)}
+.hostars b{font-weight:400}
+.hostars i{font-style:normal;color:#54405f;text-shadow:none}
+.hostarslab{font-family:'BebasNeue',sans-serif;font-size:.66rem;letter-spacing:1.5px;color:var(--mut);
+ text-shadow:none;margin-left:6px}
+.hotext{font-size:.9rem;line-height:1.65;color:#e7daec}
+.hoday{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;
+ font-family:'BebasNeue',sans-serif;letter-spacing:1.5px;font-size:.68rem;color:#fff0f6;
+ background:linear-gradient(90deg,rgba(255,46,136,.85),rgba(155,107,255,.85));
+ box-shadow:0 0 14px rgba(255,46,136,.45)}
+/* -- широкие экраны: колонки встают по бокам -- */
+@media(min-width:1920px){
+ .sidestrip{display:contents}
+ .wxcard{position:fixed;left:16px;top:134px;width:214px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:15px 14px}
+ .hocard{position:fixed;right:16px;top:134px;width:214px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:15px 14px}
+ .wxmain{gap:10px}
+ .wxtmp{font-size:2.2rem}
+ .wxico{font-size:2rem}
+ .hosel{grid-template-columns:repeat(4,1fr)}
+}
+@media(min-width:2280px){
+ .wxcard{left:26px;width:252px}
+ .hocard{right:26px;width:252px}
+ .hosel{grid-template-columns:repeat(6,1fr)}
+}
 </style>
 </head>
 <body>
@@ -432,6 +522,51 @@ footer b{color:var(--gold)}
   <div class="fact"><b>37</b><span>чисел на живом колесе</span></div>
   <div class="fact"><b>24/7</b><span>неон Strip не гаснет</span></div>
 </div>
+
+  <div class="sidestrip" id="sidestrip">
+
+    <section class="wxcard" aria-label="Погода в Las Venturas на 2 октября 2026">
+      <div class="sidehead"><span class="sidettl">&#9728; ПОГОДА · LAS VENTURAS</span><span class="sidesub">пятница<br>02.10.2026</span></div>
+      <div class="wxmain">
+        <div class="wxico" aria-hidden="true">&#9728;</div>
+        <div>
+          <div class="wxtmp">+36&deg;</div>
+          <div class="wxrange">ДНЁМ · НОЧЬЮ ДО +20&deg;</div>
+        </div>
+      </div>
+      <p class="wxcond">Жарко и сухо. До середины дня ясно, к вечеру над пустыней встаёт облачность — но до Strip не дойдёт ни капли.</p>
+      <div class="wxgrid">
+        <div class="wxrow"><span>Ощущается</span><b>+34&deg;</b></div>
+        <div class="wxrow"><span>Осадки</span><b>0%</b></div>
+        <div class="wxrow"><span>Ветер</span><b>3–4 м/с, С</b></div>
+        <div class="wxrow"><span>Влажность</span><b>~20%</b></div>
+        <div class="wxrow"><span>УФ-индекс</span><b>6,6 · высокий</b></div>
+        <div class="wxrow"><span>Солнце</span><b>06:36 &rarr; 18:22</b></div>
+      </div>
+      <div class="wxlab">В ТЕЧЕНИЕ ДНЯ</div>
+      <div class="wxhours">
+        <div class="wxh"><u>08:00</u><em aria-hidden="true">&#9728;</em><b>+24&deg;</b></div>
+        <div class="wxh"><u>13:00</u><em aria-hidden="true">&#9728;</em><b>+35&deg;</b></div>
+        <div class="wxh"><u>18:00</u><em aria-hidden="true">&#9729;</em><b>+33&deg;</b></div>
+        <div class="wxh"><u>22:00</u><em aria-hidden="true">&#9729;</em><b>+26&deg;</b></div>
+      </div>
+      <div class="wxlab">ВЫХОДНЫЕ ВПЕРЕДИ</div>
+      <div class="wxdays">
+        <div class="wxd"><u>СБ · 03.10</u><em aria-hidden="true">&#9729;</em><b>+35&deg;</b><i>ночью +20&deg;</i></div>
+        <div class="wxd"><u>ВС · 04.10</u><em aria-hidden="true">&#9728;</em><b>+35&deg;</b><i>ночью +29&deg;</i></div>
+      </div>
+      <div class="sidefoot">Пустынная метеостанция Las Venturas · прогноз на день выхода номера</div>
+    </section>
+
+    <section class="hocard" aria-label="Гороскоп на 2 октября 2026">
+      <div class="sidehead"><span class="sidettl">&#10022; ГОРОСКОП ДНЯ</span><span class="sidesub">пятница<br>02.10.2026</span></div>
+      <div class="hosky"><span aria-hidden="true">&#9790;</span><span><b>Солнце в Весах</b>, убывающая <b>Луна в Тельце</b> (63%). Городские весы клонятся к вечеру — звёзды советуют делать ставки до заката.</span></div>
+      <div class="hosel" id="hoSel" role="group" aria-label="Выбор знака зодиака"></div>
+      <div class="hoview" id="hoView" aria-live="polite"></div>
+      <div class="sidefoot">Колонка редакции · советы звёзд не заменяют холодную голову</div>
+    </section>
+
+  </div>
 
 <section class="sec" id="lvmap">
   <div class="pcard" style="--acc:#f6c453">
@@ -1043,6 +1178,55 @@ Array.prototype.forEach.call(pins,function(pin){
 });
 window.addEventListener('resize',hide);
 window.addEventListener('scroll',hide,true);
+})();
+</script>
+<script>
+/* Гороскоп дня 02.10.2026: переключатель знаков без якорей, рендер в hoView */
+(function(){
+var H=[
+{g:'\u2648',n:'Овен',s:'ОВЕН',d:'21.03 — 19.04',r:3,t:'Луна покинула ваш знак, и энергия идёт на убыль: эту пятницу лучше закрывать дела, а не начинать. Раздайте старые долги, наведите порядок на столе — то, что завершите сегодня, завтра уже не вернётся.'},
+{g:'\u2649',n:'Телец',s:'ТЕЛЕЦ',d:'20.04 — 20.05',r:5,t:'Луна в гостях у вас — обаяние на максимуме, и люди тянутся сами. Удачный день для свиданий, переговоров за ужином и любых договорённостей: сегодня ваше слово весит особенно много. Не сидите дома: удача гуляет по городу.'},
+{g:'\u264a',n:'Близнецы',s:'БЛИЗН',d:'21.05 — 20.06',r:4,t:'Разговор — главная карта дня: общий язык найдётся с кем угодно, от пит-босса до патрульного. Только не обещайте больше, чем сможете выполнить: сказанное в эту пятницу запомнят буквально.'},
+{g:'\u264b',n:'Рак',s:'РАК',d:'21.06 — 22.07',r:3,t:'Тихая пятница: город шумит, а ваш источник сил — домашний очаг. Вечер с близкими, ужин в привычном месте, старые фотографии вернут больше энергии, чем любой отпуск. Большие решения отложите до понедельника.'},
+{g:'\u264c',n:'Лев',s:'ЛЕВ',d:'23.07 — 22.08',r:4,t:'Софиты снова на вас: что бы вы сегодня ни начали, это заметят и запишут на ваш счёт. Только следите за кошельком — неон Strip щедр на обещания. Небольшая ставка допустима, но гнаться за крупными деньгами не стоит.'},
+{g:'\u264d',n:'Дева',s:'ДЕВА',d:'23.08 — 22.09',r:4,t:'День идеального порядка: документы, списки и планы складываются сами собой. Отличная пятница, чтобы распланировать весь месяц вперёд: записанное сегодня сбудется почти наверняка.'},
+{g:'\u264e',n:'Весы',s:'ВЕСЫ',d:'23.09 — 22.10',r:5,day:true,t:'Ваш сезон: Солнце в вашем знаке, и этот город крутится вокруг вас. Любые весы склоняются в вашу пользу — будь то спор, сделка или выбор, где провести вечер. Доверьтесь своему вкусу: сегодня он не подведёт.'},
+{g:'\u264f',n:'Скорпион',s:'СКОРП',d:'23.10 — 21.11',r:4,t:'Интуиция острее взгляда шулера: блеф вы чувствуете через стол. Хороший день для доверительных разговоров и дел, требующих молчания. Не показывайте всех карт — одну держите рубашкой вверх.'},
+{g:'\u2650',n:'Стрелец',s:'СТРЕЛ',d:'22.11 — 21.12',r:4,t:'Дорога зовёт: даже короткая поездка за город подарит больше радости, чем самое пышное казино. Если можете уехать — уезжайте. Если нет — хотя бы выберите длинный путь домой: по дороге случится неожиданная встреча.'},
+{g:'\u2651',n:'Козерог',s:'КОЗЕР',d:'22.12 — 19.01',r:3,t:'Работа в эту пятницу даст результат, но не надрывайтесь: пустыня не прощает перегрева. Закройте важное до обеда, а вечер посвятите себе — даже самым ответственным город сегодня выписывает отгул.'},
+{g:'\u2652',n:'Водолей',s:'ВОДОЛ',d:'20.01 — 18.02',r:3,t:'День неожиданных встреч: тот, кого вы давно не видели, может объявиться в самом необычном месте. Будьте открыты новым идеям, но не вкладывайтесь в то, чего не понимаете, — дождитесь подробностей к субботе.'},
+{g:'\u2653',n:'Рыбы',s:'РЫБЫ',d:'19.02 — 20.03',r:4,t:'Творческая пятница: вдохновение приходит даже в мелочах — неон в стекле, шелест колоды, ветер со стороны пустыни. Записывайте всё, что придумаете сегодня: на следующей неделе эти заметки покажутся пророческими.'}
+];
+var sel=document.getElementById('hoSel');
+var view=document.getElementById('hoView');
+if(!sel||!view){return;}
+var html='';
+for(var i=0;i<H.length;i++){
+ html+='<button type="button" class="hbtn" data-i="'+i+'" aria-pressed="false" title="'+H[i].n+'">'
+  +'<em aria-hidden="true">'+H[i].g+'</em><u>'+H[i].s+'</u></button>';
+}
+sel.innerHTML=html;
+function stars(n){var a='';for(var j=0;j<5;j++){a+=(j<n)?'<b>\u2605</b>':'<i>\u2605</i>';}return a;}
+function render(k){
+ var h=H[k];
+ view.innerHTML='<div class="hotop"><span class="honame">'+h.n+'</span><span class="hodates">'+h.d+'</span></div>'
+  +'<div class="hostars">'+stars(h.r)+'<span class="hostarslab">УДАЧА ДНЯ</span></div>'
+  +'<p class="hotext">'+h.t+'</p>'
+  +(h.day?'<span class="hoday">\u2722 ЗНАК ДНЯ</span>':'');
+ var bs=sel.querySelectorAll('.hbtn');
+ for(var j=0;j<bs.length;j++){
+  if(j===k){bs[j].classList.add('on');bs[j].setAttribute('aria-pressed','true');}
+  else{bs[j].classList.remove('on');bs[j].setAttribute('aria-pressed','false');}
+ }
+}
+sel.addEventListener('click',function(e){
+ var b=e.target;
+ while(b&&b!==sel&&!(b.classList&&b.classList.contains('hbtn'))){b=b.parentNode;}
+ if(!b||b===sel||!b.getAttribute){return;}
+ var k=parseInt(b.getAttribute('data-i'),10);
+ if(!isNaN(k)){render(k);}
+});
+render(6);
 })();
 </script>
 </body>
