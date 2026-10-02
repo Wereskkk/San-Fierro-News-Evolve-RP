@@ -15,7 +15,7 @@ python3 "$HERE/guard.py" || { echo "ПУБЛИКАЦИЯ ОСТАНОВЛЕНА 
 
 echo "== commit =="
 git add -A
-if git diff -q --cached --exit-code >/dev/null; then
+if git diff --cached --quiet >/dev/null; then
   echo "нечего коммитить"; exit 0
 fi
 git commit -q -m "$MSG"
