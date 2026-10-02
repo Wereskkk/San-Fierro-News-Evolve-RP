@@ -139,6 +139,7 @@ h1 .thin{color:var(--gold);text-shadow:0 0 8px rgba(246,196,83,.9),0 0 26px rgba
 .r0{background:#241730;color:var(--mut);border-color:rgba(246,196,83,.4)}
 .resword{font-family:'BebasNeue',sans-serif;font-size:1.05rem;letter-spacing:2.5px;color:#ffe9b0}
 .resnote{margin:9px auto 0;font-size:.85rem;line-height:1.55;color:var(--mut);max-width:36ch}
+.resnote:empty{display:none}
 .wres.on .resnum{animation:respulse 1s ease}
 @keyframes respulse{0%{transform:scale(.55);opacity:0}60%{transform:scale(1.14)}100%{transform:scale(1)}}
 
@@ -402,7 +403,7 @@ footer b{color:var(--gold)}
         <div class="wres" id="wres" aria-live="polite">
           <div class="wreslab">ШАРИК ОСТАНОВИТСЯ НА</div>
           <div class="wresrow"><span class="resnum r0" id="resNum">—</span><span class="resword" id="resWord">КОЛЕСО ЖДЁТ РУКУ</span></div>
-          <div class="resnote" id="resNote">Нажмите «крутить» — шарик разгонится, отобьётся от бортиков, прокатится между цифрами и сам выберет число номера.</div>
+          <div class="resnote" id="resNote"></div>
         </div>
       </div>
     </div>
