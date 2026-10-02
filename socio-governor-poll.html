@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- © 2026 San Fierro News / Jonny Wilde. Дизайн и вёрстка защищены: CC BY-NC-ND 4.0. Копирование и переработка запрещены. -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>San Fierro News — Социологическое исследование: «Вы довольны новым губернатором?»</title>
@@ -9,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Mono&display=swap" rel="stylesheet">
 <style>
+/* SFN-DESIGN-027: governor-poll · 03.10.2026 */
 :root{--paper:#edf0f3;--card:#fbfcfd;--ink:#141c26;--mut:#5b6673;--line:#d3dae1;--blue:#1f4e79;--pos:#2e7d4f;--neg:#c0392b;--neu:#7a8494}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:repeating-linear-gradient(0deg,rgba(31,78,121,.06) 0 1px,transparent 1px 30px),repeating-linear-gradient(90deg,rgba(31,78,121,.06) 0 1px,transparent 1px 30px),var(--paper);color:var(--ink);font-family:"PT Serif",Georgia,serif}
@@ -128,6 +130,8 @@ footer .copy{margin-top:1.2rem;font-family:"PT Mono",monospace;font-size:.6rem;l
  .passport .prow{grid-template-columns:15rem 1fr;gap:1rem;align-items:baseline}
  .deflist .drow{grid-template-columns:16rem 1fr;gap:1.2rem}
 }
+/* SFN fix 03.10.2026: спецвыпуск на мобильных — панель контейнером прокрутки, без оверфлоу документа */
+@media(max-width:640px){.panel{max-width:100%;min-width:0;overflow-x:auto}.mast{flex-wrap:wrap}.chip{max-width:100%}}
 </style>
 </head>
 <body>
@@ -353,6 +357,7 @@ footer .copy{margin-top:1.2rem;font-family:"PT Mono",monospace;font-size:.6rem;l
 <footer>
   <p>Исследование подготовлено отделом социологии редакции <strong>San Fierro News</strong>. Опрос проводит: Редакция San Fierro. Автор исследования: Jonny Wilde.</p>
   <p class="copy">© 2026 SF News Corp. · Спецвыпуск · 30.09.2026 · цитаты приведены дословно, повторные записи исключены из статистики</p>
-</footer>
+<br>дизайн и вёрстка — редакция San Fierro News</footer>
+<!-- SFN · 2026 · 027 · governor-poll -->
 </body>
 </html>

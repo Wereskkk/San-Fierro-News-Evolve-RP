@@ -6,153 +6,153 @@
  "files": [
   {
    "file": "all-saints-hospital.html",
-   "bytes": 1061192,
-   "sha256": "be895b401bb108057d5eb13eb0acf62b01edbd2b7ebffec4ecbebcad7053a90d"
+   "bytes": 1061756,
+   "sha256": "8d67b5fc7b0c30955a0b1db3372513be6397dbc028f6f5fdb0a07aec289e7d4a"
   },
   {
    "file": "article-lisa-akana.html",
-   "bytes": 1050399,
-   "sha256": "f07316e4307ed1d3bec99f83f5895dbd1fab9fbcbfc62ea05274563d6e01cb3c"
+   "bytes": 1050982,
+   "sha256": "12049db84acb5000dfe2cd3613e4acaf0a84d1b2a19e2c9db27a4d89ba3d1e08"
   },
   {
    "file": "caligulas-casino.html",
-   "bytes": 1682637,
-   "sha256": "7dc912c6eeb8e937efe203b2868123bfb0b2f2c1f0f18f4f6effe2f845fcc2cf"
+   "bytes": 1683209,
+   "sha256": "f155b2b8d4234ffc5725428458929a97f07b3ae7e286bf2784f6c3c0ec2ebc18"
   },
   {
    "file": "daily-02-10-2026-las-venturas.html",
-   "bytes": 4032772,
-   "sha256": "d1db36d0cb80f6c9499c3d3045b8b0ceb741d63aad310c611b33ed581f80fa50"
+   "bytes": 4033127,
+   "sha256": "3f8c6af00d8da842dc2b28e99ff8a17e8d421c5b4bb9629608c8ae5ec748201c"
   },
   {
    "file": "daily-24-09-2026.html",
-   "bytes": 1599663,
-   "sha256": "7a630ab3eb096b93a4ab9e2a423688377bfadf5286853082d04a407a30bb3cf1"
+   "bytes": 1600288,
+   "sha256": "6bdfdd80560c8fd6da0664eea61b832f352f345c88a6b24bc962e55e1010f5b4"
   },
   {
    "file": "daily-26-09-2026.html",
-   "bytes": 2070475,
-   "sha256": "1dc646ee356ccd1ef5d5433b15d71a49c7d2c9de292510812bb4f7fcf8adbac2"
+   "bytes": 2071036,
+   "sha256": "e226516b47d2e0fd076244c68e43b8392bcd47c0e79eaf2bb471ff228e6094b1"
   },
   {
    "file": "daily-27-09-2026.html",
-   "bytes": 1456169,
-   "sha256": "69b714a1b4b5f1a8157fe7bf6786fa748e6bc3cea5237a8cd3430dd86122d5d2"
+   "bytes": 1456760,
+   "sha256": "1f418c10fdb9eb3ea1ddd5a866b752b722ecd4327c7dbaae79e72163211ec247"
   },
   {
    "file": "daily-28-09-2026.html",
-   "bytes": 1317426,
-   "sha256": "d30ef65bd0ca755cd5d1f70daa4d4e343a3bdd6bcb77bda472373bd3918d73fa"
+   "bytes": 1318022,
+   "sha256": "232094fd286d65ce8206600f190a168eedce506c6ae5d439a1c3359f895603c5"
   },
   {
    "file": "daily-30-09-2026-los-santos.html",
-   "bytes": 3543211,
-   "sha256": "c038574c5430a5f32ba0d9042bb5334ddcb8d3f7f706894ff3a995f6eb83d2d1"
+   "bytes": 3543558,
+   "sha256": "9aa0cf3dc9d94eaabec64f107bb2083d5119d759f8984ed9c7f135450b1c78c2"
   },
   {
    "file": "daily-30-09-2026.html",
-   "bytes": 2581099,
-   "sha256": "77e90f715164a79b640b78cd8eae8a63c4dd3733d13d3e1fe7892166e9861039"
+   "bytes": 2581741,
+   "sha256": "bb2d5381462320a07bb4bbedc6967a5ab316fbfb321f8f1070ee17eb38c62b12"
   },
   {
    "file": "driving-school.html",
-   "bytes": 1339308,
-   "sha256": "abd22924b7bf365b7b5370ed4a4b25c058b0a4d5f03ad043ccbc9593060224cd"
+   "bytes": 1339886,
+   "sha256": "df00b54e1f5276b7210f29ff46e7792d49fbe902ddf0320c9513b8c4f2b7bb27"
   },
   {
    "file": "fotoreport-abandoned-airport.html",
-   "bytes": 1299535,
-   "sha256": "bf390da363aa1a21fc1f9d05cf5db1234ca3eca4d3526cd8f122f41bd9792b2b"
+   "bytes": 1300106,
+   "sha256": "37c06c3c0680d294921cab299b84ffe4067303dc1d8d6eee6c61f7871f9c96bc"
   },
   {
    "file": "fotoreport-avtobazar-lv.html",
-   "bytes": 1337336,
-   "sha256": "5f88d0834d090fc275f6ef4a5af529d2224df55d36ffce8d7824409ad66929bc"
+   "bytes": 1337869,
+   "sha256": "76b9301676ec7fce421f71f8e4429835c1e8aca4990f58681005509fb42c2bdd"
   },
   {
    "file": "fotoreport-city-hall.html",
-   "bytes": 1041627,
-   "sha256": "41bf623bcfd7d78a0cc785a6af12c843ee95bda701052a65d5d0820a859a3152"
+   "bytes": 1042147,
+   "sha256": "8a9f0aab27f3060c3613abc2da31f4355b2192c63269a2bc883eab62539141dc"
   },
   {
    "file": "fotoreport-comedy-club.html",
-   "bytes": 861008,
-   "sha256": "4a65433d920b2a03c033b371de5929436d1dd7cf0fd70463373be024a405e889"
+   "bytes": 861533,
+   "sha256": "cbef1718af15f6cc178ead05b48e9c2083ab85f521d3365e022f6814d9788d16"
   },
   {
    "file": "fotoreport-evolve-hotel.html",
-   "bytes": 1202722,
-   "sha256": "b05656c9699a4fc80ad45a694b65559b7fcb0f09351c6a5705477ef72eea2884"
+   "bytes": 1203272,
+   "sha256": "4f4e2bd6d4bd08e20669299f04def84648dc4c53f4c5d4295a43b98faccad4de"
   },
   {
    "file": "fotoreport-four-dragons.html",
-   "bytes": 1106748,
-   "sha256": "d1b36284ded5caf4d0c525511dff91a4868117aab1c8b6a44ba4b9d26719eb26"
+   "bytes": 1107291,
+   "sha256": "ea63f1e2241484b1ed14c2321b493410d2240d60b8fd93ebead0b8c0f3d47ea9"
   },
   {
    "file": "fotoreport-tierra-robada.html",
-   "bytes": 1102180,
-   "sha256": "520fa41e5699f10bc5e89ca94a5184eee996ea4b6cf8f140a27be963f1a039b3"
+   "bytes": 1102731,
+   "sha256": "30d5615899f5158e9d4c57d16ba56c2c537284be0613dbfbe07a858d6e381e36"
   },
   {
    "file": "fotoreport-warlocks-mc.html",
-   "bytes": 1097635,
-   "sha256": "b4762705bb1836128e1fae05bc338c7ec52e0063686a6a3e4b0ac12734956027"
+   "bytes": 1098191,
+   "sha256": "734b82a0633e0222261849ef30f654429923534d70bc9edb5e27aa7848c75235"
   },
   {
    "file": "index.html",
-   "bytes": 1012406,
-   "sha256": "4cf37709c8ec7de2b8ce1dde814cff2ed7dfed81706712eaae4726da6fc9603c"
+   "bytes": 1012973,
+   "sha256": "fa32a3edfc3d3009de28b139cc7324443a9cadbaabdbf7e74a945e9cdb76aaf9"
   },
   {
    "file": "newsroom.html",
-   "bytes": 260385,
-   "sha256": "0f590bb37cac66eb8f0075c0a48b20beaf1db90f783a1d99db6d149420a5a772"
+   "bytes": 261030,
+   "sha256": "2c2b2755e5c11825b9b3a9325445e869949ff89fde119a67df626a0e3551b830"
   },
   {
    "file": "opg-leader-interview.html",
-   "bytes": 1181538,
-   "sha256": "d30fb70402e26fbfaecdd442bad7964fba1da4c5cb88755461cbf39cc0dfb565"
+   "bytes": 1182140,
+   "sha256": "cc3e076ece4b2b2fe6c4fa8b6a1aaac36f084417429e223eb5b8cd9de423a781"
   },
   {
    "file": "sf-army-base.html",
-   "bytes": 3110220,
-   "sha256": "803216671215754c042b720cdfc9dbcae1fd447d6d1e85b032dcbc8ed92126b6"
+   "bytes": 3110793,
+   "sha256": "9094b09b72e20da1761b5b83ad9a143faa7b7e5404f5b037cdf6c1b14050682b"
   },
   {
    "file": "sf-police-raid.html",
-   "bytes": 1112184,
-   "sha256": "006b5417a57734a848b4b5ecefe408fa2bef3cf496439b407707cab51d0f6cb8"
+   "bytes": 1112732,
+   "sha256": "4cccd50530a10008e6d8338924c2e11e9ea39f813ed610dcb9b00626a3002312"
   },
   {
    "file": "sfpd-patrol-falk.html",
-   "bytes": 1890613,
-   "sha256": "7bb0c32514aa4e9d26c41cda7bf76d2c0b69ae291fe3ce311912e0a4985946bf"
+   "bytes": 1891221,
+   "sha256": "bf55696c9469c42c280344900b58cfca31f540553dcf5844a1f07d9843394487"
   },
   {
    "file": "sfpd-precinct.html",
-   "bytes": 4201429,
-   "sha256": "a986c41afb6dd49e356850f221a99a5b030ee5ff899effe7f02e1e19dd47ed7f"
+   "bytes": 4202004,
+   "sha256": "290d916772e683a4c367a2de6db9c6a5b77c5a750351916f11ea9d9e3f4b4440"
   },
   {
    "file": "socio-governor-poll.html",
-   "bytes": 45120,
-   "sha256": "e1e678d5e7ff7b881c67624b55e14d6cc1682a5ed6aabd9ef016c6ff8c71b758"
+   "bytes": 45761,
+   "sha256": "96d866c93e6507ee18e183705d4d2046fcd2d1b36dd647f436788826d9c69777"
   },
   {
    "file": "wedding-ozzy-gulnara.html",
-   "bytes": 3222194,
-   "sha256": "0b3b844def83064fc629ec9c21f8a752817f514cd751727a0a8060ad9a298705"
+   "bytes": 3222800,
+   "sha256": "c420a0dce18bf0c726b79148d1b01a5567dcc57469b605b676b745a1e5eba1eb"
   },
   {
    "file": "weekly-24-30-09-2026.html",
-   "bytes": 2569176,
-   "sha256": "c878d90f904dc3a646b7669bc5fac60ecdb7dd84cbe8c1fcbee34d43e288f4f4"
+   "bytes": 2569764,
+   "sha256": "2e3c43de6ac561f5d4fe14536ca40cd987ecdef3af1763d6af24230a2a4009c7"
   },
   {
    "file": "zone51-investigation.html",
-   "bytes": 4389764,
-   "sha256": "9417953b6a77e0fb9809569cec2f1fba093cf6e656d959f2abf03bbaf355cff2"
+   "bytes": 4390346,
+   "sha256": "5a4c448961427480f83a855cd501205bc6f41703c2c72be743a5beae852d7345"
   }
  ]
 }

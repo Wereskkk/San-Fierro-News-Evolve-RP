@@ -103,7 +103,8 @@ for f in changed:
         fail(f'G6: {f}: нет meta viewport')
     if 'name="description"' not in head:
         warn(f'{f}: нет meta description (превью ссылок в Discord/VK будет пустым)')
-    if not f.startswith('template') and 'SFN-DESIGN-' not in s:
+    import re as _re
+    if not f.startswith('template') and not _re.search(r'SFN-(DESIGN|WEEKLY)-', s):
         warn(f'{f}: нет штампа SFN-DESIGN- (ритуал защиты ещё не внедрён)')
 
 print('SFN GUARD: изменённых html:', len(changed))
