@@ -416,57 +416,53 @@ footer b{color:var(--gold)}
  font-family:'BebasNeue',sans-serif;letter-spacing:1.5px;font-size:.68rem;color:#fff0f6;
  background:linear-gradient(90deg,rgba(255,46,136,.85),rgba(155,107,255,.85));
  box-shadow:0 0 14px rgba(255,46,136,.45)}
-/* -- автосворачивание гороскопа: пока колесо в кадре, рейл свёрнут в мини-карточку -- */
-.hobody{display:grid;grid-template-rows:1fr;opacity:1;
+/* -- автосворачивание рейлов (погода + гороскоп): пока колесо в кадре, оба свёрнуты в мини-карточки -- */
+.hobody,.wxbody{display:grid;grid-template-rows:1fr;opacity:1;
  transition:grid-template-rows .55s cubic-bezier(.33,.8,.35,1),opacity .4s ease}
-.hobin{overflow:hidden;min-height:0;visibility:visible}
-.hocard.ho-min .hobody{grid-template-rows:0fr;opacity:0}
-.hocard.ho-min .hobin{visibility:hidden;transition:visibility 0s linear .55s}
-.hohint{display:none;margin:0 0 2px;font-size:.8rem;line-height:1.55;font-style:italic;color:var(--mut)}
-.hocard.ho-min .hohint{display:block}
-.hocard.ho-min{padding-bottom:14px}
-.hocard.ho-min .sidehead{margin-bottom:9px}
+.hobin,.wxbin{overflow:hidden;min-height:0;visibility:visible}
+.hocard.ho-min .hobody,.wxcard.wx-min .wxbody{grid-template-rows:0fr;opacity:0}
+.hocard.ho-min .hobin,.wxcard.wx-min .wxbin{visibility:hidden;transition:visibility 0s linear .55s}
+.hohint,.wxhint{display:none;margin:0 0 2px;font-size:.8rem;line-height:1.55;font-style:italic;color:var(--mut)}
+.hocard.ho-min .hohint,.wxcard.wx-min .wxhint{display:block}
+.hocard.ho-min,.wxcard.wx-min{padding-bottom:14px}
+.hocard.ho-min .sidehead,.wxcard.wx-min .sidehead{margin-bottom:9px}
 .hochev{display:inline-block;margin-left:7px;font-style:normal;color:var(--turq);transition:transform .45s ease}
-.hocard.ho-min .hochev{transform:rotate(-90deg)}
+.hocard.ho-min .hochev,.wxcard.wx-min .hochev{transform:rotate(-90deg)}
 /* -- от 1280px: погода и гороскоп «прилипают» к верху экрана и висят по бокам, пока читаешь номер -- */
 @media(min-width:1280px){
- .wrap{max-width:min(88rem,calc(100vw - 490px))}
+ .wrap{max-width:min(88rem,calc(100vw - 600px))}
  .sidestrip{display:contents}
- .wxcard{position:fixed;left:10px;top:134px;width:182px;max-height:calc(100vh - 158px);
-  overflow-y:auto;z-index:4;padding:14px 12px}
- .hocard{position:fixed;right:10px;top:134px;width:208px;max-height:calc(100vh - 158px);
+ .wxcard{position:fixed;left:10px;top:134px;width:240px;max-height:calc(100vh - 158px);
   overflow-y:auto;z-index:4;padding:15px 13px}
- .wxmain{gap:10px}
- .wxtmp{font-size:1.9rem}
- .wxico{font-size:1.8rem}
- .wxrange{font-size:.7rem}
- .wxcond{font-size:.88rem}
- .wxgrid{grid-template-columns:1fr;gap:6px}
- .wxhours{grid-template-columns:repeat(2,1fr)}
- .wxdays{grid-template-columns:1fr}
- .hosky{font-size:.82rem}
+ .hocard{position:fixed;right:10px;top:134px;width:250px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:15px 14px}
+ .wxmain{gap:12px}
+ .wxtmp{font-size:2.1rem}
+ .wxico{font-size:2rem}
+ .wxrange{font-size:.74rem}
+ .wxcond{font-size:.9rem}
+ .wxgrid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px}
+ .wxhours{grid-template-columns:repeat(auto-fit,minmax(46px,1fr))}
+ .hosky{font-size:.84rem}
  .hosel{grid-template-columns:repeat(4,1fr);gap:5px}
- .hbtn u{font-size:.46rem;letter-spacing:.3px}
+ .hbtn u{font-size:.5rem;letter-spacing:.3px}
  .hoview{padding:12px 12px 11px;min-height:140px}
  .hotext{font-size:.88rem;line-height:1.62}
 }
 /* -- широкие экраны: колонки встают по бокам -- */
 @media(min-width:1920px){
- .wrap{max-width:min(88rem,calc(100vw - 620px))}
+ .wrap{max-width:min(88rem,calc(100vw - 730px))}
  .sidestrip{display:contents}
- .wxcard{position:fixed;left:16px;top:134px;width:214px;max-height:calc(100vh - 158px);
-  overflow-y:auto;z-index:4;padding:15px 14px}
- .hocard{position:fixed;right:16px;top:134px;width:272px;max-height:calc(100vh - 158px);
+ .wxcard{position:fixed;left:16px;top:134px;width:280px;max-height:calc(100vh - 158px);
+  overflow-y:auto;z-index:4;padding:16px 15px}
+ .hocard{position:fixed;right:16px;top:134px;width:320px;max-height:calc(100vh - 158px);
   overflow-y:auto;z-index:4;padding:17px 16px}
- .wxmain{gap:10px}
- .wxtmp{font-size:2.2rem}
- .wxico{font-size:2rem}
- .wxrange{font-size:.78rem}
- .wxcond{font-size:.95rem}
- .wxgrid{grid-template-columns:1fr 1fr}
- .wxhours{grid-template-columns:repeat(4,1fr)}
- .wxdays{grid-template-columns:repeat(2,1fr)}
- .hosel{grid-template-columns:repeat(4,1fr)}
+ .wxmain{gap:14px}
+ .wxtmp{font-size:2.35rem}
+ .wxico{font-size:2.2rem}
+ .wxrange{font-size:.8rem}
+ .wxcond{font-size:.98rem}
+ .hosel{grid-template-columns:repeat(6,1fr)}
  .hosky{font-size:.92rem}
  .hbtn{padding:7px 2px 5px}
  .hbtn em{font-size:1.2rem}
@@ -480,9 +476,8 @@ footer b{color:var(--gold)}
  .hoday{font-size:.72rem;padding:5px 13px}
 }
 @media(min-width:2280px){
- .wxcard{left:26px;width:252px}
- .hocard{right:26px;width:316px;padding:18px 17px}
- .hosel{grid-template-columns:repeat(6,1fr)}
+ .wxcard{left:26px;width:324px;padding:18px 17px}
+ .hocard{right:26px;width:380px;padding:18px 17px}
 }
 </style>
 </head>
@@ -577,8 +572,10 @@ footer b{color:var(--gold)}
 
   <div class="sidestrip" id="sidestrip">
 
-    <section class="wxcard" aria-label="Погода в Las Venturas на 2 октября 2026">
-      <div class="sidehead"><span class="sidettl">&#9728; ПОГОДА · LAS VENTURAS</span><span class="sidesub">пятница<br>02.10.2026</span></div>
+    <section class="wxcard" id="wxcard" aria-label="Погода в Las Venturas на 2 октября 2026">
+      <div class="sidehead"><span class="sidettl">&#9728; ПОГОДА · LAS VENTURAS<i class="hochev" aria-hidden="true">&#9662;</i></span><span class="sidesub">пятница<br>02.10.2026</span></div>
+      <div class="wxhint">Пока колесо фортуны в кадре — метео сводка сложена в мини-карточку. Листай ниже: прогноз раскроется сам.</div>
+      <div class="wxbody"><div class="wxbin">
       <div class="wxmain">
         <div class="wxico" aria-hidden="true">&#9728;</div>
         <div>
@@ -608,6 +605,7 @@ footer b{color:var(--gold)}
         <div class="wxd"><u>ВС · 04.10</u><em aria-hidden="true">&#9728;</em><b>+35&deg;</b><i>ночью +29&deg;</i></div>
       </div>
       <div class="sidefoot">Пустынная метеостанция Las Venturas · прогноз на день выхода номера</div>
+      </div></div>
     </section>
 
     <section class="hocard" id="hocard" aria-label="Гороскоп на 2 октября 2026">
@@ -1285,19 +1283,43 @@ render(6);
 })();
 </script>
 <script>
-/* Гороскоп: автосворачивание рейла, пока шапка номера с колесом в кадре.
-   Шапка ушла за край экрана — гороскоп раскрывается сам. Работает только на
-   широких экранах, где колонки стоят fixed-рейлами; inline-карточки не трогает. */
+/* Погода и гороскоп: автосворачивание рейлов, пока шапка номера с колесом в кадре.
+   Шапка ушла за край экрана — обе карточки раскрываются сами. Работает только на
+   широких экранах, где колонки стоят fixed-рейлами; inline-карточки не трогает.
+   Погода дополнительно подгоняется под высоту экрана (zoom-масштаб сводки),
+   чтобы прогноз всегда был виден целиком, без внутренней прокрутки. */
 (function(){
 var ho=document.getElementById('hocard');
+var wx=document.getElementById('wxcard');
 var zone=document.querySelector('header');
-if(!ho||!zone){return;}
+if((!ho&&!wx)||!zone){return;}
+var wxbin=wx?wx.querySelector('.wxbin'):null;
+var wxhead=wx?wx.querySelector('.sidehead'):null;
 var mq=window.matchMedia('(min-width:1280px)');
 var isMin=null;
+function fitWx(){
+ if(!wx||!wxbin){return;}
+ if(!mq.matches||wx.classList.contains('wx-min')){wxbin.style.zoom='';return;}
+ var cs=window.getComputedStyle(wx);
+ var chrome=(parseFloat(cs.paddingTop)||0)+(parseFloat(cs.paddingBottom)||0)+4;
+ if(wxhead){chrome+=wxhead.offsetHeight+13;}
+ var budget=window.innerHeight-158-chrome-8;
+ wxbin.style.zoom='1';
+ if(budget<120){return;}
+ var h=wxbin.getBoundingClientRect().height;
+ var k=1;var guard=0;
+ while(h>budget&&k>0.5&&guard++<14){
+  k=Math.round(Math.max(0.5,k-0.05)*100)/100;
+  wxbin.style.zoom=String(k);
+  h=wxbin.getBoundingClientRect().height;
+ }
+}
 function apply(v){
  if(isMin===v){return;}
  isMin=v;
- ho.classList.toggle('ho-min',v);
+ if(ho){ho.classList.toggle('ho-min',v);}
+ if(wx){wx.classList.toggle('wx-min',v);}
+ if(!v){window.setTimeout(fitWx,620);}
 }
 function evalHo(){
  if(!mq.matches){apply(false);return;}
@@ -1310,11 +1332,18 @@ function onScroll(){
  tick=true;
  window.requestAnimationFrame(function(){tick=false;evalHo();});
 }
+var rtick=false;
+function onResize(){
+ if(rtick){return;}
+ rtick=true;
+ window.requestAnimationFrame(function(){rtick=false;evalHo();fitWx();});
+}
 window.addEventListener('scroll',onScroll,{passive:true});
-window.addEventListener('resize',onScroll);
-if(mq.addEventListener){mq.addEventListener('change',evalHo);}
-else if(mq.addListener){mq.addListener(evalHo);}
-evalHo();
+window.addEventListener('resize',onResize);
+function onMq(){evalHo();fitWx();}
+if(mq.addEventListener){mq.addEventListener('change',onMq);}
+else if(mq.addListener){mq.addListener(onMq);}
+evalHo();fitWx();
 })();
 </script>
 </body>
