@@ -105,6 +105,10 @@ h1 .thin{color:var(--gold);text-shadow:0 0 8px rgba(246,196,83,.9),0 0 26px rgba
  border:2px solid var(--gold);background:linear-gradient(180deg,#160c20,#0d0812);position:relative;
  box-shadow:0 0 22px rgba(246,196,83,.28),inset 0 0 22px rgba(0,0,0,.65)}
 @media(max-width:960px){.jackpot{margin-left:auto;margin-right:auto}}
+/* SFN fix 03.10.2026: мобильная шапка без горизонтального оверфлоу (jackpot по max-content растягивал heromain) */
+.marquee{overflow:hidden}
+@media(max-width:960px){.heromain{min-width:0}.jackpot{width:auto;max-width:100%}.signbase{gap:6px}}
+
 .jackpot::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;
  background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px)}
 .jplab{font-family:'BebasNeue',sans-serif;letter-spacing:4px;font-size:.8rem;color:var(--mag);

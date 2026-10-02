@@ -1,0 +1,26 @@
+© 2026 San Fierro News / Jonny Wilde. Все права на редакционный слой защищены.
+
+This license covers ONLY the editorial layer authored by the San Fierro News editorial
+team: page layout, markup, CSS, JavaScript, original texts, original graphics, logos
+and composition of the publications in this repository.
+
+In-game screenshots and frames of San Andreas depicted in these publications remain
+the property of their respective rights holders; no claim is made over them here.
+
+The editorial layer is licensed under the Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0):
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+In short:
+- You MAY share verbatim, unmodified copies for non-commercial purposes,
+  with clear attribution to "San Fierro News / Jonny Wilde".
+- You MAY NOT create derivative works: adapting, re-skinning, re-typesetting,
+  translating the layout or reusing its CSS/markup in another publication
+  is not permitted.
+- You MAY NOT use any part of the editorial layer commercially.
+- You MAY NOT remove or alter copyright notices, design stamps
+  (/* SFN-DESIGN-… */) or editorial markers embedded in the pages.
+
+Any use outside these terms is a violation of this license and of applicable
+copyright law. Publication dates of every issue are permanently recorded in the
+public commit history of this repository and in its release tags.
