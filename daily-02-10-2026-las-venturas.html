@@ -415,6 +415,18 @@ footer b{color:var(--gold)}
  font-family:'BebasNeue',sans-serif;letter-spacing:1.5px;font-size:.68rem;color:#fff0f6;
  background:linear-gradient(90deg,rgba(255,46,136,.85),rgba(155,107,255,.85));
  box-shadow:0 0 14px rgba(255,46,136,.45)}
+/* -- автосворачивание гороскопа: пока колесо в кадре, рейл свёрнут в мини-карточку -- */
+.hobody{display:grid;grid-template-rows:1fr;opacity:1;
+ transition:grid-template-rows .55s cubic-bezier(.33,.8,.35,1),opacity .4s ease}
+.hobin{overflow:hidden;min-height:0;visibility:visible}
+.hocard.ho-min .hobody{grid-template-rows:0fr;opacity:0}
+.hocard.ho-min .hobin{visibility:hidden;transition:visibility 0s linear .55s}
+.hohint{display:none;margin:0 0 2px;font-size:.8rem;line-height:1.55;font-style:italic;color:var(--mut)}
+.hocard.ho-min .hohint{display:block}
+.hocard.ho-min{padding-bottom:14px}
+.hocard.ho-min .sidehead{margin-bottom:9px}
+.hochev{display:inline-block;margin-left:7px;font-style:normal;color:var(--turq);transition:transform .45s ease}
+.hocard.ho-min .hochev{transform:rotate(-90deg)}
 /* -- широкие экраны: колонки встают по бокам -- */
 @media(min-width:1920px){
  .sidestrip{display:contents}
@@ -569,12 +581,15 @@ footer b{color:var(--gold)}
       <div class="sidefoot">Пустынная метеостанция Las Venturas · прогноз на день выхода номера</div>
     </section>
 
-    <section class="hocard" aria-label="Гороскоп на 2 октября 2026">
-      <div class="sidehead"><span class="sidettl">&#10022; ГОРОСКОП ДНЯ</span><span class="sidesub">пятница<br>02.10.2026</span></div>
+    <section class="hocard" id="hocard" aria-label="Гороскоп на 2 октября 2026">
+      <div class="sidehead"><span class="sidettl">&#10022; ГОРОСКОП ДНЯ<i class="hochev" aria-hidden="true">&#9662;</i></span><span class="sidesub">пятница<br>02.10.2026</span></div>
+      <div class="hohint">Пока колесо фортуны в кадре — звёзды тихо ждут за его краем. Листай ниже: гороскоп раскроется сам.</div>
+      <div class="hobody"><div class="hobin">
       <div class="hosky"><span aria-hidden="true">&#9790;</span><span><b>Солнце в Весах</b>, убывающая <b>Луна в Тельце</b> (63%). Городские весы клонятся к вечеру — звёзды советуют делать ставки до заката.</span></div>
       <div class="hosel" id="hoSel" role="group" aria-label="Выбор знака зодиака"></div>
       <div class="hoview" id="hoView" aria-live="polite"></div>
       <div class="sidefoot">Колонка редакции · советы звёзд не заменяют холодную голову</div>
+      </div></div>
     </section>
 
   </div>
@@ -1238,6 +1253,39 @@ sel.addEventListener('click',function(e){
  if(!isNaN(k)){render(k);}
 });
 render(6);
+})();
+</script>
+<script>
+/* Гороскоп: автосворачивание рейла, пока шапка номера с колесом в кадре.
+   Шапка ушла за край экрана — гороскоп раскрывается сам. Работает только на
+   широких экранах, где колонки стоят fixed-рейлами; inline-карточки не трогает. */
+(function(){
+var ho=document.getElementById('hocard');
+var zone=document.querySelector('header');
+if(!ho||!zone){return;}
+var mq=window.matchMedia('(min-width:1920px)');
+var isMin=null;
+function apply(v){
+ if(isMin===v){return;}
+ isMin=v;
+ ho.classList.toggle('ho-min',v);
+}
+function evalHo(){
+ if(!mq.matches){apply(false);return;}
+ var r=zone.getBoundingClientRect();
+ apply(r.bottom>150);
+}
+var tick=false;
+function onScroll(){
+ if(tick){return;}
+ tick=true;
+ window.requestAnimationFrame(function(){tick=false;evalHo();});
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+if(mq.addEventListener){mq.addEventListener('change',evalHo);}
+else if(mq.addListener){mq.addListener(evalHo);}
+evalHo();
 })();
 </script>
 </body>
