@@ -77,7 +77,12 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 026 | daily-30-09-2026-los-santos.html | ls-postcards |
 | 027 | socio-governor-poll.html | governor-poll |
 | 028 | daily-02-10-2026-las-venturas.html | roulette-noir-lv |
-| 029 | daily-03-10-2026.html | state-broadsheet |
+| 029 | daily-03-10-2026.html | classic-broadsheet |
+| 030 | (следующий выпуск) | … |
+
+Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
+после редизайна по брифу главреда (03.10.2026, пересборщик `worktmp/build_daily_0310_state_v2.py`)
+действующий слаг — `classic-broadsheet`. Прежнее имя жило до 03.10.2026.
 
 Еженедельники нумеруемся отдельно: `SFN-WEEKLY-001` и т.д. (у них свой характер и свой шаблон).
 
