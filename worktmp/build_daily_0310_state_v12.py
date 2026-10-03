@@ -66,7 +66,7 @@ for _key, _a in A.items():
 IDX = {'fallen': '01', 'crash': '02', 'gas': '03', 'kpp': '04', 'truck': '05', 'square': '06',
        'stop': '07', 'hwy': '08', 'dragons': '09', 'caligula': '10', 'heli': '11', 'yacht': '12'}
 
-CSS = """/* SFN-DESIGN-029: day-grid-hierarchy · 03.10.2026 */
+CSS = """/* SFN-DESIGN-029: day-grid-tight · 03.10.2026 */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 img{display:block;max-width:100%}
@@ -80,12 +80,12 @@ body{background:var(--paper);color:var(--ink);font-family:"PT Serif",Georgia,ser
 box-shadow:0 16px 40px rgba(20,24,28,.22);position:relative}
 .sheet+.sheet{margin-top:34px}
 /* ==== страница: 12 колонок, один gutter; сценарий полосы = grid-template-areas ==== */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);
-padding:26px var(--pad) 0}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px 22px;
+padding:20px var(--pad) 0}
 /* размещение материалов по сценарию полосы (только место, без композиции) */
 #p1 .grid{grid-template-areas:"a01 a01 a01 a01 a01 a01 a01 a01 a02 a02 a02 a02"
  "hs hs hs hs hs hs hs hs hs hs hs hs"
- "a03 a03 a03 a03 a03 a03 a03 a04 a04 a04 a04 a04"}
+ "a03 a03 a03 a03 a03 a03 a04 a04 a04 a04 a04 a04"}
 #p1 #a01{border-right:1px solid var(--hair);padding-right:var(--gut)}
 #p1 #a03{border-right:1px solid var(--hair);padding-right:var(--gut)}
 #p1 #a04 .nmeta{display:none}
@@ -103,25 +103,25 @@ padding:26px var(--pad) 0}
 /* ==== материал: общая анатомия ==== */
 .m{display:grid;align-content:start}
 .m .nn{grid-area:n;display:flex;align-items:baseline;gap:14px;
-border-bottom:1px solid var(--hair);padding-bottom:8px;margin-bottom:12px}
+border-bottom:1px solid var(--hair);padding-bottom:7px;margin-bottom:10px}
 .m .num{font-family:Anton,sans-serif;font-weight:400;line-height:.84;color:var(--ink);
 font-size:44px;letter-spacing:.01em}
 .m .k{font-family:"PT Mono",monospace;font-weight:700;font-size:9.5px;letter-spacing:.24em;
 text-transform:uppercase;color:var(--ox)}
 .m .nmeta{margin-left:auto;align-self:center;font-family:"PT Mono",monospace;font-weight:700;
 font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
-.m .end{grid-area:e;display:flex;align-items:center;gap:10px;margin-top:16px}
+.m .end{grid-area:e;display:flex;align-items:center;gap:10px;margin-top:12px}
 .m .end::before{content:"";width:6px;height:6px;background:var(--ox);flex:0 0 6px}
 .m .end::after{content:"";flex:1;border-top:1px solid var(--hair)}
-.pagefoot{margin:26px var(--pad) 0;border-top:1px solid var(--hair);padding-top:10px;
+.pagefoot{margin:18px var(--pad) 0;border-top:1px solid var(--hair);padding-top:10px;
 display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
 font-family:"PT Mono",monospace;font-weight:700;font-size:8.5px;letter-spacing:.2em;
 text-transform:uppercase;color:var(--mut)}
 .m h1,.m h3{grid-area:h;font-family:Oswald,sans-serif;font-weight:700;text-transform:uppercase;
-color:var(--ink);letter-spacing:.006em;line-height:1.08;margin-bottom:10px}
-.m h3{font-size:clamp(16px,1.75vw,22px);font-weight:600}
+color:var(--ink);letter-spacing:.006em;line-height:1.08;margin-bottom:9px}
+.m h3{font-size:clamp(16px,1.75vw,22px);font-weight:600;margin-bottom:7px}
 .m .stand{grid-area:s;font:italic 400 13.5px/1.58 "PT Serif",serif;color:var(--mut);
-border-left:2px solid var(--ox);padding-left:11px;margin-bottom:10px}
+border-left:2px solid var(--ox);padding-left:11px;margin-bottom:9px}
 .m .txt,.m .cols2,.m .cols3{grid-area:t;align-self:start}
 .m .stand{align-self:start}
 .txt p{font:400 14px/1.68 "PT Serif",serif;margin:0 0 8px}
@@ -132,7 +132,7 @@ border-left:2px solid var(--ox);padding-left:11px;margin-bottom:10px}
 .ph img{width:100%;height:auto;transition:filter .45s}
 .ph:hover img{filter:contrast(1.04)}
 figcaption{font-family:"PT Mono",monospace;font-size:9.5px;line-height:1.55;letter-spacing:.05em;
-color:var(--mut);margin-top:6px}
+color:var(--mut);margin-top:5px}
 .ph.bandcap figcaption{background:var(--ink);color:var(--paper);margin:0;padding:8px 12px;
 font-weight:700;letter-spacing:.06em}
 .stat{grid-area:x}
@@ -141,7 +141,7 @@ line-height:.95;color:var(--ox);white-space:nowrap;margin:0 0 4px}
 .stat small{display:block;font-family:"PT Mono",monospace;font-weight:700;font-size:8.5px;
 letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
 /* ==== ТИПЫ материалов: один набор стилей на тип ==== */
-.t-lead{grid-template-columns:6fr 6fr;column-gap:var(--gut);
+.t-lead{grid-template-columns:5fr 7fr;column-gap:var(--gut);
 grid-template-rows:auto auto auto 1fr auto;
 grid-template-areas:"n n" "h ph" "s ph" "t ph" "e e"}
 .t-lead .nn{border-bottom:3px solid var(--ink)}
@@ -156,7 +156,7 @@ grid-template-areas:"n n" "h ph" "s ph" "t ph" "e e"}
 .t-wide h3{font-size:clamp(19px,2.3vw,30px)}
 .t-split{grid-template-columns:4fr 6fr;column-gap:var(--gut);
 grid-template-rows:auto auto auto 1fr auto;
-grid-template-areas:"n n" "h h" "ph s" "ph t" "e e"}
+grid-template-areas:"n n" "h h" "s s" "ph t" "e e"}
 .t-split .num{font-size:56px}
 .t-report{grid-template-columns:6fr 4fr;column-gap:var(--gut);
 grid-template-rows:auto auto auto 1fr auto auto;
@@ -216,7 +216,7 @@ padding:10px var(--pad);border-bottom:2px solid var(--ink);font-family:"PT Mono"
 font-weight:700;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
 .folio b{color:var(--ox)}
 .folio .f3{background:var(--ink);color:var(--paper);padding:2px 8px}
-.sect{display:flex;align-items:center;gap:18px;margin:0 0 4px}
+.sect{display:flex;align-items:center;gap:18px;margin:0 0 2px}
 .sect .snum{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(40px,5.2vw,64px);
 line-height:1;color:var(--ox);padding:6px 0 6px var(--pad)}
 .sect h2{font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(22px,3vw,38px);
@@ -224,14 +224,14 @@ text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .sect .stail{flex:1;border-bottom:3px solid var(--ink);margin:0 20px 0 4px}
 .sect .sdate{font-family:"PT Mono",monospace;font-weight:700;font-size:9px;letter-spacing:.2em;
 text-transform:uppercase;color:var(--mut);padding-right:var(--pad)}
-.pressline{margin:30px var(--pad) 0;background:var(--ink);color:var(--paper);padding:14px 20px;
+.pressline{margin:22px var(--pad) 0;background:var(--ink);color:var(--paper);padding:14px 20px;
 display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
 .pressline .pl1{font-family:Oswald,sans-serif;font-weight:600;font-size:20px;
 text-transform:uppercase;letter-spacing:.05em}
 .pressline .pl1 i{font-style:normal;color:#e8897f}
 .pressline .pl2{font-family:"PT Mono",monospace;font-weight:700;font-size:9px;letter-spacing:.2em;
 text-transform:uppercase;color:#c9c2b4}
-.colophon{margin:44px var(--pad) 0;border:1px solid var(--ink);padding:20px 24px;display:flex;
+.colophon{margin:32px var(--pad) 0;border:1px solid var(--ink);padding:20px 24px;display:flex;
 justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;position:relative}
 .colophon::before{content:"";position:absolute;top:-4px;left:-4px;width:8px;height:8px;
 background:var(--ox);border-radius:50%}
@@ -422,7 +422,7 @@ P.append('<footer class="colophon"><div>'
          '<a class="backpill" href="newsroom.html">← Посмотреть все выпуски редакции</a></footer>')
 P.append('</section>\n')
 
-P.append('<!-- SFN · 2026 · 029 · day-grid-hierarchy -->\n</body>\n</html>\n')
+P.append('<!-- SFN · 2026 · 029 · day-grid-tight -->\n</body>\n</html>\n')
 
 html = ''.join(P)
 
@@ -432,7 +432,7 @@ assert html.count('data:image/jpeg;base64,') == 12, 'кадров не 12'
 assert 'style="' not in html, 'inline-стили вернулись'
 for n in range(1, 13):
     assert f'id="a{n:02d}"' in html, f'нет материала a{n:02d}'
-assert 'SFN-DESIGN-029: day-grid' in html and '<!-- SFN · 2026 · 029 · day-grid-hierarchy -->' in html
+assert 'SFN-DESIGN-029: day-grid' in html and '<!-- SFN · 2026 · 029 · day-grid-tight -->' in html
 assert '<title>' in html[:4000] and 'viewport' in html[:4000] and 'name="description"' in html[:4000]
 assert 'дизайн и вёрстка — редакция San Fierro News' in html
 assert 'href="newsroom.html"' in html
