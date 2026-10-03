@@ -242,7 +242,7 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
 .maproute>img{width:100%;display:block;filter:saturate(.9) contrast(1.05) brightness(.92)}
 .routeline{position:absolute;inset:0;width:100%;height:100%}
 .rline{fill:none;stroke:var(--neon2);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:6000;stroke-dashoffset:6000;filter:drop-shadow(0 0 7px rgba(89,227,127,.85))}
-.view.on .rline{animation:draw2 40s cubic-bezier(.3,.06,.25,1) forwards .4s,rlineGlow 5s ease-in-out 40.4s infinite}
+.view.on .rline{animation:none}
 @keyframes draw2{to{stroke-dashoffset:0}}
 .rstop2{cursor:default}
 .rstop2 circle{stroke:#0a120d;stroke-width:2.4}
@@ -287,14 +287,32 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
 
 </style>
 
-<style>/* sfn-comet-v1 */
+<style>/* sfn-journey-v1 */
 @keyframes rlineGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(89,227,127,.55))}50%{filter:drop-shadow(0 0 13px rgba(89,227,127,.95))}}
-.rcomet-halo{fill:none;stroke:var(--neon2);stroke-width:11;stroke-linecap:round;opacity:.34;filter:url(#rGlowF)}
-.rcomet{fill:none;stroke:#f2fff7;stroke-width:4.4;stroke-linecap:round;opacity:.96;filter:url(#rGlowF)}
+.view.on .rline.rglow{animation:rlineGlow 5s ease-in-out infinite}
+.rcomet-halo{fill:none;stroke:var(--neon2);stroke-width:11;stroke-linecap:round;opacity:0;filter:url(#rGlowF)}
+.rcomet{fill:none;stroke:#f2fff7;stroke-width:4.4;stroke-linecap:round;opacity:0;filter:url(#rGlowF)}
 .rcomet-head{opacity:0}
 .rstop-pulse{fill:none;stroke:#fff;stroke-width:2.6;opacity:0;pointer-events:none}
+.rstop2.cur circle{stroke:var(--neon2);stroke-width:3.2;filter:drop-shadow(0 0 7px rgba(89,227,127,.85))}
+#rgobar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
+.rgobtn{appearance:none;font-family:"PT Mono",monospace;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;border-radius:999px;border:1px solid var(--neon2);background:var(--neon2);color:var(--bg);cursor:pointer;transition:.2s;box-shadow:0 0 18px -6px rgba(89,227,127,.55)}
+.rgobtn:hover{transform:translateY(-2px);box-shadow:0 0 26px -4px var(--neon2)}
+.rgostate{font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.07em;color:var(--mut)}
+#rPrev{position:fixed;z-index:95;width:292px;background:#0b120d;border:1px solid var(--line2);border-radius:12px;box-shadow:0 22px 50px -20px rgba(0,0,0,.9),0 0 26px -8px rgba(89,227,127,.35);opacity:0;transform:translateY(8px);transition:opacity .18s,transform .18s;pointer-events:none;overflow:hidden}
+#rPrev.on{opacity:1;transform:none;pointer-events:auto}
+#rPrev .rh{font-family:"PT Mono",monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon);padding:8px 12px;border-bottom:1px solid var(--line);background:rgba(143,214,148,.06)}
+#rPrev img{display:block;width:100%;height:130px;object-fit:cover}
+#rPrev .pb{padding:10px 12px 12px}
+#rPrev .pt{font-family:"Oswald",sans-serif;font-weight:600;font-size:.86rem;line-height:1.3;color:var(--ink)}
+#rPrev .pm{font-family:"PT Mono",monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--neon);margin-top:6px}
+#rPrev .rl{display:inline-block;margin-top:9px;font-family:"PT Mono",monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--neon2);text-decoration:none;border-bottom:1px dashed rgba(89,227,127,.5)}
+@media(max-width:640px){
+  #rgobar{flex-direction:column;align-items:stretch;gap:8px}
+  .rgobtn{width:100%;font-size:.6rem;letter-spacing:.05em;padding:12px 14px}
+  #rPrev{width:min(292px,calc(100vw - 20px))}
+}
 @media (prefers-reduced-motion: reduce){
-  .rline{animation:draw2 .01s linear forwards}
   .rcomet,.rcomet-halo,.rcomet-head,.rstop-pulse{display:none}
 }
 </style></head>
@@ -368,7 +386,12 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
 <path id="rComet" class="rcomet" pathLength="6000" d="M158 424 L160 424 L160 460 L160 500 L160 540 L170 570 L180 600 L185 640 L190 680 L205 700 L220 712 L230 730 L240 750 L250 765 L270 778 L300 783 L320 785 L350 776 L380 766 L420 756 L460 750 L500 740 L520 720 L530 690 L535 660 L545 645 L570 636 L600 642 L630 644 L660 645 L690 645 L725 645 L725 680 L725 710 L725 740 L725 765 L724 775 L725 765 L705 776 L695 775 L695 740 L695 715 L688 712 L680 709 L695 708 L695 680 L695 650 L720 645 L740 635 L755 620 L760 620 L755 590 L750 560 L745 520 L750 500 L760 480 L775 455 L785 425 L785 410 L790 398 L790 383 L805 380 L815 376 L800 381 L790 383 L790 365 L780 356 L750 356 L720 355 L700 356 L680 358 L640 355 L600 350 L570 345 L530 350 L500 345 L470 340 L455 325 L448 300 L445 260 L445 220 L445 180 L445 140 L450 100 L455 65 L480 52 L510 49 L535 55 L540 65 L540 81 L535 55 L510 49 L480 52 L455 65 L450 100 L445 140 L443 180 L443 220 L430 205 L415 185 L395 168 L365 163 L335 165 L310 160 L290 150 L270 135 L260 115 L245 95 L220 80 L190 73 L160 70 L135 76 L120 86 L105 96 L93 106 L105 96 L120 86 L135 76 L160 70 L190 73 L220 80 L245 95 L260 115 L270 135 L290 150 L310 160 L335 165 L365 163 L395 168 L415 185 L430 205 L445 220 L445 260 L448 300 L455 325 L470 340 L500 345 L530 350 L570 345 L573 320 L575 280 L578 240 L580 218 L602 217 L580 218 L578 240 L575 280 L573 320 L570 345 L600 350 L640 355 L680 358 L700 356 L720 355 L750 356 L770 362 L785 375 L790 383 L805 386 L820 390 L834 398 L810 394 L790 396 L785 410 L785 425 L775 455 L760 480 L750 500 L745 520 L750 560 L755 590 L760 620 L765 650 L765 680 L765 710 L765 740 L765 770 L765 795 L755 798 L745 806 L755 798 L765 795 L765 770 L765 740 L765 710 L765 680 L765 650 L760 620 L755 590 L750 560 L745 520 L750 500 L760 480 L775 455 L785 425 L785 410 L790 398 L790 383 L805 380 L820 380 L820 365 L830 356 L840 345 L839 332 L840 300 L840 260 L840 220 L840 190 L840 150 L840 120 L830 112 L815 110 L830 112 L820 100 L800 86 L770 80 L740 78 L715 82 L705 100 L705 120 L705 160 L705 200 L705 240 L705 280 L705 320 L700 356 L680 358 L640 355 L600 350 L570 345 L530 350 L500 345 L470 340 L455 325 L448 300 L445 260 L445 220 L443 220 L430 205 L415 185 L395 168 L365 163 L335 165 L310 160 L290 150 L270 135 L260 115 L245 95 L220 80 L190 73 L160 70 L135 76 L120 86 L105 96 L86 116 L84 125 L84 160 L84 200 L84 240 L84 265 L84 280 L100 280 L120 280 L140 280 L160 280 L160 320 L160 360 L160 400 L160 424 L160 440 L160 460 L174 458 L174 454 L160 460 L160 500 L160 540 L170 570 L180 600 L185 640 L190 680 L205 700 L220 712 L240 713 L280 718 L320 715 L360 710 L400 715 L440 720 L480 725 L505 725 L520 710 L530 685 L535 660 L545 645 L570 636 L600 642 L630 644 L660 645 L690 645 L720 643 L725 645 L734 640 L734 635 L734 645 L725 645 L725 680 L725 710 L710 712 L697 715 L697 720 L699 729 L695 740 L695 765 L710 766 L725 766 L740 768 L750 775 L753 782 L765 775 L765 740 L765 710 L765 680 L765 650 L760 620 L780 600 L810 575 L840 555 L870 535 L883 510 L885 480 L885 450 L885 420 L885 400 L885 380 L885 365 L885 356 L900 356 L920 356 L940 356 L940 330 L940 300 L940 298 L930 300 L910 300 L880 300 L850 300 L840 300 L840 335 L820 340 L790 342 L760 344 L730 346 L705 348 L700 356 L680 358 L640 355 L600 350 L570 345 L530 350 L500 345 L470 340 L455 325 L448 300 L445 260 L445 220 L443 220 L430 205 L415 185 L395 168 L365 163 L335 165 L310 160 L290 150 L270 135 L260 115 L245 95 L220 80 L190 73 L160 70 L135 76 L120 86 L105 96 L86 116 L84 125 L84 160 L84 200 L84 240 L84 265 L84 280 L100 280 L120 280 L140 280 L160 280 L160 320 L160 360 L160 400 L160 424 L160 460 L160 500 L160 540 L170 570 L180 600 L185 640 L190 680 L205 700 L220 712 L230 742 L215 755 L200 768 L192 779 L200 768 L215 755 L230 742 L240 750 L250 765 L270 778 L300 783 L320 785 L350 776 L380 766 L420 756 L460 750 L500 740 L520 720 L530 690 L535 660 L545 645 L570 636 L600 642 L630 644 L660 645 L690 645 L725 645 L725 680 L725 710 L725 740 L725 765 L740 768 L765 770 L765 740 L765 710 L765 680 L765 650 L760 620 L755 590 L750 560 L745 520 L750 500 L760 480 L775 455 L785 425 L785 410 L790 398 L805 394 L815 394 L820 380 L825 368 L827 359 L810 356 L800 356 L770 356 L750 356 L720 355 L700 356 L680 358 L640 355 L600 350 L570 345 L530 350 L500 345 L470 340 L455 325 L448 300 L445 260 L445 220 L443 220 L430 205 L415 185 L395 168 L365 163 L335 165 L310 160 L290 150 L270 135 L260 115 L245 95 L220 80 L190 73 L160 70 L135 76 L120 86 L105 96 L86 116 L84 125 L84 160 L84 200 L84 240 L84 265 L84 280 L100 280 L120 280 L140 280 L160 280 L160 320 L160 360 L160 400 L160 424 L158 424"/>
 <circle id="rCometHead" class="rcomet-head" r="0" cx="-99" cy="-99" fill="url(#rHeadG)" filter="url(#rGlowF)"/>
 <circle id="rStopPulse" class="rstop-pulse" r="11" cx="-99" cy="-99"/><g class="rstart"><title>офис San Fierro News: старт и финиш пресс-трака</title><rect x="149" y="415" width="18" height="18" rx="4"/></g><g class="rstop2"><title>1 · 28.09 - Los Santos: банк на центральной, оцепление 2504</title><circle cx="724" cy="775" r="11" fill="#ff8f86"/><text x="724" y="775">1</text></g><g class="rstop2"><title>2 · 28.09 - Los Santos: больница, дежурная смена бригады 42</title><circle cx="680" cy="709" r="11" fill="#ff8f86"/><text x="680" y="709">2</text></g><g class="rstop2"><title>3 · 28.09 - Las Venturas: автобазар, сделка о машине</title><circle cx="815" cy="376" r="11" fill="#ff8f86"/><text x="815" y="376">3</text></g><g class="rstop2"><title>4 · 29.09 - пустыня: кладбище фюзеляжей заброшенного аэропорта</title><circle cx="540" cy="81" r="11" fill="#7fd0e8"/><text x="540" y="81">4</text></g><g class="rstop2"><title>5 · 29.09 - Tierra Robada: склады у воды, округ без света</title><circle cx="93" cy="106" r="11" fill="#7fd0e8"/><text x="93" y="106">5</text></g><g class="rstop2"><title>6 · 29.09 - пустошь: комната собраний Warlocks MC</title><circle cx="602" cy="217" r="11" fill="#7fd0e8"/><text x="602" y="217">6</text></g><g class="rstop2"><title>7 · 29.09 - Las Venturas: автобазар, сервисная зона и кабинет</title><circle cx="834" cy="398" r="11" fill="#7fd0e8"/><text x="834" y="398">7</text></g><g class="rstop2"><title>8 · 29.09 - Los Santos: сити-холл, биржа труда и архив</title><circle cx="745" cy="806" r="11" fill="#7fd0e8"/><text x="745" y="806">8</text></g><g class="rstop2"><title>9 · 29.09 - Las Venturas: The Four Dragons, красная дорожка</title><circle cx="839" cy="332" r="11" fill="#7fd0e8"/><text x="839" y="332">9</text></g><g class="rstop2"><title>10 · 29.09 - Las Venturas: мраморное лобби Evolve Five Stars</title><circle cx="840" cy="190" r="11" fill="#7fd0e8"/><text x="840" y="190">10</text></g><g class="rstop2"><title>11 · 29.09 - Las Venturas: Comedy Club, смех под лазерами</title><circle cx="815" cy="110" r="11" fill="#7fd0e8"/><text x="815" y="110">11</text></g><g class="rstop2"><title>12 · 30.09 - San Fierro: шоурум Wang Cars, Chinatown</title><circle cx="174" cy="454" r="11" fill="#9db4ff"/><text x="174" y="454">12</text></g><g class="rstop2"><title>13 · 30.09 - Los Santos: холмы с надписью, десять открыток</title><circle cx="734" cy="635" r="11" fill="#9db4ff"/><text x="734" y="635">13</text></g><g class="rstop2"><title>14 · 30.09 - Los Santos: приёмный покой, смена главврача</title><circle cx="699" cy="729" r="11" fill="#9db4ff"/><text x="699" y="729">14</text></g><g class="rstop2"><title>15 · 30.09 - Los Santos: улица опроса о губернаторе</title><circle cx="753" cy="782" r="11" fill="#9db4ff"/><text x="753" y="782">15</text></g><g class="rstop2"><title>16 · 02.10 - Las Venturas: башня Las Venturas News, колода карт</title><circle cx="940" cy="298" r="11" fill="#f6c453"/><text x="940" y="298">16</text></g><g class="rstop2"><title>17 · 02.10 - San Fierro: угольная шахта и ключи человека недели</title><circle cx="192" cy="779" r="11" fill="#f6c453"/><text x="192" y="779">17</text></g><g class="rstop2"><title>18 · 03.10 - трасса под Las Venturas: тяжёлая строка субботы</title><circle cx="827" cy="359" r="11" fill="#ff5d5d"/><text x="827" y="359">18</text></g></svg></div>
-    <div class="rleg"><span><b>■</b> офис San Fierro News - старт и финиш; линия не спеша ведёт по дорогам штата, а трак объезжает рейс с остановками в каждой точке</span><span><b>1</b> 28.09 - Los Santos: банк на центральной, оцепление 2504</span><span><b>2</b> 28.09 - Los Santos: больница, дежурная смена бригады 42</span><span><b>3</b> 28.09 - Las Venturas: автобазар, сделка о машине</span><span><b>4</b> 29.09 - пустыня: кладбище фюзеляжей заброшенного аэропорта</span><span><b>5</b> 29.09 - Tierra Robada: склады у воды, округ без света</span><span><b>6</b> 29.09 - пустошь: комната собраний Warlocks MC</span><span><b>7</b> 29.09 - Las Venturas: автобазар, сервисная зона и кабинет</span><span><b>8</b> 29.09 - Los Santos: сити-холл, биржа труда и архив</span><span><b>9</b> 29.09 - Las Venturas: The Four Dragons, красная дорожка</span><span><b>10</b> 29.09 - Las Venturas: мраморное лобби Evolve Five Stars</span><span><b>11</b> 29.09 - Las Venturas: Comedy Club, смех под лазерами</span><span><b>12</b> 30.09 - San Fierro: шоурум Wang Cars, Chinatown</span><span><b>13</b> 30.09 - Los Santos: холмы с надписью, десять открыток</span><span><b>14</b> 30.09 - Los Santos: приёмный покой, смена главврача</span><span><b>15</b> 30.09 - Los Santos: улица опроса о губернаторе</span><span><b>16</b> 02.10 - Las Venturas: башня Las Venturas News, колода карт</span><span><b>17</b> 02.10 - San Fierro: угольная шахта и ключи человека недели</span><span><b>18</b> 03.10 - трасса под Las Venturas: тяжёлая строка субботы</span></div>
+    <div id="rgobar">
+      <button type="button" class="rgobtn" id="rGoBtn">Начать путь вместе с редакцией San Fierro News</button>
+      <span class="rgostate" id="rGoState" aria-live="polite">пресс-трак у офиса редакции: маршрут на семь дней готов к отправке</span>
+    </div>
+    <div id="rPrev" aria-hidden="true" style="left:-9999px;top:0"></div>
+    <div class="rleg"><span><b>■</b> офис San Fierro News - старт и финиш; линия повторяет дороги штата: рейс пресс-трака идёт от точки к точке и возвращается в офис</span><span><b>1</b> 28.09 - Los Santos: банк на центральной, оцепление 2504</span><span><b>2</b> 28.09 - Los Santos: больница, дежурная смена бригады 42</span><span><b>3</b> 28.09 - Las Venturas: автобазар, сделка о машине</span><span><b>4</b> 29.09 - пустыня: кладбище фюзеляжей заброшенного аэропорта</span><span><b>5</b> 29.09 - Tierra Robada: склады у воды, округ без света</span><span><b>6</b> 29.09 - пустошь: комната собраний Warlocks MC</span><span><b>7</b> 29.09 - Las Venturas: автобазар, сервисная зона и кабинет</span><span><b>8</b> 29.09 - Los Santos: сити-холл, биржа труда и архив</span><span><b>9</b> 29.09 - Las Venturas: The Four Dragons, красная дорожка</span><span><b>10</b> 29.09 - Las Venturas: мраморное лобби Evolve Five Stars</span><span><b>11</b> 29.09 - Las Venturas: Comedy Club, смех под лазерами</span><span><b>12</b> 30.09 - San Fierro: шоурум Wang Cars, Chinatown</span><span><b>13</b> 30.09 - Los Santos: холмы с надписью, десять открыток</span><span><b>14</b> 30.09 - Los Santos: приёмный покой, смена главврача</span><span><b>15</b> 30.09 - Los Santos: улица опроса о губернаторе</span><span><b>16</b> 02.10 - Las Venturas: башня Las Venturas News, колода карт</span><span><b>17</b> 02.10 - San Fierro: угольная шахта и ключи человека недели</span><span><b>18</b> 03.10 - трасса под Las Venturas: тяжёлая строка субботы</span></div>
   </div>
 </div>
 </section>
@@ -441,7 +464,7 @@ document.getElementById('nextb').addEventListener('click',function(){show(cur()+
 document.addEventListener('keydown',function(e){
  if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName)){return;}
  if(e.key==='ArrowRight'){show(cur()+1);}if(e.key==='ArrowLeft'){show(cur()-1);}});
-var pv=document.getElementById('prev');
+var pv=document.getElementById('prev');window.__sfnPV={pv:pv,fill:fill,place:place,PREV:PREV,NEWS:NEWS};
 function fill(k){var d=PREV[k];if(!d){return false;}
  pv.innerHTML=(d.img?'<img src="'+d.img+'" alt="">':'')+'<div class="pb"><div class="pt">'+d.t+'</div><div class="pm">источник: '+d.src+'</div></div>';return true;}
 function place(r){var w=pv.offsetWidth,h=pv.offsetHeight;var x=r.right+14,y=r.top-10;
@@ -509,84 +532,218 @@ if(hs2){hs2.innerHTML=HORO.map(function(h,i){return '<button class="hb2" data-i=
 })();</script>
 <!-- SFN · 2026 · W02 · five-pages -->
 
-<script>/* sfn-comet-v1 */
+<script>/* sfn-journey-v1 */
 (function(){
   var svg=document.querySelector('svg.routeline'); if(!svg)return;
-  var line=document.querySelector('.rline');
+  var line=svg.querySelector('.rline');
   var comet=document.getElementById('rComet'),
       halo=document.getElementById('rCometHalo'),
       head=document.getElementById('rCometHead'),
       pulse=document.getElementById('rStopPulse');
-  if(!line||!comet||!comet.animate)return;
+  var btn=document.getElementById('rGoBtn'),
+      stEl=document.getElementById('rGoState'),
+      rpv=document.getElementById('rPrev');
+  if(!line||!comet||!btn||!window.requestAnimationFrame)return;
+  var PV=window.__sfnPV||{PREV:{},NEWS:[]};
+
+  /* геометрия дороги */
   var P=(line.getAttribute('d').match(/-?\d+(?:\.\d+)?/g)||[]).map(Number);
   var pts=[]; for(var i=0;i<P.length;i+=2){ pts.push({x:P[i],y:P[i+1]}); }
   var segs=[],total=0;
   for(i=1;i<pts.length;i++){ var dx=pts[i].x-pts[i-1].x, dy=pts[i].y-pts[i-1].y, L=Math.sqrt(dx*dx+dy*dy); segs.push(L); total+=L; }
   var cum=[0]; for(i=0;i<segs.length;i++){ cum.push(cum[i]+segs[i]); }
-  function ptAt(u){
-    var s2=u*total, j=0;
-    while(j<segs.length-1&&s2>cum[j+1])j++;
-    var t=segs[j]?(s2-cum[j])/segs[j]:0;
+  function ptAtDist(sv){
+    sv=sv<0?0:sv>total?total:sv;
+    var j=0; while(j<segs.length-1&&sv>cum[j+1])j++;
+    var t=segs[j]?(sv-cum[j])/segs[j]:0;
     return {x:pts[j].x+(pts[j+1].x-pts[j].x)*t, y:pts[j].y+(pts[j+1].y-pts[j].y)*t};
   }
-  var stops=[];
-  svg.querySelectorAll('.rstop2').forEach(function(g){
-    var c=g.querySelector('circle'), t=g.querySelector('title');
-    stops.push({x:+c.getAttribute('cx'), y:+c.getAttribute('cy'), label:t?t.textContent:'', col:c.getAttribute('fill')||'#fff'});
-  });
-  var stopUs=stops.map(function(st){
-    var best=1e18, bu=0;
-    for(var u=0;u<=1.0001;u+=0.001){
-      var q=ptAt(u), dx=q.x-st.x, dy=q.y-st.y, dd=dx*dx+dy*dy;
-      if(dd<best){ best=dd; bu=u; }
+  function nearestAfter(j0,dmin,x,y){
+    var best=1e18, bj=j0, bs=dmin;
+    for(var j=j0;j<segs.length;j++){
+      var ax=pts[j].x, ay=pts[j].y, bx=pts[j+1].x, by=pts[j+1].y;
+      var vx=bx-ax, vy=by-ay, l2=vx*vx+vy*vy;
+      var t=l2?((x-ax)*vx+(y-ay)*vy)/l2:0; t=t<0?0:t>1?1:t;
+      var px=ax+vx*t-x, py=ay+vy*t-y, dd=px*px+py*py;
+      var sAbs=cum[j]+segs[j]*t;
+      if(sAbs<dmin-1e-6)continue;
+      if(dd<best){ best=dd; bj=j; bs=sAbs; }
     }
-    return bu;
-  });
-  var order=stopUs.map(function(u,idx){ return {u:u, idx:idx}; }).sort(function(a,b){ return a.u-b.u; });
-  var LEN=6000, ARC=230, DRAWMS=40400;
-  var PERIOD=120000, HOLD=3500, GAP=600, N=order.length;
-  var cycle=PERIOD+(N-1)*(HOLD+GAP);
-  var kf=[], t=0, k;
-  for(k=0;k<N;k++){
-    var o=order[k];
-    kf.push({offset:t/cycle, strokeDashoffset:-(o.u*LEN)});
-    kf.push({offset:(t+HOLD)/cycle, strokeDashoffset:-(o.u*LEN)});
-    if(k<N-1){
-      var nu=order[k+1].u, du=(nu-o.u+1)%1;
-      kf.push({offset:(t+HOLD+GAP)/cycle, strokeDashoffset:-((o.u+du)*LEN)});
-    }
-    t+=HOLD+GAP;
+    return {j:bj, d:bs, err:best};
   }
-  kf.push({offset:1, strokeDashoffset:-(LEN*(order[0].u+1))});
-  [comet,halo].forEach(function(el){ el.style.strokeDasharray=ARC+' '+(LEN*2); });
-  var opts={duration:cycle, iterations:Infinity, easing:'linear', delay:DRAWMS};
-  var a1=comet.animate(kf,opts);
-  halo.animate(kf,opts);
-  /* голова кометы + пульс на текущей остановке (детерминированный рендер по времени) */
-  var holdSpan=HOLD+GAP;
-  function renderAt(lp){
-    if(lp===null||lp<DRAWMS){ head.setAttribute('r','0'); pulse.style.opacity=0; return; }
-    var tt=(lp-DRAWMS)%cycle, u=tt/cycle, q=ptAt(u<0?0:u>1?1:u);
+
+  /* точки в порядке номеров: монотонный поиск вдоль пути */
+  var stopEls=[]; svg.querySelectorAll('.rstop2').forEach(function(g){ stopEls.push(g); });
+  var N=stopEls.length;
+  var D=[0], pj=0, pd=0, bad=[];
+  for(i=0;i<N;i++){
+    var c0=stopEls[i].querySelector('circle');
+    var r0=nearestAfter(pj,pd,+c0.getAttribute('cx'),+c0.getAttribute('cy'));
+    if(r0.d<=pd+1e-6||r0.err>400)bad.push(i+1);
+    D.push(r0.d); pj=r0.j; pd=r0.d;
+  }
+  D.push(total);
+  if(bad.length&&window.console&&console.warn)console.warn('sfn-journey: подозрительные точки: '+bad.join(','));
+
+  /* хронометраж: неспешный ход, короткий перегон не короче MINLEG */
+  var LEN=6000, ARC=230, MINLEG=2600;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SPEED=total/120000;   /* весь путь ~120 c чистого хода */
+  var legs=[]; for(i=0;i<D.length-1;i++){ var dd=D[i+1]-D[i]; legs.push(reduce?1:Math.max(MINLEG,dd/SPEED)); }
+
+  var START='Начать путь вместе с редакцией San Fierro News';
+  var CONT='Продолжить путь';
+  var AGAIN='Начать путь заново';
+
+  var mode='idle', leg=0, tLocal=0, holdT=0, frozen=false, lastTs=null;
+
+  function nid(k){ return 'n'+(k<9?'0':'')+(k+1); }
+  function stopTitle(k){
+    var t=stopEls[k].querySelector('title');
+    return t?t.textContent:'';
+  }
+  function setBtn(label){
+    if(label===null){ btn.style.display='none'; }
+    else { btn.textContent=label; btn.style.display=''; }
+  }
+  function sNorm(sAbs){ return sAbs/total*LEN; }
+  function setLine(sAbs){ line.style.strokeDashoffset=LEN-sNorm(sAbs); }
+  function drawAt(sAbs){
+    var sN=sNorm(sAbs), q=ptAtDist(sAbs);
+    setLine(sAbs);
     head.setAttribute('cx',q.x.toFixed(1)); head.setAttribute('cy',q.y.toFixed(1));
     head.setAttribute('r','9'); head.style.opacity=.95;
-    var seg=Math.floor(tt/holdSpan), cur=order[Math.min(seg,N-1)];
-    var ph=tt-seg*holdSpan;
-    if(ph<HOLD&&cur){
-      var sp=stops[cur.idx];
-      pulse.setAttribute('cx',sp.x); pulse.setAttribute('cy',sp.y);
-      pulse.setAttribute('r',(11+13*(ph/HOLD)).toFixed(1));
-      pulse.style.opacity=(0.95*(1-0.55*(ph/HOLD))).toFixed(2);
-      pulse.setAttribute('stroke', sp.col);
-    } else { pulse.style.opacity=0; }
+    comet.style.opacity=.96; halo.style.opacity=.34;
+    var off=ARC-sN;                    /* окно штриха [sN-ARC, sN]: след ровно за точкой */
+    comet.style.strokeDashoffset=off; halo.style.strokeDashoffset=off;
+    window.__sfnLast={mode:mode,leg:leg,t:tLocal,s:sN,off:off,op:.96,head:[q.x,q.y]};
   }
-  function tick(){
-    var st=a1.effect.getComputedTiming();
-    renderAt(st.localTime);
+  function hideComet(){
+    comet.style.opacity=0; halo.style.opacity=0;
+    comet.style.strokeDasharray=ARC+' '+(LEN*2);   /* окно штриха: только след за точкой */
+    halo.style.strokeDasharray=ARC+' '+(LEN*2);
+    comet.style.strokeDashoffset=ARC; halo.style.strokeDashoffset=ARC;
+    head.setAttribute('r','0'); head.style.opacity=0;
+    pulse.style.opacity=0;
+    window.__sfnLast={mode:mode,leg:leg,t:tLocal,s:0,off:ARC,op:0,head:null};
+  }
+  function lightStop(k){
+    stopEls.forEach(function(g,j){ g.classList.toggle('cur',j===k); });
+  }
+  function unlight(){ stopEls.forEach(function(g){ g.classList.remove('cur'); }); }
+  function renderHold(ph){
+    var c=stopEls[leg].querySelector('circle');
+    pulse.setAttribute('cx',c.getAttribute('cx')); pulse.setAttribute('cy',c.getAttribute('cy'));
+    pulse.setAttribute('stroke',c.getAttribute('fill')||'#fff');
+    var p=(ph%1500)/1500;
+    pulse.setAttribute('r',(11+14*p).toFixed(1));
+    pulse.style.opacity=(0.92*(1-0.62*p)).toFixed(2);
+    var q=ptAtDist(D[leg+1]);
+    window.__sfnLast={mode:'hold',leg:leg,t:ph,s:sNorm(D[leg+1]),off:ARC-sNorm(D[leg+1]),op:.96,head:[q.x,q.y]};
+  }
+  function closePreview(){ rpv.classList.remove('on'); rpv.setAttribute('aria-hidden','true'); }
+  function positionPreview(k){
+    var c=stopEls[k].querySelector('circle'), r=c.getBoundingClientRect();
+    if(r.bottom<8||r.top>innerHeight-8||r.right<8||r.left>innerWidth-8){
+      c.scrollIntoView({block:'center'}); r=c.getBoundingClientRect();
+    }
+    var mR=svg.getBoundingClientRect();
+    var w=rpv.offsetWidth,h=rpv.offsetHeight;
+    var x=r.right+14,y=r.top-10;
+    if(x+w>innerWidth-8){x=r.left-w-14;} if(x<8){x=8;}
+    /* превью живёт над картой и не закрывает кнопку рейса под ней */
+    var yMax=Math.min(innerHeight-8, mR.bottom-8-h);
+    var yMin=Math.max(8, Math.min(mR.top+8, yMax));
+    if(y>yMax)y=yMax; if(y<yMin)y=yMin;
+    rpv.style.left=x+'px'; rpv.style.top=y+'px';
+  }
+  function showPreview(k){
+    var d=PV.PREV[nid(k)], n=PV.NEWS[k];
+    rpv.innerHTML='<div class="rh">рейс редакции · точка '+(k+1)+' из '+N+'</div>'+
+      (d&&d.img?'<img src="'+d.img+'" alt="">':'')+
+      '<div class="pb"><div class="pt">'+(d?d.t:stopTitle(k))+'</div>'+
+      (d&&d.src?'<div class="pm">источник: '+d.src+'</div>':'')+
+      (n&&n.h?'<a class="rl" href="'+n.h+'">открыть выпуск</a>':'')+'</div>';
+    rpv.setAttribute('aria-hidden','false');
+    rpv.classList.add('on');
+    positionPreview(k);
+  }
+  function runText(k){
+    if(k===0)return 'тракт в пути: офис - точка 1';
+    if(k===N)return 'тракт возвращается: точка '+N+' - офис редакции';
+    return 'тракт в пути: точка '+k+' - точка '+(k+1);
+  }
+  function holdText(k){
+    var t=stopTitle(k), p=t.split('\u00b7');
+    return 'стоянка: точка '+(k+1)+' из '+N+(p.length>1?' - '+p.slice(1).join('\u00b7').trim():'');
+  }
+  function interp(k,t){
+    var f=legs[k]?t/legs[k]:1; f=f<0?0:f>1?1:f;
+    var e=f<.5?4*f*f*f:1-Math.pow(-2*f+2,3)/2;   /* трак плавно трогается и тормозит */
+    return D[k]+(D[k+1]-D[k])*e;
+  }
+  function arrive(){
+    if(leg<N){
+      mode='hold'; holdT=0;
+      lightStop(leg); renderHold(0); showPreview(leg);
+      setBtn(CONT); stEl.textContent=holdText(leg);
+    } else {
+      mode='done'; drawAt(total); pulse.style.opacity=0; unlight();
+      line.classList.add('rglow');
+      setBtn(AGAIN);
+      stEl.textContent='рейс закрыт: все '+N+' точек пройдены, пресс-тракт снова у офиса редакции';
+    }
+  }
+  function renderRun(t){
+    tLocal=t<0?0:t;
+    if(tLocal>=legs[leg]){ tLocal=legs[leg]; drawAt(D[leg+1]); arrive(); }
+    else drawAt(interp(leg,tLocal));
+  }
+  function start(){
+    if(mode!=='idle')return;
+    mode='run'; leg=0; tLocal=0; lastTs=null;
+    line.classList.remove('rglow');
+    setBtn(null); stEl.textContent=runText(0);
+    drawAt(0);
+  }
+  function next(){
+    if(mode==='hold'){
+      closePreview(); unlight(); pulse.style.opacity=0;
+      leg++; mode='run'; tLocal=0; lastTs=null;
+      setBtn(null); stEl.textContent=runText(leg);
+    }
+  }
+  function restart(){
+    mode='idle'; leg=0; tLocal=0; holdT=0; lastTs=null;
+    closePreview(); unlight(); pulse.style.opacity=0;
+    line.classList.remove('rglow');
+    hideComet(); line.style.strokeDashoffset=LEN;
+    setBtn(START);
+    stEl.textContent='пресс-трак у офиса редакции: маршрут на семь дней готов к отправке';
+  }
+  btn.addEventListener('click',function(){
+    if(mode==='idle')start();
+    else if(mode==='hold')next();
+    else if(mode==='done'){ restart(); start(); }
+  });
+
+  function tick(now){
+    if(!frozen){
+      if(lastTs===null)lastTs=now;
+      var dt=now-lastTs; lastTs=now; if(dt>250)dt=250;
+      if(mode==='run'){ renderRun(tLocal+dt); }
+      else if(mode==='hold'){ holdT+=dt; renderHold(holdT); }
+    }
     requestAnimationFrame(tick);
   }
+  restart();                    /* начальное состояние: точка стоит, линия не видна */
   requestAnimationFrame(tick);
-  window.__sfnRender=function(t){ renderAt(t); };
-  window.__routeComet={cycle:cycle, draw:DRAWMS, hold:HOLD, stops:N, orderUs:order.map(function(o){return o.u;})};
+  window.__sfnRender=function(t){ frozen=true; if(mode==='run')renderRun(t); else if(mode==='hold')renderHold(t); };
+  window.__sfnJourney={
+    start:start, next:next, restart:restart,
+    state:function(){ return {mode:mode,leg:leg,t:tLocal,N:N,total:total,LEN:LEN,ARC:ARC,
+                              D:D.slice(),legs:legs.slice(),labels:{start:START,cont:CONT,again:AGAIN}}; }
+  };
 })();
 </script></body>
 </html>
