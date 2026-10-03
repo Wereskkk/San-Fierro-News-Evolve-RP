@@ -36,7 +36,11 @@ def published_set():
     return out
 
 # ---- G1: удаления/переименования опубликованного ----
-on_main = set(sh('git', 'ls-tree', '-r', '--name-only', 'origin/main').split())
+branch = sh('git', 'rev-parse', '--abbrev-ref', 'HEAD').strip()
+base = 'origin/main'
+if branch != 'main' and sh('git', 'rev-parse', '-q', '--verify', 'refs/remotes/origin/' + branch).strip():
+    base = 'refs/remotes/origin/' + branch  # побочные ветки сравниваем с их собственным основанием
+on_main = set(sh('git', 'ls-tree', '-r', '--name-only', base).split())
 protected_on_main = {p for p in on_main if (p.endswith('.html') and not p.startswith('template'))
                      or p.endswith('.png') or (p.startswith('assets/') and p.endswith('.jpg'))}
 here = published_set() | {p for p in glob.glob('*.html')} | set(glob.glob('flyers/*.png'))
@@ -50,6 +54,7 @@ for f in sorted(glob.glob('*.html')):
     if f.startswith('template'):
         continue
     s = open(f, encoding='utf-8', errors='replace').read()
+    s = re.sub(r'<script[^>]*>.*?</script>', '', s, flags=re.S)  # href, собранные в JS, статически не проверяются
     for m in re.finditer(r'(?:href|src)="([^"]+)"', s):
         u = m.group(1)
         if u.startswith(('http', 'data:', 'mailto:', '#', '//')):
