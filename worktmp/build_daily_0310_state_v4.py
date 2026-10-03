@@ -124,7 +124,7 @@ background-image:radial-gradient(#ddd8cb 1px,transparent 1px);background-size:26
 .stage{flex:1 1 auto;display:flex;align-items:center;justify-content:center;width:100%;min-height:0}
 .sheet-wrap{position:relative}
 .book{position:absolute;top:0;left:0;width:720px;height:1000px;transform-origin:top left;perspective:2200px}
-/* лист: НИКАКОГО overflow:hidden — всё, что не поместится, остаётся видимым */
+/* лист: контент не скрывается никакими правилами — всё, что не поместится, остаётся видимым */
 .page{position:absolute;inset:0;background:var(--paper);padding:26px 28px;
 box-shadow:0 14px 34px rgba(40,36,28,.22),0 2px 6px rgba(40,36,28,.14);border:1px solid #cfc8b8;
 opacity:0;visibility:hidden;transform:rotateY(0deg);transform-origin:left center;
@@ -154,6 +154,9 @@ figcaption{margin-top:4px;font-family:"PT Sans",sans-serif;font-size:10.5px;line
 .txt p{margin:0 0 7px;line-height:1.6;font-size:13.5px}
 .txt2{columns:2;column-gap:16px;column-rule:1px solid var(--line)}
 .txt2 p{margin:0 0 7px;line-height:1.6;font-size:13.5px}
+/* статьи: естественная высота по содержимому, никаких фиксированных размеров */
+.page article{height:auto;min-height:0;overflow:visible}
+.leadgrid{display:grid;grid-template-columns:48fr 52fr;gap:16px;align-items:start;margin-bottom:12px}
 /* шапка */
 .masttop{display:flex;justify-content:space-between;font-family:"PT Sans",sans-serif;font-size:9.5px;
 letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
@@ -170,7 +173,8 @@ border-bottom:1px solid var(--line);padding:4px 0 5px;margin:0 0 14px}
 .sechead h2{font-family:"PT Sans",sans-serif;font-weight:700;font-size:12px;letter-spacing:.17em;text-transform:uppercase}
 .sechead .pg{margin-left:auto;font-family:"PT Sans",sans-serif;font-size:9.5px;color:var(--mut)}
 /* композиции */
-.briefs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;border-top:1px solid var(--line);padding-top:12px}
+.briefs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;
+border-top:1px solid var(--line);padding-top:10px}
 .g-side{display:grid;grid-template-columns:45fr 55fr;gap:16px;align-items:start;margin-bottom:16px}
 .g-side-rev{display:grid;grid-template-columns:55fr 45fr;gap:16px;align-items:start;margin-bottom:16px}
 .colophon{margin-top:16px;border-top:4px double var(--ink);padding-top:8px}
@@ -202,7 +206,7 @@ border-radius:4px;cursor:pointer;font-size:15px;line-height:1;transition:.2s}
  .page.cur{display:block}
  .page::after{display:none}
  .txt2{columns:1}
- .g-side,.g-side-rev,.briefs{grid-template-columns:1fr}
+ .g-side,.g-side-rev,.briefs,.leadgrid{grid-template-columns:1fr}
 }
 """
 
@@ -278,9 +282,10 @@ P.append('<div class="mastmeta"><span><b>№ 30</b></span><span>ежедневн
 P.append('<div class="mastcred">Кадры: Anna Malboro · Фоторедактор: Sonya Malboro · Текст/Редактор: Jonny Wilde</div>'
          '<div style="height:12px"></div>')
 a = A['fallen']
-P.append(f'<div class="kicker">{a["k"]}</div><h1>{a["t"]}</h1><div class="stand">{a["s"]}</div>')
-P.append(f'<div style="width:86%;margin:0 auto">{fig("fallen", a["alt"], a["cap"])}</div>')
-P.append('<div class="txt2">' + ''.join(f'<p>{p}</p>' for p in a['p']) + '</div>')
+P.append(f'<div class="kicker">{a["k"]}</div>')
+P.append('<div class="leadgrid"><div>' + fig("fallen", a["alt"], a["cap"]) + '</div>'
+         f'<div><h1>{a["t"]}</h1><div class="stand">{a["s"]}</div>'
+         + '<div class="txt">' + ''.join(f'<p>{p}</p>' for p in a['p']) + '</div></div></div>')
 P.append('<div class="briefs">')
 for key in ('crash', 'gas', 'kpp'):
     b = A[key]
