@@ -463,8 +463,8 @@ function obsrender(k){
  var cg=document.getElementById('constg');var c=CONST[k];var html='';
  c.l.forEach(function(pr,idx){var a=c.s[pr[0]],b=c.s[pr[1]];
   var x1=80+a[0]*1.4,y1=80+a[1]*1.4,x2=80+b[0]*1.4,y2=80+b[1]*1.4;
-  html+='<path class="cln" style="animation-delay:'+(0.5+idx*0.22)+'s" d="M'+x1.toFixed(1)+' '+y1.toFixed(1)+' L'+x2.toFixed(1)+' '+y2.toFixed(1)+'"/>';});
- c.s.forEach(function(pt,idx){html+='<circle class="cst" style="animation-delay:'+(idx*0.16)+'s;transform-origin:'+(80+pt[0]*1.4).toFixed(1)+'px '+(80+pt[1]*1.4).toFixed(1)+'px" cx="'+(80+pt[0]*1.4).toFixed(1)+'" cy="'+(80+pt[1]*1.4).toFixed(1)+'" r="'+(idx===0?3.4:2.6)+'"/>';});
+  html+='<path class="cln" style="animation-delay:'+(0.35+idx*0.12)+'s" d="M'+x1.toFixed(1)+' '+y1.toFixed(1)+' L'+x2.toFixed(1)+' '+y2.toFixed(1)+'"/>';});
+ c.s.forEach(function(pt,idx){html+='<circle class="cst" style="animation-delay:'+(idx*0.09)+'s;transform-origin:'+(80+pt[0]*1.4).toFixed(1)+'px '+(80+pt[1]*1.4).toFixed(1)+'px" cx="'+(80+pt[0]*1.4).toFixed(1)+'" cy="'+(80+pt[1]*1.4).toFixed(1)+'" r="'+(idx===0?3.4:2.6)+'"/>';});
  cg.innerHTML=html;
  document.getElementById('oname').textContent=h.g+' '+h.n;
  var st='';for(var j=0;j<5;j++){st+=(j<h.r)?'<b style="animation-delay:'+(0.3+j*0.18)+'s">★</b>':'<i>★</i>';}
