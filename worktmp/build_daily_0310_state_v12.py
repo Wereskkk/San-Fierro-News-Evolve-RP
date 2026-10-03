@@ -66,7 +66,7 @@ for _key, _a in A.items():
 IDX = {'fallen': '01', 'crash': '02', 'gas': '03', 'kpp': '04', 'truck': '05', 'square': '06',
        'stop': '07', 'hwy': '08', 'dragons': '09', 'caligula': '10', 'heli': '11', 'yacht': '12'}
 
-CSS = """/* SFN-DESIGN-029: day-grid · 03.10.2026 */
+CSS = """/* SFN-DESIGN-029: day-grid-dense · 03.10.2026 */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 img{display:block;max-width:100%}
@@ -83,20 +83,18 @@ box-shadow:0 16px 40px rgba(20,24,28,.22);position:relative}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);
 padding:26px var(--pad) 0}
 /* размещение материалов по сценарию полосы (только место, без композиции) */
-#p1 .grid{grid-template-areas:"a01 a01 a01 a01 a01 a01 a01 a01 a02 a02 a02 a02"
- "a03 a03 a03 a03 a04 a04 a04 a04 a04 a04 a04 a04"}
+#p1 .grid{grid-template-areas:"a01 a01 a01 a01 a01 a01 a01 a01 a01 a01 a01 a01"
+ "a02 a02 a02 a02 a02 a02 a03 a03 a03 a03 a03 a03"
+ "a04 a04 a04 a04 a04 a04 a04 a04 a04 a04 a04 a04"}
 #p2 .grid{grid-template-areas:"a05 a05 a05 a05 a05 a05 a05 a05 a05 a05 a05 a05"
  "a06 a06 a06 a06 a06 a06 a07 a07 a07 a07 a07 a07"}
-#p3 .grid{grid-template-areas:"a08 a08 a08 a08 a08 a08 a08 a08 vd3 vd3 vd3 vd3"
+#p3 .grid{grid-template-areas:"a08 a08 a08 a08 a08 a08 a08 a08 a08 a08 a08 a08"
  "a09 a09 a09 a09 a09 a09 a10 a10 a10 a10 a10 a10"}
 #p4 .grid{grid-template-areas:"a11 a11 a11 a11 a11 a11 a11 a11 a11 a11 a11 a11"
- "vd4 vd4 vd4 vd4 vd4 vd4 vd4 vd4 vd4 vd4 vd4 vd4"
  "a12 a12 a12 a12 a12 a12 a12 a12 a12 a12 a12 a12"}
 #a01{grid-area:a01}#a02{grid-area:a02}#a03{grid-area:a03}#a04{grid-area:a04}
 #a05{grid-area:a05}#a06{grid-area:a06}#a07{grid-area:a07}#a08{grid-area:a08}
 #a09{grid-area:a09}#a10{grid-area:a10}#a11{grid-area:a11}#a12{grid-area:a12}
-#vd3{grid-area:vd3}#vd4{grid-area:vd4}
-#p3 #a10{margin-top:44px}
 /* ==== материал: общая анатомия ==== */
 .m{display:grid;align-content:start}
 .m .nn{grid-area:n;display:flex;align-items:baseline;gap:14px;
@@ -110,7 +108,8 @@ color:var(--ink);letter-spacing:.006em;line-height:1.08;margin-bottom:10px}
 .m h3{font-size:clamp(16px,1.75vw,22px);font-weight:600}
 .m .stand{grid-area:s;font:italic 400 13.5px/1.58 "PT Serif",serif;color:var(--mut);
 border-left:2px solid var(--ox);padding-left:11px;margin-bottom:10px}
-.m .txt,.m .cols2,.m .cols3{grid-area:t}
+.m .txt,.m .cols2,.m .cols3{grid-area:t;align-self:start}
+.m .stand{align-self:start}
 .txt p{font:400 14px/1.68 "PT Serif",serif;margin:0 0 8px}
 .cols2{columns:2;column-gap:24px;column-rule:1px solid var(--hair)}
 .cols3{columns:3;column-gap:24px;column-rule:1px solid var(--hair)}
@@ -128,7 +127,7 @@ line-height:.95;color:var(--ox);white-space:nowrap;margin:0 0 4px}
 .stat small{display:block;font-family:"PT Mono",monospace;font-weight:700;font-size:8.5px;
 letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
 /* ==== ТИПЫ материалов: один набор стилей на тип ==== */
-.t-lead{grid-template-columns:7fr 5fr;column-gap:var(--gut);
+.t-lead{grid-template-columns:6fr 6fr;column-gap:var(--gut);
 grid-template-areas:"n n" "h ph" "s ph" "t ph"}
 .t-lead .nn{border-bottom:3px solid var(--ink)}
 .t-lead .num{font-size:72px;color:var(--ox)}
@@ -141,25 +140,19 @@ grid-template-areas:"n n" "h ph" "s ph" "t ph"}
 .t-wide .num{font-size:56px}
 .t-wide h3{font-size:clamp(19px,2.3vw,30px)}
 .t-split{grid-template-columns:5fr 7fr;column-gap:var(--gut);
-grid-template-areas:"n n" "h h" "s ph" "t ph"}
+grid-template-areas:"n n" "h h" "s s" "ph t"}
 .t-split .num{font-size:56px}
-.t-finale{grid-template-columns:236px 1fr;column-gap:var(--gut);
-grid-template-areas:"n ph" "n h" "n s" "t t"}
-.t-finale .num{font-size:clamp(120px,14vw,186px);color:var(--ox);align-self:end}
-.t-finale .nn{border-bottom:0;padding-bottom:0;align-items:end;flex-direction:column;
-gap:6px;align-self:stretch;justify-content:flex-end}
-.t-finale .nn .k{text-align:right}
+.t-finale{grid-template-columns:7fr 5fr;column-gap:var(--gut);
+grid-template-rows:auto auto auto 1fr;
+grid-template-areas:"n n" "h h" "s ph" "t ph"}
+.t-finale .nn{border-bottom:3px solid var(--ink)}
+.t-finale .num{font-size:84px;color:var(--ox)}
 .t-finale h3{font-size:clamp(18px,2.1vw,27px)}
-/* ==== пауза .void: воздух с назначением ==== */
-.void{background:var(--tint);padding:16px 18px;display:flex;flex-direction:column;
-justify-content:flex-end;gap:10px;min-height:120px}
-.void .pull{font-family:Oswald,sans-serif;font-weight:600;font-size:clamp(15px,1.7vw,21px);
-line-height:1.15;text-transform:uppercase;color:var(--ox)}
-.void .vnote{font-family:"PT Mono",monospace;font-weight:700;font-size:8.5px;letter-spacing:.22em;
-text-transform:uppercase;color:var(--mut)}
-.void.vband{flex-direction:row;justify-content:space-between;align-items:center;min-height:0;
-padding:12px 18px}
-.void.vband .vdots{font-family:Anton,sans-serif;font-size:18px;color:var(--ox);letter-spacing:.3em}
+/* ==== дословный вынос-якорь (функциональный элемент материала) ==== */
+.twrap{grid-area:t}
+.pull{font-family:Oswald,sans-serif;font-weight:600;font-size:clamp(15px,1.7vw,21px);
+line-height:1.15;text-transform:uppercase;color:var(--ox);border-top:3px solid var(--ink);
+border-bottom:1px solid var(--hair);padding:9px 0;margin-top:14px}
 /* ==== мебель страниц (единый набор) ==== */
 .mtop{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
 padding:14px var(--pad) 10px;font-family:"PT Mono",monospace;font-weight:700;font-size:9.5px;
@@ -212,12 +205,7 @@ text-transform:uppercase;text-decoration:none;transition:.2s;white-space:nowrap}
  .grid{gap:26px}
  #p1 .grid,#p2 .grid,#p3 .grid,#p4 .grid{grid-template-columns:1fr;grid-template-areas:none}
  #a01,#a02,#a03,#a04,#a05,#a06,#a07,#a08,#a09,#a10,#a11,#a12,#vd3,#vd4{grid-area:auto}
- #p3 #a10{margin-top:0}
- .t-lead,.t-split{grid-template-columns:1fr;grid-template-areas:"n" "h" "s" "ph" "t"}
- .t-finale{grid-template-columns:1fr;grid-template-areas:"n" "h" "s" "ph" "t"}
- .t-finale .nn{flex-direction:row;align-items:baseline;justify-content:flex-start}
- .t-finale .nn .k{text-align:left}
- .t-finale .num{font-size:96px;align-self:start}
+ .t-lead,.t-split,.t-finale{grid-template-columns:1fr;grid-template-areas:"n" "h" "s" "ph" "t"}
  .cols2,.cols3{columns:1}
  .void.vband{flex-direction:column;align-items:flex-start;gap:6px}
 }
@@ -312,10 +300,10 @@ P.append('<header class="sect"><span class="snum">02</span><h2>Криминал 
          '<span class="stail" aria-hidden="true"></span><span class="sdate">03.10.2026</span></header>')
 P.append('<div class="grid">')
 P.append(f'<article class="m t-split" id="a08">{nn("hwy")}<h3>{h["t"]}</h3>'
-         f'<div class="stand">{h["s"]}</div>{txt("hwy")}'
+         f'<div class="stand">{h["s"]}</div>'
+         f'<div class="twrap">{txt("hwy")}'
+         f'<div class="pull">На полотне — отделившаяся деталь кузова</div></div>'
          f'{fig("hwy", band=True)}</article>')
-P.append('<aside class="void" id="vd3"><div class="pull">На полотне — отделившаяся '
-         'деталь кузова</div><span class="vnote">из материала 08 · остановка на шоссе</span></aside>')
 P.append(f'<article class="m t-side-b" id="a09">{nn("dragons")}<h3>{d["t"]}</h3>'
          f'<div class="stand">{d["s"]}</div>{txt("dragons")}{fig("dragons")}</article>')
 P.append(f'<article class="m t-side-a" id="a10">{nn("caligula")}<h3>{cc["t"]}</h3>'
@@ -332,10 +320,8 @@ P.append('<header class="sect"><span class="snum">03</span><h2>Необычны�
 P.append('<div class="grid">')
 P.append(f'<article class="m t-wide" id="a11">{nn("heli")}<h3>{he["t"]}</h3>'
          f'<div class="stand">{he["s"]}</div>{fig("heli", band=True)}{txt("heli", "cols3")}</article>')
-P.append('<aside class="void vband" id="vd4"><span class="vnote">конец дневной хроники · '
-         'выпуск № 30 · четыре полосы</span><span class="vdots" aria-hidden="true">···</span></aside>')
 P.append(f'<article class="m t-finale" id="a12">{nn("yacht")}<h3>{y["t"]}</h3>'
-         f'<div class="stand">{y["s"]}</div>{fig("yacht")}{txt("yacht", "cols2")}</article>')
+         f'<div class="stand">{y["s"]}</div>{fig("yacht", band=True)}{txt("yacht", "cols2")}</article>')
 P.append('</div>')
 P.append('<footer class="colophon"><div>'
          '<div class="credits">Кадры: Anna Malboro · Фоторедактор: Sonya Malboro · '
@@ -345,7 +331,7 @@ P.append('<footer class="colophon"><div>'
          '<a class="backpill" href="newsroom.html">← Посмотреть все выпуски редакции</a></footer>')
 P.append('</section>\n')
 
-P.append('<!-- SFN · 2026 · 029 · day-grid -->\n</body>\n</html>\n')
+P.append('<!-- SFN · 2026 · 029 · day-grid-dense -->\n</body>\n</html>\n')
 
 html = ''.join(P)
 
@@ -355,7 +341,7 @@ assert html.count('data:image/jpeg;base64,') == 12, 'кадров не 12'
 assert 'style="' not in html, 'inline-стили вернулись'
 for n in range(1, 13):
     assert f'id="a{n:02d}"' in html, f'нет материала a{n:02d}'
-assert 'SFN-DESIGN-029: day-grid' in html and '<!-- SFN · 2026 · 029 · day-grid -->' in html
+assert 'SFN-DESIGN-029: day-grid' in html and '<!-- SFN · 2026 · 029 · day-grid-dense -->' in html
 assert '<title>' in html[:4000] and 'viewport' in html[:4000] and 'name="description"' in html[:4000]
 assert 'дизайн и вёрстка — редакция San Fierro News' in html
 assert 'href="newsroom.html"' in html
