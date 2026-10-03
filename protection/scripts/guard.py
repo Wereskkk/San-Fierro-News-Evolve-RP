@@ -36,13 +36,13 @@ def published_set():
     return out
 
 # ---- G1: удаления/переименования опубликованного ----
-# anna-malboro/ — очередь на подшивку (anna-malboro/README.md): файлы оттуда легально
-# исчезают после подшивки в корень, поэтому G1 на папку не распространяется.
-STAGING_PREFIXES = ('anna-malboro/',)
-on_main = set(sh('git', 'ls-tree', '-r', '--name-only', 'origin/main').split())
-protected_on_main = {p for p in on_main if not p.startswith(STAGING_PREFIXES)
-                     and ((p.endswith('.html') and not p.startswith('template'))
-                     or p.endswith('.png') or (p.startswith('assets/') and p.endswith('.jpg')))}
+branch = sh('git', 'rev-parse', '--abbrev-ref', 'HEAD').strip()
+base = 'origin/main'
+if branch != 'main' and sh('git', 'rev-parse', '-q', '--verify', 'refs/remotes/origin/' + branch).strip():
+    base = 'refs/remotes/origin/' + branch  # побочные ветки сравниваем с их собственным основанием
+on_main = set(sh('git', 'ls-tree', '-r', '--name-only', base).split())
+protected_on_main = {p for p in on_main if (p.endswith('.html') and not p.startswith('template'))
+                     or p.endswith('.png') or (p.startswith('assets/') and p.endswith('.jpg'))}
 here = published_set() | {p for p in glob.glob('*.html')} | set(glob.glob('flyers/*.png'))
 for p in sorted(protected_on_main - here):
     if os.path.exists(p):
