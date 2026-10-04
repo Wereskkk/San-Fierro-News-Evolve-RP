@@ -54,6 +54,7 @@ for f in sorted(glob.glob('*.html')):
     if f.startswith('template'):
         continue
     s = open(f, encoding='utf-8', errors='replace').read()
+    s = re.sub(r'<script[^>]*>.*?</script>', '', s, flags=re.S)  # href, собранные в JS, статически не проверяются
     for m in re.finditer(r'(?:href|src)="([^"]+)"', s):
         u = m.group(1)
         if u.startswith(('http', 'data:', 'mailto:', '#', '//')):
