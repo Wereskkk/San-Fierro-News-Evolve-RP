@@ -313,7 +313,8 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
   #rPrev{width:min(292px,calc(100vw - 20px))}
 }
 @media (prefers-reduced-motion: reduce){
-  .rcomet,.rcomet-halo,.rcomet-head,.rstop-pulse{display:none}
+  .rstop-pulse{display:none}
+  .view.on .rline.rglow{animation:none}
 }
 </style></head>
 <body>
@@ -587,9 +588,13 @@ if(hs2){hs2.innerHTML=HORO.map(function(h,i){return '<button class="hb2" data-i=
 
   /* хронометраж: неспешный ход, короткий перегон не короче MINLEG */
   var LEN=6000, ARC=230, MINLEG=2600;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var SPEED=total/120000;   /* весь путь ~120 c чистого хода */
-  var legs=[]; for(i=0;i<D.length-1;i++){ var dd=D[i+1]-D[i]; legs.push(reduce?1:Math.max(MINLEG,dd/SPEED)); }
+  /* Ход рейса одинаков у всех зрителей: рейс стартует ТОЛЬКО по кнопке зрителя,
+     значит это движение по запросу (WCAG допускает), и prefers-reduced-motion
+     гасит лишь декоративные циклы (пульс точек, дыхание линии - см. CSS выше),
+     а не сам путь. Иначе читатель с «уменьшить движение» в ОС видит телепорт
+     линии до точки вместо отрисовки (случай Анны, 04.10.2026). */
+  var legs=[]; for(i=0;i<D.length-1;i++){ var dd=D[i+1]-D[i]; legs.push(Math.max(MINLEG,dd/SPEED)); }
 
   var START='Начать путь вместе с редакцией San Fierro News';
   var CONT='Продолжить путь';
