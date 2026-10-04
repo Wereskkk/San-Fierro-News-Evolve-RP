@@ -2,7 +2,7 @@
  "generated": "2026-10-04",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 32,
+ "issues": 33,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -110,9 +110,14 @@
    "sha256": "fa32a3edfc3d3009de28b139cc7324443a9cadbaabdbf7e74a945e9cdb76aaf9"
   },
   {
+   "file": "investigation-falk.html",
+   "bytes": 4634377,
+   "sha256": "b4e6b050bd92b0e69a70dbd443231629ffdba28fb89da2c617ff2d2a0db4f5a8"
+  },
+  {
    "file": "newsroom.html",
-   "bytes": 261973,
-   "sha256": "309b292a11eb32218625f3ff51e7c4180adabcaba03ec240fca95dfc17dfd268"
+   "bytes": 263363,
+   "sha256": "de12b17ecb0cb7b82a218d014b5169a1fc2c69c72b2d380b9e39e59e1f970c5e"
   },
   {
    "file": "opg-leader-interview.html",
