@@ -209,6 +209,15 @@ font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppe
 .a2{top:30%;--d:26s;--dl:-9s;width:64px}
 .a3{top:56%;--d:17s;--dl:-5s;width:96px}
 .a4{top:80%;--d:29s;--dl:-16s;width:58px}
+/* ---- большой кадр с подписью под ним и лупа ---- */
+.leadshot.big .ls{aspect-ratio:16/9}
+.underrow{display:flex;gap:clamp(18px,3vw,34px);align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.undercap{flex:1 1 420px;font-family:var(--ser);font-style:italic;font-size:15.6px;line-height:1.66;color:rgba(255,255,255,.94);max-width:64ch}
+.zoom{flex:0 0 auto;text-align:center}
+.zlens{display:block;width:236px;height:236px;border-radius:50%;border:6px solid #fff;box-shadow:0 16px 34px rgba(0,0,0,.4);
+background-size:335%;background-position:51% 58%;cursor:zoom-in;transition:transform .25s}
+.zlens:hover{transform:scale(1.04)}
+.zlbl{display:block;margin-top:10px;font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9)}
 /* ---- адаптив ---- */
 section[data-sec]{scroll-margin-top:52px}
 @media(max-width:1020px){
@@ -223,6 +232,8 @@ section[data-sec]{scroll-margin-top:52px}
 }
 @media(max-width:640px){
 .strip{grid-template-columns:1fr}
+.zlens{width:180px;height:180px}
+.undercap{font-size:14.8px}
 .angel{width:64px}
 .a3{width:72px}
 .chip{font-size:.58rem}
@@ -419,17 +430,21 @@ html{scroll-behavior:auto}
       <h2>Тот самый хот-дог</h2>
       <div class="sub">То, ради чего, если честно, и писалась эта колонка. Редакция предупреждала в шапке: конец будет про хот-дог.</div>
     </div>
-    <div class="hdwrap">
-      <figure class="leadshot">
-        <div class="ls" role="img" aria-label="Пляж поздним вечером: Hiromi несёт Гульнару на руках" style="background-image:var(--g13)" data-lb="13" data-cap="Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, был съеден тот самый хот-дог и сломан третий каблук."></div>
-        <figcaption class="cap">Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, был съеден тот самый хот-дог и сломан третий каблук. Рисованную иллюстрацию редакция убрала: правда сильнее графики.</figcaption>
-      </figure>
-      <div>
-        <p class="hand">«И да, раз уж я решила быть честной до конца… у тебя самый большой и самый вкусный хот-дог в штате. Тот самый, от которого сносит крышу и который хочется снова и снова. Никто даже близко не стоит рядом.»</p>
-        <div class="pull">
-          <q>Никто даже близко не стоит рядом.</q>
-          <span class="who mono">Gulnara Elfie · о хот-доге Hiromi Higumura</span>
-        </div>
+    <figure class="leadshot big">
+      <div class="ls" role="img" aria-label="Пляж поздним вечером: Hiromi у гигантского хот-дога, Гульнара с крыльями феи и букетом рядом" style="background-image:var(--g13)" data-lb="13" data-cap="Пляж, поздний вечер: последний кадр серии. Сразу после него, по хронологии Гульнары, был съеден тот самый хот-дог и сломан третий каблук. Хот-дог в кадре настоящий - и он больше, чем редакция ожидала от любой сосиски в этом штате."></div>
+    </figure>
+    <div class="underrow">
+      <figcaption class="undercap">Пляж, поздний вечер: последний кадр серии. Сразу после него, по хронологии Гульнары, был съеден тот самый хот-дог и сломан третий каблук. Хот-дог в кадре настоящий - и он больше, чем редакция ожидала от любой сосиски в этом штате.</figcaption>
+      <div class="zoom">
+        <span class="zlens" role="img" aria-label="Лупа редакции: фрагмент кадра с гигантским хот-догом крупным планом" style="background-image:var(--g13)" data-lb="13" data-cap="Лупа редакции: тот самый хот-дог крупным планом. Полный кадр откроется по клику."></span>
+        <span class="zlbl mono">лупа редакции · да, это хот-дог</span>
+      </div>
+    </div>
+    <div style="max-width:74ch;margin-top:clamp(24px,4vh,40px)">
+      <p class="hand">«И да, раз уж я решила быть честной до конца… у тебя самый большой и самый вкусный хот-дог в штате. Тот самый, от которого сносит крышу и который хочется снова и снова. Никто даже близко не стоит рядом.»</p>
+      <div class="pull">
+        <q>Никто даже близко не стоит рядом.</q>
+        <span class="who mono">Gulnara Elfie · о хот-доге Hiromi Higumura</span>
       </div>
     </div>
     <div class="rate">
