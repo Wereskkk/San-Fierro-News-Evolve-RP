@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-02",
+ "generated": "2026-10-04",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 31,
+ "issues": 32,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -153,6 +153,11 @@
    "file": "weekly-24-30-09-2026.html",
    "bytes": 2569764,
    "sha256": "2e3c43de6ac561f5d4fe14536ca40cd987ecdef3af1763d6af24230a2a4009c7"
+  },
+  {
+   "file": "weekly-28-09-04-10-2026.html",
+   "bytes": 965021,
+   "sha256": "c8649b23e910f573b0084a1c9b9aca4708b34b9d749302805cc076344c10cbf9"
   },
   {
    "file": "zone51-investigation.html",
