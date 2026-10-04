@@ -191,6 +191,24 @@ font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppe
 .lbx{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mutd);padding:8px 12px;border:1px solid var(--lined)}
 .lbx:hover{color:var(--cream);border-color:var(--pink)}
 .lbnav{position:absolute;bottom:3vh;left:0;right:0;display:flex;justify-content:center;gap:14px}
+/* ---- летающие ангелочки любви ---- */
+.angels{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.pinksec .wrap{position:relative;z-index:2}
+.angel{position:absolute;left:-16%;width:86px;opacity:.95;animation:fly var(--d,20s) linear infinite;animation-delay:var(--dl,0s)}
+.angel svg{width:100%;height:auto;display:block;filter:drop-shadow(0 4px 8px rgba(43,13,28,.25))}
+.angel.rev{animation-direction:reverse}
+.angel.rev svg{transform:scaleX(-1)}
+.angel .w{transform-box:fill-box;transform-origin:center;animation:flap .55s ease-in-out infinite alternate}
+.angel .wr{animation-name:flapR}
+@keyframes flap{from{transform:rotate(-16deg)}to{transform:rotate(9deg)}}
+@keyframes flapR{from{transform:rotate(16deg)}to{transform:rotate(-9deg)}}
+@keyframes fly{0%{transform:translate(0,0) rotate(4deg)}25%{transform:translate(30vw,-26px) rotate(-3deg)}
+50%{transform:translate(60vw,16px) rotate(4deg)}75%{transform:translate(90vw,-22px) rotate(-2deg)}
+100%{transform:translate(126vw,0) rotate(4deg)}}
+.a1{top:5%;--d:21s}
+.a2{top:30%;--d:26s;--dl:-9s;width:64px}
+.a3{top:56%;--d:17s;--dl:-5s;width:96px}
+.a4{top:80%;--d:29s;--dl:-16s;width:58px}
 /* ---- адаптив ---- */
 section[data-sec]{scroll-margin-top:52px}
 @media(max-width:1020px){
