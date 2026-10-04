@@ -79,7 +79,8 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 028 | daily-02-10-2026-las-venturas.html | roulette-noir-lv |
 | 029 | daily-03-10-2026.html | day-grid-tight |
 | 030 | investigation-falk.html | falk-dossier |
-| 031 | (следующий выпуск) | … |
+| 031 | article-confession-gulnara.html | hotdog-confession |
+| 032 | (следующий выпуск) | … |
 
 Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
 после редизайна по брифу главреда (03.10.2026, пересборщик `worktmp/build_daily_0310_state_v2.py`)
@@ -112,6 +113,7 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 `.lvlegend`, `.tomap/.tomapline`, `.wxcard/.hocard/.wxbin/.hobin/.ho-min/.wx-min`, `.hostars/.hoday`,
 `.sidestrip`, `.fin ttl/.fintext` (класс `.finttl`), `.factrow/.fact`, `.divider`, `.secno/.rubric/.rule`.
 Дело №1 `investigation-falk.html` (04.10.2026, штампы 029 `falk-two-lives` → 030 `falk-dossier`): `.splitwrap/.split/.pane/.splithandle/.handle/.splitrange`, `.mosaic/.mshot`, `.evgrid/.ev/.evbtn/.evimg/.evnum/.evcap/.evsrc`, `.route/.rnode/.rbtn/.rshot/.rlbl/.rtxt/.rmark`, `.factgrid/.fcol/.knum`, `.tgbtns/.tgbtn/.tgpanel/.tgnote`, `.qwall/.qnum/.qtxt`, `.finalshot/.fimg/.fcap/.watch/.openend`, `.tlgrid/.tlside/.tlline/.tlfill/.tlpct/.stage/.stnum/.stthumbs/.th`, `.refcard/.rlabel`, `.mailwrap/.mail/.mailbar/.mailhead/.mrow/.mailsubj/.mailbody/.mailsign/.attach/.atch/.stampmark/.threadbtn/.msg2/.sidecard/.sclbl/.sidenote`, `.triggrid/.trig/.tn/.tpill/.trigshot`, `.steps/.step/.sn/.sstat/.spill/.swhen/.stdbox/.stlbl/.stdlist`, `.spheregrid/.scard/.sch/.snum/.smeta/.idbadge/.btop/.bname/.brole/.bcode/.bnum/.rules/.rlbl`, `.fldhead/.fldrow/.flddate/.fldplace/.fldwhat/.fldres/.fldnote/.nb/.nl`, `.reghead/.regrow/.regnum/.regthumb/.regobj/.regtxt/.regline/.rpill/.regsum/.rsum/.rn/.rl`, `.ivtabs/.ivtab/.ivpanel/.ivmeta/.ivq/.ivpull`, `.exitgrid/.exdoc/.dlbl/.dtext/.dsign/.dlg/.dwhen/.dlgline/.exstamp/.sttxt`, `.fstep`.
+Юмористическая колонка `article-confession-gulnara.html` (04.10.2026, штамп 031 `hotdog-confession`): `.gate/.gbox/.gage/.gbtn/.gbtn.no/.gfine`, `.pol/.pols/.pcap/.pimg`, `.leadshot/.ls/.cap`, `.letter/.llbl/.lstamp`, `.hand`, `.hdwrap/.hdsvg/.rate/.rrow/.rnum/.rname/.rbar/.bar/.rv`, `.ednote/.en`, `.disclaim/.agepill/.dlbl`, `.strip/.st`, `.pull/.who`, `.cols`, `.secpad/.dark/.pinksec`, `.mast/.mastlogo/.mastmeta`, `.hero/.heroin/.kick/.heroline/.standfirst/.chips/.chip/.herobtns/.btn`, `.topnav/.topnavin/.navbtn`, `.lb/.lbctl/.lbx/.lbnav/.lbnum/.lbcnt` (имена живут с 04.10.2026).
 Пополнять реестр при каждом новом фирменном элементе; при рефакторе — не удалять записи,
 а помечать датой «имя жило до …».
 
