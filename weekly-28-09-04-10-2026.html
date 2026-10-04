@@ -317,84 +317,85 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
   .view.on .rline.rglow{animation:none}
 }
 </style>
-<style>/* sfn-sky-v1 */
+<style>/* sfn-sky-v2 */
 .skydeck{margin-top:16px}
-.skycup{position:relative;height:clamp(240px,34vw,400px);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0b120d}
-.skybg{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
-.bg-fog{background:linear-gradient(180deg,#182620 0%,#2a3831 55%,#43504a 100%)}
-.bg-cloud{background:linear-gradient(180deg,#15222a 0%,#2b3a44 60%,#46565c 100%)}
-.bg-rain{background:linear-gradient(180deg,#0e171d 0%,#1c2932 60%,#2f3e46 100%)}
-.bg-sun{background:linear-gradient(180deg,#1b2c47 0%,#41577a 38%,#b97f52 74%,#e8b06a 100%)}
-.bg-moon{background:linear-gradient(180deg,#060b15 0%,#0c1524 55%,#182541 100%)}
-.skycup[data-wx="fog"] .bg-fog,.skycup[data-wx="cloud"] .bg-cloud,.skycup[data-wx="rain"] .bg-rain,.skycup[data-wx="sun"] .bg-sun,.skycup[data-wx="moon"] .bg-moon{opacity:1}
-.skystars{position:absolute;inset:0;opacity:0;transition:opacity .9s}
-.skystars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#e8f4e8;opacity:.85;animation:skytw 2.6s ease-in-out infinite alternate}
+.skycup{position:relative;height:clamp(280px,38vw,440px);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0b120d}
+.skybg{position:absolute;inset:0}
+.skystars{position:absolute;inset:0;opacity:0;pointer-events:none}
+.skystars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#e8f4e8;animation:skytw 2.6s ease-in-out infinite alternate}
 @keyframes skytw{from{opacity:.25}to{opacity:.95}}
-.skycup[data-wx="moon"] .skystars{opacity:1}
-.skysun{position:absolute;right:12%;top:12%;width:clamp(84px,12vw,132px);opacity:0;transition:opacity .9s;filter:drop-shadow(0 0 26px rgba(246,196,83,.65))}
+.skyglow,.moonglow{position:absolute;top:84%;width:56%;height:52%;transform:translate(-50%,-50%);pointer-events:none;opacity:0}
+.moonglow{top:80%;background:radial-gradient(ellipse at center,rgba(207,224,240,.5) 0%,transparent 70%)}
+.skysun{position:absolute;width:clamp(64px,9vw,100px);transform:translate(-50%,-50%);pointer-events:none;opacity:0}
 .skysun svg{display:block;width:100%}
-.skysun .rays{animation:skyspin 52s linear infinite;transform-origin:60px 60px}
+.skysun .rays{animation:skyspin 60s linear infinite;transform-origin:60px 60px}
 @keyframes skyspin{to{transform:rotate(360deg)}}
-.skycup[data-wx="sun"] .skysun{opacity:1}
-.skycup[data-wx="fog"] .skysun{opacity:.28}
-.skycup[data-wx="cloud"] .skysun{opacity:.14}
-.skymoon{position:absolute;right:14%;top:11%;width:clamp(64px,9vw,104px);opacity:0;transition:opacity .9s;filter:drop-shadow(0 0 22px rgba(232,244,232,.5))}
+.skymoon{position:absolute;width:clamp(40px,6vw,64px);transform:translate(-50%,-50%);pointer-events:none;opacity:0;filter:drop-shadow(0 0 16px rgba(232,244,232,.45))}
 .skymoon svg{display:block;width:100%}
-.skycup[data-wx="moon"] .skymoon{opacity:1}
-.skyclouds{position:absolute;left:0;width:200%;opacity:0;transition:opacity .9s,filter .9s;animation:skydrift 80s linear infinite}
+.skyclouds{position:absolute;left:0;width:200%;pointer-events:none;opacity:0;animation:skydrift 90s linear infinite}
 .skyclouds svg{display:block;width:100%;height:100%}
 .skyclouds path{fill:#9fbca3}
 .sk1{top:6%;height:44%}
-.sk2{top:30%;height:52%;animation-duration:120s}
+.sk2{top:28%;height:52%;animation-duration:130s}
 .sk2 path{fill:#7e9a84}
 @keyframes skydrift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.skycup[data-wx="cloud"] .skyclouds{opacity:.95}
-.skycup[data-wx="rain"] .skyclouds{opacity:1;filter:brightness(.55)}
-.skycup[data-wx="fog"] .sk1{opacity:.5}
-.skycup[data-wx="fog"] .sk2{opacity:.35;filter:brightness(.8)}
-.skycup[data-wx="sun"] .sk1{opacity:.4;filter:brightness(1.15)}
-.skycup[data-wx="moon"] .sk2{opacity:.18}
-.skyrain{position:absolute;inset:0;opacity:0;transition:opacity .9s;pointer-events:none}
-.skyrain i{position:absolute;top:-18%;width:2px;height:16%;border-radius:2px;background:linear-gradient(180deg,rgba(94,234,212,0),rgba(94,234,212,.5));animation:skyfall 1.15s linear infinite}
+.skyrain{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s}
+.skyrain i{position:absolute;top:-18%;width:2px;height:15%;border-radius:2px;background:linear-gradient(180deg,rgba(94,234,212,0),rgba(94,234,212,.5));animation:skyfall 1.15s linear infinite}
 @keyframes skyfall{from{top:-18%}to{top:104%}}
-.skycup[data-wx="rain"] .skyrain{opacity:1}
-.skyfog{position:absolute;inset:0;opacity:0;transition:opacity .9s;pointer-events:none}
+.skyfog{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .8s}
 .skyfog i{position:absolute;left:-30%;width:160%;height:15%;filter:blur(7px);background:linear-gradient(90deg,transparent,rgba(214,226,214,.14) 28%,rgba(214,226,214,.22) 55%,transparent);animation:skyfogmv 24s ease-in-out infinite alternate}
 @keyframes skyfogmv{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+.skycup[data-wx="rain"] .skyrain{opacity:1}
 .skycup[data-wx="fog"] .skyfog{opacity:1}
-.skycity{position:absolute;left:0;bottom:0;width:100%;height:30%;display:block}
-.skyhud{position:absolute;left:14px;top:12px;padding:10px 16px 12px;border:1px solid var(--line);border-radius:14px;background:rgba(7,12,9,.58);backdrop-filter:blur(5px)}
-.skyhud .shdate{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon)}
-.skyhud .shtemp{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.1;color:var(--neon2);text-shadow:0 0 18px rgba(89,227,127,.45)}
-.skyhud .shstate{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.skyinst{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.skycity{position:absolute;left:0;bottom:0;width:100%;height:31%;display:block;pointer-events:none}
+.skycity .win{transition:fill 1.2s linear}
+.beacon{animation:skyblink 2.6s ease-in-out infinite}
+@keyframes skyblink{0%,100%{opacity:.15}50%{opacity:.95}}
+.skyhud{position:absolute;left:14px;top:12px;padding:10px 16px 12px;border:1px solid var(--line);border-radius:14px;background:rgba(7,12,9,.58);backdrop-filter:blur(5px);pointer-events:none}
+.shdate{font-family:"PT Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon)}
+.shclock{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.15;color:var(--ink);letter-spacing:.04em}
+.shtemp{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.1;color:var(--neon2);text-shadow:0 0 18px rgba(89,227,127,.45)}
+.shstate{font-family:"PT Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:2px}
+.shmm{font-family:"PT Mono",monospace;font-size:.6rem;color:var(--mut);margin-top:4px}
+.skyplay{position:absolute;right:12px;top:12px;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:rgba(7,12,9,.58);color:var(--neon2);font-size:.85rem;line-height:1;cursor:pointer;backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:0}
+.skyplay:hover{border-color:var(--neon2)}
+.skyinst{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
 .si{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px 14px;display:flex;flex-direction:column;gap:4px}
 .si .sil{font-family:"PT Mono",monospace;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 .si .siv{font-family:"PT Mono",monospace;font-size:.8rem;color:var(--ink)}
 .si .siv b{font-family:"Unbounded",sans-serif;font-weight:600;font-size:1.05rem;color:var(--neon2)}
+.si .six{font-family:"PT Mono",monospace;font-size:.58rem;color:var(--mut)}
+.skyrail{position:relative;height:34px;margin-top:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);cursor:ew-resize;touch-action:none;user-select:none}
+.railbg{position:absolute;inset:2px;border-radius:8px;overflow:hidden}
+.railmoon{position:absolute;top:3px;bottom:3px;background:rgba(232,244,232,.25);border-radius:3px}
+.railtick{position:absolute;top:0;bottom:0;width:2px}
+.railhead{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--neon2);box-shadow:0 0 8px rgba(89,227,127,.8);pointer-events:none}
+.railtime{position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-family:"PT Mono",monospace;font-size:.58rem;color:var(--neon2);white-space:nowrap}
+.skyrail:focus-visible{outline:2px solid var(--neon2);outline-offset:2px}
 .skydock{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .skyd{appearance:none;flex:1 1 92px;min-width:88px;border:1px solid var(--line);border-radius:14px;background:var(--panel);cursor:pointer;padding:8px 6px 9px;text-align:center;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
 .skyd .sdw{display:block;font-family:"PT Mono",monospace;font-size:.56rem;letter-spacing:.1em;color:var(--mut)}
-.skyd .ic{width:30px;height:30px;margin:5px auto 3px;display:block}
-.skyd .sdt{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:.92rem;color:var(--neon2)}
+.skyd .ic{width:28px;height:28px;margin:4px auto 2px;display:block}
+.skyd .sdt{display:block;font-family:"Unbounded",sans-serif;font-weight:600;font-size:.9rem;color:var(--neon2)}
+.skyd .sdm{display:block;font-family:"PT Mono",monospace;font-size:.54rem;color:var(--mut);margin-top:2px}
 .skyd.on{border-color:var(--neon2);background:rgba(89,227,127,.09);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(89,227,127,.5),0 10px 24px -14px rgba(89,227,127,.7)}
 .skyd.on .sdw{color:var(--neon)}
-.skynote{margin-top:12px;font-size:.86rem;color:var(--mut);max-width:92ch}
+.skynote{margin-top:12px;font-size:.86rem;color:var(--mut);max-width:92ch;min-height:2.6em}
+@media(max-width:900px){.skyinst{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){
-  .skycup{height:250px}
+  .skycup{height:280px}
   .skyhud{left:10px;top:10px;padding:8px 12px 10px}
-  .skyinst{gap:8px}
-  .si{padding:8px 10px}
-  .si .siv{font-size:.7rem}
-  .si .siv b{font-size:.92rem}
   .skyd{flex:1 1 84px;min-width:80px}
+  .railtime{font-size:.5rem}
 }
 @media (prefers-reduced-motion: reduce){
-  .skyclouds,.skyrain i,.skyfog i,.skystars i,.skysun .rays{animation:none}
-  .ic .rays,.ic .drift,.ic .drops line,.ic .foggy,.ic .glowm{animation:none}
-  .skyrain i{top:34%;opacity:.55}
+  /* сам суточный цикл - запрошенное движение, он идёт у всех одинаково;
+     гасятся только декоративные петли */
+  .skystars i,.skyclouds,.skyrain i,.skyfog i,.skysun .rays,.beacon{animation:none}
+  .skyrain i{top:40%;opacity:.5}
   .skystars i{opacity:.8}
-  .skybg,.skystars,.skysun,.skymoon,.skyclouds,.skyrain,.skyfog,.skyd{transition-duration:.2s}
+  .beacon{opacity:.85}
+  .ic .rays,.ic .drift,.ic .drops line,.ic .foggy,.ic .glowm{animation:none}
 }
 </style>
 </head>
@@ -508,24 +509,32 @@ footer p{color:var(--mut);font-size:.93rem;line-height:1.75;max-width:52rem;marg
 <div class="sec" style="margin-top:0"><span class="no">04</span><h2>Прогноз на неделю 05.10 - 11.10</h2><span class="rule"></span></div>
 <p class="secsub">Редакция смотрит на небо так же внимательно, как на сводки: следующая неделя обещает штату три погоды - туманы San Fierro, сухое солнце Los Santos и жару Las Venturas с ясными ночами. Прогноз снят с наблюдений пресс-трака: в редакционный лист попадает только то, что небо показало само.</p>
 <div class="wxtabs" id="wxtabs"></div>
-<!-- sfn-sky-v1 -->
+<!-- sfn-sky-v2 -->
 <div class="skydeck" id="skydeck">
-  <div class="skycup" id="skycup" data-wx="fog">
-    <div class="skybg bg-fog"></div><div class="skybg bg-cloud"></div><div class="skybg bg-rain"></div><div class="skybg bg-sun"></div><div class="skybg bg-moon"></div>
-    <div class="skystars"><i style="left:45.0%;top:30.9%;animation-delay:2.40s"></i><i style="left:46.2%;top:28.4%;animation-delay:1.53s"></i><i style="left:19.5%;top:28.6%;animation-delay:1.64s"></i><i style="left:77.3%;top:8.5%;animation-delay:0.79s"></i><i style="left:10.6%;top:42.9%;animation-delay:1.80s"></i><i style="left:6.0%;top:51.1%;animation-delay:2.51s"></i><i style="left:64.1%;top:33.5%;animation-delay:0.41s"></i><i style="left:3.4%;top:29.4%;animation-delay:0.15s"></i><i style="left:20.1%;top:15.6%;animation-delay:0.08s"></i><i style="left:46.1%;top:25.1%;animation-delay:2.19s"></i><i style="left:51.3%;top:34.7%;animation-delay:1.30s"></i><i style="left:64.9%;top:26.0%;animation-delay:0.72s"></i><i style="left:96.8%;top:51.8%;animation-delay:2.18s"></i><i style="left:69.2%;top:19.1%;animation-delay:0.60s"></i><i style="left:29.5%;top:7.4%;animation-delay:1.99s"></i><i style="left:40.0%;top:44.6%;animation-delay:1.00s"></i><i style="left:93.0%;top:44.7%;animation-delay:0.00s"></i><i style="left:21.9%;top:47.7%;animation-delay:1.22s"></i><i style="left:95.1%;top:23.1%;animation-delay:0.19s"></i><i style="left:61.8%;top:41.4%;animation-delay:0.70s"></i><i style="left:10.3%;top:20.0%;animation-delay:2.51s"></i><i style="left:74.0%;top:9.7%;animation-delay:0.64s"></i><i style="left:11.6%;top:6.9%;animation-delay:2.07s"></i><i style="left:18.9%;top:30.8%;animation-delay:1.16s"></i><i style="left:20.1%;top:39.1%;animation-delay:0.34s"></i><i style="left:63.2%;top:9.6%;animation-delay:1.09s"></i></div>
-    <div class="skysun"><svg viewBox="0 0 120 120" aria-hidden="true"><g class="rays" stroke="#f6c453" stroke-width="3" stroke-linecap="round"><line x1="60" y1="20" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="100"/><line x1="20" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="100" y2="60"/><line x1="32" y1="32" x2="39" y2="39"/><line x1="81" y1="81" x2="88" y2="88"/><line x1="32" y1="88" x2="39" y2="81"/><line x1="81" y1="39" x2="88" y2="32"/></g><circle cx="60" cy="60" r="22" fill="#f6c453"/></svg></div>
-    <div class="skymoon"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M62 14a36 36 0 1 0 24 58 40 40 0 0 1-24-58z" fill="#e8f4e8"/><circle cx="34" cy="62" r="3" fill="#c9dcc9" opacity=".55"/><circle cx="44" cy="76" r="2.2" fill="#c9dcc9" opacity=".45"/></svg></div>
-    <div class="skyclouds sk1"><svg viewBox="0 0 2400 200" preserveAspectRatio="none" aria-hidden="true"><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(40 30) scale(5.12 3.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1240 30) scale(5.12 3.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(330 52) scale(3.84 2.40)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1530 52) scale(3.84 2.40)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(620 20) scale(6.08 3.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1820 20) scale(6.08 3.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(900 44) scale(4.48 2.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(2100 44) scale(4.48 2.80)"/></svg></div>
-    <div class="skyclouds sk2"><svg viewBox="0 0 2400 200" preserveAspectRatio="none" aria-hidden="true"><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(120 80) scale(7.36 4.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1320 80) scale(7.36 4.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(520 96) scale(5.76 3.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1720 96) scale(5.76 3.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(860 70) scale(6.72 4.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(2060 70) scale(6.72 4.20)"/></svg></div>
-    <div class="skyrain"><i style="left:22.8%;animation-delay:0.30s;animation-duration:1.39s"></i><i style="left:77.7%;animation-delay:0.33s;animation-duration:1.35s"></i><i style="left:22.6%;animation-delay:0.43s;animation-duration:1.34s"></i><i style="left:62.7%;animation-delay:0.11s;animation-duration:1.40s"></i><i style="left:22.8%;animation-delay:0.28s;animation-duration:1.31s"></i><i style="left:33.6%;animation-delay:0.33s;animation-duration:1.03s"></i><i style="left:11.4%;animation-delay:0.64s;animation-duration:1.10s"></i><i style="left:58.9%;animation-delay:0.41s;animation-duration:1.18s"></i><i style="left:92.2%;animation-delay:0.53s;animation-duration:1.23s"></i><i style="left:83.6%;animation-delay:0.20s;animation-duration:1.06s"></i><i style="left:87.5%;animation-delay:0.90s;animation-duration:1.10s"></i><i style="left:20.7%;animation-delay:0.81s;animation-duration:1.38s"></i><i style="left:21.3%;animation-delay:1.05s;animation-duration:1.35s"></i><i style="left:59.1%;animation-delay:0.46s;animation-duration:1.04s"></i><i style="left:6.6%;animation-delay:1.06s;animation-duration:1.10s"></i><i style="left:68.5%;animation-delay:0.28s;animation-duration:1.33s"></i></div>
+  <div class="skycup" id="skycup" data-wx="fog" role="img" aria-label="Небо суток">
+    <div class="skybg" id="skybg"></div>
+    <div class="skystars" id="skystars"><i style="left:40.6%;top:32.4%;animation-delay:2.24s"></i><i style="left:18.1%;top:14.6%;animation-delay:0.08s"></i><i style="left:12.3%;top:2.5%;animation-delay:0.41s"></i><i style="left:50.8%;top:57.4%;animation-delay:1.80s"></i><i style="left:37.7%;top:24.7%;animation-delay:1.80s"></i><i style="left:32.6%;top:6.1%;animation-delay:2.19s"></i><i style="left:60.9%;top:8.3%;animation-delay:0.18s"></i><i style="left:10.2%;top:55.7%;animation-delay:0.28s"></i><i style="left:61.7%;top:56.3%;animation-delay:0.09s"></i><i style="left:38.4%;top:28.7%;animation-delay:2.38s"></i><i style="left:19.3%;top:16.5%;animation-delay:0.64s"></i><i style="left:5.8%;top:39.7%;animation-delay:2.12s"></i><i style="left:43.3%;top:4.1%;animation-delay:1.86s"></i><i style="left:72.5%;top:38.6%;animation-delay:0.85s"></i><i style="left:81.6%;top:37.3%;animation-delay:1.53s"></i><i style="left:53.4%;top:15.1%;animation-delay:1.18s"></i><i style="left:78.0%;top:40.3%;animation-delay:0.90s"></i><i style="left:80.5%;top:49.0%;animation-delay:0.11s"></i><i style="left:16.3%;top:14.5%;animation-delay:0.04s"></i><i style="left:74.1%;top:38.2%;animation-delay:1.41s"></i><i style="left:97.5%;top:22.0%;animation-delay:0.52s"></i><i style="left:11.8%;top:21.0%;animation-delay:2.18s"></i><i style="left:59.9%;top:5.3%;animation-delay:1.13s"></i><i style="left:5.7%;top:36.9%;animation-delay:0.32s"></i><i style="left:18.4%;top:38.0%;animation-delay:2.17s"></i><i style="left:61.1%;top:18.4%;animation-delay:1.68s"></i><i style="left:27.4%;top:2.4%;animation-delay:0.71s"></i><i style="left:67.8%;top:37.1%;animation-delay:0.50s"></i><i style="left:82.5%;top:48.5%;animation-delay:0.73s"></i><i style="left:94.2%;top:16.7%;animation-delay:0.17s"></i><i style="left:50.7%;top:50.4%;animation-delay:1.56s"></i><i style="left:54.0%;top:29.3%;animation-delay:0.74s"></i><i style="left:30.1%;top:24.6%;animation-delay:1.42s"></i><i style="left:92.5%;top:6.1%;animation-delay:0.66s"></i><i style="left:92.5%;top:38.8%;animation-delay:0.19s"></i><i style="left:43.8%;top:38.5%;animation-delay:2.37s"></i><i style="left:9.2%;top:52.5%;animation-delay:2.00s"></i><i style="left:28.0%;top:31.9%;animation-delay:2.15s"></i><i style="left:24.6%;top:41.3%;animation-delay:1.46s"></i><i style="left:8.1%;top:17.2%;animation-delay:1.07s"></i><i style="left:14.5%;top:54.9%;animation-delay:0.65s"></i><i style="left:23.5%;top:35.4%;animation-delay:1.37s"></i><i style="left:32.0%;top:20.2%;animation-delay:1.29s"></i><i style="left:89.2%;top:6.4%;animation-delay:2.37s"></i></div>
+    <div class="skyglow" id="skyglow"></div>
+    <div class="moonglow" id="moonglow"></div>
+    <div class="skysun" id="skysun"><svg viewBox="0 0 120 120" aria-hidden="true"><g class="rays" stroke="#f6c453" stroke-width="3" stroke-linecap="round"><line x1="60" y1="20" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="100"/><line x1="20" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="100" y2="60"/><line x1="32" y1="32" x2="39" y2="39"/><line x1="81" y1="81" x2="88" y2="88"/><line x1="32" y1="88" x2="39" y2="81"/><line x1="81" y1="39" x2="88" y2="32"/></g><circle cx="60" cy="60" r="22" fill="#f6c453"/></svg></div>
+    <div class="skymoon" id="skymoon"><svg viewBox="-50 -50 100 100" aria-hidden="true"><circle cx="0" cy="0" r="44" fill="#0e1826"/><path id="srmpath" d="" fill="#e8f4e8"/><clipPath id="srmclip"><path id="srmclipd" d=""/></clipPath><g clip-path="url(#srmclip)" fill="#c4d8c4" opacity=".5"><circle cx="12" cy="-14" r="6"/><circle cx="-10" cy="14" r="8"/><circle cx="18" cy="18" r="4"/><circle cx="-18" cy="-16" r="3.4"/></g></svg></div>
+    <div class="skyclouds sk1" id="skc1"><svg viewBox="0 0 2400 200" preserveAspectRatio="none" aria-hidden="true"><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(40 30) scale(5.12 3.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1240 30) scale(5.12 3.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(330 52) scale(3.84 2.40)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1530 52) scale(3.84 2.40)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(620 20) scale(6.08 3.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1820 20) scale(6.08 3.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(900 44) scale(4.48 2.80)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(2100 44) scale(4.48 2.80)"/></svg></div>
+    <div class="skyclouds sk2" id="skc2"><svg viewBox="0 0 2400 200" preserveAspectRatio="none" aria-hidden="true"><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(120 80) scale(7.36 4.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1320 80) scale(7.36 4.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(520 96) scale(5.76 3.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(1720 96) scale(5.76 3.60)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(860 70) scale(6.72 4.20)"/><path d="M12 26a6 6 0 0 1 1-12 8 8 0 0 1 15-2 6 6 0 0 1 1 14z" transform="translate(2060 70) scale(6.72 4.20)"/></svg></div>
+    <div class="skyrain"><i style="left:90.2%;animation-delay:0.75s;animation-duration:1.32s"></i><i style="left:38.5%;animation-delay:1.06s;animation-duration:1.30s"></i><i style="left:66.9%;animation-delay:0.49s;animation-duration:1.09s"></i><i style="left:67.3%;animation-delay:0.81s;animation-duration:1.00s"></i><i style="left:31.9%;animation-delay:0.59s;animation-duration:1.08s"></i><i style="left:15.0%;animation-delay:0.21s;animation-duration:1.01s"></i><i style="left:14.2%;animation-delay:0.43s;animation-duration:1.20s"></i><i style="left:62.4%;animation-delay:0.34s;animation-duration:1.05s"></i><i style="left:88.6%;animation-delay:0.70s;animation-duration:1.27s"></i><i style="left:67.1%;animation-delay:0.35s;animation-duration:1.24s"></i><i style="left:32.6%;animation-delay:0.72s;animation-duration:1.33s"></i><i style="left:4.5%;animation-delay:0.88s;animation-duration:1.05s"></i><i style="left:4.5%;animation-delay:0.08s;animation-duration:1.22s"></i><i style="left:82.8%;animation-delay:1.02s;animation-duration:1.06s"></i><i style="left:42.9%;animation-delay:1.04s;animation-duration:1.36s"></i><i style="left:79.8%;animation-delay:0.27s;animation-duration:1.11s"></i><i style="left:16.9%;animation-delay:0.29s;animation-duration:1.16s"></i><i style="left:77.1%;animation-delay:0.73s;animation-duration:1.07s"></i></div>
     <div class="skyfog"><i style="top:46%;animation-delay:0.0s"></i><i style="top:60%;animation-delay:-8.0s"></i><i style="top:74%;animation-delay:-16.0s"></i></div>
-    <svg class="skycity" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true"><path fill="#0a120d" d="M0 140V116h34V92h26v24h22V78h30v38h18V64h26v52h20V98h34v18h26V86h24v30h28V72h20v44h24V102h30v14h22V80h28v36h26V94h24v22h30V76h22v40h26V104h28v12h24V88h26v28h30V96h22v20h26V82h24v34h28V106h26v10h30V90h22v26h26V100h24v16h40V140z"/><path fill="#0a120d" d="M140 140V50h9v90zM298 140V50h9v90z"/><path d="M20 118Q80 74 144 52M149 52Q223 112 302 52M307 52Q370 74 420 118" stroke="#0a120d" stroke-width="4" fill="none"/><path fill="#0a120d" d="M820 140q60-46 130-30q70 16 120-8q70-30 130 6v32z"/></svg>
-    <div class="skyhud"><div class="shdate" id="srdate"></div><div class="shtemp" id="srtemp"></div><div class="shstate" id="srstate"></div></div>
+    <svg class="skycity" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path fill="#0a120d" d="M798 160q70-52 150-34q80 18 140-10q80-34 152 8V160Z"/><path fill="#0a120d" d="M388 160V86H440V160ZM448 160V56H492V160ZM500 160V98H564V160ZM574 160V32H614V160ZM622 160V74H680V160ZM690 160V92H740V160ZM750 160V64H794V160Z"/><line x1="594" y1="36" x2="594" y2="14" stroke="#0a120d" stroke-width="3"/><path fill="#0a120d" d="M140 160V46h9v114zM298 160V46h9v114z"/><path d="M20 138Q80 94 144 50M149 48Q223 108 302 48M307 48Q370 94 420 138" stroke="#0a120d" stroke-width="4" fill="none"/><rect class="win" x="394" y="94" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.63" data-b="1.37" data-c="#ffc46b"/><rect class="win" x="394" y="108" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.09" data-b="18.18" data-c="#f4e3b0"/><rect class="win" x="394" y="122" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="394" y="136" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.78" data-b="22.29" data-c="#ffd98a"/><rect class="win" x="406" y="94" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.64" data-b="3.32" data-c="#f4e3b0"/><rect class="win" x="406" y="108" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.62" data-b="0.84" data-c="#ffc46b"/><rect class="win" x="406" y="136" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.9" data-b="2.04" data-c="#f4e3b0"/><rect class="win" x="418" y="94" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.29" data-b="20.53" data-c="#f4e3b0"/><rect class="win" x="418" y="122" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.52" data-b="2.98" data-c="#ffd98a"/><rect class="win" x="418" y="136" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="454" y="64" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.81" data-b="22.56" data-c="#ffc46b"/><rect class="win" x="454" y="78" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.81" data-b="20.74" data-c="#ffd98a"/><rect class="win" x="454" y="92" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="7.29" data-b="17.25" data-c="#f4e3b0"/><rect class="win" x="454" y="106" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.08" data-b="5.6" data-c="#ffc46b"/><rect class="win" x="454" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.16" data-b="17.28" data-c="#cfe3ff"/><rect class="win" x="466" y="64" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.08" data-b="6.27" data-c="#ffd98a"/><rect class="win" x="466" y="78" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.08" data-b="1.47" data-c="#ffc46b"/><rect class="win" x="466" y="92" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.14" data-b="19.78" data-c="#cfe3ff"/><rect class="win" x="466" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.73" data-b="4.55" data-c="#ffd98a"/><rect class="win" x="466" y="134" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.39" data-b="1.68" data-c="#f4e3b0"/><rect class="win" x="506" y="106" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.75" data-b="5.63" data-c="#ffc46b"/><rect class="win" x="506" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="506" y="134" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.65" data-b="20.7" data-c="#ffd98a"/><rect class="win" x="518" y="106" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.74" data-b="2.3" data-c="#ffd98a"/><rect class="win" x="518" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.48" data-b="22.63" data-c="#ffc46b"/><rect class="win" x="518" y="134" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="530" y="106" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.45" data-b="6.7" data-c="#ffc46b"/><rect class="win" x="530" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.22" data-b="18.58" data-c="#cfe3ff"/><rect class="win" x="542" y="120" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.4" data-b="3.19" data-c="#ffd98a"/><rect class="win" x="542" y="134" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.68" data-b="19.53" data-c="#ffc46b"/><rect class="win" x="580" y="40" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="7.63" data-b="19.39" data-c="#ffd98a"/><rect class="win" x="580" y="54" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.22" data-b="17.57" data-c="#ffc46b"/><rect class="win" x="580" y="68" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.31" data-b="18.16" data-c="#cfe3ff"/><rect class="win" x="580" y="82" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.6" data-b="19.77" data-c="#f4e3b0"/><rect class="win" x="580" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.39" data-b="6.58" data-c="#ffc46b"/><rect class="win" x="580" y="124" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="580" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.08" data-b="4.2" data-c="#ffd98a"/><rect class="win" x="592" y="40" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.6" data-b="21.73" data-c="#f4e3b0"/><rect class="win" x="592" y="54" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="592" y="82" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.44" data-b="4.69" data-c="#ffd98a"/><rect class="win" x="592" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.04" data-b="23.48" data-c="#ffd98a"/><rect class="win" x="592" y="124" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="592" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="628" y="82" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.12" data-b="0.14" data-c="#ffd98a"/><rect class="win" x="628" y="96" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.72" data-b="6.37" data-c="#ffd98a"/><rect class="win" x="628" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.0" data-b="5.56" data-c="#ffd98a"/><rect class="win" x="628" y="124" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.52" data-b="23.86" data-c="#f4e3b0"/><rect class="win" x="628" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.76" data-b="2.2" data-c="#f4e3b0"/><rect class="win" x="640" y="82" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="640" y="96" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.35" data-b="3.83" data-c="#ffd98a"/><rect class="win" x="640" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="640" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="652" y="82" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.71" data-b="3.26" data-c="#ffd98a"/><rect class="win" x="652" y="96" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="652" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.6" data-b="22.07" data-c="#ffd98a"/><rect class="win" x="652" y="124" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.43" data-b="2.11" data-c="#f4e3b0"/><rect class="win" x="652" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.5" data-b="3.79" data-c="#f4e3b0"/><rect class="win" x="664" y="110" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.44" data-b="18.28" data-c="#ffc46b"/><rect class="win" x="664" y="124" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.69" data-b="22.38" data-c="#ffc46b"/><rect class="win" x="664" y="138" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.75" data-b="21.95" data-c="#ffd98a"/><rect class="win" x="696" y="100" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.01" data-b="21.41" data-c="#ffc46b"/><rect class="win" x="696" y="114" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.08" data-b="20.57" data-c="#ffd98a"/><rect class="win" x="696" y="128" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.72" data-b="18.94" data-c="#cfe3ff"/><rect class="win" x="708" y="100" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.12" data-b="2.91" data-c="#ffd98a"/><rect class="win" x="708" y="114" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.78" data-b="6.5" data-c="#ffc46b"/><rect class="win" x="720" y="100" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.11" data-b="6.01" data-c="#ffc46b"/><rect class="win" x="720" y="114" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.97" data-b="17.57" data-c="#cfe3ff"/><rect class="win" x="720" y="128" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="7.49" data-b="19.1" data-c="#ffc46b"/><rect class="win" x="756" y="72" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="8.66" data-b="17.56" data-c="#cfe3ff"/><rect class="win" x="756" y="86" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.71" data-b="19.69" data-c="#ffc46b"/><rect class="win" x="756" y="100" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.38" data-b="4.84" data-c="#ffc46b"/><rect class="win" x="756" y="114" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="18.82" data-b="21.43" data-c="#ffd98a"/><rect class="win" x="756" y="128" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="7.31" data-b="17.86" data-c="#cfe3ff"/><rect class="win" x="768" y="72" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="17.78" data-b="21.44" data-c="#ffd98a"/><rect class="win" x="768" y="86" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="-1" data-b="-1" data-c="#000"/><rect class="win" x="768" y="114" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="20.9" data-b="3.62" data-c="#ffc46b"/><rect class="win" x="768" y="128" width="5" height="6.5" rx="0.8" fill="#101a22" data-a="19.45" data-b="1.25" data-c="#ffc46b"/><circle class="win" cx="50" cy="116" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="81" cy="94" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="112" cy="72" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="186" cy="70" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="224" cy="78" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="263" cy="70" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="win" cx="367" cy="93" r="1.7" fill="#101a22" data-a="18.0" data-b="6.4" data-c="#ffcf7a"/><circle class="beacon" cx="594" cy="12" r="2.6" fill="#ff5a4a"/></svg>
+    <div class="skyhud"><div class="shdate" id="srdate"></div><div class="shclock" id="srclock"></div><div class="shtemp" id="srtemp"></div><div class="shstate" id="srstate"></div><div class="shmm" id="srmm"></div></div>
+    <button class="skyplay" id="srplay" type="button" aria-label="Пауза" aria-pressed="false">&#10074;&#10074;</button>
+  </div>
+  <div class="skyrail" id="skyrail" role="slider" tabindex="0" aria-label="Время суток" aria-valuemin="0" aria-valuemax="1439" aria-valuenow="0" aria-valuetext="">
+    <div class="railbg" id="railbg"></div>
+    <div class="railhead" id="railhead"><div class="railtime" id="railtime"></div></div>
   </div>
   <div class="skyinst">
-    <div class="si"><span class="sil">давление</span><span class="siv"><b id="srp"></b> мм рт. ст.</span></div>
-    <div class="si"><span class="sil">ветер</span><span class="siv"><b id="srw"></b> м/с</span></div>
-    <div class="si"><span class="sil">влажность</span><span class="siv"><b id="srh"></b> %</span></div>
+    <div class="si"><span class="sil">давление</span><span class="siv"><b id="srp"></b> мм рт. ст.</span><span class="six" id="srpt"></span></div>
+    <div class="si"><span class="sil">ветер</span><span class="siv"><b id="srw"></b> м/с</span><span class="six" id="srwt"></span></div>
+    <div class="si"><span class="sil">влажность</span><span class="siv"><b id="srh"></b> %</span><span class="six" id="srht"></span></div>
+    <div class="si"><span class="sil">видимость</span><span class="siv"><b id="srv"></b> км</span><span class="six" id="srvt"></span></div>
   </div>
   <div class="skydock" id="skydock"></div>
   <p class="skynote" id="srnote"></p>
@@ -587,26 +596,171 @@ NEWS.forEach(function(n){
   m.addEventListener('mouseleave',function(){lit(n.id,false);pv.classList.remove('on');});
   m.addEventListener('click',function(){if(l){l.scrollIntoView({block:'nearest',behavior:'smooth'});lit(n.id,true);setTimeout(function(){lit(n.id,false);},1600);}});}});
 var wt=document.getElementById('wxtabs'),ci=0,di=0;
-var WXP={"San Fierro":{p:[752,750,746,744,749,754,752],w:[2,3,5,6,4,2,2],h:[94,82,88,91,78,64,90]},"Los Santos":{p:[756,756,754,750,755,756,756],w:[3,3,4,5,3,2,2],h:[38,36,44,58,40,35,33]},"Las Venturas":{p:[758,758,757,755,757,758,759],w:[2,2,3,4,2,2,1],h:[22,20,21,30,22,19,26]}};
-var WXS={fog:'туман',cloud:'облачность',rain:'дождь',sun:'ясно',moon:'ясная ночь'};
-var WXN={fog:'Туман с залива держит город до полудня: видимость падает до пары кварталов, влажность на пределе недели.',cloud:'Слоистая облачность: солнце просвечивает окнами, к вечеру небо подсыхает.',rain:'Дождевой фронт над штатом: небо отдаёт сутки воде, давление просело до минимума недели.',sun:'Сухое солнце: день звенит насквозь, влажность на минимуме, ветер едва шевелит вывески.',moon:'Ясная ночь: над пустыней горят звёзды, давление чуть выше нормы, воздух сухой и неподвижный.'};
-function wrender(){var c=Object.keys(WX)[ci],arr=WX[c],X=WXP[c],d=arr[di],st=d[1];
- document.getElementById('skycup').setAttribute('data-wx',st);
- document.getElementById('srdate').textContent=WD[di]+', '+c;
- document.getElementById('srtemp').textContent=d[0]+'\u00b0';
- document.getElementById('srstate').textContent=WXS[st];
- document.getElementById('srp').textContent=X.p[di];
- document.getElementById('srw').textContent=X.w[di];
- document.getElementById('srh').textContent=X.h[di];
- document.getElementById('srnote').textContent=WXN[st];
- document.querySelectorAll('#skydock .skyd').forEach(function(b,i){b.classList.toggle('on',i===di);b.setAttribute('aria-pressed',i===di?'true':'false');});}
-function wcity(){var c=Object.keys(WX)[ci],arr=WX[c];
- document.getElementById('skydock').innerHTML=arr.map(function(d,i){return '<button class="skyd'+(i===di?' on':'')+'" data-i="'+i+'" aria-pressed="'+(i===di?'true':'false')+'"><span class="sdw">'+WD[i]+'</span>'+ICON[d[1]]+'<span class="sdt">'+d[0]+'\u00b0</span></button>';}).join('');
- document.querySelectorAll('#skydock .skyd').forEach(function(b){b.addEventListener('click',function(){di=+b.getAttribute('data-i');wrender();});});
- wrender();}
+var WXP={"San Fierro":{"p":[752,750,746,744,749,754,752],"w":[2,3,5,6,4,2,2],"h":[94,82,88,91,78,64,90]},"Los Santos":{"p":[756,756,754,750,755,756,756],"w":[3,3,4,5,3,2,2],"h":[38,36,44,58,40,35,33]},"Las Venturas":{"p":[758,758,757,755,757,758,759],"w":[2,2,3,4,2,2,1],"h":[22,20,21,30,22,19,26]}};
+var AST=[{"d":5,"sr":7.15,"ss":18.773,"tn":12.962,"sd":-0.05312,"cd":0.78745,"td":-0.08705,"mr":1.659,"ms":16.266,"k0":31.0,"k1":21.1,"wane":true,"e0":292.6,"m":[[-15.19,46.87],[-10.92,52.22],[-6.32,57.22],[-1.46,61.91],[3.61,66.37],[8.87,70.65],[14.26,74.81],[19.77,78.93],[25.36,83.07],[31.0,87.34],[36.66,91.85],[42.3,96.74],[47.88,102.23],[53.33,108.64],[58.54,116.46],[63.36,126.41],[67.47,139.52],[70.42,156.72],[71.61,177.47],[70.7,198.52],[67.95,216.33],[63.94,229.98],[59.17,240.3],[53.94,248.35],[48.45,254.9],[42.81,260.46],[37.07,265.37],[31.3,269.86],[25.53,274.09],[19.78,278.18],[14.09,282.21],[8.49,286.28],[2.99,290.45],[-2.36,294.79],[-7.52,299.37],[-12.46,304.27],[-17.12,309.54],[-21.43,315.25],[-25.33,321.48],[-28.72,328.25],[-31.52,335.57],[-33.64,343.39],[-34.99,351.63],[-35.51,360.1],[-35.19,368.6],[-34.03,376.92],[-32.1,384.88],[-29.46,392.37],[-26.2,399.33]]},{"d":6,"sr":7.165,"ss":18.748,"tn":12.957,"sd":-0.0572,"cd":0.78697,"td":-0.0938,"mr":2.862,"ms":16.77,"k0":21.1,"k1":12.8,"wane":true,"e0":305.5,"m":[[-26.2,39.33],[-22.42,45.74],[-18.21,51.66],[-13.64,57.13],[-8.78,62.23],[-3.68,67.03],[1.6,71.59],[7.03,76.01],[12.56,80.34],[18.17,84.68],[23.83,89.1],[29.48,93.73],[35.11,98.67],[40.65,104.12],[46.05,110.29],[51.21,117.5],[56.0,126.19],[60.2,136.89],[63.52,150.08],[65.57,165.79],[66.01,182.97],[64.76,199.67],[62.04,214.24],[58.23,226.19],[53.67,235.84],[48.63,243.74],[43.27,250.36],[37.7,256.1],[32.01,261.21],[26.24,265.91],[20.44,270.33],[14.64,274.59],[8.88,278.8],[3.17,283.04],[-2.44,287.38],[-7.92,291.91],[-13.23,296.7],[-18.32,301.85],[-23.13,307.45],[-27.59,313.58],[-31.61,320.33],[-35.09,327.77],[-37.91,335.91],[-39.97,344.68],[-41.16,353.94],[-41.42,363.43],[-40.73,372.85],[-39.14,381.93],[-36.72,390.45]]},{"d":7,"sr":7.18,"ss":18.724,"tn":12.952,"sd":-0.06127,"cd":0.78646,"td":-0.10053,"mr":4.024,"ms":17.215,"k0":12.8,"k1":6.4,"wane":true,"e0":318.2,"m":[[-36.72,30.45],[-33.59,38.31],[-29.86,45.48],[-25.65,52.01],[-21.04,57.97],[-16.13,63.46],[-10.97,68.57],[-5.63,73.39],[-0.15,78.02],[5.43,82.52],[11.07,87.0],[16.73,91.54],[22.38,96.24],[27.97,101.21],[33.46,106.6],[38.78,112.58],[43.86,119.37],[48.56,127.24],[52.74,136.49],[56.17,147.38],[58.6,159.98],[59.78,173.87],[59.55,188.15],[57.94,201.71],[55.14,213.78],[51.41,224.11],[47.0,232.86],[42.11,240.31],[36.88,246.76],[31.41,252.45],[25.78,257.6],[20.04,262.37],[14.24,266.88],[8.42,271.25],[2.61,275.57],[-3.16,279.93],[-8.86,284.41],[-14.44,289.1],[-19.87,294.11],[-25.09,299.54],[-30.03,305.51],[-34.61,312.15],[-38.72,319.59],[-42.23,327.92],[-45.01,337.18],[-46.89,347.25],[-47.77,357.87],[-47.57,368.64],[-46.32,379.11]]},{"d":8,"sr":7.195,"ss":18.699,"tn":12.947,"sd":-0.06532,"cd":0.78592,"td":-0.10725,"mr":5.149,"ms":17.629,"k0":6.4,"k1":2.1,"wane":true,"e0":330.8,"m":[[-46.32,19.11],[-44.1,28.92],[-41.06,37.87],[-37.33,45.91],[-33.06,53.09],[-28.38,59.55],[-23.37,65.4],[-18.13,70.77],[-12.72,75.79],[-7.17,80.55],[-1.55,85.17],[4.1,89.73],[9.77,94.31],[15.39,99.03],[20.94,103.97],[26.36,109.25],[31.6,115.02],[36.57,121.43],[41.17,128.66],[45.29,136.9],[48.75,146.29],[51.37,156.87],[52.96,168.45],[53.38,180.57],[52.59,192.59],[50.65,203.9],[47.74,214.11],[44.04,223.12],[39.72,230.99],[34.94,237.89],[29.82,244.01],[24.45,249.53],[18.89,254.59],[13.21,259.31],[7.44,263.82],[1.63,268.21],[-4.2,272.57],[-10.01,276.98],[-15.76,281.55],[-21.43,286.37],[-26.95,291.56],[-32.28,297.26],[-37.33,303.64],[-42.01,310.88],[-46.18,319.19],[-49.68,328.71],[-52.32,339.5],[-53.9,351.34],[-54.28,363.73]]},{"d":9,"sr":7.211,"ss":18.675,"tn":12.943,"sd":-0.06936,"cd":0.78534,"td":-0.11396,"mr":6.246,"ms":18.037,"k0":2.1,"k1":0.1,"wane":true,"e0":343.3,"m":[[-54.28,3.73],[-53.42,15.99],[-51.41,27.46],[-48.43,37.77],[-44.66,46.82],[-40.31,54.72],[-35.52,61.65],[-30.41,67.81],[-25.07,73.39],[-19.58,78.53],[-13.98,83.37],[-8.33,88.02],[-2.66,92.58],[2.99,97.14],[8.58,101.79],[14.07,106.64],[19.42,111.77],[24.56,117.29],[29.43,123.33],[33.94,130.01],[38.0,137.44],[41.46,145.73],[44.19,154.89],[46.05,164.83],[46.92,175.29],[46.74,185.88],[45.51,196.19],[43.32,205.86],[40.3,214.7],[36.6,222.65],[32.34,229.75],[27.65,236.12],[22.63,241.88],[17.35,247.14],[11.88,252.03],[6.27,256.64],[0.55,261.07],[-5.24,265.4],[-11.06,269.73],[-16.88,274.13],[-22.67,278.72],[-28.38,283.6],[-33.98,288.92],[-39.4,294.87],[-44.55,301.66],[-49.32,309.59],[-53.54,318.98],[-57.0,330.1],[-59.41,343.01]]},{"d":10,"sr":7.226,"ss":18.651,"tn":12.938,"sd":-0.07338,"cd":0.78473,"td":-0.12065,"mr":7.331,"ms":18.461,"k0":0.1,"k1":0.5,"wane":true,"e0":355.5,"m":[[-59.41,343.01],[-60.52,357.25],[-60.19,371.81],[-58.46,385.53],[-55.55,397.64],[-51.74,407.95],[-47.28,416.65],[-42.37,424.05],[-37.15,430.48],[-31.72,436.18],[-26.16,441.37],[-20.52,446.2],[-14.85,450.81],[-9.18,455.3],[-3.56,459.77],[1.99,464.31],[7.42,469.0],[12.69,473.92],[17.75,479.17],[22.54,484.83],[26.98,491.0],[31.0,497.77],[34.48,505.19],[37.31,513.28],[39.39,522.0],[40.61,531.18],[40.9,540.59],[40.26,549.95],[38.71,558.96],[36.33,567.43],[33.23,575.24],[29.53,582.37],[25.33,588.84],[20.72,594.73],[15.79,600.12],[10.61,605.12],[5.23,609.8],[-0.31,614.24],[-5.97,618.53],[-11.7,622.75],[-17.49,626.98],[-23.3,631.31],[-29.1,635.84],[-34.86,640.71],[-40.51,646.08],[-46.01,652.2],[-51.27,659.37],[-56.13,668.05],[-60.4,678.77]]},{"d":11,"sr":7.241,"ss":18.627,"tn":12.934,"sd":-0.07737,"cd":0.78409,"td":-0.12733,"mr":8.413,"ms":18.924,"k0":0.5,"k1":2.9,"wane":false,"e0":7.5,"m":[[-60.4,318.77],[-63.77,332.06],[-65.85,347.95],[-66.3,365.36],[-65.03,382.24],[-62.28,396.91],[-58.46,408.89],[-53.9,418.56],[-48.88,426.46],[-43.56,433.11],[-38.05,438.88],[-32.43,444.05],[-26.76,448.81],[-21.08,453.31],[-15.43,457.68],[-9.83,462.0],[-4.33,466.36],[1.05,470.85],[6.26,475.53],[11.26,480.48],[15.99,485.77],[20.4,491.47],[24.41,497.65],[27.94,504.36],[30.89,511.62],[33.18,519.38],[34.71,527.58],[35.43,536.04],[35.3,544.57],[34.32,552.96],[32.54,561.01],[30.04,568.59],[26.89,575.64],[23.2,582.12],[19.05,588.08],[14.52,593.56],[9.69,598.63],[4.6,603.36],[-0.69,607.82],[-6.15,612.08],[-11.73,616.21],[-17.4,620.27],[-23.15,624.36],[-28.93,628.55],[-34.72,632.95],[-40.49,637.72],[-46.19,643.04],[-51.76,649.21],[-57.11,656.67]]}];
+var SP=0.612561,CP=0.790423;
+var WXS={"fog":"туман","cloud":"облачность","rain":"дождь","sun":"ясно","moon":"ясная ночь"},PHR={"night":"ночь","dawn":"рассвет","sunrise":"восход","morning":"утро","day":"день","evening":"вечер","sunset":"закат","dusk":"сумерки"},NOTES={"San Fierro":{"night":"Ночь над заливом: мост держит огни, вода чёрная, из доков тянет пароходным дымом.","dawn":"Рассвет: восток над холмами светлеет, фонари гаснут по одному, траулеры выходят в воду.","sunrise":"Солнце вышло над хребтом: мост ещё в тени, набережная уже тёплая.","morning":"Утро: небо набирает высоту, ветер с океана поднимает волну у причалов, город едет на работу.","day":"День в зените: свет плоский и честный, с моста видно залив до самых верфей.","evening":"Вечер: солнце уходит в океан, вода краснеет, холмы остывают первыми.","sunset":"Закат: диск лёг на воду, над заливом двадцать минут держится полоса света.","dusk":"Сумерки: огни города уже ярче неба, набережная остывает."},"Los Santos":{"night":"Ночь в Los Santos: неон не гаснет до утра, небо светлее земли, звёзд почти не разобрать.","dawn":"Рассвет: пальмы на набережной встают против розового неба, улицы ещё пустые, поливальные машины уже работают.","sunrise":"Солнце вышло из-за холмов: пляж уже золотой, тени пальм длинные, первые серферы гребут к бую.","morning":"Утро: воздух прозрачный, с холмов виден весь центр, жара только набирает ход.","day":"День: солнце бьёт в лобовые стёкла, асфальт мягкий, над центром висит привычная дымка.","evening":"Вечер: солнце садится в океан, пляж пустеет, небоскрёбы ловят последний свет стеклом.","sunset":"Закат над океаном: диск уходит в воду, набережная зажигает фонари, небо держит розовый ещё минут двадцать.","dusk":"Сумерки: город включает всё сразу - вывески, фары, подсветку холмов."},"Las Venturas":{"night":"Ночь над пустыней: воздух остывает быстро, звёзды до самого горизонта, огни полосы видны за тридцать миль.","dawn":"Рассвет: пустыня светлеет разом, небо из чёрного уходит в серый, камни ещё холодные.","sunrise":"Солнце вышло над хребтом: пустыня сразу желтеет, камни начинают отдавать ночной холод.","morning":"Утро: жара ещё не включилась, ветер сухой, с дороги видно горы до самой кромки.","day":"День: зной стоит стеной, асфальт дрожит, влажность на минимуме, тень - единственное убежище.","evening":"Вечер: солнце опускается за хребет, пустыня отдаёт накопленное тепло, небо горит медью.","sunset":"Закат: диск уходит за хребет одним движением, над дорогой ещё стоит тёплый воздух, неон пока молчит.","dusk":"Сумерки: над полосой зажигаются вывески, а над пустыней - звёзды; первые полчаса небо делится пополам."}},CLAUSE={"fog":" Туман с залива держит видимость на двух кварталах.","rain":" Дождь идёт ровно, без пауз.","cloud":" Облачность слоистая, солнце просвечивает окнами.","sun":"","moon":""};
+var WXR={'San Fierro':7,'Los Santos':11,'Las Venturas':14};
+var WXF={sun:1,moon:1.1,cloud:0.82,rain:0.68,fog:0.62};
+var WXV={sun:1.2,moon:1.2,cloud:0.9,rain:0.45,fog:0.12};
+var WXW={'San Fierro':255,'Los Santos':225,'Las Venturas':195};
+var COMPAS=['С','ССВ','СВ','ВСВ','В','ВЮВ','ЮВ','ЮЮВ','Ю','ЮЮЗ','ЮЗ','ЗЮЗ','З','ЗСЗ','СЗ','ССЗ'];
+var C1OP={fog:0.5,cloud:0.95,rain:1,sun:0.34,moon:0.16},C2OP={fog:0.35,cloud:0.8,rain:0.9,sun:0.22,moon:0.12};
+var SUNOP={sun:1,moon:1,cloud:0.18,rain:0,fog:0.3};
+var HOUR_MS=4000,TICK=50,DTH=TICK/HOUR_MS;
+var PSTOPS=[[-24,[4,7,15],[8,17,32],[13,26,42]],[-12,[10,20,36],[22,35,58],[42,53,80]],[-6,[28,42,72],[74,63,94],[138,95,88]],[-2,[44,60,96],[122,90,100],[208,120,80]],[1.5,[53,85,127],[138,122,114],[232,164,94]],[5,[42,92,140],[106,147,176],[203,176,138]],[14,[30,78,128],[74,131,176],[157,195,212]],[50,[24,70,116],[63,120,171],[147,188,207]]];
+var OVC={cloud:[[57,69,78],[76,88,96],[95,107,114],0.45],rain:[[35,45,53],[51,63,72],[70,82,90],0.72],fog:[[74,84,90],[92,102,108],[112,120,124],0.55]};
+var t=0,paused=false,scrub=false,inView=true,L={},lastQ=-1,lastK=-1e9,WINS=null;
+function $(id){return document.getElementById(id);}
+function clamp(v,a,b){return v<a?a:(v>b?b:v);}
+function mix3(a,b,f){return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}
+function rgb(c){return 'rgb('+Math.round(c[0])+','+Math.round(c[1])+','+Math.round(c[2])+')';}
+function skyCols(alt,st){var S=PSTOPS,a,i,f,ov;
+ if(alt<=S[0][0])a=[S[0][1],S[0][2],S[0][3]];
+ else if(alt>=S[S.length-1][0])a=[S[S.length-1][1],S[S.length-1][2],S[S.length-1][3]];
+ else{for(i=0;i<S.length-1;i++){if(alt>=S[i][0]&&alt<=S[i+1][0]){f=(alt-S[i][0])/(S[i+1][0]-S[i][0]);a=[mix3(S[i][1],S[i+1][1],f),mix3(S[i][2],S[i+1][2],f),mix3(S[i][3],S[i+1][3],f)];break;}}}
+ ov=OVC[st];
+ if(ov){a=[mix3(a[0],ov[0],ov[3]),mix3(a[1],ov[1],ov[3]),mix3(a[2],ov[2],ov[3])];}
+ return a;}
+function sunAltAz(A,tt){var H=(tt-A.tn)*15*Math.PI/180,sa=clamp(A.sd+A.cd*Math.cos(H),-1,1);
+ return [Math.asin(sa)*180/Math.PI,(Math.atan2(Math.sin(H),Math.cos(H)*SP-A.td*CP)*180/Math.PI+180)%360];}
+function moonAltAz(A,tt){var i=clamp(Math.floor(tt*2),0,47),f=tt*2-i,j=A.m[i],k=A.m[i+1]||j;
+ return [j[0]+(k[0]-j[0])*f,j[1]+(k[1]-j[1])*f];}
+function tempAt(A,Tmax,rng,tt){var lo=A.sr+0.5,hi=A.ss-3.3,Tmin=Tmax-rng,w=hi-lo,u;
+ if(tt>=lo&&tt<hi)return Tmin+rng*0.5*(1-Math.cos(Math.PI*(tt-lo)/w));
+ u=(tt-hi+24)%24;
+ return Tmax-rng*0.5*(1-Math.cos(Math.PI*u/(24-w)));}
+function es(T){return 6.112*Math.exp(17.62*T/(243.12+T));}
+function dewPoint(T,RH){var a=Math.log(clamp(RH,1,100)/100)+17.62*T/(243.12+T);return 243.12*a/(17.62-a);}
+function phaseOf(A,tt,alt){var rising=tt<A.tn;
+ if(alt<=-8)return 'night';
+ if(alt<-1.5)return rising?'dawn':'dusk';
+ if(alt<=2.5)return rising?'sunrise':'sunset';
+ if(alt>=30)return 'day';
+ return rising?'morning':'evening';}
+function hhmm(tt){var m=Math.floor(tt*60+1e-6)%1440,h=Math.floor(m/60),mm=m%60;return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;}
+function sgn(v,d){return (v>=0?'+':'')+v.toFixed(d);}
+function compass(deg){return COMPAS[Math.round((((deg%360)+360)%360)/22.5)%16];}
+function moonPathD(kk,wane){var r=44,c=1-2*kk,pts=[],i,th,x,y;
+ for(i=0;i<=24;i++){th=Math.PI*i/24;x=Math.sin(th)*r;y=-Math.cos(th)*r;pts.push((wane?-x:x).toFixed(1)+' '+y.toFixed(1));}
+ for(i=24;i>=0;i--){th=Math.PI*i/24;x=Math.sin(th)*r*c;y=-Math.cos(th)*r;pts.push((wane?-x:x).toFixed(1)+' '+y.toFixed(1));}
+ return 'M'+pts.join('L')+'Z';}
+function setT(id,txt){if(L['t'+id]!==txt){L['t'+id]=txt;var el=$(id);if(el)el.textContent=txt;}}
+function setA(id,at,v){if(L['a'+id+at]!==v){L['a'+id+at]=v;var el=$(id);if(el)el.setAttribute(at,v);}}
+function setS(id,st,v){if(L['s'+id+st]!==v){L['s'+id+st]=v;var el=$(id);if(el)el.style[st]=v;}}
+function updateWindows(tt){if(!WINS)WINS=document.querySelectorAll('.win');
+ for(var i=0;i<WINS.length;i++){var w=WINS[i],a=parseFloat(w.getAttribute('data-a')),b,lit,f;
+  if(a<0){f='#101a22';}
+  else{b=parseFloat(w.getAttribute('data-b'));lit=(a<=b)?(tt>=a&&tt<=b):(tt>=a||tt<=b);f=lit?w.getAttribute('data-c'):'#101a22';}
+  if(w.getAttribute('fill')!==f)w.setAttribute('fill',f);}}
+function buildRail(){var city=Object.keys(WX)[ci],A=AST[di],st=WX[city][di][1],stops=[],i,tt,cols,c;
+ for(i=0;i<96;i++){tt=i*0.25;cols=skyCols(sunAltAz(A,tt)[0],st);c=mix3(cols[1],cols[2],0.5);stops.push(rgb(c)+' '+(i/95*100).toFixed(1)+'%');}
+ var h='<div style="position:absolute;inset:0;background:linear-gradient(90deg,'+stops.join(',')+')"></div>';
+ if(A.mr!=null&&A.ms!=null&&A.ms>A.mr)h+='<div class="railmoon" style="left:'+(A.mr/24*100).toFixed(2)+'%;width:'+((A.ms-A.mr)/24*100).toFixed(2)+'%"></div>';
+ h+='<div class="railtick" style="left:'+(A.sr/24*100).toFixed(2)+'%;background:#f6c453"></div>';
+ h+='<div class="railtick" style="left:'+(A.ss/24*100).toFixed(2)+'%;background:#e88a4a"></div>';
+ $('railbg').innerHTML=h;}
+function buildDock(){var city=Object.keys(WX)[ci],arr=WX[city];
+ $('skydock').innerHTML=arr.map(function(d,i){var Tmax=parseInt(d[0].replace('+',''),10),Tmin=Math.round(Tmax-WXR[city]*WXF[d[1]]);
+  return '<button class="skyd'+(i===di?' on':'')+'" data-i="'+i+'" aria-pressed="'+(i===di?'true':'false')+'"><span class="sdw">'+WD[i]+'</span>'+ICON[d[1]]+'<span class="sdt">'+d[0]+'\u00b0</span><span class="sdm">\u043c\u0438\u043d '+(Tmin>=0?'+':'')+Tmin+'\u00b0</span></button>';}).join('');
+ $('skydock').querySelectorAll('.skyd').forEach(function(b){b.addEventListener('click',function(){di=+b.getAttribute('data-i');syncDock();buildRail();render();});});}
+function syncDock(){$('skydock').querySelectorAll('.skyd').forEach(function(b,i){b.classList.toggle('on',i===di);b.setAttribute('aria-pressed',i===di?'true':'false');});}
+function syncTabs(){wt.querySelectorAll('.wxt').forEach(function(x,i){x.classList.toggle('on',i===ci);});}
+function snapshot(){var city=Object.keys(WX)[ci],A=AST[di],d=WX[city][di],X=WXP[city];
+ var Tmax=parseInt(d[0].replace('+',''),10),st=d[1],rng=WXR[city]*WXF[st];
+ var saz=sunAltAz(A,t),maz=moonAltAz(A,t),kk=A.k0+(A.k1-A.k0)*(t/24);
+ var T=tempAt(A,Tmax,rng,t);
+ return {t:t,day:di,city:city,state:st,phase:phaseOf(A,t,saz[0]),clock:hhmm(t),
+  alt:+saz[0].toFixed(2),az:+saz[1].toFixed(1),sunUp:saz[0]>-0.833,
+  malt:+maz[0].toFixed(2),maz:+maz[1].toFixed(1),mvis:(maz[0]>0.125&&kk>=1.5&&!(saz[0]>0&&kk<6)),k:+kk.toFixed(1),
+  temp:+T.toFixed(2)};}
+function render(){
+ var city=Object.keys(WX)[ci],A=AST[di],d=WX[city][di],X=WXP[city];
+ var Tmax=parseInt(d[0].replace('+',''),10),st=d[1];
+ var rng=WXR[city]*WXF[st],Tmin=Tmax-rng;
+ var saz=sunAltAz(A,t),alt=saz[0],az=saz[1];
+ var maz=moonAltAz(A,t),malt=maz[0],mazim=maz[1];
+ var kk=A.k0+(A.k1-A.k0)*(t/24),mvis=malt>0.125&&kk>=1.5&&!(alt>0&&kk<6);
+ var T=tempAt(A,Tmax,rng,t);
+ var Tmean=Tmax-rng/2,Td=dewPoint(Tmean,X.h[di]);
+ var RH=clamp(100*es(Td)/es(T),18,100);
+ var burn=0.35+0.65*clamp((t-9)/5,0,1);
+ RH=Math.max(RH,st==='fog'?96-14*burn:(st==='rain'?86:0));
+ var P=X.p[di]+1.4*Math.cos(2*Math.PI*(t-10)/12);
+ var dP=-1.4*2*Math.PI/12*Math.sin(2*Math.PI*(t-10)/12);
+ var W=X.w[di]*(0.62+0.38*Math.cos(2*Math.PI*(t-15)/24));
+ var wdir=WXW[city]+22*Math.sin(2*Math.PI*(t-9)/24);
+ var vis=(100-RH)*WXV[st];
+ if(st==='fog')vis*=burn;
+ vis=clamp(vis,0.1,30);
+ var ph=phaseOf(A,t,alt);
+ var ovw=OVC[st]?OVC[st][3]:0;
+ var qa=Math.round(alt*4)/4;
+ if(L.qa!==qa||L.qst!==st){L.qa=qa;L.qst=st;var cols=skyCols(qa,st);
+  $('skybg').style.background='linear-gradient(180deg,'+rgb(cols[0])+' 0%,'+rgb(cols[1])+' 54%,'+rgb(cols[2])+' 86%,'+rgb([cols[2][0]*0.3,cols[2][1]*0.3,cols[2][2]*0.32])+' 100%)';}
+ setS('skystars','opacity',(clamp((-alt-1)/7,0,1)*(1-ovw)).toFixed(2));
+ var sx=clamp((az-55)/250*100,-10,110),sy=86-Math.pow(clamp(alt,0,90)/90,0.72)*78,sup=alt>-0.833;
+ setS('skysun','opacity',sup?(clamp((alt+0.833)/3,0,1)*SUNOP[st]).toFixed(2):'0');
+ setS('skysun','left',sx.toFixed(2)+'%');setS('skysun','top',sy.toFixed(2)+'%');
+ var hr=clamp((16-alt)/16,0,1);
+ setS('skysun','filter','drop-shadow(0 0 22px rgba(246,196,83,.55)) hue-rotate('+(-hr*28).toFixed(0)+'deg) saturate('+(1+hr*0.5).toFixed(2)+')');
+ var gop=(alt>-6)?clamp(1-Math.abs(alt)/9,0,1)*(1-ovw*0.85):0;
+ setS('skyglow','opacity',gop.toFixed(2));setS('skyglow','left',sx.toFixed(2)+'%');
+ if(L.gc!==qa){L.gc=qa;var gc=mix3([224,86,43],[246,196,83],clamp(alt/10,0,1));
+  $('skyglow').style.background='radial-gradient(ellipse at center,rgba('+Math.round(gc[0])+','+Math.round(gc[1])+','+Math.round(gc[2])+',.5) 0%,transparent 70%)';}
+ var mx=clamp((mazim-55)/250*100,-10,110),my=86-Math.pow(clamp(malt,0,90)/90,0.72)*78;
+ setS('skymoon','opacity',mvis?clamp(malt/4,0,1).toFixed(2):'0');
+ setS('skymoon','left',mx.toFixed(2)+'%');setS('skymoon','top',my.toFixed(2)+'%');
+ var kp=Math.round(kk*10)/10;
+ if(mvis&&kp!==lastK){lastK=kp;var pd=moonPathD(kk/100,A.wane);$('srmpath').setAttribute('d',pd);$('srmclipd').setAttribute('d',pd);}
+ var mgop=mvis?clamp(1-Math.abs(malt)/14,0,1)*0.28:0;
+ setS('moonglow','opacity',mgop.toFixed(2));setS('moonglow','left',mx.toFixed(2)+'%');
+ var br=((0.42+0.62*clamp((alt+6)/16,0,1))*(st==='rain'?0.6:1)).toFixed(2);
+ setS('skc1','filter','brightness('+br+')');setS('skc2','filter','brightness('+br+')');
+ setS('skc1','opacity',C1OP[st].toFixed(2));setS('skc2','opacity',C2OP[st].toFixed(2));
+ setA('skycup','data-wx',st);
+ setT('srclock',hhmm(t));
+ setT('srtemp',sgn(T,0)+'\u00b0');
+ setT('srdate',WD[di]+', '+city);
+ setT('srstate',PHR[ph]+' \u00b7 '+WXS[st]);
+ setT('srmm','\u043c\u0438\u043d '+sgn(Tmin,0)+'\u00b0 \u00b7 \u043c\u0430\u043a\u0441 '+sgn(Tmax,0)+'\u00b0');
+ setA('skycup','aria-label','\u041d\u0435\u0431\u043e \u0441\u0443\u0442\u043e\u043a: '+WD[di]+', '+city);
+ setT('srp',String(Math.round(P)));
+ setT('srpt',Math.abs(dP)<0.12?'\u0440\u043e\u0432\u043d\u043e\u0435':(dP>0?'\u0440\u0430\u0441\u0442\u0451\u0442':'\u043f\u0430\u0434\u0430\u0435\u0442'));
+ setT('srw',W.toFixed(1));
+ setT('srwt',compass(wdir)+(W>=5?', \u043f\u043e\u0440\u044b\u0432\u044b \u0434\u043e '+Math.round(W*1.4+1):''));
+ setT('srh',String(Math.round(RH)));
+ setT('srht','\u0442. \u0440\u043e\u0441\u044b '+sgn(Td,0)+'\u00b0');
+ setT('srv',vis>=20?'20+':vis.toFixed(1));
+ setT('srvt',vis<0.9?'\u043f\u043e\u0447\u0442\u0438 \u043d\u0430 \u043e\u0449\u0443\u043f\u044c':(vis<4?'\u0434\u044b\u043c\u043a\u0430':(vis<10?'\u0443\u043c\u0435\u0440\u0435\u043d\u043d\u0430\u044f':'\u0434\u043e \u0433\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430')));
+ var nk=city+'|'+ph+'|'+st;
+ if(L.nk!==nk){L.nk=nk;$('srnote').textContent=NOTES[city][ph]+(CLAUSE[st]||'');}
+ setS('railhead','left',(t/24*100).toFixed(3)+'%');
+ setT('railtime',hhmm(t));
+ var q=Math.floor(t*4);
+ if(q!==lastQ){lastQ=q;updateWindows(t);setA('skyrail','aria-valuenow',String(Math.floor(t*60)));setA('skyrail','aria-valuetext',hhmm(t)+', '+PHR[ph]);}}
+var rail=$('skyrail');
+function scrubTo(e){var r=rail.getBoundingClientRect();t=clamp((e.clientX-r.left)/r.width,0,0.9999)*24;render();}
+rail.addEventListener('pointerdown',function(e){scrub=true;if(rail.setPointerCapture){try{rail.setPointerCapture(e.pointerId);}catch(x){}}scrubTo(e);e.preventDefault();});
+rail.addEventListener('pointermove',function(e){if(scrub)scrubTo(e);});
+rail.addEventListener('pointerup',function(){scrub=false;});
+rail.addEventListener('pointercancel',function(){scrub=false;});
+rail.addEventListener('keydown',function(e){var step=0;
+ if(e.key==='ArrowRight')step=e.shiftKey?1:0.25;
+ else if(e.key==='ArrowLeft')step=e.shiftKey?-1:-0.25;
+ else if(e.key==='Home'){t=0;render();e.preventDefault();e.stopPropagation();return;}
+ else return;
+ t=clamp(t+step,0,23.999);render();e.preventDefault();e.stopPropagation();});
+var play=$('srplay');
+play.addEventListener('click',function(){paused=!paused;play.innerHTML=paused?'\u25b6':'\u275a\u275a';play.setAttribute('aria-label',paused?'\u041f\u0443\u0441\u043a':'\u041f\u0430\u0443\u0437\u0430');play.setAttribute('aria-pressed',paused?'true':'false');});
 wt.innerHTML=Object.keys(WX).map(function(c,i){return '<button class="wxt'+(i===0?' on':'')+'" data-i="'+i+'">'+c+'</button>';}).join('');
-wt.querySelectorAll('.wxt').forEach(function(b){b.addEventListener('click',function(){ci=+b.getAttribute('data-i');wt.querySelectorAll('.wxt').forEach(function(x){x.classList.remove('on');});b.classList.add('on');wcity();});});
-wcity();
+wt.querySelectorAll('.wxt').forEach(function(b){b.addEventListener('click',function(){ci=+b.getAttribute('data-i');syncTabs();buildDock();buildRail();render();});});
+buildDock();buildRail();
+t=AST[0].sr-0.75;if(t<0)t+=24;
+render();
+setInterval(function(){if(!paused&&!scrub&&inView&&!document.hidden){t+=DTH;if(t>=24)t-=24;render();}},TICK);
+if('IntersectionObserver' in window){try{new IntersectionObserver(function(es){inView=es[0].isIntersecting;},{threshold:0.05}).observe($('skydeck'));}catch(x){}}
+window.__sfnSky={setTime:function(h){t=clamp(h,0,23.999);render();},getTime:function(){return t;},setDay:function(i){di=clamp(i|0,0,6);syncDock();buildRail();render();},setCity:function(i){ci=clamp(i|0,0,2);syncTabs();buildDock();buildRail();render();},freeze:function(b){paused=!!b;play.innerHTML=paused?'\u25b6':'\u275a\u275a';},snap:snapshot};
 
 /* обсерватория */
 var CONST={"10": {"s": [[49.7, 12.0], [34.1, 12.9], [41.3, 15.5], [63.8, 22.8], [12.0, 25.4], [20.7, 28.1], [47.8, 28.5], [81.8, 28.1], [24.6, 39.8], [51.7, 40.6], [23.3, 45.4], [17.2, 58.0]], "l": [[0, 2], [0, 3], [0, 6], [1, 4], [3, 7], [4, 5], [5, 8], [6, 9], [8, 10], [10, 11]]}, "0": {"s": [[75.5, 12.0], [88.0, 14.7], [57.2, 17.2], [12.0, 82.9]], "l": [[0, 1], [0, 2], [2, 3]]}, "3": {"s": [[20.4, 12.0], [72.2, 25.9], [78.9, 27.2], [23.1, 29.5], [22.6, 38.1], [12.0, 52.4], [37.5, 59.6]], "l": [[0, 3], [1, 2], [3, 4], [4, 5], [4, 6]]}, "9": {"s": [[60.9, 12.0], [55.9, 20.7], [16.3, 24.7], [30.6, 27.0], [52.0, 29.3], [12.0, 39.7], [41.3, 49.3], [36.1, 54.7]], "l": [[0, 1], [1, 3], [1, 4], [2, 3], [4, 6], [5, 7], [6, 7]]}, "2": {"s": [[19.1, 12.0], [33.4, 12.2], [20.7, 16.5], [13.4, 17.7], [26.9, 18.4], [49.5, 18.9], [36.5, 19.7], [19.2, 30.1], [39.7, 35.4], [25.1, 39.1], [12.0, 39.8], [46.1, 49.1], [50.2, 51.1], [56.3, 51.8], [30.5, 55.2], [21.4, 57.8]], "l": [[0, 2], [1, 6], [2, 3], [2, 4], [2, 7], [4, 6], [5, 6], [6, 8], [7, 9], [7, 10], [8, 11], [9, 14], [10, 15], [11, 12], [12, 13]]}, "4": {"s": [[52.9, 12.0], [57.1, 17.0], [41.9, 18.9], [12.5, 25.4], [40.0, 26.6], [46.9, 33.7], [12.0, 37.1], [46.9, 43.5]], "l": [[0, 1], [0, 2], [2, 4], [3, 4], [4, 5], [5, 7], [6, 7]]}, "6": {"s": [[43.0, 12.0], [12.0, 18.2], [84.1, 38.4], [43.6, 40.0], [88.0, 46.1], [24.7, 50.4], [78.5, 50.7], [24.3, 56.7]], "l": [[0, 1], [0, 3], [1, 5], [2, 6], [4, 6], [5, 7]]}, "11": {"s": [[23.3, 12.0], [15.3, 25.1], [12.0, 33.0], [28.0, 49.5], [61.2, 50.5], [22.5, 51.8], [35.6, 51.5], [80.2, 51.1], [72.5, 53.3], [13.9, 54.7], [88.0, 58.4], [73.2, 64.2], [82.4, 63.8]], "l": [[0, 1], [1, 2], [3, 6], [4, 6], [4, 8], [5, 9], [7, 8], [8, 11], [10, 12], [11, 12]]}, "8": {"s": [[30.4, 12.0], [49.7, 19.7], [79.1, 19.8], [41.4, 19.8], [69.6, 32.8], [53.7, 35.1], [59.8, 38.2], [43.4, 39.3], [73.4, 45.0], [48.8, 46.9], [83.4, 49.1], [69.4, 57.8], [12.0, 64.2], [74.3, 66.2], [35.6, 77.0], [18.7, 82.6], [38.2, 88.0]], "l": [[0, 3], [1, 3], [1, 5], [2, 4], [2, 10], [3, 5], [4, 8], [5, 6], [5, 7], [6, 8], [6, 9], [7, 12], [8, 10], [8, 11], [9, 14], [10, 13], [11, 13], [12, 14], [12, 15], [14, 16]]}, "7": {"s": [[78.7, 12.0], [84.2, 12.8], [88.0, 21.0], [65.5, 25.6], [73.3, 26.7], [59.8, 30.3], [86.4, 30.9], [74.9, 33.6], [85.0, 39.3], [47.6, 42.7], [12.9, 44.7], [21.5, 44.5], [26.4, 45.4], [20.8, 49.9], [15.5, 52.5], [44.5, 52.3], [12.0, 56.2], [18.3, 61.3], [41.8, 62.8], [31.6, 64.3]], "l": [[0, 1], [0, 4], [1, 2], [2, 6], [3, 4], [3, 5], [4, 5], [4, 7], [5, 9], [6, 8], [7, 8], [9, 15], [10, 11], [11, 13], [12, 13], [13, 14], [15, 18], [16, 17], [17, 19], [18, 19]]}, "1": {"s": [[21.1, 12.0], [88.0, 24.0], [51.2, 29.7], [12.0, 34.6], [61.2, 40.4], [66.7, 45.3], [56.9, 48.8], [61.8, 51.0], [68.3, 51.0], [82.9, 59.5]], "l": [[0, 2], [1, 5], [2, 4], [3, 6], [4, 5], [4, 6], [4, 7], [8, 9]]}, "5": {"s": [[65.7, 12.0], [69.6, 25.6], [24.7, 29.7], [42.6, 29.9], [53.4, 33.5], [88.0, 34.4], [76.7, 35.2], [25.7, 40.9], [36.1, 41.5], [63.1, 42.6], [37.0, 47.6], [54.9, 51.3]], "l": [[0, 1], [1, 4], [1, 6], [2, 3], [3, 4], [4, 11], [5, 6], [5, 9], [6, 9], [6, 11], [7, 8], [8, 10], [9, 11], [10, 11]]}};
