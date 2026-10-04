@@ -78,7 +78,8 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 027 | socio-governor-poll.html | governor-poll |
 | 028 | daily-02-10-2026-las-venturas.html | roulette-noir-lv |
 | 029 | daily-03-10-2026.html | day-grid-tight |
-| 030 | (следующий выпуск) | … |
+| 030 | investigation-falk.html | falk-dossier |
+| 031 | (следующий выпуск) | … |
 
 Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
 после редизайна по брифу главреда (03.10.2026, пересборщик `worktmp/build_daily_0310_state_v2.py`)
@@ -99,6 +100,8 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 плакатный вынос дословной фразы, ступенчатые лок-апы) действующий слаг — `prize-desk`.
 Прежние имена жили до 03.10.2026.
 
+Примечание по делу №1 (04.10.2026, ветка `investigation-falk-draft`): черновой тираж `investigation-falk.html` был собран со штампом `SFN-DESIGN-029: falk-two-lives`, но номер 029 уже занят `daily-03-10-2026.html` — коллизия закрыта при переработке дела по методике расследования: действующий штамп `SFN-DESIGN-030: falk-dossier`, маркер `<!-- SFN · 2026 · 030 · falk-dossier -->`. Имя `falk-two-lives` жило до 04.10.2026.
+
 Еженедельники нумеруемся отдельно: `SFN-WEEKLY-001` и т.д. (у них свой характер и свой шаблон).
 
 ## 6. Реестр сигнатурных имён (форензика переживает рефакторы)
@@ -108,6 +111,7 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 `.logbook/.logrow`, `.hubbtn`, `.tape/.tnum/.t-red/.t-blk/.t-zero`, `.mapframe/.pin/.pinprev/.pvplate`,
 `.lvlegend`, `.tomap/.tomapline`, `.wxcard/.hocard/.wxbin/.hobin/.ho-min/.wx-min`, `.hostars/.hoday`,
 `.sidestrip`, `.fin ttl/.fintext` (класс `.finttl`), `.factrow/.fact`, `.divider`, `.secno/.rubric/.rule`.
+Дело №1 `investigation-falk.html` (04.10.2026, штампы 029 `falk-two-lives` → 030 `falk-dossier`): `.splitwrap/.split/.pane/.splithandle/.handle/.splitrange`, `.mosaic/.mshot`, `.evgrid/.ev/.evbtn/.evimg/.evnum/.evcap/.evsrc`, `.route/.rnode/.rbtn/.rshot/.rlbl/.rtxt/.rmark`, `.factgrid/.fcol/.knum`, `.tgbtns/.tgbtn/.tgpanel/.tgnote`, `.qwall/.qnum/.qtxt`, `.finalshot/.fimg/.fcap/.watch/.openend`, `.tlgrid/.tlside/.tlline/.tlfill/.tlpct/.stage/.stnum/.stthumbs/.th`, `.refcard/.rlabel`, `.mailwrap/.mail/.mailbar/.mailhead/.mrow/.mailsubj/.mailbody/.mailsign/.attach/.atch/.stampmark/.threadbtn/.msg2/.sidecard/.sclbl/.sidenote`, `.triggrid/.trig/.tn/.tpill/.trigshot`, `.steps/.step/.sn/.sstat/.spill/.swhen/.stdbox/.stlbl/.stdlist`, `.spheregrid/.scard/.sch/.snum/.smeta/.idbadge/.btop/.bname/.brole/.bcode/.bnum/.rules/.rlbl`, `.fldhead/.fldrow/.flddate/.fldplace/.fldwhat/.fldres/.fldnote/.nb/.nl`, `.reghead/.regrow/.regnum/.regthumb/.regobj/.regtxt/.regline/.rpill/.regsum/.rsum/.rn/.rl`, `.ivtabs/.ivtab/.ivpanel/.ivmeta/.ivq/.ivpull`, `.exitgrid/.exdoc/.dlbl/.dtext/.dsign/.dlg/.dwhen/.dlgline/.exstamp/.sttxt`, `.fstep`.
 Пополнять реестр при каждом новом фирменном элементе; при рефакторе — не удалять записи,
 а помечать датой «имя жило до …».
 
