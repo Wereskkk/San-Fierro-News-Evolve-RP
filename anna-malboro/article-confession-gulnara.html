@@ -98,13 +98,13 @@ section{position:relative}
 .leadshot .ls{aspect-ratio:16/9;background-size:cover;background-position:center;cursor:zoom-in}
 .leadshot .cap{position:absolute;left:0;right:0;bottom:0;background:rgba(23,20,28,.88);color:var(--cream);
 font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;line-height:1.6}
-.pols{display:flex;gap:clamp(14px,2.4vw,28px);flex-wrap:wrap;justify-content:center;margin-top:clamp(24px,4vh,40px)}
-.pol{background:#fff;padding:10px 10px 0;box-shadow:0 12px 30px rgba(23,20,28,.24);width:min(340px,100%);min-width:0}
+.pols{display:flex;gap:clamp(18px,3vw,36px);flex-wrap:wrap;justify-content:center;margin-top:clamp(26px,4.4vh,46px)}
+.pol{background:#fff;padding:14px 14px 0;box-shadow:0 14px 34px rgba(23,20,28,.26);width:min(560px,100%);min-width:0}
 .dark .pol{box-shadow:0 12px 30px rgba(0,0,0,.5)}
 .pol:nth-child(odd){transform:rotate(-1.6deg)}
 .pol:nth-child(even){transform:rotate(1.3deg)}
 .pol .pimg{aspect-ratio:16/9;background-size:cover;background-position:center;cursor:zoom-in}
-.pol .pcap{font-family:var(--hand);font-size:17px;line-height:1.42;color:#3a3440;padding:10px 4px 12px}
+.pol .pcap{font-family:var(--hand);font-size:20px;line-height:1.45;color:#3a3440;padding:12px 6px 14px}
 .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.6vw,20px)}
 .strip .st{aspect-ratio:16/9;background-size:cover;background-position:center;border:1px solid var(--line);cursor:zoom-in;filter:saturate(1.02)}
 .dark .strip .st{border-color:var(--lined)}
@@ -343,22 +343,27 @@ html{scroll-behavior:auto}
     <div class="sechead">
       <div class="kick">Глава четвёртая · после</div>
       <h2>С того момента всё изменилось</h2>
-      <div class="sub">Трасса больше не входит в маршрут. В маршрут входят пляж, пирс и один человек, который носит Гульнару на руках - по её версии, исключительно из-за каблука.</div>
+      <div class="sub">Трасса больше не входит в маршрут. В маршрут входят пляж, пирс и один человек, который носит Гульнару на руках. У редакции был один вопрос - почему. У Гульнары есть ответ, и он про каблук.</div>
     </div>
     <div class="cols">
       <div>
         <p class="hand">«С того момента всё изменилось.»</p>
         <p>Шесть слов, ради которых в журналистике и существуют исповеди. Гульнара не стала уточнять, что именно изменилось: то ли маршрут, то ли гардероб, то ли отношение к хот-догам. Редакция предполагает, что всё сразу - и в следующем блоке у неё будут доказательства.</p>
-        <p>Кадры ниже сделаны в разное время суток и в разных точках штата, но сюжет у них один: Hiromi несёт Гульнару, Гульнара делает вид, что так и задумано, а где-то за кадром, по её же словам, «лежит каблук». Третий кадр этой серии живёт в главе про хот-дог - там он важнее.</p>
+        <p>Кадры ниже сделаны в разное время суток и в разных точках штата, но сюжет у них один: Hiromi несёт Гульнару, а Гульнара делает вид, что так и задумано. На прямой вопрос редакции, зачем её несут через песок, воду и ночной пирс, она ответила без паузы: «У меня каблук. Сломался. На песке. Потом на пирсе. Потом ещё раз, ночью». Три съёмочных дня - три сломанных каблука. Эту статистику редакция записала отдельно.</p>
+        <div class="pull">
+          <q>У меня каблук. Сломался. На песке. Потом на пирсе. Потом ещё раз, ночью.</q>
+          <span class="who mono">Gulnara Elfie · ответ на единственный вопрос редакции</span>
+        </div>
+        <p>Третий кадр серии живёт в главе про хот-дог - там он важнее. И да: третий каблук, по хронологии, сломался сразу после него.</p>
       </div>
       <aside class="ednote">
         <span class="en">Пометка редакции</span>
-        Каблук на кадрах не обнаружен ни разу. Редакция проверила все три снимка под лупой фоторедактора и официально заявляет: каблук - это алиби. Красивое, романтичное и совершенно непроверяемое.
+        Каблук не показали ни разу - ни сломанный, ни целый: на кадрах этой серии обувь не разглядеть вовсе. Редакция проверила все три снимка под лупой фоторедактора и официально заявляет: каблук - это алиби. Красивое, романтичное и совершенно непроверяемое. Статистика «три дня - три каблука» в реестр достижений штата не внесена.
       </aside>
     </div>
     <div class="pols">
-      <figure class="pol"><div class="pimg" role="img" aria-label="Пляж днём: Hiromi несёт Гульнару на руках" style="background-image:var(--g11)" data-lb="11" data-cap="Пляж, день: Hiromi несёт Гульнару через песок. По её версии - «это не романтика, у меня каблук»."></div><figcaption class="pcap">Пляж, день: «это не романтика, у меня каблук».</figcaption></figure>
-      <figure class="pol"><div class="pimg" role="img" aria-label="Пирс ночью: Hiromi несёт Гульнару" style="background-image:var(--g12)" data-lb="12" data-cap="Пирс, ночь: тот же каблук, та же легенда. Редакция видела оба кадра и молчит."></div><figcaption class="pcap">Пирс, ночь: тот же каблук, та же легенда. Мы молчим.</figcaption></figure>
+      <figure class="pol"><div class="pimg" role="img" aria-label="Пляж днём: Hiromi несёт Гульнару на руках" style="background-image:var(--g11)" data-lb="11" data-cap="Пляж, день: первый сломанный каблук. «Это не романтика», - говорит Гульнара из-за плеча Hiromi."></div><figcaption class="pcap">Пляж, день: первый сломанный каблук. «Это не романтика».</figcaption></figure>
+      <figure class="pol"><div class="pimg" role="img" aria-label="Пирс ночью: Hiromi несёт Гульнару" style="background-image:var(--g12)" data-lb="12" data-cap="Пирс, ночь: второй сломанный каблук и та же легенда. Редакция видела оба кадра и молчит."></div><figcaption class="pcap">Пирс, ночь: второй каблук, та же легенда. Мы молчим.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -372,8 +377,8 @@ html{scroll-behavior:auto}
     </div>
     <div class="hdwrap">
       <figure class="leadshot">
-        <div class="ls" role="img" aria-label="Пляж поздним вечером: Hiromi несёт Гульнару на руках" style="background-image:var(--g13)" data-lb="13" data-cap="Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, и был съеден тот самый хот-дог."></div>
-        <figcaption class="cap">Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, и был съеден тот самый хот-дог. Рисованную иллюстрацию редакция убрала: правда сильнее графики.</figcaption>
+        <div class="ls" role="img" aria-label="Пляж поздним вечером: Hiromi несёт Гульнару на руках" style="background-image:var(--g13)" data-lb="13" data-cap="Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, был съеден тот самый хот-дог и сломан третий каблук."></div>
+        <figcaption class="cap">Пляж, поздний вечер: сразу после этого кадра, по словам Гульнары, был съеден тот самый хот-дог и сломан третий каблук. Рисованную иллюстрацию редакция убрала: правда сильнее графики.</figcaption>
       </figure>
       <div>
         <p class="hand">«И да, раз уж я решила быть честной до конца… у тебя самый большой и самый вкусный хот-дог в штате. Тот самый, от которого сносит крышу и который хочется снова и снова. Никто даже близко не стоит рядом.»</p>
