@@ -167,6 +167,17 @@ background:repeating-conic-gradient(rgba(232,193,90,.85) 0 4deg,transparent 4deg
 .st3 .n{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;color:var(--pink2)}
 .st3 h3{font-family:var(--osw);font-weight:600;text-transform:uppercase;font-size:17px;margin:8px 0 6px}
 .st3 p{font-size:14.4px;line-height:1.6;color:#5c5648}
+/* ---- карьерная лестница ---- */
+.ladder{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vw,38px);margin-top:clamp(26px,4.4vh,44px)}
+.lcol{border:1px solid rgba(23,20,28,.16);background:#fff;padding:clamp(18px,2.8vw,28px);min-width:0}
+.lhead{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pink2);margin-bottom:10px}
+.lrk{display:grid;gap:5px;padding:12px 0 12px 22px;border-top:1px solid rgba(23,20,28,.12);position:relative}
+.lrk::before{content:"›";position:absolute;left:4px;top:11px;font-family:var(--mono);color:var(--pink2)}
+.lrk:first-of-type::before{content:"●";font-size:.55rem;top:16px}
+.rk{font-family:var(--osw);font-weight:600;text-transform:uppercase;font-size:17px;letter-spacing:.02em}
+.rq{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;line-height:1.75;color:#5c5648}
+.lrk.top .rk{color:var(--pink2)}
+.vac.open{border-left:4px solid var(--pink)}
 /* ---- правила объявлений ---- */
 .ruletabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .rtab{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--line2);color:var(--mut);transition:.2s}
@@ -240,6 +251,7 @@ footer{background:var(--ink2);border-top:1px solid var(--line);padding:44px 0 58
 font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut2)}
 /* ---- адаптив ---- */
 @media(max-width:1020px){
+.ladder{grid-template-columns:1fr}
 .herogrid,.hzwrap,.teamgrid{grid-template-columns:1fr}
 .wxgrid{grid-template-columns:1fr}
 .cards{grid-template-columns:1fr 1fr}
@@ -362,14 +374,32 @@ html{scroll-behavior:auto}
       <div class="teamtext">
         <p>San Fierro News начиналась с одного репортажа из казино в Чайнатауне и одной радиоволны. Сегодня у редакции <b>три города, собственный архив с 23 сентября и формат еженедельного расследования</b>, ради которого генеральный директор лично подписывает поручения.</p>
         <p>У нас нет «смен ради галочки»: репортёр выходит к патрулю с фотоаппаратом, ведущий держит эфир двадцать минут и не даёт слушателю заскучать, корректор превращает «куп дом С в СФ 15к» в объявление, которое не стыдно поставить в строку. <b>Каждый выпуск подписан именами</b> - и это не формальность, а ответственность.</p>
+        <p>Девять рангов - от Стажёра [1] до Программного директора [9]: лестница ниже показывает, сколько часов и дней между вами и следующей строкой в титрах. Повышения старшего состава подписывает Генеральный директор.</p>
         <p>Мы публикуем то, что видели сами, и не додумываем то, чего не видели. Мы цензурим нецензурное, не пишем ни слова OOC и держим пробелы пробелами. Если вам близко - приходите: редакционная кофемашина старая, зато темы бесконечные.</p>
         <p>Редакция находится в офисе San Fierro News, радиостудия оборудована там же; эфиры также ведутся из служебного фургона и вертолёта. Позывной редакции в эфире - <b>11-555</b>.</p>
       </div>
       <div class="vacs">
-        <div class="vac"><span class="vt">Стажёр репортёра [1]</span><span class="vd">Выезды на вызовы, съёмка, первичные заметки. Учим держать камеру, голову и паузу в эфире.</span><span class="vtags"><span class="vtag">грамотная речь</span><span class="vtag">законы штата</span><span class="vtag">без опыта</span></span></div>
-        <div class="vac"><span class="vt">Ведущий эфира</span><span class="vd">Информационные, развлекательные и интерактивные эфиры: викторины, приветы, интервью. Минимум 20 минут в эфире и ни одной мёртвой паузы.</span><span class="vtags"><span class="vtag">импровизация</span><span class="vtag">ППЭ на зубок</span></span></div>
-        <div class="vac"><span class="vt">Фоторедактор</span><span class="vd">Отбор и обработка кадров выпуска: единый формат, единая опись, ни одного потерянного лица.</span><span class="vtags"><span class="vtag">вкус</span><span class="vtag">внимание</span></span></div>
-        <div class="vac"><span class="vt">Корректор объявлений</span><span class="vd">Строка 101.1 FM: приводит объявления к правилам редакции и не пропускает OOC в эфир.</span><span class="vtags"><span class="vtag">ПРО на зубок</span><span class="vtag">тренажёр ниже</span></span></div>
+        <div class="vac open"><span class="vt">Открыт набор · Стажёр [1]</span><span class="vd">Вступление в редакцию - по собеседованию, с трёх лет проживания в штате. Первые сутки - под наставником: выезды, съёмка, первичные заметки, строка в эфире на подхвате.</span><span class="vtags"><span class="vtag">грамотная речь</span><span class="vtag">законы штата</span><span class="vtag">без опыта</span></span></div>
+        <div class="vac"><span class="vt">Чёрный список редакции</span><span class="vd">Стажёр, попросивший расчёт, не прослужив в редакции и суток, заносится в чёрный список. Без обид: строка в эфире дороже настроения.</span><span class="vtags"><span class="vtag">сутки минимум</span></span></div>
+        <div class="vac"><span class="vt">Активность решает</span><span class="vd">Сотрудник, который не проявляет активности в редакции, может не дождаться повышения: решение за главным редактором.</span><span class="vtags"><span class="vtag">решение за главным редактором</span></span></div>
+      </div>
+    </div>
+    <div class="ladder">
+      <div class="lcol">
+        <div class="lhead mono">Младший состав · ранги [1] - [6]</div>
+        <div class="lrk"><span class="rk">Стажёр [1]</span><span class="rq">вступление по собеседованию, с трёх лет проживания в штате</span></div>
+        <div class="lrk"><span class="rk">Звукооператор [2]</span><span class="rq">отработать в редакции минимум 24 часа · знать правила редактирования объявлений и соблюдать их в работе</span></div>
+        <div class="lrk"><span class="rk">Звукорежиссёр [3]</span><span class="rq">два дня с момента повышения · проявлять активность в работе</span></div>
+        <div class="lrk"><span class="rk">Репортёр [4]</span><span class="rq">два дня с момента повышения · активность · с этого ранга одобрение на эфир не запрашивается</span></div>
+        <div class="lrk"><span class="rk">Ведущий [5]</span><span class="rq">три дня с момента повышения · активность в работе</span></div>
+        <div class="lrk"><span class="rk">Редактор [6]</span><span class="rq">пять дней с момента повышения · активность в работе</span></div>
+      </div>
+      <div class="lcol">
+        <div class="lhead mono">Старший состав · ранги [7] - [9]</div>
+        <div class="lrk"><span class="rk">Главный редактор [7]</span><span class="rq">семь дней с момента повышения · на усмотрение Генерального директора · не менее восьми лет проживания в штате · в редакции не более четырёх главных редакторов</span></div>
+        <div class="lrk"><span class="rk">Технический директор [8]</span><span class="rq">семь дней с момента повышения · на усмотрение Генерального директора · не менее девяти лет проживания в штате · не более четырёх</span></div>
+        <div class="lrk"><span class="rk">Программный директор [9]</span><span class="rq">десять дней с момента повышения · на усмотрение Генерального директора · не менее десяти лет проживания в штате · не более трёх</span></div>
+        <div class="lrk top"><span class="rk">Генеральный директор</span><span class="rq">возглавляет медиахолдинг: подписывает поручения на расследования и повышения старшего состава. Сейчас - Jonny Wilde.</span></div>
       </div>
     </div>
     <div class="steps3">
