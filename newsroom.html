@@ -23,7 +23,7 @@ img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-section[data-sec]{scroll-margin-top:56px}
+section[data-sec]{scroll-margin-top:calc(var(--navh,60px) + 10px)}
 /* ---- шапка ---- */
 .masthead{background:var(--ink2);border-bottom:1px solid var(--line)}
 .mastin{max-width:1180px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
@@ -68,8 +68,7 @@ radial-gradient(800px 420px at 8% 110%,rgba(127,208,232,.16),transparent 60%),va
 .livebox li b{font-family:var(--mono);font-weight:400;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);padding-top:3px}
 /* ---- навигация ---- */
 .topnav{position:sticky;top:0;z-index:60;background:rgba(20,17,26,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.topnavin{max-width:1180px;margin:0 auto;padding:12px 22px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
-.topnavin::-webkit-scrollbar{display:none}
+.topnavin{max-width:1180px;margin:0 auto;padding:12px 22px;display:flex;gap:8px;row-gap:8px;align-items:center;flex-wrap:wrap}
 .navlabel{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;
 text-transform:uppercase;color:var(--mut2);padding:8px 14px 8px 0;border-right:1px solid var(--line);margin-right:4px}
 .navlabel i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
@@ -330,7 +329,7 @@ html{scroll-behavior:auto}
 
 <nav class="topnav" aria-label="Разделы страницы редакции">
   <div class="topnavin">
-    <span class="navlabel mono"><i aria-hidden="true">⇵</i>разделы страницы · быстрый переход</span>
+    <span class="navlabel mono" title="Кнопки ниже переключают страницу к нужному разделу"><i aria-hidden="true">⇵</i>разделы · быстрый переход</span>
     <button class="navbtn" type="button" data-t="pogoda" title="Быстрый переход: погода штата">Погода штата</button>
     <button class="navbtn" type="button" data-t="goroskop" title="Быстрый переход: гороскоп на сегодня">Гороскоп</button>
     <button class="navbtn" type="button" data-t="komanda">К нам в команду</button>
@@ -908,11 +907,14 @@ document.addEventListener("click",function(e){var b=e.target.closest("[data-t]")
 /* подсветка текущего раздела в навигации */
 var secs=[].slice.call(document.querySelectorAll("section[data-sec]"));
 var nbs=[].slice.call(document.querySelectorAll(".navbtn[data-t]"));
-function spy(){var y=(window.scrollY||window.pageYOffset||0)+110,cur="top";
+var nav=document.querySelector(".topnav");
+function nh(){if(nav)document.documentElement.style.setProperty("--navh",nav.offsetHeight+"px");}
+window.addEventListener("resize",nh);nh();
+function spy(){var y=(window.scrollY||window.pageYOffset||0)+(nav?nav.offsetHeight:56)+24,cur="top";
 secs.forEach(function(sc){if(sc.offsetTop<=y)cur=sc.getAttribute("data-sec");});
 nbs.forEach(function(b){b.classList.toggle("on",b.getAttribute("data-t")===cur);});}
 window.addEventListener("scroll",function(){window.requestAnimationFrame(spy);},{passive:true});
-window.addEventListener("resize",spy);spy();
+window.addEventListener("resize",spy);spy();nh();
 /* часы редакции */
 var clk=document.getElementById("clock");
 function tick(){var d=new Date();function z(n){return(n<10?"0":"")+n;}

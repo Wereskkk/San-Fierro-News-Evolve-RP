@@ -22,7 +22,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit}
 button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
-section[data-sec]{scroll-margin-top:56px}
+section[data-sec]{scroll-margin-top:calc(var(--navh,60px) + 10px)}
 .masthead{background:var(--ink2);border-bottom:1px solid var(--line)}
 .mastin{max-width:1140px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
 .logo{font-family:var(--osw);font-weight:700;font-size:1.15rem;letter-spacing:.12em;text-transform:uppercase}
@@ -50,8 +50,7 @@ radial-gradient(900px 400px at 78% -20%,rgba(255,59,59,.22),transparent 60%),var
 .chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line2);padding:8px 13px;color:var(--paper)}
 .chip b{color:var(--gold)}
 .topnav{position:sticky;top:0;z-index:60;background:rgba(16,13,20,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.topnavin{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
-.topnavin::-webkit-scrollbar{display:none}
+.topnavin{max-width:1140px;margin:0 auto;padding:12px 22px;display:flex;gap:8px;row-gap:8px;align-items:center;flex-wrap:wrap}
 .navlabel{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;
 text-transform:uppercase;color:var(--mut2);padding:8px 14px 8px 0;border-right:1px solid var(--line);margin-right:4px}
 .navlabel i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
@@ -160,7 +159,7 @@ font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppe
 
 <nav class="topnav" aria-label="Разделы правил эфиров">
   <div class="topnavin">
-    <span class="navlabel mono"><i aria-hidden="true">⇵</i>разделы правил · быстрый переход</span>
+    <span class="navlabel mono" title="Кнопки ниже переключают страницу к нужному разделу правил"><i aria-hidden="true">⇵</i>разделы правил · переход</span>
     <button class="navbtn" type="button" data-t="dostup" title="Быстрый переход: доступ к волне">Доступ</button>
     <button class="navbtn" type="button" data-t="normy" title="Быстрый переход: нормы общения в эфире">Нормы общения</button>
     <button class="navbtn" type="button" data-t="tipy" title="Быстрый переход: три типа эфиров">Типы эфиров</button>
@@ -390,11 +389,14 @@ el.scrollIntoView(rm?{behavior:"auto",block:"start"}:{behavior:"smooth",block:"s
 document.addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b)go(b.getAttribute("data-t"));});
 var secs=[].slice.call(document.querySelectorAll("section[data-sec]"));
 var nbs=[].slice.call(document.querySelectorAll(".navbtn[data-t]"));
-function spy(){var y=(window.scrollY||window.pageYOffset||0)+110,cur="top";
+var nav=document.querySelector(".topnav");
+function nh(){if(nav)document.documentElement.style.setProperty("--navh",nav.offsetHeight+"px");}
+window.addEventListener("resize",nh);nh();
+function spy(){var y=(window.scrollY||window.pageYOffset||0)+(nav?nav.offsetHeight:56)+24,cur="top";
 secs.forEach(function(sc){if(sc.offsetTop<=y)cur=sc.getAttribute("data-sec");});
 nbs.forEach(function(b){b.classList.toggle("on",b.getAttribute("data-t")===cur);});}
 window.addEventListener("scroll",function(){window.requestAnimationFrame(spy);},{passive:true});
-window.addEventListener("resize",spy);spy();
+window.addEventListener("resize",spy);spy();nh();
 /* индикаторы уровня: живут, пока страница открыта */
 var vu=document.getElementById("vu");
 if(vu&&!rm){var bars=vu.children;
