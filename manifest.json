@@ -1,13 +1,18 @@
 {
- "generated": "2026-10-04",
+ "generated": "2026-10-05",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 33,
+ "issues": 35,
  "files": [
   {
    "file": "all-saints-hospital.html",
    "bytes": 1061756,
    "sha256": "8d67b5fc7b0c30955a0b1db3372513be6397dbc028f6f5fdb0a07aec289e7d4a"
+  },
+  {
+   "file": "article-confession-gulnara.html",
+   "bytes": 2791294,
+   "sha256": "1c63a4d716aee3902df10cb1d0bbcbf37844e1dfb46d79f9aa38834d06f3ac5d"
   },
   {
    "file": "article-lisa-akana.html",
@@ -65,6 +70,11 @@
    "sha256": "df00b54e1f5276b7210f29ff46e7792d49fbe902ddf0320c9513b8c4f2b7bb27"
   },
   {
+   "file": "efir-rules.html",
+   "bytes": 33812,
+   "sha256": "f319088f08f67218a51d4f1d7d93d2a1a767b88b1897fb311615512c8a7bdb41"
+  },
+  {
    "file": "fotoreport-abandoned-airport.html",
    "bytes": 1300106,
    "sha256": "37c06c3c0680d294921cab299b84ffe4067303dc1d8d6eee6c61f7871f9c96bc"
@@ -111,13 +121,13 @@
   },
   {
    "file": "investigation-falk.html",
-   "bytes": 4634377,
-   "sha256": "b4e6b050bd92b0e69a70dbd443231629ffdba28fb89da2c617ff2d2a0db4f5a8"
+   "bytes": 4634311,
+   "sha256": "85ddf6b4c16b1e9f3698bc6947deca697333ffb28ff1f79fe87953f5d8afd01c"
   },
   {
    "file": "newsroom.html",
-   "bytes": 263363,
-   "sha256": "de12b17ecb0cb7b82a218d014b5169a1fc2c69c72b2d380b9e39e59e1f970c5e"
+   "bytes": 110296,
+   "sha256": "a3e9a2589aa5bf79e0503952cf8addaf196c29d46a113e7fba7373b704cf7433"
   },
   {
    "file": "opg-leader-interview.html",
