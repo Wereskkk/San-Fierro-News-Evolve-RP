@@ -50,10 +50,16 @@ radial-gradient(900px 400px at 78% -20%,rgba(255,59,59,.22),transparent 60%),var
 .chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line2);padding:8px 13px;color:var(--paper)}
 .chip b{color:var(--gold)}
 .topnav{position:sticky;top:0;z-index:60;background:rgba(16,13,20,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.topnavin{max-width:1140px;margin:0 auto;padding:0 22px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.topnavin{max-width:1140px;margin:0 auto;padding:10px 22px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
 .topnavin::-webkit-scrollbar{display:none}
-.navbtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:14px 12px;white-space:nowrap;border-bottom:2px solid transparent;transition:.2s;text-decoration:none}
-.navbtn:hover{color:var(--paper);border-color:var(--red)}
+.navlabel{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;
+text-transform:uppercase;color:var(--mut2);padding:8px 14px 8px 0;border-right:1px solid var(--line);margin-right:4px}
+.navlabel i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+border:1px solid var(--line2);color:var(--red);font-size:.62rem}
+.navbtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);
+padding:9px 15px;white-space:nowrap;border:1px solid var(--line2);border-radius:999px;background:rgba(244,238,226,.04);transition:.2s;text-decoration:none}
+.navbtn:hover{color:var(--paper);border-color:var(--red);transform:translateY(-1px)}
+.navbtn.on{background:var(--red);border-color:var(--red);color:#fff}
 .secpad{padding:clamp(50px,8vh,96px) 0}
 .alt{background:var(--ink2)}
 .sechead{margin-bottom:clamp(24px,4vh,46px)}
@@ -149,16 +155,17 @@ font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppe
 
 <nav class="topnav" aria-label="Разделы правил эфиров">
   <div class="topnavin">
-    <button class="navbtn" type="button" data-t="dostup">Доступ</button>
-    <button class="navbtn" type="button" data-t="normy">Нормы общения</button>
-    <button class="navbtn" type="button" data-t="tipy">Типы эфиров</button>
-    <button class="navbtn" type="button" data-t="vazhno">Важно · можно · нельзя</button>
-    <button class="navbtn" type="button" data-t="stancii">Станции</button>
-    <button class="navbtn" type="button" data-t="podgotovka">Подготовка</button>
-    <button class="navbtn" type="button" data-t="primery">Примеры выхода</button>
-    <button class="navbtn" type="button" data-t="temy">Темы эфиров</button>
-    <button class="navbtn" type="button" data-t="top">↑ наверх</button>
-    <a class="navbtn" href="newsroom.html">← В редакцию</a>
+    <span class="navlabel mono"><i aria-hidden="true">⇵</i>разделы правил · быстрый переход</span>
+    <button class="navbtn" type="button" data-t="dostup" title="Быстрый переход: доступ к волне">Доступ</button>
+    <button class="navbtn" type="button" data-t="normy" title="Быстрый переход: нормы общения в эфире">Нормы общения</button>
+    <button class="navbtn" type="button" data-t="tipy" title="Быстрый переход: три типа эфиров">Типы эфиров</button>
+    <button class="navbtn" type="button" data-t="vazhno" title="Быстрый переход: важно, разрешено, запрещено">Важно · можно · нельзя</button>
+    <button class="navbtn" type="button" data-t="stancii" title="Быстрый переход: номера радиостанций">Станции</button>
+    <button class="navbtn" type="button" data-t="podgotovka" title="Быстрый переход: четыре этапа подготовки">Подготовка</button>
+    <button class="navbtn" type="button" data-t="primery" title="Быстрый переход: примеры выхода в эфир">Примеры выхода</button>
+    <button class="navbtn" type="button" data-t="temy" title="Быстрый переход: библиотека тем эфиров">Темы эфиров</button>
+    <button class="navbtn" type="button" data-t="top" title="Быстрый переход: к началу страницы">↑ наверх</button>
+    <a class="navbtn" href="newsroom.html" title="Вернуться на главную страницу редакции">← В редакцию</a>
   </div>
 </nav>
 
@@ -376,6 +383,13 @@ function go(t){if(t==="top"){window.scrollTo({top:0,behavior:rm?"auto":"smooth"}
 var el=document.querySelector("[data-sec=\""+t+"\"]");if(!el)return;
 el.scrollIntoView(rm?{behavior:"auto",block:"start"}:{behavior:"smooth",block:"start"});}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b)go(b.getAttribute("data-t"));});
+var secs=[].slice.call(document.querySelectorAll("section[data-sec]"));
+var nbs=[].slice.call(document.querySelectorAll(".navbtn[data-t]"));
+function spy(){var y=(window.scrollY||window.pageYOffset||0)+110,cur="top";
+secs.forEach(function(sc){if(sc.offsetTop<=y)cur=sc.getAttribute("data-sec");});
+nbs.forEach(function(b){b.classList.toggle("on",b.getAttribute("data-t")===cur);});}
+window.addEventListener("scroll",function(){window.requestAnimationFrame(spy);},{passive:true});
+window.addEventListener("resize",spy);spy();
 /* индикаторы уровня: живут, пока страница открыта */
 var vu=document.getElementById("vu");
 if(vu&&!rm){var bars=vu.children;

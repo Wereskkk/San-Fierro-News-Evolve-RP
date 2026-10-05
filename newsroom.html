@@ -68,10 +68,16 @@ radial-gradient(800px 420px at 8% 110%,rgba(127,208,232,.16),transparent 60%),va
 .livebox li b{font-family:var(--mono);font-weight:400;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);padding-top:3px}
 /* ---- навигация ---- */
 .topnav{position:sticky;top:0;z-index:60;background:rgba(20,17,26,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.topnavin{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.topnavin{max-width:1180px;margin:0 auto;padding:10px 22px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
 .topnavin::-webkit-scrollbar{display:none}
-.navbtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);padding:14px 13px;white-space:nowrap;border-bottom:2px solid transparent;transition:.2s}
-.navbtn:hover{color:var(--paper);border-color:var(--pink)}
+.navlabel{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;
+text-transform:uppercase;color:var(--mut2);padding:8px 14px 8px 0;border-right:1px solid var(--line);margin-right:4px}
+.navlabel i{font-style:normal;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+border:1px solid var(--line2);color:var(--pink);font-size:.62rem}
+.navbtn{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);
+padding:9px 15px;white-space:nowrap;border:1px solid var(--line2);border-radius:999px;background:rgba(244,238,226,.04);transition:.2s;text-decoration:none}
+.navbtn:hover{color:var(--paper);border-color:var(--pink);transform:translateY(-1px)}
+.navbtn.on{background:var(--pink);border-color:var(--pink);color:#fff}
 /* ---- секции ---- */
 .secpad{padding:clamp(54px,8.5vh,104px) 0}
 .paper{background:var(--paper);color:var(--ink)}
@@ -299,7 +305,7 @@ html{scroll-behavior:auto}
         <p>На этой странице - всё, чем редакция живёт прямо сейчас: <b>прогноз по трём городам штата</b>, гороскоп на сегодня, открытые вакансии, правила объявлений с тренажёром и полный архив газет. Если вы давно хотели писать, снимать или вести эфиры - вам в блок «К нам в команду».</p>
         <div class="hbtns">
           <a class="btn" href="investigation-falk.html">Читать последний выпуск</a>
-          <button class="btn ghost" type="button" data-t="komanda">К нам в команду</button>
+          <button class="btn ghost" type="button" data-t="komanda" title="Быстрый переход: о редакции и вакансии">К нам в команду</button>
           <a class="btn ghost" href="efir-rules.html">Правила эфиров</a>
         </div>
       </div>
@@ -319,14 +325,15 @@ html{scroll-behavior:auto}
 
 <nav class="topnav" aria-label="Разделы страницы редакции">
   <div class="topnavin">
-    <button class="navbtn" type="button" data-t="pogoda">Погода штата</button>
-    <button class="navbtn" type="button" data-t="goroskop">Гороскоп</button>
+    <span class="navlabel mono"><i aria-hidden="true">⇵</i>разделы страницы · быстрый переход</span>
+    <button class="navbtn" type="button" data-t="pogoda" title="Быстрый переход: погода штата">Погода штата</button>
+    <button class="navbtn" type="button" data-t="goroskop" title="Быстрый переход: гороскоп на сегодня">Гороскоп</button>
     <button class="navbtn" type="button" data-t="komanda">К нам в команду</button>
-    <button class="navbtn" type="button" data-t="pravila">Правила объявлений</button>
-    <button class="navbtn" type="button" data-t="igra">Тренажёр правил</button>
-    <button class="navbtn" type="button" data-t="arhiv">Архив газет</button>
-    <a class="navbtn" href="efir-rules.html">Правила эфиров</a>
-    <button class="navbtn" type="button" data-t="top">↑ наверх</button>
+    <button class="navbtn" type="button" data-t="pravila" title="Быстрый переход: правила редактирования объявлений">Правила объявлений</button>
+    <button class="navbtn" type="button" data-t="igra" title="Быстрый переход: мини-игра по правилам">Тренажёр правил</button>
+    <button class="navbtn" type="button" data-t="arhiv" title="Быстрый переход: архив газет">Архив газет</button>
+    <a class="navbtn" href="efir-rules.html" title="Отдельная страница: правила проведения эфиров">Правила эфиров ↗</a>
+    <button class="navbtn" type="button" data-t="top" title="Быстрый переход: к началу страницы">↑ наверх</button>
   </div>
 </nav>
 
@@ -893,6 +900,14 @@ function go(t){if(t==="top"){window.scrollTo({top:0,behavior:rm?"auto":"smooth"}
 var el=document.querySelector("[data-sec=\""+t+"\"]");if(!el)return;
 el.scrollIntoView(rm?{behavior:"auto",block:"start"}:{behavior:"smooth",block:"start"});}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-t]");if(b)go(b.getAttribute("data-t"));});
+/* подсветка текущего раздела в навигации */
+var secs=[].slice.call(document.querySelectorAll("section[data-sec]"));
+var nbs=[].slice.call(document.querySelectorAll(".navbtn[data-t]"));
+function spy(){var y=(window.scrollY||window.pageYOffset||0)+110,cur="top";
+secs.forEach(function(sc){if(sc.offsetTop<=y)cur=sc.getAttribute("data-sec");});
+nbs.forEach(function(b){b.classList.toggle("on",b.getAttribute("data-t")===cur);});}
+window.addEventListener("scroll",function(){window.requestAnimationFrame(spy);},{passive:true});
+window.addEventListener("resize",spy);spy();
 /* часы редакции */
 var clk=document.getElementById("clock");
 function tick(){var d=new Date();function z(n){return(n<10?"0":"")+n;}
