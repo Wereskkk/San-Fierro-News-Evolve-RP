@@ -1,0 +1,12 @@
+<a class="card" style="--stripe:#f2c53d" href="tour-seven-places.html">
+      <div class="badgerow">
+<span class="badge" style="color:#3f7d44;border-color:#3f7d44">Фоторепортаж</span>
+</div>
+      <div class="cardmeta mono">
+<b>05.10.2026</b>
+<span>Весь штат</span>
+</div>
+      <div class="cardtitle">Тур недели: семь мест штата, которые редакция проехала за вас</div>
+      <div class="carddesc">Интерактивный фоторепортаж-маршрут: карта San Andreas с машиной, стартующей от офиса SFN, семь точек от игрового центра до автомастерской, 25 кадров с места, голос водителя в салоне и одно спущенное колесо по дороге домой. Кадры: Anna Malboro · Фоторедактор: Sonya Malboro.</div>
+      <div class="cardlink mono">Читать выпуск</div>
+    </a>
