@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- © 2026 San Fierro News / Jonny Wilde. Дизайн и вёрстка защищены: CC BY-NC-ND 4.0. Копирование и переработка запрещены. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Fierro News — Социологическое исследование: «Какая по вашему мнению лучшая редакция штата?»</title>
+<meta name="description" content="Социологическое исследование редакции San Fierro News: 14 жителей штата дословно ответили, какую редакцию считают лучшей. San Fierro News — 64,3%; бюллетени со штампами, счётные полосы, таблицы, диаграммы, анализ, заключение и рекомендации.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* SFN-DESIGN-034: tally-station · 07.10.2026 */
+:root{
+  --bg:#0a0e17; --panel:#101a2b; --panel2:#0d1523; --line:rgba(146,166,196,.16);
+  --ink:#eaf1fa; --mut:#96a3b6; --dim:#67748a;
+  --sfn:#2fd67c; --lsn:#ffb03a; --lvn:#d76bff; --abs:#7d8ca3;
+  --dsp:"Wix Madefor Display","Manrope",system-ui,sans-serif;
+  --body:"Manrope",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(900px 480px at 50% -140px, rgba(47,214,124,.09), transparent 70%),
+    radial-gradient(700px 500px at 110% 30%, rgba(215,107,255,.05), transparent 70%),
+    radial-gradient(700px 500px at -10% 70%, rgba(255,176,58,.045), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(146,166,196,.05) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, rgba(146,166,196,.05) 0 1px, transparent 1px 40px),
+    var(--bg)}
+.mono{font-family:var(--mono)}
+.wrap{max-width:74rem;margin:0 auto;padding:0 1.4rem}
+::selection{background:rgba(47,214,124,.3)}
+
+/* ── верхняя счётная полоса ── */
+.tallybar{border-bottom:1px solid var(--line);background:rgba(8,12,20,.85)}
+.tbin{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);padding:.55rem 0}
+.tbin b{color:var(--sfn);font-weight:500}
+.tblive{display:inline-flex;align-items:center;gap:.55rem}
+.tblive i{width:8px;height:8px;border-radius:50%;background:var(--sfn);box-shadow:0 0 10px var(--sfn);animation:blip 1.7s infinite}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ── мастхэд ── */
+.mast{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:1.4rem 0 1.5rem}
+.mastleft{display:flex;align-items:center;gap:1rem}
+.monogram{width:58px;height:58px;flex:none;display:grid;place-items:center;font-family:var(--dsp);font-weight:800;font-size:1.05rem;
+  letter-spacing:.06em;color:#04140b;background:linear-gradient(140deg,#3ce88b,#1fae63);border-radius:10px;
+  box-shadow:0 0 26px rgba(47,214,124,.35), inset 0 1px 0 rgba(255,255,255,.4)}
+.mastname{font-family:var(--dsp);font-weight:700;font-size:1.25rem;letter-spacing:.14em;text-transform:uppercase}
+.mastsub{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
+.mastchip{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sfn);
+  border:1px solid rgba(47,214,124,.4);background:rgba(47,214,124,.07);border-radius:999px;padding:.5rem 1rem;white-space:nowrap}
+
+/* ── липкая навигация протокола ── */
+.snav{position:sticky;top:0;z-index:50;background:rgba(10,14,23,.9);backdrop-filter:blur(8px);border-block:1px solid var(--line)}
+.snavin{display:flex;gap:.45rem;overflow-x:auto;padding:.55rem 0;scrollbar-width:none}
+.snavin::-webkit-scrollbar{display:none}
+.snavbtn{flex:none;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);
+  background:transparent;border:1px solid var(--line);border-radius:999px;padding:.45rem .85rem;cursor:pointer;transition:.2s}
+.snavbtn:hover{color:var(--ink);border-color:rgba(47,214,124,.5)}
+.snavbtn.cur{color:#04140b;background:var(--sfn);border-color:var(--sfn);box-shadow:0 0 14px rgba(47,214,124,.4)}
+
+/* ── герой ── */
+.hero{padding:3.4rem 0 2.6rem;position:relative}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg, rgba(234,241,250,.022) 0 1px, transparent 1px 4px)}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);margin-bottom:1.2rem}
+.kicker b{color:var(--sfn);font-weight:500}
+h1{font-family:var(--dsp);font-weight:800;font-size:clamp(1.9rem,5vw,3.7rem);line-height:1.12;letter-spacing:-.01em;max-width:20ch}
+h1 .hl{color:var(--sfn);text-shadow:0 0 30px rgba(47,214,124,.45)}
+.herolead{max-width:62ch;color:var(--mut);margin-top:1.3rem;font-size:1.02rem}
+.herolead b{color:var(--ink);font-weight:700}
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-top:2.2rem}
+.stattile{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-left:3px solid var(--c,#2fd67c);
+  border-radius:12px;padding:1.05rem 1.1rem;box-shadow:0 16px 34px rgba(0,0,0,.3)}
+.stattile .big{font-family:var(--dsp);font-weight:800;font-size:clamp(1.7rem,3.1vw,2.5rem);line-height:1;color:var(--c,#eaf1fa)}
+.stattile .lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:.6rem;line-height:1.7}
+.stattile .lbl b{color:var(--mut);font-weight:500}
+
+/* ── секции ── */
+.stsec{padding:2.9rem 0;border-top:1px solid var(--line)}
+.sthead{display:flex;align-items:baseline;gap:1.1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.stnum{font-family:var(--dsp);font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1;color:transparent;
+  -webkit-text-stroke:1px rgba(47,214,124,.55);letter-spacing:.04em}
+h2{font-family:var(--dsp);font-weight:700;font-size:clamp(1.25rem,2.4vw,1.7rem);letter-spacing:.05em;text-transform:uppercase}
+.hrule{flex:1 1 90px;height:1px;background:linear-gradient(90deg,rgba(47,214,124,.5),transparent)}
+.lead{color:var(--mut);max-width:70ch}
+.lead+.lead{margin-top:.9rem}
+.lead b{color:var(--ink)}
+p.txt{color:var(--mut);max-width:74ch}
+p.txt+p.txt{margin-top:.9rem}
+p.txt b{color:var(--ink)}
+
+/* ── панель-досье ── */
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 18px 44px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);position:relative}
+.phead{display:flex;align-items:center;gap:.8rem;padding:1rem 1.4rem;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sfn)}
+.phead::before{content:"";width:10px;height:10px;border:2px solid var(--sfn);border-radius:2px;transform:rotate(45deg);flex:none}
+.prow,.mrow{display:grid;grid-template-columns:230px 1fr;gap:1.2rem;padding:.85rem 1.4rem;border-bottom:1px solid rgba(146,166,196,.09)}
+.prow:last-child,.mrow:last-child{border-bottom:none}
+.plabel,.mlabel{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding-top:.25rem}
+.pval{color:var(--ink);font-size:.95rem}
+.mval{color:var(--mut);font-size:.95rem}
+.mval .mlist{margin:.2rem 0 0 1.1rem}
+.mval .mlist li{margin:.25rem 0}
+.pval.q,.mval.q{font-family:var(--mono);color:var(--sfn)}
+
+/* ── счётные полосы (lanes) ── */
+.figcap{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:.8rem}
+.figure{padding:1.4rem}
+.lane{display:grid;grid-template-columns:minmax(150px,215px) 1fr auto;gap:1rem;align-items:center;padding:.55rem 0}
+.lanelbl b{display:block;font-family:var(--dsp);font-weight:700;font-size:.9rem;letter-spacing:.02em}
+.lanelbl span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.lanetrack{height:44px;background:rgba(234,241,250,.035);border:1px solid var(--line);border-radius:9px;position:relative;overflow:hidden}
+.lanefill{position:absolute;top:0;bottom:0;left:0;width:var(--w);display:flex;
+  background:linear-gradient(90deg,var(--f1),var(--f2));border-right:2px solid var(--c);
+  box-shadow:0 0 18px color-mix(in srgb, var(--c) 25%, transparent);
+  transform:scaleX(0);transform-origin:left center;transition:transform 1.15s cubic-bezier(.22,.75,.2,1)}
+.lanefill.hatch{background:repeating-linear-gradient(-45deg,var(--f1) 0 8px,var(--f2) 8px 16px)}
+.reveal.on .lanefill{transform:scaleX(1)}
+.votecell{flex:1;border-right:1px dashed rgba(234,241,250,.22);position:relative}
+.votecell:last-child{border-right:none}
+.votecell::after{content:attr(data-n);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#050a12;border:1px solid var(--c);color:var(--ink);font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;
+  padding:.3rem .55rem;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:.15s;z-index:5}
+.votecell:hover::after{opacity:1}
+.lanenum{text-align:right;min-width:96px}
+.lanenum b{font-family:var(--dsp);font-weight:800;font-size:1.5rem;color:var(--c)}
+.lanenum span{display:block;font-size:.66rem;color:var(--dim);letter-spacing:.08em}
+
+/* ── таблицы ── */
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem}
+.tbl thead th{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);
+  text-align:left;padding:.7rem 1rem;border-bottom:1px solid var(--line)}
+.tbl thead th.tn,.tbl td.tn{text-align:center}
+.tbl thead th.tr,.tbl td.tr{text-align:right}
+.tbl td{padding:.72rem 1rem;border-bottom:1px solid rgba(146,166,196,.09);color:var(--mut)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tbody tr:hover td{background:rgba(234,241,250,.03)}
+.tbl .tname{color:var(--ink)}
+.tbl .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.6rem;vertical-align:baseline}
+.tbl td.mono{font-family:var(--mono);font-size:.85rem}
+.tbl .sumrow td{border-top:1px solid var(--line);color:var(--ink);font-weight:700}
+.tblnote{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--dim);padding:.8rem 1rem 1rem;line-height:1.8}
+
+/* ── кольцевая диаграмма ── */
+.dgrid{display:grid;grid-template-columns:340px 1fr;gap:2rem;align-items:center}
+.donutbox{position:relative;width:min(320px,74vw);aspect-ratio:1;margin:0 auto}
+.donut{position:absolute;inset:0;border-radius:50%;background:var(--donut);
+  -webkit-mask:radial-gradient(closest-side,transparent 0 61%,#000 61.5%);
+  mask:radial-gradient(closest-side,transparent 0 61%,#000 61.5%);
+  filter:drop-shadow(0 0 18px rgba(47,214,124,.18))}
+.dcenter{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:.2rem}
+.dcenter .dcnum{font-family:var(--dsp);font-weight:800;font-size:2.3rem;line-height:1}
+.dcenter .dclbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.dleg{display:flex;flex-direction:column;gap:.5rem}
+.dlrow{display:flex;align-items:center;gap:.8rem;background:transparent;border:1px solid transparent;border-radius:10px;
+  padding:.6rem .8rem;cursor:pointer;text-align:left;color:var(--mut);font-family:var(--body);font-size:.92rem;transition:.18s}
+.dlrow:hover,.dlrow.hot{border-color:var(--line);background:rgba(234,241,250,.04);color:var(--ink)}
+.dlsw{width:14px;height:14px;border-radius:4px;background:var(--c);flex:none;box-shadow:0 0 10px color-mix(in srgb, var(--c) 45%, transparent)}
+.dlname{flex:1}
+.dlnum{font-size:.8rem;letter-spacing:.06em;color:var(--dim)}
+.dlrow:hover .dlnum,.dlrow.hot .dlnum{color:var(--ink)}
+
+/* ── единая лента 100% ── */
+.ribbon{display:flex;height:54px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.rbseg{display:flex;align-items:center;justify-content:center;min-width:0}
+.rbseg span{font-size:.72rem;font-weight:600;color:#06121c;letter-spacing:.04em;text-shadow:0 1px 0 rgba(255,255,255,.25)}
+.rbseg[data-g="abs"] span{color:#0b1220}
+.rblegs{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:.8rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim)}
+.rbleg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:.45rem}
+
+/* ── анализ ── */
+.ancard{display:grid;grid-template-columns:180px 1fr;gap:1.4rem;padding:1.5rem 1.6rem;margin-top:1rem}
+.anleft{text-align:left}
+.anpct{font-family:var(--dsp);font-weight:800;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1;color:var(--c,#eaf1fa)}
+.ansub{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:.55rem;line-height:1.8}
+.ancard h3{font-family:var(--dsp);font-weight:700;font-size:1.08rem;letter-spacing:.03em;margin-bottom:.55rem}
+.ancard p{color:var(--mut);font-size:.95rem}
+.ancard p+p{margin-top:.7rem}
+.ancard b{color:var(--ink)}
+
+/* ── протокольная сноска (flipnote) ── */
+.flipnote{margin-top:.9rem}
+.fnbtn{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lsn);
+  background:rgba(255,176,58,.08);border:1px solid rgba(255,176,58,.4);border-radius:999px;padding:.5rem .95rem;cursor:pointer;transition:.2s}
+.fnbtn:hover{background:rgba(255,176,58,.16)}
+.fnbtn::after{content:" ▾"}
+.flipnote.open .fnbtn::after{content:" ▴"}
+.fnpanel{display:none;margin-top:.7rem;border-left:2px solid var(--lsn);background:rgba(255,176,58,.05);
+  border-radius:0 10px 10px 0;padding:.8rem 1rem}
+.flipnote.open .fnpanel{display:block}
+.fnpanel p{font-size:.8rem;color:var(--mut);letter-spacing:.02em;line-height:1.8}
+
+/* ── портреты групп ── */
+.ptgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem}
+.ptcard{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-top:3px solid var(--c);
+  border-radius:12px;padding:1.1rem 1.15rem;box-shadow:0 14px 32px rgba(0,0,0,.3)}
+.pttop{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.ptpct{font-family:var(--dsp);font-weight:800;font-size:1.5rem;color:var(--c)}
+.ptsub{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);line-height:1.7}
+.ptq{margin-top:.8rem;font-size:1rem;font-weight:500;color:var(--ink);line-height:1.5}
+.ptwho{margin-top:.7rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* ── реестр: фильтр и бюллетени ── */
+.btabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0 .7rem}
+.btab{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);
+  background:transparent;border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;cursor:pointer;transition:.2s}
+.btab:hover{color:var(--ink);border-color:rgba(47,214,124,.5)}
+.btab.on{color:#04140b;background:var(--sfn);border-color:var(--sfn);box-shadow:0 0 14px rgba(47,214,124,.35)}
+.btab sup{font-size:.8em;opacity:.75;margin-left:.3em}
+.bcount{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:1.1rem}
+.ballots{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.ballot{position:relative;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+  border-radius:12px;padding:1.15rem 1.2rem 1.2rem 1.75rem;box-shadow:0 14px 30px rgba(0,0,0,.3);transition:opacity .25s,transform .25s}
+.ballot.hide{display:none}
+.bperf{position:absolute;left:0;top:6px;bottom:6px;width:12px;border-right:1px dashed rgba(146,166,196,.25);
+  background:radial-gradient(circle at 6px 7px, var(--bg) 2.6px, transparent 3.1px) repeat-y;background-size:12px 18px}
+.bhead{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.bnum{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.gchip{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c);border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  background:color-mix(in srgb, var(--c) 9%, transparent);border-radius:999px;padding:.28rem .6rem}
+.bstamp{position:absolute;right:.85rem;top:2.6rem;transform:rotate(7deg);border:2px solid var(--sfn);color:var(--sfn);
+  font-family:var(--mono);font-size:.55rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  padding:.28rem .5rem;border-radius:5px;opacity:.85;text-align:center;line-height:1.5}
+.bstamp.mid{top:4.55rem;transform:rotate(-6deg);border-color:var(--lsn);color:var(--lsn);font-size:.5rem;letter-spacing:.12em}
+.bname{font-family:var(--dsp);font-weight:700;font-size:1.12rem;letter-spacing:.02em;margin:1.5rem 0 .7rem;padding-right:5.5rem}
+.bopts{display:flex;flex-direction:column;gap:.34rem;margin-bottom:.85rem}
+.opt{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--dim)}
+.opt .box{width:15px;height:15px;flex:none;border:1.5px solid rgba(146,166,196,.45);border-radius:4px;position:relative}
+.opt.chosen{color:var(--ink);font-weight:600}
+.opt.chosen .box{border-color:var(--c);background:var(--c);box-shadow:0 0 10px color-mix(in srgb, var(--c) 50%, transparent)}
+.opt.chosen .box::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#06121c;font-size:.68rem;font-weight:800}
+.bquote{font-family:var(--mono);font-size:.9rem;line-height:1.6;color:var(--ink);border-left:2px solid var(--c);
+  padding:.35rem 0 .35rem .85rem;background:linear-gradient(90deg,color-mix(in srgb, var(--c) 6%, transparent),transparent)}
+.flipnote.mini .fnbtn{font-size:.56rem;padding:.4rem .75rem}
+.flipnote.mini .fnpanel p{font-size:.72rem}
+
+/* ── заключение ── */
+.verdict{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:1.3rem 1.6rem;margin:1.3rem 0;
+  border:1px solid rgba(47,214,124,.4);border-radius:14px;background:linear-gradient(90deg,rgba(47,214,124,.1),rgba(47,214,124,.02))}
+.verdict .vnum{font-family:var(--dsp);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);color:var(--sfn);line-height:1;
+  text-shadow:0 0 26px rgba(47,214,124,.4)}
+.verdict .vtext{color:var(--ink);font-size:.98rem;max-width:60ch}
+.ednote{border-left:3px solid var(--sfn);background:rgba(47,214,124,.05);border-radius:0 12px 12px 0;padding:1.1rem 1.4rem;margin-top:1.4rem}
+.ednote .ent{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sfn);margin-bottom:.5rem}
+.ednote p{color:var(--mut);font-size:.93rem}
+.mline{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--dim);line-height:2;margin-top:1.4rem;
+  border-top:1px dashed var(--line);padding-top:1rem}
+
+/* ── рекомендации ── */
+.recgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.3rem}
+.reccard{padding:1.3rem 1.4rem}
+.reccard .rto{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sfn);margin-bottom:.55rem}
+.reccard h3{font-family:var(--dsp);font-weight:700;font-size:1rem;margin-bottom:.5rem;letter-spacing:.02em}
+.reccard p{color:var(--mut);font-size:.92rem}
+.reccard p b{color:var(--ink)}
+
+/* ── доказательства и подпись ── */
+.signrow{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;
+  border-top:1px solid var(--line);padding-top:1.3rem}
+.signlbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.signname{font-family:var(--dsp);font-weight:700;font-size:1.15rem;margin-top:.35rem}
+.signscript{font-family:var(--mono);font-size:.66rem;color:var(--sfn);letter-spacing:.1em;margin-top:.5rem}
+
+/* ── подвал ── */
+.colophon{border-top:1px solid var(--line);padding:2.2rem 0 2.6rem;margin-top:2.5rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.credits{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--mut)}
+.made{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--dim);margin-top:.45rem;line-height:1.9}
+.backpill{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sfn);text-decoration:none;border:1px solid rgba(47,214,124,.5);border-radius:999px;padding:.75rem 1.4rem;
+  background:rgba(47,214,124,.07);box-shadow:0 0 18px rgba(47,214,124,.22), inset 0 0 12px rgba(47,214,124,.08);transition:.2s}
+.backpill:hover{background:rgba(47,214,124,.16);box-shadow:0 0 26px rgba(47,214,124,.4)}
+.copyline{width:100%;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--dim);border-top:1px solid var(--line);padding-top:1.2rem;margin-top:.4rem;line-height:1.9}
+
+/* ── появление ── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+.noanim .reveal{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .statgrid{grid-template-columns:1fr 1fr}
+  .dgrid{grid-template-columns:1fr}
+  .ptgrid{grid-template-columns:1fr 1fr}
+  .ancard{grid-template-columns:1fr}
+  .recgrid{grid-template-columns:1fr}
+  .prow,.mrow{grid-template-columns:1fr;gap:.3rem}
+}
+@media (max-width:640px){
+  .statgrid{grid-template-columns:1fr}
+  .ptgrid{grid-template-columns:1fr}
+  .lane{grid-template-columns:1fr;gap:.4rem}
+  .lanenum{text-align:left;display:flex;gap:.6rem;align-items:baseline}
+  .lanenum span{display:inline}
+  .mast{padding:1.1rem 0}
+  .tbin{font-size:.56rem;letter-spacing:.14em}
+  .bstamp{top:2.4rem;right:.6rem}
+  .bname{padding-right:5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .lanefill{transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+
+<div class="tallybar"><div class="wrap tbin">
+  <span>San Fierro News · отдел социологии</span>
+  <span class="tblive"><i></i> полевой протокол · опубликован</span>
+  <span>Спецвыпуск · <b>07.10.2026</b></span>
+</div></div>
+
+<div class="wrap mast">
+  <div class="mastleft">
+    <div class="monogram">SFN</div>
+    <div>
+      <div class="mastname">San Fierro News</div>
+      <div class="mastsub">социологическое исследование · полевой опрос</div>
+    </div>
+  </div>
+  <div class="mastchip">Опрос проводит: редакция San Fierro</div>
+</div>
+
+<nav class="snav" aria-label="Разделы исследования"><div class="wrap snavin">
+  <button type="button" class="snavbtn cur" data-t="s00">Паспорт</button>
+  <button type="button" class="snavbtn" data-t="s01">01 · Введение</button>
+  <button type="button" class="snavbtn" data-t="s02">02 · Методология</button>
+  <button type="button" class="snavbtn" data-t="s03">03 · Результаты</button>
+  <button type="button" class="snavbtn" data-t="s04">04 · Анализ</button>
+  <button type="button" class="snavbtn" data-t="s05">05 · Реестр</button>
+  <button type="button" class="snavbtn" data-t="s06">06 · Заключение</button>
+  <button type="button" class="snavbtn" data-t="s07">07 · Рекомендации</button>
+  <button type="button" class="snavbtn" data-t="s08">08 · Доказательства</button>
+</div></nav>
+
+<main>
+
+<section class="hero"><div class="wrap">
+  <div class="kicker">штат San Andreas · <b>14 интервью</b> · возврат 100% · цитаты дословно</div>
+  <h1>«Какая по вашему мнению <span class="hl">лучшая</span> редакция штата?»</h1>
+  <p class="herolead">Редакция San Fierro News вышла к жителям штата с одним стандартизированным вопросом и вернулась
+  с полным полевым протоколом: <b>14 интервью, 14 учтённых ответов</b> — от лаконичного «СФ» до честного «воздержусь».
+  Двое респондентов по ходу беседы пересмотрели первоначальный ответ: первые ответы сохранены в протоколе,
+  в статистике учтены итоговые. Полный подсчёт — счётные полосы, таблицы, диаграммы и реестр из 14 бюллетеней — ниже.</p>
+
+  <div class="statgrid">
+    <div class="stattile reveal" style="--c:#eaf1fa"><div class="big"><span class="num" data-to="14" data-dec="0">14</span></div>
+      <div class="lbl"><b>ответов учтено</b><br>14 интервью · возврат 100%</div></div>
+    <div class="stattile reveal" style="--c:#2fd67c"><div class="big"><span class="num" data-to="64.3" data-dec="1" data-suf="%">64,3%</span></div>
+      <div class="lbl"><b>San Fierro News</b><br>считают лучшей редакцией · 9 бюллетеней</div></div>
+    <div class="stattile reveal" style="--c:#ffb03a"><div class="big"><span class="num" data-to="21.4" data-dec="1" data-suf="%">21,4%</span></div>
+      <div class="lbl"><b>коллеги по штату</b><br>Los Santos News — 2, Las Venturas News — 1</div></div>
+    <div class="stattile reveal" style="--c:#7d8ca3"><div class="big"><span class="num" data-to="14.3" data-dec="1" data-suf="%">14,3%</span></div>
+      <div class="lbl"><b>воздержались</b><br>2 бюллетеня · «зона незнакоства»</div></div>
+  </div>
+</div></section>
+
+<section class="stsec" id="s00"><div class="wrap">
+  <div class="sthead"><span class="stnum">00</span><h2>Паспорт исследования</h2><span class="hrule"></span></div>
+  <div class="panel reveal">
+    <div class="phead">дело · опрос редакции · том 2</div>
+    <div class="prow"><div class="plabel mono">Тема</div><div class="pval">Анализ предпочтений жителей штата San Andreas при выборе новостной редакции.</div></div>
+<div class="prow"><div class="plabel mono">Организация</div><div class="pval">Редакция San Fierro News, отдел социологии.</div></div>
+<div class="prow"><div class="plabel mono">Автор исследования</div><div class="pval">Jonny Wilde, корреспондент San Fierro News.</div></div>
+<div class="prow"><div class="plabel mono">Вопрос (дословно)</div><div class="pval">«Какая по вашему мнению лучшая редакция штата?»</div></div>
+<div class="prow"><div class="plabel mono">Метод</div><div class="pval">Личный опрос (интервьюирование), случайная выборка, дословная запись ответа.</div></div>
+<div class="prow"><div class="plabel mono">Выборка</div><div class="pval">14 жителей штата San Andreas, различные социальные и профессиональные группы.</div></div>
+<div class="prow"><div class="plabel mono">География</div><div class="pval">Штат San Andreas.</div></div>
+<div class="prow"><div class="plabel mono">Дата проведения</div><div class="pval">Октябрь 2026 года.</div></div>
+<div class="prow"><div class="plabel mono">Дата публикации</div><div class="pval">7 октября 2026 года.</div></div>
+<div class="prow"><div class="plabel mono">Возврат</div><div class="pval">100%: ни одно интервью не осталось без ответа.</div></div>
+  </div>
+</div></section>
+
+<section class="stsec" id="s01"><div class="wrap">
+  <div class="sthead"><span class="stnum">01</span><h2>Введение</h2><span class="hrule"></span></div>
+  <p class="lead reveal">Штат San Andreas обслуживают сразу три новостные редакции: <b>San Fierro News</b>, <b>Los Santos News</b>
+  и <b>Las Venturas News</b>. У каждой — свой город, своя повестка, свой читатель; у жителей — выбор, которому редко
+  находят числовое выражение. Газету читают, откладывают, хвалят в разговоре или не замечают вовсе, но доверие
+  к печатному слову почти никогда не измеряют напрямую. Редакция San Fierro News решила исправить это упущение.</p>
+  <p class="lead reveal">Цель данного социологического исследования — выяснить, какую редакцию сами жители штата считают лучшей.
+  Формат неудобен в первую очередь для нас: опрос проводит один из трёх участников забега. Поэтому методика предельно
+  прозрачна — каждый ответ записан дословно, первоначальные ответы сохранены в протоколе наравне с итоговыми,
+  «неудобные» цитаты не фильтруются, а реестр опубликован полностью. Любой читатель может проверить каждый
+  из 14 бюллетеней и сравнить с собственным впечатлением от трёх редакций штата.</p>
+</div></section>
+
+<section class="stsec" id="s02"><div class="wrap">
+  <div class="sthead"><span class="stnum">02</span><h2>Методология и организация исследования</h2><span class="hrule"></span></div>
+  <div class="panel reveal">
+    <div class="phead">методика · дословный протокол · без фильтрации</div>
+    <div class="mrow"><div class="mlabel mono">Цель исследования</div><div class="mval">Определить, какую редакцию штата жители считают лучшей, и измерить распределение предпочтений между тремя редакциями и группой воздержавшихся.</div></div>
+<div class="mrow"><div class="mlabel mono">Задачи исследования</div><div class="mval"><ul class="mlist"><li>провести количественную обработку полученных ответов;</li><li>рассчитать долю каждой редакции и группы воздержавшихся;</li><li>представить результаты в виде таблиц и диаграмм;</li><li>сформулировать итоговый вывод и рекомендации по результатам исследования.</li></ul></div></div>
+<div class="mrow"><div class="mlabel mono">Объект исследования</div><div class="mval">Общественное мнение жителей штата San Andreas.</div></div>
+<div class="mrow"><div class="mlabel mono">Предмет исследования</div><div class="mval">Предпочтения жителей при выборе лучшей новостной редакции штата.</div></div>
+<div class="mrow"><div class="mlabel mono">Гипотеза</div><div class="mval">Предполагается, что упоминания распределятся между тремя редакциями штата относительно равномерно, а заметная часть жителей воздержится от выбора из-за недостаточного знакомства с периодикой.</div></div>
+<div class="mrow"><div class="mlabel mono">Метод сбора информации</div><div class="mval">Личный опрос (интервьюирование) в формате случайной выборки.</div></div>
+<div class="mrow"><div class="mlabel mono">Инструментарий</div><div class="mval">Гражданам задавался стандартизированный вопрос: «Какая по вашему мнению лучшая редакция штата?» Ответ звучал в свободной форме — название редакции, город или аббревиатура записывались корреспондентом дословно.</div></div>
+<div class="mrow"><div class="mlabel mono">Выборка</div><div class="mval">В исследовании приняли участие 14 жителей штата, представляющих различные социальные и профессиональные группы. Возврат опроса составил 100%. В статистику включены все 14 ответов.</div></div>
+<div class="mrow"><div class="mlabel mono">Особенности обработки данных</div><div class="mval">В ходе опроса двое респондентов изменили ответ по ходу беседы: Gigi Pump первоначально ответил «ЛСН», итоговый ответ — «СФН»; John Jowing первоначально ответил «ЛВ ньюс», итоговый — «СФ ньюс». Первоначальные ответы занесены в протокол, исключены из статистики и отмечены в реестре; учтены итоговые ответы. Повторных записей не выявлено. Все доли рассчитаны от базы 14 ответов; округлённые значения таблицы 1 в сумме дают 99% вместо 100% — это погрешность округления, а не потерянный бюллетень.</div></div>
+  </div>
+</div></section>
+
+<section class="stsec" id="s03"><div class="wrap">
+  <div class="sthead"><span class="stnum">03</span><h2>Полученные результаты</h2><span class="hrule"></span></div>
+  <p class="lead reveal">Первичные данные опроса распределились следующим образом: <b>9 из 14 упоминаний — у San Fierro News</b>;
+  у редакций-коллег суммарно 3 бюллетеня (21,4%): два у Los Santos News и один у Las Venturas News;
+  <b>2 жителя (14,3%) воздержались</b> от оценки.</p>
+
+  <div class="panel figure reveal" style="margin-top:1.4rem">
+    <div class="phead" style="padding:0 0 .9rem;margin-bottom:1rem;border-bottom:1px solid var(--line)">рис. 1 · счётные полосы — каждый сегмент равен одному бюллетеню</div>
+    <div class="lane" data-g="sfn" style="--c:#2fd67c;--w:64.286%;--f1:rgba(47,214,124,.16);--f2:rgba(47,214,124,.42)"><div class="lanelbl"><b>San Fierro News</b><span class="mono">SFN</span></div><div class="lanetrack"><div class="lanefill"><span class="votecell" data-n="Gigi Pump"></span><span class="votecell" data-n="Kvint Hateu"></span><span class="votecell" data-n="Voyage Hateu"></span><span class="votecell" data-n="Jackson Sanders"></span><span class="votecell" data-n="Brain Richardson"></span><span class="votecell" data-n="Aru Sheen"></span><span class="votecell" data-n="Donny Lewis"></span><span class="votecell" data-n="John Jowing"></span><span class="votecell" data-n="Ildar Baikuzin"></span></div></div><div class="lanenum mono"><b>9</b><span>64,3%</span></div></div>
+<div class="lane" data-g="lsn" style="--c:#ffb03a;--w:14.286%;--f1:rgba(255,176,58,.16);--f2:rgba(255,176,58,.42)"><div class="lanelbl"><b>Los Santos News</b><span class="mono">LSN</span></div><div class="lanetrack"><div class="lanefill"><span class="votecell" data-n="Dan Mellow"></span><span class="votecell" data-n="Ava Cooper"></span></div></div><div class="lanenum mono"><b>2</b><span>14,3%</span></div></div>
+<div class="lane" data-g="lvn" style="--c:#d76bff;--w:7.143%;--f1:rgba(215,107,255,.16);--f2:rgba(215,107,255,.42)"><div class="lanelbl"><b>Las Venturas News</b><span class="mono">LVN</span></div><div class="lanetrack"><div class="lanefill"><span class="votecell" data-n="Pierce DaGreez"></span></div></div><div class="lanenum mono"><b>1</b><span>7,1%</span></div></div>
+<div class="lane" data-g="abs" style="--c:#7d8ca3;--w:14.285%;--f1:rgba(125,140,163,.14);--f2:rgba(125,140,163,.34)"><div class="lanelbl"><b>Воздержались / отказались отвечать</b><span class="mono">воздержались</span></div><div class="lanetrack"><div class="lanefill hatch"><span class="votecell" data-n="Joseph Masseria"></span><span class="votecell" data-n="Just Godless"></span></div></div><div class="lanenum mono"><b>2</b><span>14,3%</span></div></div>
+    <div class="figcap">рис. 1 · длина полосы = доля группы от 14 учтённых ответов · наведите на сегмент — увидите имя респондента</div>
+  </div>
+
+  <div class="panel reveal" style="margin-top:1.4rem;overflow:hidden">
+    <div class="phead">таблица 1 · распределение ответов жителей</div>
+    <table class="tbl">
+      <thead><tr><th>Вариант ответа</th><th class="tn">Бюллетеней</th><th>Доля</th><th class="tr">Округл.</th></tr></thead>
+      <tbody>
+<tr data-g="sfn"><td class="tname"><i class="dot" style="background:#2fd67c"></i>San Fierro News (SFN)</td><td class="mono tn">9</td><td class="mono">64,3%</td><td class="mono tr">≈64%</td></tr>
+<tr data-g="lsn"><td class="tname"><i class="dot" style="background:#ffb03a"></i>Los Santos News (LSN)</td><td class="mono tn">2</td><td class="mono">14,3%</td><td class="mono tr">≈14%</td></tr>
+<tr data-g="lvn"><td class="tname"><i class="dot" style="background:#d76bff"></i>Las Venturas News (LVN)</td><td class="mono tn">1</td><td class="mono">7,1%</td><td class="mono tr">≈7%</td></tr>
+<tr data-g="abs"><td class="tname"><i class="dot" style="background:#7d8ca3"></i>Воздержались / отказались отвечать</td><td class="mono tn">2</td><td class="mono">14,3%</td><td class="mono tr">≈14%</td></tr>
+<tr class="sumrow"><td class="tname">Итого</td><td class="mono tn">14</td><td class="mono">100,0%</td><td class="mono tr">99%*</td></tr>
+      </tbody>
+    </table>
+    <div class="tblnote">Таблица 1 · доли считаются от 14 учтённых ответов; первоначальные ответы двух респондентов,
+    изменивших мнение по ходу беседы, исключены из статистики · *сумма округлённых значений даёт 99% — погрешность округления.</div>
+  </div>
+
+  <div class="panel figure reveal" style="margin-top:1.4rem">
+    <div class="phead" style="padding:0 0 .9rem;margin-bottom:1.2rem;border-bottom:1px solid var(--line)">рис. 2 · структура ответов</div>
+    <div class="dgrid">
+      <div class="donutbox">
+        <div class="donut" id="donut" style="--donut:conic-gradient(from -90deg,#2fd67c 0 64.286%,#ffb03a 64.286% 78.572%,#d76bff 78.572% 85.715%,#7d8ca3 85.715% 100%)" data-segs='[[64.286, "#2fd67c"], [14.286, "#ffb03a"], [7.143, "#d76bff"], [14.285, "#7d8ca3"]]'></div>
+        <div class="dcenter" id="dcenter">
+          <div class="dcnum" id="dcnum">14</div>
+          <div class="dclbl" id="dclbl">ответов учтено</div>
+        </div>
+      </div>
+      <div class="dleg" id="dleg">
+<button type="button" class="dlrow" data-g="sfn" style="--c:#2fd67c"><i class="dlsw"></i><span class="dlname">San Fierro News</span><span class="dlnum mono">9 · 64,3%</span></button>
+<button type="button" class="dlrow" data-g="lsn" style="--c:#ffb03a"><i class="dlsw"></i><span class="dlname">Los Santos News</span><span class="dlnum mono">2 · 14,3%</span></button>
+<button type="button" class="dlrow" data-g="lvn" style="--c:#d76bff"><i class="dlsw"></i><span class="dlname">Las Venturas News</span><span class="dlnum mono">1 · 7,1%</span></button>
+<button type="button" class="dlrow" data-g="abs" style="--c:#7d8ca3"><i class="dlsw"></i><span class="dlname">Воздержались / отказались отвечать</span><span class="dlnum mono">2 · 14,3%</span></button>
+      </div>
+    </div>
+    <div class="figcap">рис. 2 · кольцевая диаграмма, % от числа учтённых ответов · наведите на строку легенды — центр покажет группу</div>
+  </div>
+
+  <div class="panel figure reveal" style="margin-top:1.4rem">
+    <div class="phead" style="padding:0 0 .9rem;margin-bottom:1rem;border-bottom:1px solid var(--line)">рис. 3 · единая лента ответов (100%)</div>
+    <div class="ribbon reveal"><div class="rbseg" data-g="sfn" style="width:64.286%;background:#2fd67c"><span class="mono">64,3%</span></div><div class="rbseg" data-g="lsn" style="width:14.286%;background:#ffb03a"><span class="mono">14,3%</span></div><div class="rbseg" data-g="lvn" style="width:7.143%;background:#d76bff"><span class="mono"></span></div><div class="rbseg" data-g="abs" style="width:14.285%;background:#7d8ca3"><span class="mono">14,3%</span></div></div>
+    <div class="rblegs"><span class="rbleg" data-g="sfn"><i style="background:#2fd67c"></i>SFN · 64,3%</span><span class="rbleg" data-g="lsn"><i style="background:#ffb03a"></i>LSN · 14,3%</span><span class="rbleg" data-g="lvn"><i style="background:#d76bff"></i>LVN · 7,1%</span><span class="rbleg" data-g="abs"><i style="background:#7d8ca3"></i>воздерж. · 14,3%</span></div>
+    <div class="figcap">рис. 3 · ширина сегмента = доля группы</div>
+  </div>
+
+  <div class="panel reveal" style="margin-top:1.4rem;overflow:hidden">
+    <div class="phead">таблица 2 · почему молчат воздержавшиеся</div>
+    <table class="tbl">
+      <thead><tr><th>Причина (кодировка редакции)</th><th class="tn">Ответов</th></tr></thead>
+      <tbody>
+        <tr><td class="tname">Не пользуется услугами редакций, отказался от оценки</td><td class="mono tn">1</td></tr>
+        <tr><td class="tname">Не знаком ни с одной редакцией штата</td><td class="mono tn">1</td></tr>
+        <tr class="sumrow"><td class="tname">Итого воздержавшихся</td><td class="mono tn">2</td></tr>
+      </tbody>
+    </table>
+    <div class="tblnote">Таблица 2 · кодировка цитат — экспертная оценка редакции; формулировки респондентов приведены в реестре дословно.</div>
+  </div>
+
+  <p class="lead reveal" style="margin-top:1.4rem">Диаграммы наглядно демонстрируют: из забега трёх редакций выходит выраженный лидер —
+  San Fierro News выбирают почти две трети опрошенных. Редакции-коллеги сохраняют устойчивый, но компактный круг читателей,
+  а каждый седьмой респондент находится в «зоне незнакоства» — с периодикой штата он пока не пересекался вовсе.</p>
+</div></section>
+
+<section class="stsec" id="s04"><div class="wrap">
+  <div class="sthead"><span class="stnum">04</span><h2>Анализ результатов</h2><span class="hrule"></span></div>
+  <p class="lead reveal">Анализ полученных данных позволяет сделать следующие выводы:</p>
+
+  <div class="panel ancard reveal" style="--c:#2fd67c">
+    <div class="anleft"><div class="anpct">64,3%</div><div class="ansub">9 бюллетеней<br>San Fierro News</div></div>
+    <div><h3>Лидер определился</h3>
+      <p>9 из 14 респондентов считают лучшей редакцией штата San Fierro News. Показателен сам разброс формулировок:
+      от аббревиатуры <b>«SFN»</b> (Aru Sheen, Gigi Pump) и короткого <b>«СФ»</b> (Jackson Sanders, Donny Lewis) до полного
+      <b>«Сан Фиерро»</b> (Kvint Hateu, Voyage Hateu, Ildar Baikuzin) и <b>«СФ Ньюс»</b> (Brain Richardson, John Jowing).
+      На девять бюллетеней приходится семь разных написаний — городом, сокращением или полным именем:
+      марку называют так, как привыкли, и это признак живой узнаваемости.</p></div>
+  </div>
+
+  <div class="panel ancard reveal" style="--c:#ffb03a">
+    <div class="anleft"><div class="anpct">21,4%</div><div class="ansub">3 бюллетеня<br>коллеги по штату</div></div>
+    <div><h3>Фланги конкурентов</h3>
+      <p><b>Los Santos News</b> получила два бюллетеня: Dan Mellow — разговорным <b>«Ну ЛС»</b>, Ava Cooper — полным именем
+      <b>«Los-Santos News»</b>. У <b>Las Venturas News</b> один бюллетень: Pierce DaGreez назвал <b>«лас вентурас»</b>.
+      У обеих редакций-коллег есть свой читатель, и называет он их коротко, без длинных объяснений — как про своих.
+      Для штата это здоровая картина: жителям есть из чего выбирать, и они этим выбором пользуются.</p></div>
+  </div>
+
+  <div class="panel ancard reveal" style="--c:#7d8ca3">
+    <div class="anleft"><div class="anpct">14,3%</div><div class="ansub">2 бюллетеня<br>воздержались</div></div>
+    <div><h3>«Зона молчания»: не оценка, а незнакоство</h3>
+      <p>Оба воздержания — не про конкретные редакции, а про незнакомство с самой прессой штата. Joseph Masseria заявил,
+      что <b>«не пользуется вашими услугами вообще»</b>, и отказался от оценки; Just Godless воздержался, <b>«тк ни с одной не знаком»</b>.
+      Это не антирейтинг, а невостребованная аудитория: с периодикой штата эти жители пока не пересекались —
+      кто-то не пользуется ею вовсе, кто-то не знаком ни с одной редакцией. Для всех трёх этот сегмент —
+      одновременно резерв роста и немой упрёк.</p></div>
+  </div>
+
+  <div class="panel ancard reveal" style="--c:#ffb03a">
+    <div class="anleft"><div class="anpct">2</div><div class="ansub">изменили ответ<br>по ходу беседы</div></div>
+    <div><h3>Изменили мнение</h3>
+      <p>Протокол зафиксировал два пересмотра ответа прямо во время беседы — оба в пользу San Fierro News:
+      <b>Gigi Pump</b> сменил «ЛСН» на «СФН», <b>John Jowing</b> — «ЛВ ньюс» на «СФ ньюс». Редакция фиксирует это
+      с процедурной нейтральностью: первоначальные ответы сохранены в реестре и исключены из статистики,
+      никого из респондентов мы не записываем в неискренние — пересмотр ответа по ходу интервью является
+      нормальной протокольной практикой.</p>
+      <div class="flipnote"><button type="button" class="fnbtn mono" aria-expanded="false">Протокольная сноска — раскрыть</button>
+        <div class="fnpanel"><p class="mono">Первоначальные ответы: Gigi Pump — «ЛСН»; John Jowing — «ЛВ ньюс».
+        Записаны корреспондентом в момент произнесения, исключены из статистики согласно разделу 02.
+        Итоговые ответы учтены: «СФН» и «СФ ньюс» соответственно.</p></div></div>
+      <p style="margin-top:.9rem">Важен сам факт: выбор редакции не всегда сформирован заранее — иногда отношение
+      рождается прямо во время разговора о газете. Значит, прессу в штате сравнивают вживую.</p></div>
+  </div>
+
+  <div class="panel ancard reveal" style="--c:#2fd67c">
+    <div class="anleft"><div class="anpct" style="font-size:clamp(1.5rem,2.6vw,2.1rem)">9/2/1/2</div><div class="ansub">синтез<br>расклад протокола</div></div>
+    <div><h3>Синтез: расклад «9 / 2 / 1 / 2»</h3>
+      <p>San Fierro News удерживает почти две трети упоминаний, Los Santos News и Las Venturas News держат устойчивые фланги,
+      а каждый седьмой респондент пока находится вне газетного поля штата. Борьба за «зону незнакоства» — главный сюжет
+      следующей волны.</p>
+      <p>Два имени протокола знакомы внимательному читателю по сентябрьской волне опроса («Вы довольны новым губернатором?»,
+      30.09.2026): <b>Gigi Pump</b> и <b>Dan Mellow</b>. Ответы разных волн мы не сопоставляем — темы разные; фиксируем лишь факт
+      повторного участия: круг респондентов опросов редакции становится постоянным. Показательна и деталь: Dan Mellow
+      в сентябрьской волне называл себя недавно приехавшим в штат и оценивать воздержался — а сегодня уже сделал
+      определённый выбор.</p></div>
+  </div>
+
+  <div class="sthead" style="margin-top:2.2rem"><h2 style="font-size:1.1rem">Портреты групп</h2><span class="hrule"></span></div>
+  <div class="ptgrid">
+<div class="ptcard reveal" style="--c:#2fd67c"><div class="pttop"><span class="ptpct mono">64,3%</span><span class="ptsub">9 бюллетеней · San Fierro News</span></div><div class="ptq">«Сан Фиерро»</div><div class="ptwho mono">— Kvint Hateu, респондент №2</div></div>
+<div class="ptcard reveal" style="--c:#ffb03a"><div class="pttop"><span class="ptpct mono">14,3%</span><span class="ptsub">2 бюллетеня · Los Santos News</span></div><div class="ptq">«Ну ЛС»</div><div class="ptwho mono">— Dan Mellow, респондент №10</div></div>
+<div class="ptcard reveal" style="--c:#d76bff"><div class="pttop"><span class="ptpct mono">7,1%</span><span class="ptsub">1 бюллетень · Las Venturas News</span></div><div class="ptq">«лас вентурас»</div><div class="ptwho mono">— Pierce DaGreez, респондент №12</div></div>
+<div class="ptcard reveal" style="--c:#7d8ca3"><div class="pttop"><span class="ptpct mono">14,3%</span><span class="ptsub">2 бюллетеня · воздержались</span></div><div class="ptq">«Не пользуюсь вашими услугами вообще, не скажу»</div><div class="ptwho mono">— Joseph Masseria, респондент №13</div></div>
+  </div>
+</div></section>
+
+<section class="stsec" id="s05"><div class="wrap">
+  <div class="sthead"><span class="stnum">05</span><h2>Реестр ответов · дословно</h2><span class="hrule"></span></div>
+  <p class="lead reveal">Все 14 учтённых записей полевого протокола — в виде бюллетеней. Цитаты сохранены дословно,
+  включая авторские сокращения и регистр. Отметка «Изменил мнение» означает, что в протоколе сохранён и первоначальный
+  ответ респондента — он исключён из статистики и доступен по кнопке на бюллетене.</p>
+
+  <div class="btabs" id="btabs" role="group" aria-label="Фильтр бюллетеней">
+    <button type="button" class="btab on" data-f="all">Все<sup>14</sup></button>
+    <button type="button" class="btab" data-f="sfn">SFN<sup>9</sup></button>
+    <button type="button" class="btab" data-f="lsn">LSN<sup>2</sup></button>
+    <button type="button" class="btab" data-f="lvn">LVN<sup>1</sup></button>
+    <button type="button" class="btab" data-f="abs">Воздержались<sup>2</sup></button>
+  </div>
+  <div class="bcount" id="bcount">показано: 14 из 14 бюллетеней</div>
+
+  <div class="ballots" id="ballots">
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №01</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bstamp mid">Изменил<br>мнение</div><div class="bname">Gigi Pump</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«СФН»</blockquote><div class="flipnote mini"><button type="button" class="fnbtn mono" aria-expanded="false">Первоначальный ответ — показать</button><div class="fnpanel"><p class="mono">Протокол: первоначально прозвучало «ЛСН» — ответ изменён по ходу беседы на «СФН». Первоначальный ответ исключён из статистики (методика, раздел 02), в реестре сохранён.</p></div></div></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №02</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Kvint Hateu</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«Сан Фиерро»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №03</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Voyage Hateu</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«сан фиерро»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №04</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Jackson Sanders</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«SF»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №05</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Brain Richardson</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«СФ Ньюс»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №06</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Aru Sheen</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«SFN»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №07</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Donny Lewis</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«СФ»</blockquote></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №08</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bstamp mid">Изменил<br>мнение</div><div class="bname">John Jowing</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«СФ ньюс»</blockquote><div class="flipnote mini"><button type="button" class="fnbtn mono" aria-expanded="false">Первоначальный ответ — показать</button><div class="fnpanel"><p class="mono">Протокол: первоначально прозвучало «ЛВ ньюс» — ответ изменён по ходу беседы на «СФ ньюс». Первоначальный ответ исключён из статистики (методика, раздел 02), в реестре сохранён.</p></div></div></article>
+<article class="ballot reveal" data-g="sfn" style="--c:#2fd67c"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №09</span><span class="gchip mono" data-g="sfn">SFN</span></div><div class="bstamp">Учтён</div><div class="bname">Ildar Baikuzin</div><div class="bopts"><div class="opt chosen" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«Сан Фиерро»</blockquote></article>
+<article class="ballot reveal" data-g="lsn" style="--c:#ffb03a"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №10</span><span class="gchip mono" data-g="lsn">LSN</span></div><div class="bstamp">Учтён</div><div class="bname">Dan Mellow</div><div class="bopts"><div class="opt" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt chosen" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«Ну ЛС»</blockquote></article>
+<article class="ballot reveal" data-g="lsn" style="--c:#ffb03a"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №11</span><span class="gchip mono" data-g="lsn">LSN</span></div><div class="bstamp">Учтён</div><div class="bname">Ava Cooper</div><div class="bopts"><div class="opt" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt chosen" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«Los-Santos News»</blockquote></article>
+<article class="ballot reveal" data-g="lvn" style="--c:#d76bff"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №12</span><span class="gchip mono" data-g="lvn">LVN</span></div><div class="bstamp">Учтён</div><div class="bname">Pierce DaGreez</div><div class="bopts"><div class="opt" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt chosen" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div></div><blockquote class="bquote">«лас вентурас»</blockquote></article>
+<article class="ballot reveal" data-g="abs" style="--c:#7d8ca3"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №13</span><span class="gchip mono" data-g="abs">воздерж.</span></div><div class="bstamp">Учтён</div><div class="bname">Joseph Masseria</div><div class="bopts"><div class="opt" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div><div class="opt chosen" style="--c:#7d8ca3"><i class="box"></i><span>Воздержался от ответа</span></div></div><blockquote class="bquote">«Не пользуюсь вашими услугами вообще, не скажу»</blockquote></article>
+<article class="ballot reveal" data-g="abs" style="--c:#7d8ca3"><div class="bperf" aria-hidden="true"></div><div class="bhead"><span class="bnum mono">Бюллетень №14</span><span class="gchip mono" data-g="abs">воздерж.</span></div><div class="bstamp">Учтён</div><div class="bname">Just Godless</div><div class="bopts"><div class="opt" style="--c:#2fd67c"><i class="box"></i><span>San Fierro News (SFN)</span></div><div class="opt" style="--c:#ffb03a"><i class="box"></i><span>Los Santos News (LSN)</span></div><div class="opt" style="--c:#d76bff"><i class="box"></i><span>Las Venturas News (LVN)</span></div><div class="opt chosen" style="--c:#7d8ca3"><i class="box"></i><span>Воздержался от ответа</span></div></div><blockquote class="bquote">«Воздержусь, тк ни с одной не знаком»</blockquote></article>
+  </div>
+
+  <div class="tblnote" style="padding:1rem 0 0">Реестр · 14 учтённых записей · нумерация — по порядку протокола ·
+  орфография и пунктуация цитат сохранены без изменений · первоначальные ответы двух респондентов, изменивших мнение,
+  хранятся в протокольных сносках их бюллетеней.</div>
+</div></section>
+
+<section class="stsec" id="s06"><div class="wrap">
+  <div class="sthead"><span class="stnum">06</span><h2>Заключение</h2><span class="hrule"></span></div>
+  <div class="verdict reveal"><div class="vnum">64,3%</div>
+    <div class="vtext">Жители штата назвали лучшую редакцию: <b>San Fierro News</b> — 9 из 14 учтённых ответов.</div></div>
+  <p class="txt reveal">По итогам проведённого социологического опроса можно сделать вывод, что поставленная цель исследования достигнута.</p>
+  <p class="txt reveal">Гипотеза о равномерном распределении упоминаний <b>не подтвердилась</b>: из забега вышел выраженный лидер —
+  San Fierro News с 64,3% (9 из 14 ответов). Редакции-коллеги сохранили устойчивый круг читателей: Los Santos News — 14,3%,
+  Las Venturas News — 7,1%. Ещё 14,3% выборки воздержались, и оба воздержания говорят не о претензиях к конкретным
+  редакциям, а о незнакомстве с периодикой штата как таковой.</p>
+  <p class="txt reveal">Своё лидерство редакция фиксирует с процедурной нейтральностью и рассматривает не как награду, а как кредит доверия:
+  двое респондентов пересмотрели ответ прямо во время беседы — значит, предпочтения подвижны. Отдельная честная оговорка
+  про методику: опрос проводила редакция-лидер, поэтому для верификации результата отдел социологии намерен повторить волну
+  с расширенной выборкой и, по возможности, пригласить коллег к совместному наблюдению.</p>
+
+  <div class="ednote reveal">
+    <div class="ent">Примечание редакции</div>
+    <p>Коротко: 9 из 14 — за San Fierro News (64,3%); 2 — за Los Santos News (14,3%); 1 — за Las Venturas News (7,1%);
+    2 жителя воздержались (14,3%). Все цитаты приведены дословно, первоначальные ответы двух респондентов, изменивших
+    мнение, сохранены в протоколе и исключены из статистики. Следующая волна замера — с расширенной выборкой.</p>
+  </div>
+
+  <div class="mline reveal">Методика: уличный полевой опрос на территории штата San Andreas · инструмент: личное интервью
+  с дословной записью ответа · проведено 14 интервью, возврат 100% · учтено 14 ответов · первоначальные ответы двух
+  респондентов, пересмотренные по ходу беседы, исключены из статистики · кодировка таблицы 2 — экспертная оценка редакции.</div>
+</div></section>
+
+<section class="stsec" id="s07"><div class="wrap">
+  <div class="sthead"><span class="stnum">07</span><h2>Рекомендации</h2><span class="hrule"></span></div>
+  <p class="lead reveal">На основании проведённого анализа редакция San Fierro News рекомендует:</p>
+  <div class="recgrid">
+    <div class="panel reccard reveal"><div class="rto">редакции San Fierro News</div>
+      <h3>Относиться к 64,3% как к кредиту доверия</h3>
+      <p>Подтверждать результат каждым выпуском: держать полевую журналистику, публиковать опросы дословно и никогда
+      не цитировать собственное лидерство как аргумент в споре с коллегами. <b>Проверка доверия — тираж, а не цифры замеров.</b></p></div>
+    <div class="panel reccard reveal"><div class="rto">редакциям-коллегам · Los Santos News · Las Venturas News</div>
+      <h3>Расширять видимость за пределами домашних городов</h3>
+      <p>Ваш читатель устойчив, но компактен: <b>3 бюллетеня из 14</b>. Штатные сюжеты из соседних городов и живые уличные
+      репортажи — прямой путь к тому, чтобы следующая волна выглядела иначе. Редакция фиксирует выбор жителей с уважением.</p></div>
+    <div class="panel reccard reveal"><div class="rto">жителям штата</div>
+      <h3>Читать и сравнивать</h3>
+      <p>Оба воздержания — про незнакомство, а не про оценку. Газету узнают по выпускам: возьмите номер, сравните три редакции
+      и приходите на следующую волну опроса уже с ответом. <b>Опросы работают тогда, когда на них отвечают.</b></p></div>
+    <div class="panel reccard reveal"><div class="rto">отделу социологии редакции</div>
+      <h3>Сделать замер регулярным</h3>
+      <p>Следующая волна — через полгода, выборка от 30 респондентов, та же методика дословного протокола с сохранением
+      первоначальных ответов. По возможности — пригласить к наблюдению за волной коллег из двух других редакций.</p></div>
+  </div>
+</div></section>
+
+<section class="stsec" id="s08"><div class="wrap">
+  <div class="sthead"><span class="stnum">08</span><h2>Доказательства проведения опроса</h2><span class="hrule"></span></div>
+  <div class="panel reveal" style="padding:1.5rem 1.6rem">
+    <p class="txt">Все первичные материалы, подтверждающие проведение данного исследования, — записи бесед корреспондента,
+    полевой протокол опроса со всеми 14 записями (включая два первоначальных ответа респондентов, пересмотренных по ходу
+    беседы), рабочие заметки — хранятся в архиве редакции San Fierro News и доступны для ознакомления по официальному запросу.
+    Нумерация протокола соответствует опубликованному выше реестру ответов; реестр приведён дословно.</p>
+    <div class="signrow">
+      <div>
+        <div class="signlbl">подпись</div>
+        <div class="signname">Корреспондент San Fierro News, Jonny Wilde</div>
+        <div class="signscript">автор исследования и интервьюер · 7 октября 2026 года</div>
+      </div>
+      <div class="mono" style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);text-align:right">
+        протокол · 14/14<br>возврат 100%<br>подсчёт завершён
+      </div>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="wrap colophon">
+  <div>
+    <div class="credits">Опрос и текст: Jonny Wilde · Отдел социологии редакции San Fierro News</div>
+    <div class="made">выпуск очереди подшивки · 07.10.2026 · дизайн и вёрстка — редакция San Fierro News</div>
+  </div>
+  <a class="backpill" href="newsroom.html">← Посмотреть все выпуски редакции</a>
+  <div class="copyline">© 2026 SF News Corp. · Спецвыпуск · 07.10.2026 · цитаты приведены дословно, первоначальные ответы двух респондентов, изменивших мнение, исключены из статистики</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var hasIO = ('IntersectionObserver' in window);
+  var hasRAF = ('requestAnimationFrame' in window);
+
+  /* ── счётчики плиток ── */
+  function fmt(v, dec){ return v.toFixed(dec).replace('.', ','); }
+  function animNum(el){
+    var to = parseFloat(el.getAttribute('data-to')) || 0;
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    var suf = el.getAttribute('data-suf') || '';
+    if(!hasRAF){ el.textContent = fmt(to, dec) + suf; return; }
+    var t0 = null, dur = 1100;
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * e, dec) + suf;
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(to, dec) + suf;
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── кольцевая диаграмма: перекрутка сегментов ── */
+  var donut = document.getElementById('donut');
+  function donutFinal(){
+    if(donut && donut.getAttribute('data-segs')){
+      var segs = JSON.parse(donut.getAttribute('data-segs'));
+      var acc = 0, parts = [];
+      for(var i = 0; i < segs.length; i++){
+        var a = acc, b = acc + segs[i][0];
+        parts.push(segs[i][1] + ' ' + a.toFixed(3) + '% ' + b.toFixed(3) + '%');
+        acc = b;
+      }
+      donut.style.setProperty('--donut', 'conic-gradient(from -90deg,' + parts.join(',') + ')');
+    }
+  }
+  function donutSpin(){
+    if(!donut || !hasRAF){ donutFinal(); return; }
+    var segs = JSON.parse(donut.getAttribute('data-segs'));
+    var t0 = null, dur = 1300, total = 0;
+    for(var i = 0; i < segs.length; i++) total += segs[i][0];
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      var acc = 0, parts = [];
+      for(var j = 0; j < segs.length; j++){
+        var a = acc * e, b = (acc + segs[j][0]) * e;
+        parts.push(segs[j][1] + ' ' + a.toFixed(3) + '% ' + b.toFixed(3) + '%');
+        acc += segs[j][0];
+      }
+      donut.style.setProperty('--donut', 'conic-gradient(from -90deg,' + parts.join(',') + ')');
+      if(p < 1) requestAnimationFrame(step);
+      else donutFinal();
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── легенда: центр показывает группу ── */
+  var dcnum = document.getElementById('dcnum'), dclbl = document.getElementById('dclbl');
+  var GINFO = {
+    sfn: ['9', 'San Fierro News · 64,3%'],
+    lsn: ['2', 'Los Santos News · 14,3%'],
+    lvn: ['1', 'Las Venturas News · 7,1%'],
+    abs: ['2', 'воздержались · 14,3%']
+  };
+  var rows = document.querySelectorAll('.dlrow');
+  for(var r = 0; r < rows.length; r++){
+    (function(row){
+      function enter(){
+        var g = row.getAttribute('data-g');
+        row.classList.add('hot');
+        if(dcnum) dcnum.textContent = GINFO[g][0];
+        if(dclbl) dclbl.textContent = GINFO[g][1];
+      }
+      function leave(){
+        row.classList.remove('hot');
+        if(dcnum) dcnum.textContent = '14';
+        if(dclbl) dclbl.textContent = 'ответов учтено';
+      }
+      row.addEventListener('mouseenter', enter);
+      row.addEventListener('mouseleave', leave);
+      row.addEventListener('focus', enter);
+      row.addEventListener('blur', leave);
+      row.addEventListener('click', enter);
+    })(rows[r]);
+  }
+
+  /* ── фильтр бюллетеней ── */
+  var ballots = document.querySelectorAll('#ballots .ballot');
+  var tabs = document.querySelectorAll('#btabs .btab');
+  var bcount = document.getElementById('bcount');
+  function applyFilter(f){
+    var shown = 0;
+    for(var i = 0; i < ballots.length; i++){
+      var hit = (f === 'all') || (ballots[i].getAttribute('data-g') === f);
+      ballots[i].classList.toggle('hide', !hit);
+      if(hit) shown++;
+    }
+    if(bcount) bcount.textContent = 'показано: ' + shown + ' из ' + ballots.length + ' бюллетеней';
+  }
+  for(var t = 0; t < tabs.length; t++){
+    (function(tab){
+      tab.addEventListener('click', function(){
+        for(var k = 0; k < tabs.length; k++) tabs[k].classList.remove('on');
+        tab.classList.add('on');
+        applyFilter(tab.getAttribute('data-f'));
+      });
+    })(tabs[t]);
+  }
+
+  /* ── протокольные сноски ── */
+  var fns = document.querySelectorAll('.flipnote .fnbtn');
+  for(var f = 0; f < fns.length; f++){
+    (function(btn){
+      btn.addEventListener('click', function(){
+        var note = btn.closest ? btn.closest('.flipnote') : btn.parentNode;
+        var open = note.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })(fns[f]);
+  }
+
+  /* ── навигация протокола: скролл без якорей + scrollspy ── */
+  var navBtns = document.querySelectorAll('.snavbtn');
+  for(var n = 0; n < navBtns.length; n++){
+    (function(btn){
+      btn.addEventListener('click', function(){
+        var sec = document.getElementById(btn.getAttribute('data-t'));
+        if(sec) sec.scrollIntoView({behavior: hasRAF ? 'smooth' : 'auto', block: 'start'});
+      });
+    })(navBtns[n]);
+  }
+  function setCur(id){
+    for(var i = 0; i < navBtns.length; i++){
+      navBtns[i].classList.toggle('cur', navBtns[i].getAttribute('data-t') === id);
+    }
+  }
+
+  /* ── появление секций, счётчики, полосы, диаграмма ── */
+  var reveals = document.querySelectorAll('.reveal');
+  var donutDone = false;
+  function activate(el){
+    el.classList.add('on');
+    var nums = el.querySelectorAll ? el.querySelectorAll('.num[data-to]') : [];
+    for(var i = 0; i < nums.length; i++){
+      if(nums[i].getAttribute('data-done')) continue;
+      nums[i].setAttribute('data-done', '1');
+      animNum(nums[i]);
+    }
+    if(!donutDone && el.contains && el.contains(donut)){
+      donutDone = true;
+      donutSpin();
+    }
+  }
+  if(hasIO){
+    var io = new IntersectionObserver(function(entries){
+      for(var i = 0; i < entries.length; i++){
+        if(entries[i].isIntersecting){
+          activate(entries[i].target);
+          io.unobserve(entries[i].target);
+        }
+      }
+    }, {threshold: 0.18});
+    for(var i = 0; i < reveals.length; i++) io.observe(reveals[i]);
+    var secs = document.querySelectorAll('.stsec');
+    var spy = new IntersectionObserver(function(entries){
+      for(var i = 0; i < entries.length; i++){
+        if(entries[i].isIntersecting) setCur(entries[i].target.id);
+      }
+    }, {rootMargin: '-30% 0px -60% 0px'});
+    for(var s = 0; s < secs.length; s++) spy.observe(secs[s]);
+  } else {
+    document.body.classList.add('noanim');
+    for(var j = 0; j < reveals.length; j++) activate(reveals[j]);
+    donutFinal();
+  }
+})();
+</script>
+<!-- SFN · 2026 · 034 · tally-station -->
+</body>
+</html>
