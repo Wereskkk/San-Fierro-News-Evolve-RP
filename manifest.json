@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-05",
+ "generated": "2026-10-07",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 35,
+ "issues": 36,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -71,8 +71,8 @@
   },
   {
    "file": "efir-rules.html",
-   "bytes": 33812,
-   "sha256": "f319088f08f67218a51d4f1d7d93d2a1a767b88b1897fb311615512c8a7bdb41"
+   "bytes": 34469,
+   "sha256": "0f2aedf6546c0fc5e459294cc5cb01428f39ba769d62748832a162aba47915f6"
   },
   {
    "file": "fotoreport-abandoned-airport.html",
@@ -126,8 +126,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 110296,
-   "sha256": "a3e9a2589aa5bf79e0503952cf8addaf196c29d46a113e7fba7373b704cf7433"
+   "bytes": 112131,
+   "sha256": "dcca4e33bc955807cccbfea8fb8765bb59832127ad9dd475d40a4d87d6f37f41"
   },
   {
    "file": "opg-leader-interview.html",
@@ -158,6 +158,11 @@
    "file": "socio-governor-poll.html",
    "bytes": 45761,
    "sha256": "96d866c93e6507ee18e183705d4d2046fcd2d1b36dd647f436788826d9c69777"
+  },
+  {
+   "file": "tour-seven-places.html",
+   "bytes": 8534475,
+   "sha256": "5e934379bf09cc64f0371c65eaf13b16bc34a0a90e909a67470995abafd7b53d"
   },
   {
    "file": "wedding-ozzy-gulnara.html",
