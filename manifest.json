@@ -2,7 +2,7 @@
  "generated": "2026-10-07",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 36,
+ "issues": 38,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -33,6 +33,11 @@
    "file": "daily-02-10-2026-las-venturas.html",
    "bytes": 4033127,
    "sha256": "3f8c6af00d8da842dc2b28e99ff8a17e8d421c5b4bb9629608c8ae5ec748201c"
+  },
+  {
+   "file": "daily-03-10-2026.html",
+   "bytes": 3167076,
+   "sha256": "05f2ebb18e37f1b7bea7dcadd480a7fe1eb387edd111da4fba9df49fece749cc"
   },
   {
    "file": "daily-24-09-2026.html",
@@ -126,8 +131,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 112131,
-   "sha256": "dcca4e33bc955807cccbfea8fb8765bb59832127ad9dd475d40a4d87d6f37f41"
+   "bytes": 114073,
+   "sha256": "58c2ac304daa3ed72e0d141d6727e35ab5dd0d7c9255f3fcf8ffebf3203b70ee"
   },
   {
    "file": "opg-leader-interview.html",
@@ -153,6 +158,11 @@
    "file": "sfpd-precinct.html",
    "bytes": 4202004,
    "sha256": "290d916772e683a4c367a2de6db9c6a5b77c5a750351916f11ea9d9e3f4b4440"
+  },
+  {
+   "file": "socio-best-newsroom-poll.html",
+   "bytes": 82483,
+   "sha256": "8ffbb08a90bb6770f6ddf63522ae63500e5a08103b99af80411806da7d9fb279"
   },
   {
    "file": "socio-governor-poll.html",
