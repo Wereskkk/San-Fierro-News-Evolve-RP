@@ -1,7 +1,0 @@
-<a class="card" style="--stripe:#14804a" href="socio-best-newsroom-poll.html">
-      <div class="badgerow"><span class="badge" style="color:#1f4e79;border-color:#1f4e79">Спецвыпуск</span></div>
-      <div class="cardmeta mono"><b>07.10.2026</b><span>штат San Andreas</span></div>
-      <div class="cardtitle">Какая редакция лучшая в штате?</div>
-      <div class="carddesc">Социологическое исследование: 14 жителей ответили дословно, какую редакцию штата считают лучшей. 64,3% упоминаний — San Fierro News; бюллетени со штампами, счётные полосы, таблицы и два первоначальных ответа, изменённых по ходу беседы.</div>
-      <div class="cardlink mono">Читать выпуск</div>
-    </a>
