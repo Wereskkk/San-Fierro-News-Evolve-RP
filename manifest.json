@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-07",
+ "generated": "2026-10-08",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 38,
+ "issues": 39,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -38,6 +38,11 @@
    "file": "daily-03-10-2026.html",
    "bytes": 3167076,
    "sha256": "05f2ebb18e37f1b7bea7dcadd480a7fe1eb387edd111da4fba9df49fece749cc"
+  },
+  {
+   "file": "daily-08-10-2026-los-santos.html",
+   "bytes": 2642801,
+   "sha256": "300aed6c00e854890d16a8657384e6af127beee79799d576f4fd96c1907e7a4d"
   },
   {
    "file": "daily-24-09-2026.html",
@@ -131,8 +136,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 114073,
-   "sha256": "58c2ac304daa3ed72e0d141d6727e35ab5dd0d7c9255f3fcf8ffebf3203b70ee"
+   "bytes": 115103,
+   "sha256": "0bcf7f667f2652006155406649814b9f5c47a34388b99a5a969aad3a8cca69e3"
   },
   {
    "file": "opg-leader-interview.html",
