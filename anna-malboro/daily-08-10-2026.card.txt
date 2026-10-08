@@ -1,0 +1,7 @@
+<a class="card" style="--stripe:#16406e" href="daily-08-10-2026.html">
+      <div class="badgerow"><span class="badge" style="color:#16283c;border-color:#16283c">Ежедневная газета</span></div>
+      <div class="cardmeta mono"><b>08.10.2026</b><span>штат San Andreas</span></div>
+      <div class="cardtitle">Маршрут одной погони</div>
+      <div class="carddesc">Хроника дня операции на шоссе: чекпойнт на мосту, остановка в пустыне, авария с огнём у ферменного съезда, перестрелка на эстакаде, кольцо на развязке и оцепление со скорой у контейнерной площадки. Двенадцать кадров по нитке маршрута, четыре бортовых номера на бортах, ноль комментариев.</div>
+      <div class="cardlink mono">Читать выпуск</div>
+    </a>

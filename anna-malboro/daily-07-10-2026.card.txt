@@ -1,0 +1,7 @@
+<a class="card" style="--stripe:#9c4a2f" href="daily-07-10-2026.html">
+      <div class="badgerow"><span class="badge" style="color:#16283c;border-color:#16283c">Ежедневная газета</span></div>
+      <div class="cardmeta mono"><b>07.10.2026</b><span>штат San Andreas</span></div>
+      <div class="cardtitle">Десять адресов тишины</div>
+      <div class="carddesc">Репортажный день редакции там, где раньше кипела работа: сады и пастбище, ферма с комбайном без жатки, портовый двор, полупустой склад, грузовая платформа, семь автобусов не на маршрутах и очередь у дверей биржи труда. В восьми кадрах из десяти нет ни одного человека.</div>
+      <div class="cardlink mono">Читать выпуск</div>
+    </a>
