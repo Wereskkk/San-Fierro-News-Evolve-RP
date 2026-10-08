@@ -1,7 +1,0 @@
-<a class="card" style="--stripe:#9c4a2f" href="daily-07-10-2026.html">
-      <div class="badgerow"><span class="badge" style="color:#16283c;border-color:#16283c">Ежедневная газета</span></div>
-      <div class="cardmeta mono"><b>07.10.2026</b><span>Los Santos · штат San Andreas</span></div>
-      <div class="cardtitle">Очередь, которая не расходится</div>
-      <div class="carddesc">Вокзал Los Santos, вечер и ночь у одних дверей: людям нечем уехать - в городе безработица, автобусы и такси не работают. Между этими двумя кадрами редакция прошла семь адресов пустой работы по штату и стоящий автобусный двор.</div>
-      <div class="cardlink mono">Читать выпуск</div>
-    </a>
