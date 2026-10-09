@@ -1,0 +1,7 @@
+<a class="card" style="--stripe:#0e7a63" href="investigation-whitecoat.html">
+      <div class="badgerow"><span class="badge" style="color:#7c1b1b;border-color:#7c1b1b">Расследование</span></div>
+      <div class="cardmeta mono"><b>10.2026</b><span>Минздрав · МОН</span></div>
+      <div class="cardtitle">За белым халатом</div>
+      <div class="carddesc">Еженедельное расследование, дело №2: программный директор Anna Village под прикрытием проходит собеседование в интернатуру МОН у главврача Lisa Akana и отрабатывает две полные смены - от раздевалки и обхода до ночного вызова в пустыне. Инструктаж и chat-лог смены - дословно. Вердикт: partially confirmed.</div>
+      <div class="cardlink mono">Читать выпуск</div>
+    </a>
