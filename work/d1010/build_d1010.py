@@ -107,19 +107,18 @@ h1 em{font-style:normal;color:var(--amber)}
 .snavbtn.cur{color:#101318;background:var(--amber);border-color:var(--amber)}
 /* секции инцидентов */
 .sec{padding:2.7rem 0 1.2rem;border-bottom:1px solid var(--line)}
-.sechead{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.sechead{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;justify-content:center}
 .sechead .bignum{font-family:var(--disp);font-weight:800;font-size:3rem;line-height:1;color:transparent;-webkit-text-stroke:1.4px var(--dim)}
 .sechead .kick{margin:0}
-h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.3rem);text-transform:uppercase;letter-spacing:.01em;line-height:1.12;margin-top:.4rem}
-.lead{margin:1rem 0 .9rem;font-size:1.1rem;font-style:italic;color:var(--ink)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.3rem);text-transform:uppercase;letter-spacing:.01em;line-height:1.12;margin-top:.4rem;text-align:center}
+.lead{margin:1rem auto .9rem;font-size:1.1rem;font-style:italic;color:var(--ink);text-align:center}
 .sec p.txt{max-width:82ch;margin:.55rem 0;color:#c3cad3}
-.cols{display:grid;grid-template-columns:minmax(0,1fr) 21rem;gap:1.8rem;align-items:start}
-.rail{position:sticky;top:3.6rem;display:grid;gap:.8rem;align-content:start}
-.facts{margin:0;background:var(--panel);border:1px solid var(--line)}
-.facts .frow{display:grid;grid-template-columns:8.5rem 1fr;gap:.9rem;padding:.5rem .95rem;border-top:1px dashed var(--line);font-size:.95rem;color:#c3cad3}
-.facts .frow:first-child{border-top:0}
-.facts b{font-family:var(--mono);font-weight:400;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding-top:.2rem}
-.backline{margin:.4rem 0 0}
+.colwrap{max-width:76ch;margin:0 auto}
+.facts{margin:1.5rem 0 0;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.facts .frow{display:grid;gap:.35rem;padding:.75rem .95rem;border-left:1px dashed var(--line);font-size:.95rem;color:#c3cad3}
+.facts .frow:first-child{border-left:0}
+.facts b{font-family:var(--mono);font-weight:400;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.backline{margin:1.1rem 0 0;text-align:center}
 .backline button{cursor:pointer;background:none;border:0;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .backline button:hover{color:var(--amber)}
 /* кадры */
@@ -150,7 +149,6 @@ footer{margin-top:3rem;border-top:1px solid var(--line);background:var(--panel2)
   font-family:var(--mono);font-size:.72rem;border-radius:999px;padding:.4rem .9rem}
 .lb .lbnav{display:flex;gap:.7rem;margin-top:.8rem}
 .lb .lbnav button{cursor:pointer;background:transparent;border:1px solid rgba(232,236,242,.4);color:#e8ecf2;font-family:var(--mono);font-size:.72rem;border-radius:999px;padding:.42rem 1rem}
-@media (max-width:900px){.cols{grid-template-columns:1fr}.rail{position:static}}
 @media (max-width:720px){
   .brow{grid-template-columns:2.6rem 1fr;grid-auto-rows:auto;row-gap:.3rem}
   .brow .bcity{grid-column:2}
@@ -206,8 +204,8 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
 <section class="sec" data-sec="i01">
   <div class="wrap">
     <div class="sechead"><span class="bignum">01</span><div class="kick">Los Santos · ночь · ограбление</div></div>
+    <div class="colwrap">
     <h2>Перестрелка у витрин Ammu-Nation</h2>
-    <div class="cols"><div class="main">
     <p class="lead">Ограбление магазина аммуниции закончилось перестрелкой прямо у входа: вертолёт сел на полотно улицы, патруль и белый спорткар закрыли витрины, у тротуара - люди с оружием.</p>
     <p class="txt">Ночной Los Santos увидел сцену, которую обычно показывают в сводках одним словом «перестрелка». Слово
     складывается из деталей: ротор вертолёта над разметкой, открытый багажник патруля, две фигуры у спорткара - одна
@@ -216,38 +214,36 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     <p class="txt">Ограбление магазина аммуниции - всегда проверка города на скорость: между витриной и выстрелом
     проходят секунды. В эту ночь город успел лишь частично: перестрелка закончилась, прежде чем у тротуара появились
     первые свидетели, готовые говорить.</p>
-    ''' + fig('f1', 'EV-01') + '''
-    </div><aside class="rail">
     ''' + FACTS.format(CITY='Los Santos, торговая улица у Ammu-Nation', SRV='полиция, авиазвено, скорая', ST='перестрелка, есть пострадавшие', PR='не выступала') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
-    </aside></div>
+    </div>
+    ''' + fig('f1', 'EV-01') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i02">
   <div class="wrap">
     <div class="sechead"><span class="bignum">02</span><div class="kick">Los Santos · день · помехи на дороге</div></div>
+    <div class="colwrap">
     <h2>Фура, которую никто не пришёл чинить</h2>
-    <div class="cols"><div class="main">
     <p class="lead">У автовокзала сломалась фура: тягач откатился вперёд, прицеп отцепился и лёг поперёк полосы. Помехи на дороге - и помощи нет: ни тягача эвакуации, ни бригады, ни даже водителя в кадре.</p>
     <p class="txt">Это происшествие без пострадавших и без выстрелов - и потому оно самое говорливое: о городе судят
     не только по тому, как он стреляет, но и по тому, как быстро он убирает с дороги сорок футов железа. Ответ:
     никак. Прицеп стоит, светофор зелёный, объезд по тротуарной дуге.</p>
     <p class="txt">Редакция оставила этот кадр в сводке намеренно: день, в который молчат пресс-службы, состоит
     не только из сирен. Иногда он состоит из прицепа, который некому прицепить.</p>
-    ''' + fig('f2', 'EV-02') + '''
-    </div><aside class="rail">
     ''' + FACTS.format(CITY='Los Santos, улица у автовокзала', SRV='не прибыли: помощи нет', ST='помехи на дороге, прицеп поперёк полосы', PR='не запрашивалась') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
-    </aside></div>
+    </div>
+    ''' + fig('f2', 'EV-02') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i03">
   <div class="wrap">
     <div class="sechead"><span class="bignum">03</span><div class="kick">Los Santos · пляж Santa Maria · гибель двоих</div></div>
+    <div class="colwrap">
     <h2>Встречная полоса: борт 405 не доехал до скорой</h2>
-    <div class="cols"><div class="main">
     <p class="lead">Патрульная машина выехала на встречную полосу недалеко от пляжа Santa Maria и столкнулась с фурой. Оба полицейских погибли до приезда скорой. LSPD комментарии давать отказались.</p>
     <p class="txt">Кадр снят сверху и потому не щадит: борт 405 развёрнут поперёк своей полосы, фура встала юзом у
     отбойника, двое на асфальте - по одному с каждой стороны удара. Такси проезжает мимо по встречной: в этот час
@@ -256,38 +252,36 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     отдельной строкой. Вместо службы говорит кадр: удар был встречным, оба полицейских остались лежать на асфальте
     рядом с машиной, и скорая приехала слишком поздно, чтобы их спасти. Две гибели в одном кадре - цена одного
     неверного выезда на встречную полосу.</p>
-    ''' + fig('f3', 'EV-03') + '''
-    </div><aside class="rail">
     ''' + FACTS.format(CITY='Los Santos, дорога у пляжа Santa Maria', SRV='патруль (борт 405), фура, скорая опоздала', ST='оба полицейских погибли', PR='LSPD: отказ от комментариев') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
-    </aside></div>
+    </div>
+    ''' + fig('f3', 'EV-03') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i04">
   <div class="wrap">
     <div class="sechead"><span class="bignum">04</span><div class="kick">Las Venturas · Авторынок · перестрелка</div></div>
+    <div class="colwrap">
     <h2>Песок Авторынка принял всех</h2>
-    <div class="cols"><div class="main">
     <p class="lead">Перестрелка у Авторынка: человек с винтовкой держит сектор из-за чёрного седана, борт 9320 заходит с шоссе, люди расходятся по площадке веером - каждый ищет своё укрытие.</p>
     <p class="txt">Первый кадр снят в разгар: стволы подняты, бегущий ещё в шаге от песка, жёлтый седан стоит с открытой
     дверью. Второй - после: машины раскиданы по площадке, как фишки после партии, пострадавшие лежат у жёлтого седана
     и у борта с распахнутыми дверями. Много пострадавших - формула, за которой стоят люди, а не цифра.</p>
     <p class="txt">LVPD комментарии не даёт. Редакция отмечает: вторая за день пресс-служба, которая выбирает молчание,
     и вторая площадка, где молчание приходится заполнять кадрами.</p>
-    <div class="duo">''' + fig('f4', 'EV-04') + fig('f5', 'EV-05') + '''</div>
-    </div><aside class="rail">
     ''' + FACTS.format(CITY='Las Venturas, Авторынок', SRV='полиция (борт 9320 и другие), скорые', ST='перестрелка, много пострадавших', PR='LVPD: отказ от комментариев') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
-    </aside></div>
+    </div>
+    <div class="duo">''' + fig('f4', 'EV-04') + fig('f5', 'EV-05') + '''</div>
   </div>
 </section>
 
 <section class="sec" data-sec="i05">
   <div class="wrap">
     <div class="sechead"><span class="bignum">05</span><div class="kick">San Fierro · мост · финал погони</div></div>
+    <div class="colwrap">
     <h2>Четыре экипажа и одни колени на полотне</h2>
-    <div class="cols"><div class="main">
     <p class="lead">Погоня за преступником в четыре экипажа закончилась на мосту San Fierro: борта 7436 и 7426 заперли полотно, офицеры с винтовками взяли сектор, подозреваемый встал на колени посреди полос.</p>
     <p class="txt">Мост - хорошая сцена для финала: деваться некуда, впереди рельсы, по бокам вода. Четыре экипажа
     поставили точку там, где город ставит запятую: серый седан подозреваемого зажат между патрулями, двери распахнуты,
@@ -295,11 +289,10 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     <p class="txt">Сумма нанесённого ущерба составила десятки миллионов долларов: погоня прошла через полгорода, и
     счёт ей выставит не суд, а сметы. Редакция приводит сумму со слов источников, близких к делу: официальной
     калькуляции в сводке нет - и это тоже строка о молчании служб.</p>
-    ''' + fig('f6', 'EV-06') + '''
-    </div><aside class="rail">
     ''' + FACTS.format(CITY='San Fierro, мост', SRV='четыре экипажа (борта 7436, 7426 и ещё два)', ST='подозреваемый задержан на мосту', PR='официальной калькуляции нет') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
-    </aside></div>
+    </div>
+    ''' + fig('f6', 'EV-06') + '''
   </div>
 </section>
 
