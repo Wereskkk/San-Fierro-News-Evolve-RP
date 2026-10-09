@@ -7,6 +7,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const FILES = [
   ['daily-08-10-2026-los-santos.html', 10, 6],
   ['anna-malboro/investigation-whitecoat.html', 25, 11],
+  ['anna-malboro/daily-10-10-2026.html', 6, 6],
 ];
 
 let fails = 0;

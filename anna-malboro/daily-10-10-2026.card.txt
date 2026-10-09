@@ -1,0 +1,7 @@
+<a class="card" style="--stripe:#d33f36" href="daily-10-10-2026.html">
+      <div class="badgerow"><span class="badge" style="color:#16283c;border-color:#16283c">Ежедневная газета</span></div>
+      <div class="cardmeta mono"><b>10.10.2026</b><span>три города штата</span></div>
+      <div class="cardtitle">Сводка, которую не дали пресс-службы</div>
+      <div class="carddesc">Пять происшествий дня: перестрелка у ограбленного Ammu-Nation, фура с отцепленным прицепом у автовокзала без помощи, гибель двоих полицейских во встречном ударе у пляжа Santa Maria, перестрелка на Авторынке Las Venturas и финал погони в четыре экипажа на мосту San Fierro. LSPD и LVPD комментарии давать отказались - сводку редакция собрала сама.</div>
+      <div class="cardlink mono">Читать выпуск</div>
+    </a>
