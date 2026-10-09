@@ -41,7 +41,7 @@ def published_set():
 # inbox/ — очередь загрузки фото для выпусков (inbox/README.md): главред загружает фото
 # через веб GitHub, редакция забирает их локально и очищает папку отдельным коммитом —
 # исчезновение файлов оттуда штатное, как у anna-malboro/.
-STAGING_PREFIXES = ('anna-malboro/', 'inbox/')
+STAGING_PREFIXES = ('anna-malboro/', 'inbox/', 'inbox-mon/')
 on_main = set(sh('git', 'ls-tree', '-r', '--name-only', 'origin/main').split())
 protected_on_main = {p for p in on_main if not p.startswith(STAGING_PREFIXES)
                      and ((p.endswith('.html') and not p.startswith('template'))
