@@ -204,6 +204,7 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
 <section class="sec" data-sec="i01">
   <div class="wrap">
     <div class="sechead"><span class="bignum">01</span><div class="kick">Los Santos · ночь · ограбление</div></div>
+    ''' + fig('f1', 'EV-01') + '''
     <div class="colwrap">
     <h2>Перестрелка у витрин Ammu-Nation</h2>
     <p class="lead">Ограбление магазина аммуниции закончилось перестрелкой прямо у входа: вертолёт сел на полотно улицы, патруль и белый спорткар закрыли витрины, у тротуара - люди с оружием.</p>
@@ -217,13 +218,13 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     ''' + FACTS.format(CITY='Los Santos, торговая улица у Ammu-Nation', SRV='полиция, авиазвено, скорая', ST='перестрелка, есть пострадавшие', PR='не выступала') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
     </div>
-    ''' + fig('f1', 'EV-01') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i02">
   <div class="wrap">
     <div class="sechead"><span class="bignum">02</span><div class="kick">Los Santos · день · помехи на дороге</div></div>
+    ''' + fig('f2', 'EV-02') + '''
     <div class="colwrap">
     <h2>Фура, которую никто не пришёл чинить</h2>
     <p class="lead">У автовокзала сломалась фура: тягач откатился вперёд, прицеп отцепился и лёг поперёк полосы. Помехи на дороге - и помощи нет: ни тягача эвакуации, ни бригады, ни даже водителя в кадре.</p>
@@ -235,13 +236,13 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     ''' + FACTS.format(CITY='Los Santos, улица у автовокзала', SRV='не прибыли: помощи нет', ST='помехи на дороге, прицеп поперёк полосы', PR='не запрашивалась') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
     </div>
-    ''' + fig('f2', 'EV-02') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i03">
   <div class="wrap">
     <div class="sechead"><span class="bignum">03</span><div class="kick">Los Santos · пляж Santa Maria · гибель двоих</div></div>
+    ''' + fig('f3', 'EV-03') + '''
     <div class="colwrap">
     <h2>Встречная полоса: борт 405 не доехал до скорой</h2>
     <p class="lead">Патрульная машина выехала на встречную полосу недалеко от пляжа Santa Maria и столкнулась с фурой. Оба полицейских погибли до приезда скорой. LSPD комментарии давать отказались.</p>
@@ -255,13 +256,13 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     ''' + FACTS.format(CITY='Los Santos, дорога у пляжа Santa Maria', SRV='патруль (борт 405), фура, скорая опоздала', ST='оба полицейских погибли', PR='LSPD: отказ от комментариев') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
     </div>
-    ''' + fig('f3', 'EV-03') + '''
   </div>
 </section>
 
 <section class="sec" data-sec="i04">
   <div class="wrap">
     <div class="sechead"><span class="bignum">04</span><div class="kick">Las Venturas · Авторынок · перестрелка</div></div>
+    <div class="duo">''' + fig('f4', 'EV-04') + fig('f5', 'EV-05') + '''</div>
     <div class="colwrap">
     <h2>Песок Авторынка принял всех</h2>
     <p class="lead">Перестрелка у Авторынка: человек с винтовкой держит сектор из-за чёрного седана, борт 9320 заходит с шоссе, люди расходятся по площадке веером - каждый ищет своё укрытие.</p>
@@ -273,13 +274,13 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     ''' + FACTS.format(CITY='Las Venturas, Авторынок', SRV='полиция (борт 9320 и другие), скорые', ST='перестрелка, много пострадавших', PR='LVPD: отказ от комментариев') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
     </div>
-    <div class="duo">''' + fig('f4', 'EV-04') + fig('f5', 'EV-05') + '''</div>
   </div>
 </section>
 
 <section class="sec" data-sec="i05">
   <div class="wrap">
     <div class="sechead"><span class="bignum">05</span><div class="kick">San Fierro · мост · финал погони</div></div>
+    ''' + fig('f6', 'EV-06') + '''
     <div class="colwrap">
     <h2>Четыре экипажа и одни колени на полотне</h2>
     <p class="lead">Погоня за преступником в четыре экипажа закончилась на мосту San Fierro: борта 7436 и 7426 заперли полотно, офицеры с винтовками взяли сектор, подозреваемый встал на колени посреди полос.</p>
@@ -292,7 +293,6 @@ BODY = '''<div class="pbar" id="pbar" aria-hidden="true"></div>
     ''' + FACTS.format(CITY='San Fierro, мост', SRV='четыре экипажа (борта 7436, 7426 и ещё два)', ST='подозреваемый задержан на мосту', PR='официальной калькуляции нет') + '''
     <div class="backline"><button data-t="itogi">&uarr; к сводке дня</button></div>
     </div>
-    ''' + fig('f6', 'EV-06') + '''
   </div>
 </section>
 
