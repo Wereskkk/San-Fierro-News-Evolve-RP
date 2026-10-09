@@ -1,7 +1,0 @@
-<a class="card" style="--stripe:#16406e" href="daily-08-10-2026.html">
-      <div class="badgerow"><span class="badge" style="color:#16283c;border-color:#16283c">Ежедневная газета</span></div>
-      <div class="cardmeta mono"><b>08.10.2026</b><span>штат San Andreas</span></div>
-      <div class="cardtitle">Дорога не говорит ничего</div>
-      <div class="carddesc">Хроника одного дня на шоссе штата в шести главах: чекпойнт на мосту, остановка в пустыне, огонь у деревенского поворота, лежащие люди на эстакаде, кольцо на развязке и скорая у контейнерной площадки. Двенадцать кадров соединены единственным свидетелем, побывавшим на всех, - самой дорогой.</div>
-      <div class="cardlink mono">Читать выпуск</div>
-    </a>
