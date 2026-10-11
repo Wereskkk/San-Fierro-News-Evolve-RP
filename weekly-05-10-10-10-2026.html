@@ -824,7 +824,7 @@ if("IntersectionObserver" in window){
 /* ---------- nav progress + active tab ---------- */
 var prog = document.getElementById("prog");
 var tabs = [].slice.call(document.querySelectorAll(".pnav a"));
-var pages = tabs.map(function(a){return document.querySelector(a.getAttribute("href"));});
+var pages = tabs.map(function(a){var h=a.getAttribute("href")||"";var k=h.indexOf("#");var sel=k>=0?h.slice(k):h;try{return sel?document.querySelector(sel):null;}catch(e){return null;}});
 function onScroll(){
  var h = document.documentElement;
  var max = h.scrollHeight - h.clientHeight;
