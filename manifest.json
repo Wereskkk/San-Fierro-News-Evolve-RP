@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-09",
+ "generated": "2026-10-11",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 42,
+ "issues": 43,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -198,6 +198,11 @@
    "file": "wedding-ozzy-gulnara.html",
    "bytes": 3222800,
    "sha256": "c420a0dce18bf0c726b79148d1b01a5567dcc57469b605b676b745a1e5eba1eb"
+  },
+  {
+   "file": "weekly-05-10-10-10-2026.html",
+   "bytes": 7095024,
+   "sha256": "f427e25ee40c6ec87a9da904bb6ec3bc2954c290cf6e7dfda75b524b272b84b2"
   },
   {
    "file": "weekly-24-30-09-2026.html",
