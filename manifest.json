@@ -2,7 +2,7 @@
  "generated": "2026-10-11",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 43,
+ "issues": 50,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -105,6 +105,11 @@
    "sha256": "37c06c3c0680d294921cab299b84ffe4067303dc1d8d6eee6c61f7871f9c96bc"
   },
   {
+   "file": "fotoreport-accessories-lv.html",
+   "bytes": 580789,
+   "sha256": "b78184cd30e8951bb2145ba091f45ef176e2f09a97b2a9ab4001611b6531574f"
+  },
+  {
    "file": "fotoreport-avtobazar-lv.html",
    "bytes": 1337869,
    "sha256": "76b9301676ec7fce421f71f8e4429835c1e8aca4990f58681005509fb42c2bdd"
@@ -120,6 +125,11 @@
    "sha256": "cbef1718af15f6cc178ead05b48e9c2083ab85f521d3365e022f6814d9788d16"
   },
   {
+   "file": "fotoreport-effect-realty.html",
+   "bytes": 799794,
+   "sha256": "e9e2bf65ef1171eb4e758c04261af54cf84b930e97ceb1694f56d5ba31a844f3"
+  },
+  {
    "file": "fotoreport-evolve-hotel.html",
    "bytes": 1203272,
    "sha256": "4f4e2bd6d4bd08e20669299f04def84648dc4c53f4c5d4295a43b98faccad4de"
@@ -130,9 +140,34 @@
    "sha256": "ea63f1e2241484b1ed14c2321b493410d2240d60b8fd93ebead0b8c0f3d47ea9"
   },
   {
+   "file": "fotoreport-paganc-mc.html",
+   "bytes": 886927,
+   "sha256": "53e5af2f012ad54e133e7396b9096b576256978c742870b1c3afa8a18ccc8025"
+  },
+  {
+   "file": "fotoreport-pegasus-yacht.html",
+   "bytes": 667251,
+   "sha256": "944905bab49e07c5897c3742c418720bcf897afd32bfc24aac8028fb9fa0a1d3"
+  },
+  {
    "file": "fotoreport-tierra-robada.html",
    "bytes": 1102731,
    "sha256": "30d5615899f5158e9d4c57d16ba56c2c537284be0613dbfbe07a858d6e381e36"
+  },
+  {
+   "file": "fotoreport-transport-co.html",
+   "bytes": 813515,
+   "sha256": "5a580aacbf9102936bf6cec461532cbc1e0d6d718934fb5fc11d1a397f8a9aa2"
+  },
+  {
+   "file": "fotoreport-ufo-bar.html",
+   "bytes": 634701,
+   "sha256": "079757850e4c2b0b1b8b69b36e288395e6689f00fd1f9cdd58c3a875d083022d"
+  },
+  {
+   "file": "fotoreport-victim-clothes.html",
+   "bytes": 465544,
+   "sha256": "17f477a938d6f26235a07708dad83519ce9d142567f409746f3e2861767562e6"
   },
   {
    "file": "fotoreport-warlocks-mc.html",
@@ -151,8 +186,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 118248,
-   "sha256": "74c57937d6b03594195ad5ceec5ce9376ee79ea9c464ab47dd7bef9006c03c10"
+   "bytes": 118219,
+   "sha256": "8d196d12ce26f6dfa09b45e9d788fc782d90ccd735a0e5acc31f6634921c9f08"
   },
   {
    "file": "opg-leader-interview.html",

@@ -92,7 +92,7 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 041 | fotoreport-accessories-lv.html | lotus-accessories |
 | 042 | fotoreport-victim-clothes.html | victim-to-die-for |
 | 043 | fotoreport-paganc-mc.html | paganc-clubhouse |
-| 044 | fotoreport-ernest-realty.html | ernest-realty-group |
+| 044 | fotoreport-effect-realty.html | effect-realty-group |
 | 045 | fotoreport-transport-co.html | transport-company-lv |
 | 046 | fotoreport-pegasus-yacht.html | pegasus-yacht-club |
 | 035 | (следующий выпуск) | … |
