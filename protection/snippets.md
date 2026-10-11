@@ -88,6 +88,13 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 037 | investigation-whitecoat.html | white-coat-days |
 | 038 | daily-10-10-2026.html | dispatch-desk |
 | 039 | daily-10-10-2026-unknowns.html | four-unknowns |
+| 040 | fotoreport-ufo-bar.html | ufo-bar-desert |
+| 041 | fotoreport-accessories-lv.html | lotus-accessories |
+| 042 | fotoreport-victim-clothes.html | victim-to-die-for |
+| 043 | fotoreport-paganc-mc.html | paganc-clubhouse |
+| 044 | fotoreport-ernest-realty.html | ernest-realty-group |
+| 045 | fotoreport-transport-co.html | transport-company-lv |
+| 046 | fotoreport-pegasus-yacht.html | pegasus-yacht-club |
 | 035 | (следующий выпуск) | … |
 
 Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
