@@ -73,10 +73,12 @@ h1 .q{color:var(--acc)}
 .stripe .sn{font-family:var(--disp);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.03em}
 .stripe .sv{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:var(--mut)}
 .stripe .sv b{color:var(--acc2)}
-.bar{margin-top:.6rem;display:flex;height:1.5rem;border:1px solid var(--line2);background:var(--bg2)}
-.bar i{display:block;height:100%;background:var(--sc);border-right:1px solid rgba(0,0,0,.35);position:relative;transition:filter .15s}
-.bar i:hover{filter:brightness(1.25)}
-.bar i:last-child{border-right:none}
+.bar{margin-top:.6rem;display:flex;height:1.9rem;border:1px solid var(--line2);background:var(--bg2) linear-gradient(90deg,rgba(190,225,255,.16) 1px,transparent 1px);background-size:calc(100%/6.2) 100%}
+.bar i{display:block;height:100%;width:calc(100%/31);border-right:1px solid rgba(8,24,40,.55);transition:filter .15s}
+.bar i:hover{filter:brightness(1.3)}
+.scale{position:relative;height:1.4rem;margin-top:.5rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;color:var(--mut)}
+.scale span{position:absolute;transform:translateX(-50%)}
+.scale span::before{content:"";position:absolute;left:50%;top:-.5rem;width:1px;height:.4rem;background:var(--line2)}
 /* donut + ribbon */
 .charts{margin-top:1.6rem;display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center}
 @media(max-width:56rem){.charts{grid-template-columns:1fr}}
@@ -150,7 +152,7 @@ h1 .q{color:var(--acc)}
 <div class="kpi rv">
  <div><div class="n" data-count="31">0</div><div class="l">учтённых ответов · возврат 100%</div></div>
  <div><div class="n" data-count="8">0</div><div class="l">голосов у BMW · абсолютный лидер</div></div>
- <div><div class="n"><span data-count="51">0</span><i>,6%</i></div><div class="l">образца у немецкой тройки марок</div></div>
+ <div><div class="n"><span data-count="51">0</span><i>,6%</i></div><div class="l">ответов у трёх немецких марок вместе (BMW, Audi, Mercedes)</div></div>
  <div><div class="n" data-count="2">0</div><div class="l">бюллетеня зоны юмора и скромности</div></div>
 </div>
 
@@ -174,7 +176,7 @@ h1 .q{color:var(--acc)}
  <div class="sechead"><span class="no">01</span><h2>Введение</h2><span class="rule"></span></div>
  <div class="txt">
   <p>О дорогах штата жители San Andreas говорят охотнее, чем о погоде: машина здесь - не роскошь и не средство, а почти подпись под именем. Редакция, которая уже спрашивала штат о лучшей редакции и о новом губернаторе, решила задать третий большой вопрос - <b>«Какая по вашему мнению лучшая машина?»</b> - и не подсказывать ни марок, ни моделей.</p>
-  <p>Ответы пришли разные: от сухих аббревиатур кузовов до признаний в любви к скутеру и российскому автопрому. Два бюллетеня редакцию откровенно рассмешили, один - ответил не машиной, а именем соседки по штату, и все тридцать один вошли в протокол дословно. Это исследование - о том, на чём штат мечтает ездить, и о том, как он об этом говорит.</p>
+  <p>Ответы пришли разные: от сухих аббревиатур кузовов до признаний в любви к скутеру и российскому автопрому. Два бюллетеня редакцию откровенно рассмешили, один - ответил не машиной, а именем соседки по штату, и все тридцать один вошли в протокол дословно. Каждый учтённый ответ называется бюллетенем, и все 31 бюллетеня опубликованы в реестре раздела 05 без правок. Это исследование - о том, на чём штат мечтает ездить, и о том, как он об этом говорит.</p>
  </div>
 </section>
 
@@ -190,14 +192,16 @@ h1 .q{color:var(--acc)}
 
 <section class="sec rv" id="s3">
  <div class="sechead"><span class="no">03</span><h2>Результаты</h2><span class="rule"></span></div>
- <p class="txt" style="margin-bottom:0">рис. 1 · счётные полосы: каждый сегмент равен одному бюллетеню; наведите на сегмент - увидите имя респондента</p>
+ <p class="txt" style="margin-bottom:0">рис. 1 · счётные полосы: длина полосы пропорциональна числу голосов по единой шкале 0-31 (деления под полосами); каждая клетка равна одному бюллетеню; наведите на клетку - увидите имя респондента</p>
  <div class="stripes">
-  <div class="stripe"><div class="sh"><span class="sn">BMW (разные модели)</span><span class="sv"><b>8</b> · 25,8%</span></div><div class="bar" style="--sc:#8fd8ff"><i style="width:12.5%" title="Enderman Fawkes — БМВ"></i><i style="width:12.5%" title="Alessandro Carrasco — BMW M5 F90"></i><i style="width:12.5%" title="Karl Winstone — БМВ"></i><i style="width:12.5%" title="Guff Clamore — BMW m5 e60"></i><i style="width:12.5%" title="zushi — БМВ х7"></i><i style="width:12.5%" title="Mayas Lavelas — БМВ М5 ф90"></i><i style="width:12.5%" title="Dariana Laurent — BMW G90"></i><i style="width:12.5%" title="Antony Hill — Ф10 (BMW M5 F10)"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Audi (разные модели)</span><span class="sv"><b>5</b> · 16,1%</span></div><div class="bar" style="--sc:#f2a33c"><i style="width:20%" title="Jacob Deagle — Audi"></i><i style="width:20%" title="Carl Village — Audi RS6 C8"></i><i style="width:20%" title="Fujin Sunjiwan — Audi RS6 C8 Sport"></i><i style="width:20%" title="Brice Fox — ауди ку 7"></i><i style="width:20%" title="Maks Berezniak — Audi RS6"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Mercedes (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar" style="--sc:#7fe0b0"><i style="width:33.33%" title="Mamaptica Exclame — чпс 63 (Mercedes C63)"></i><i style="width:33.33%" title="Dutch Vanderlinde — Mercedes CLS 63 AMG"></i><i style="width:33.34%" title="Alberto Hernandes — Мерседес"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Dodge (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar" style="--sc:#ff8f86"><i style="width:33.33%" title="Leonid Angelov — старенький додж"></i><i style="width:33.33%" title="Eddie Blore — Додж Чарджер 1069 года"></i><i style="width:33.34%" title="Aleksandra Suvorova — Додж Вайпер"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Другие марки и модели</span><span class="sv"><b>10</b> · 32,3%</span></div><div class="bar" style="--sc:#9db4ff"><i style="width:10%" title="Hiromi Higumura — lamborghini Centanario"></i><i style="width:10%" title="Joel Evans — Скутер"></i><i style="width:10%" title="Julia Kill — Mayas Lavelas"></i><i style="width:10%" title="Lato Svirel — султан"></i><i style="width:10%" title="Ray Offset — Geely"></i><i style="width:10%" title="Kyle Crane — российский автопром"></i><i style="width:10%" title="Kurta Bein — шестерка (ВАЗ 2106)"></i><i style="width:10%" title="Karina Vspakova — шкода октавия"></i><i style="width:10%" title="Alya Fisher — Hotknife"></i><i style="width:10%" title="Merlin Monroe — банf"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Воздержались / шутка</span><span class="sv"><b>2</b> · 6,5%</span></div><div class="bar" style="--sc:#8a97a5"><i style="width:50%" title="Svetlana Luxery — шутка про бывшего"></i><i style="width:50%" title="Lloyd Coleman — не разбираюсь в авто, лучшая наша EMS"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">BMW (разные модели)</span><span class="sv"><b>8</b> · 25,8%</span></div><div class="bar"><i style="background:#8fd8ff" title="Enderman Fawkes — БМВ"></i><i style="background:#8fd8ff" title="Alessandro Carrasco — BMW M5 F90"></i><i style="background:#8fd8ff" title="Karl Winstone — БМВ"></i><i style="background:#8fd8ff" title="Guff Clamore — BMW m5 e60"></i><i style="background:#8fd8ff" title="zushi — БМВ х7"></i><i style="background:#8fd8ff" title="Mayas Lavelas — БМВ М5 ф90"></i><i style="background:#8fd8ff" title="Dariana Laurent — BMW G90"></i><i style="background:#8fd8ff" title="Antony Hill — Ф10 (BMW M5 F10)"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">Audi (разные модели)</span><span class="sv"><b>5</b> · 16,1%</span></div><div class="bar"><i style="background:#f2a33c" title="Jacob Deagle — Audi"></i><i style="background:#f2a33c" title="Carl Village — Audi RS6 C8"></i><i style="background:#f2a33c" title="Fujin Sunjiwan — Audi RS6 C8 Sport"></i><i style="background:#f2a33c" title="Brice Fox — ауди ку 7"></i><i style="background:#f2a33c" title="Maks Berezniak — Audi RS6"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">Mercedes (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar"><i style="background:#7fe0b0" title="Mamaptica Exclame — чпс 63 (Mercedes C63)"></i><i style="background:#7fe0b0" title="Dutch Vanderlinde — Mercedes CLS 63 AMG"></i><i style="background:#7fe0b0" title="Alberto Hernandes — Мерседес"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">Dodge (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar"><i style="background:#ff8f86" title="Leonid Angelov — старенький додж"></i><i style="background:#ff8f86" title="Eddie Blore — Додж Чарджер 1069 года"></i><i style="background:#ff8f86" title="Aleksandra Suvorova — Додж Вайпер"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">Другие марки и модели</span><span class="sv"><b>10</b> · 32,3%</span></div><div class="bar"><i style="background:#9db4ff" title="Hiromi Higumura — lamborghini Centanario"></i><i style="background:#9db4ff" title="Joel Evans — Скутер"></i><i style="background:#9db4ff" title="Julia Kill — Mayas Lavelas"></i><i style="background:#9db4ff" title="Lato Svirel — султан"></i><i style="background:#9db4ff" title="Ray Offset — Geely"></i><i style="background:#9db4ff" title="Kyle Crane — российский автопром"></i><i style="background:#9db4ff" title="Kurta Bein — шестерка (ВАЗ 2106)"></i><i style="background:#9db4ff" title="Karina Vspakova — шкода октавия"></i><i style="background:#9db4ff" title="Alya Fisher — Hotknife"></i><i style="background:#9db4ff" title="Merlin Monroe — банf"></i></div></div>
+  <div class="stripe"><div class="sh"><span class="sn">Воздержались / шутка</span><span class="sv"><b>2</b> · 6,5%</span></div><div class="bar"><i style="background:#8a97a5" title="Svetlana Luxery — шутка про бывшего"></i><i style="background:#8a97a5" title="Lloyd Coleman — не разбираюсь в авто, лучшая наша EMS"></i></div></div>
+  </div>
+  <div class="scale"><span style="left:0.0%">0</span><span style="left:16.13%">5</span><span style="left:32.26%">10</span><span style="left:48.39%">15</span><span style="left:64.52%">20</span><span style="left:80.65%">25</span><span style="left:96.77%">30</span><span style="left:100.0%">31</span></div>
  </div>
 
  <table class="tbl">
@@ -231,10 +235,10 @@ h1 .q{color:var(--acc)}
 <section class="sec rv" id="s4">
  <div class="sechead"><span class="no">04</span><h2>Анализ результатов</h2><span class="rule"></span></div>
  <div class="txt">
-  <p><b>Лидер с именем на generations.</b> BMW берёт 8 голосов - и это не просто марка, а семейная сага: пять из восьми бюллетеней называют M5 в разных кузовах (E60, F10, F90 и G90), один - X7, и лишь два остаются маркой без модели. Штат голосует не за шильдик, а за конкретный силуэт в конкретном кузове: так выбирают не машину, а воспоминание о ней.</p>
-  <p><b>Второй фронт - Audi RS6.</b> Три из пяти голосов Audi приходятся на RS6 (включая формулировку «C8 Sport»), ещё по одному - на марку в целом и на «ауди ку 7». Немецкая тройка BMW + Audi + Mercedes суммарно держит <b>16 голосов из 31 (51,6%)</b>: половина штата мыслит категорией немецкого премиума, и это самая устойчивая коалиция опроса.</p>
-  <p><b>Американская классика и её характер.</b> Dodge с тремя голосами выглядит скромно рядом с немцами, но это самые тёплые формулировки протокола: «старенький додж», «Чарджер 1069 года» (да, с опечаткой, да, с любовью) и «Вайпер». Там, где немцы получают индексы кузовов, Dodge получает уменьшительный суффикс.</p>
-  <p><b>«Другие» - самая большая группа после BMW.</b> Десять бюллетеней разбежались от lamborghini Centanario и Hotknife до султана, Geely, шкоды октавии, «шестерки» (ВАЗ 2106), российского автопрома и скутера. Это не статистический мусор, а портрет штата: рядом с мечтой о M5 здесь спокойно живут практичность, ирония и один скутер, который тоже считает себя машиной.</p>
+  <p><b>Лидер, которого выбирали по модели, а не только по марке.</b> BMW получила 8 голосов из 31. Важно как именно их подавали: пять респондентов из восьми назвали конкретную модель - M5 в разных кузовах (E60, F10, F90, G90), ещё один - кроссовер X7, и лишь двое ответили просто «BMW». То есть половина штата мечтает не о значке на капоте вообще, а об вполне конкретной машине в вполне конкретном кузове.</p>
+  <p><b>Второе место - Audi, в основном модель RS6.</b> Три из пяти голосов Audi достались модели RS6 (включая формулировку «C8 Sport»), остальные два - марке в целом и «ауди ку 7». А вместе три немецкие марки - BMW, Audi и Mercedes - собрали <b>16 голосов из 31 (51,6%)</b>: больше половины всех ответов. Это самое устойчивое предпочтение опроса: немецкие машины штат выбирает чаще, чем все остальные вместе взятые.</p>
+  <p><b>Американская классика - с душой.</b> У Dodge всего три голоса, зато самые тёплые формулировки протокола: «старенький додж», «Чарджер 1069 года» (да, с опечаткой, да, с любовью) и «Вайпер». Немецкие марки респонденты перечисляют по индексам кузовов, а про Dodge говорят ласково - и это тоже результат.</p>
+  <p><b>«Другие» - самая большая группа после BMW: десять разных мечт.</b> Десять бюллетеней разбежались от lamborghini Centanario и Hotknife до султана, Geely, шкоды октавии, «шестерки» (ВАЗ 2106), российского автопрома и скутера. Эта группа - не статистический мусор, а портрет штата: рядом с мечтой о M5 здесь спокойно живут практичность, ирония и один скутер, который тоже считает себя машиной.</p>
   <p><b>Зона юмора и скромности.</b> Два бюллетеня не назвали машину: один пошутил про транспорт бывшего, второй честно признался, что не разбирается в авто, и назвал лучшей свою EMS. Редакция оставила оба в протоколе: опрос, из которого вычеркнули смех и скромность, врёт громче, чем опрос без возвратов.</p>
  </div>
 </section>
@@ -250,7 +254,7 @@ h1 .q{color:var(--acc)}
  <div class="sechead"><span class="no">06</span><h2>Заключение</h2><span class="rule"></span></div>
  <div class="txt">
   <p>Лучшей машиной штата San Andreas по итогам 31 учтённого ответа признана <b>BMW - 8 голосов (25,8%)</b>, преимущественно M5 в поколениях от E60 до G90. Второе место - <b>Audi (5 голосов, 16,1%)</b> с ядром из RS6; третью ступень делят <b>Mercedes и Dodge (по 3 голоса, 9,7%)</b>. Группа «другие марки и модели» (10 голосов, 32,3%) превосходит любого отдельного призёра и показывает: единой автомобильной мечты у штата нет - есть созвездие мечт, в котором немецкий премиум лишь самая яркая звезда.</p>
-  <p>Гипотеза о равномерном распределении предпочтений не подтвердилась: распределение имеет выраженного лидера и длинный хвост штучных ответов. Гипотеза о заметной доле воздержавшихся подтвердилась лишь отчасти - 6,5%, и оба таких бюллетеня оказались самыми человечными в протоколе.</p>
+  <p>Гипотеза о равномерном распределении предпочтений не подтвердилась: распределение имеет выраженного лидера и много единичных ответов. Гипотеза о заметной доле воздержавшихся подтвердилась лишь отчасти: таких бюллетеней два из тридцати одного (6,5%), и именно они оказались самыми человечными в протоколе.</p>
  </div>
  <div style="margin-top:1.2rem"><span class="stamp">31 бюллетень · возврат 100% · лидер BMW</span></div>
 </section>
