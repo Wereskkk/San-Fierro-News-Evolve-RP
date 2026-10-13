@@ -96,6 +96,14 @@ h1 .q{color:var(--acc)}
 .meterbar{display:flex;height:2.5rem;border:1.5px solid var(--line2)}
 .meterbar i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;color:#082036;overflow:hidden;white-space:nowrap;border-right:1px solid rgba(8,24,40,.4)}
 .meterbar i:last-child{border-right:none}
+.piepanel{margin-top:1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:center;max-width:56rem;border:1.5px solid var(--line);background:var(--panel);padding:1.2rem 1.4rem}
+@media(max-width:48rem){.piepanel{grid-template-columns:1fr;justify-items:center}}
+.donut2{width:12.5rem;height:12.5rem;border-radius:50%;position:relative;border:1.5px solid var(--line2);background:conic-gradient(#8fd8ff 0 25.8%,#f2a33c 25.8% 41.9%,#7fe0b0 41.9% 51.6%,#ff8f86 51.6% 61.3%,#9db4ff 61.3% 93.6%,#8a97a5 93.6% 100%)}
+.donut2::after{content:"";position:absolute;inset:26%;background:var(--bg2);border-radius:50%;border:1px solid var(--line)}
+.donut2 .c{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:1.5rem;color:var(--acc)}
+.legend2{display:grid;gap:.5rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--mut)}
+.legend2 i{display:inline-block;width:.8rem;height:.8rem;margin-right:.55rem;vertical-align:-1px;border:1px solid rgba(8,24,40,.5)}
+.legend2 b{color:var(--ink)}
 .figcap{margin-top:.7rem;font-size:.82rem;line-height:1.7;color:var(--mut);max-width:60rem}
 /* table */
 .tbl{margin-top:1.4rem;width:100%;max-width:56rem;border-collapse:collapse;border:1.5px solid var(--line);font-size:.9rem}
@@ -218,6 +226,19 @@ h1 .q{color:var(--acc)}
  </div>
  <p class="figcap" style="margin-top:2rem">рис. 3 · итоговая лента: ширина сегмента - доля группы от 31 учтённого ответа</p>
  <div class="meter"><div class="meterbar"><i style="width:25.8%;background:#8fd8ff">BMW 25,8%</i><i style="width:16.1%;background:#f2a33c">Audi 16,1%</i><i style="width:9.7%;background:#7fe0b0">Mercedes 9,7%</i><i style="width:9.7%;background:#ff8f86">Dodge 9,7%</i><i style="width:32.3%;background:#9db4ff">другие 32,3%</i><i style="width:6.4%;background:#8a97a5;color:#eaf4ff">6,5%</i></div></div>
+ <p class="figcap" style="margin-top:2rem">рис. 4 · кольцевая диаграмма: сектор равен доле группы от 31 учтённого ответа; центр - число учтённых бюллетеней</p>
+ <div class="piepanel">
+  <div class="donut2" role="img" aria-label="Кольцевая диаграмма: BMW 25,8%, Audi 16,1%, Mercedes 9,7%, Dodge 9,7%, другие 32,3%, воздержались 6,5%"><span class="c">31</span></div>
+  <div class="legend2">
+   <span><i style="background:#8fd8ff"></i><b>BMW</b> · 8 бюллетеней · 25,8%</span>
+   <span><i style="background:#f2a33c"></i><b>Audi</b> · 5 бюллетеней · 16,1%</span>
+   <span><i style="background:#7fe0b0"></i><b>Mercedes</b> · 3 бюллетеня · 9,7%</span>
+   <span><i style="background:#ff8f86"></i><b>Dodge</b> · 3 бюллетеня · 9,7%</span>
+   <span><i style="background:#9db4ff"></i><b>другие марки</b> · 10 бюллетеней · 32,3%</span>
+   <span><i style="background:#8a97a5"></i><b>воздержались / шутка</b> · 2 бюллетеня · 6,5%</span>
+   <span style="color:var(--mut)">секторы читаются по часовой стрелке от верха: от лидера к замыкающим</span>
+  </div>
+ </div>
  <table class="tbl">
   <tr><th>Вариант ответа</th><th>Бюллетеней</th><th>Доля</th><th>Округл.</th></tr>
   <tr><td><b>BMW (разные модели)</b></td><td>8</td><td>25,8%</td><td>≈26%</td></tr>
