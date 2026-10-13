@@ -66,32 +66,39 @@ h1 .q{color:var(--acc)}
 .pass .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);padding-top:.2rem}
 .pass .v{color:var(--ink)}
 @media(max-width:48rem){.pass div{grid-template-columns:1fr}}
-/* tally stripes */
-.stripes{margin-top:1.4rem;display:grid;gap:.9rem}
-.stripe{border:1.5px solid var(--line);background:var(--panel);padding:.8rem .9rem}
-.stripe .sh{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
-.stripe .sn{font-family:var(--disp);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.03em}
-.stripe .sv{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:var(--mut)}
-.stripe .sv b{color:var(--acc2)}
-.bar{margin-top:.6rem;display:flex;height:1.9rem;border:1px solid var(--line2);background:var(--bg2) linear-gradient(90deg,rgba(190,225,255,.16) 1px,transparent 1px);background-size:calc(100%/6.2) 100%}
-.bar i{display:block;height:100%;width:calc(100%/31);border-right:1px solid rgba(8,24,40,.55);transition:filter .15s}
-.bar i:hover{filter:brightness(1.3)}
-.scale{position:relative;height:1.4rem;margin-top:.5rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;color:var(--mut)}
-.scale span{position:absolute;transform:translateX(-50%)}
-.scale span::before{content:"";position:absolute;left:50%;top:-.5rem;width:1px;height:.4rem;background:var(--line2)}
-/* donut + ribbon */
-.charts{margin-top:1.6rem;display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center}
-@media(max-width:56rem){.charts{grid-template-columns:1fr}}
-.donut{width:13rem;height:13rem;border-radius:50%;position:relative;border:1.5px solid var(--line2);background:conic-gradient(var(--c1) 0 25.8%,var(--c2) 25.8% 41.9%,var(--c3) 41.9% 51.6%,var(--c4) 51.6% 61.3%,var(--c5) 61.3% 93.6%,var(--c6) 93.6% 100%)}
-.donut::after{content:"";position:absolute;inset:24%;background:var(--bg2);border-radius:50%;border:1px solid var(--line)}
-.donut .c{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:1.6rem;color:var(--acc)}
-.legend{display:grid;gap:.45rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--mut)}
-.legend i{display:inline-block;width:.75rem;height:.75rem;margin-right:.55rem;vertical-align:-1px;border:1px solid rgba(0,0,0,.4)}
-.legend b{color:var(--ink)}
-.ribbon{margin-top:1.4rem;display:flex;height:2.2rem;border:1.5px solid var(--line2)}
-.ribbon i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;color:#082036;overflow:hidden;white-space:nowrap}
+/* rank plates */
+.rank{display:grid;gap:.8rem;max-width:64rem}
+.plate{border:1.5px solid var(--line);background:var(--panel);padding:.9rem 1.1rem;display:grid;grid-template-columns:3.4rem 1fr 7rem;gap:1.1rem;align-items:center}
+.plate.out{border-style:dashed;background:transparent}
+.plate .rk{font-family:var(--disp);font-weight:700;font-size:1.7rem;color:var(--pc);line-height:1}
+.plate.out .rk{font-size:1rem;letter-spacing:.08em}
+.plate .nm{font-family:var(--disp);font-weight:700;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em}
+.plate .sub{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;color:var(--mut);text-transform:uppercase;margin-top:.25rem}
+.pips{display:flex;gap:4px;margin-top:.6rem;flex-wrap:wrap}
+.pips i{width:15px;height:15px;background:var(--pc);border:1px solid rgba(8,24,40,.55)}
+.pips i:nth-child(5n+1){margin-left:8px}
+.pips i:first-child{margin-left:0}
+.shr{margin-top:.55rem;height:4px;background:var(--bg2);border:1px solid var(--line)}
+.shr i{display:block;height:100%;background:var(--pc)}
+.plate .vt{font-family:var(--mono);font-size:.62rem;color:var(--mut);text-align:right;letter-spacing:.08em}
+.plate .vt b{display:block;font-family:var(--disp);font-weight:700;font-size:1.9rem;color:var(--pc);line-height:1.1}
+/* model cards */
+.models{margin-top:1.6rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;max-width:64rem}
+@media(max-width:56rem){.models{grid-template-columns:1fr}}
+.mcard{border:1.5px solid var(--line);background:var(--panel);padding:.9rem 1rem}
+.mcard h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:1.02rem;letter-spacing:.05em}
+.mcard h4 span{color:var(--pc)}
+.mcard .chips{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.mchip{font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;border:1px solid var(--line2);padding:.32rem .6rem;color:var(--mut)}
+.mchip b{color:var(--ink)}
+/* meter */
+.meter{margin-top:1.6rem;max-width:64rem}
+.meterbar{display:flex;height:2.5rem;border:1.5px solid var(--line2)}
+.meterbar i{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.56rem;letter-spacing:.06em;color:#082036;overflow:hidden;white-space:nowrap;border-right:1px solid rgba(8,24,40,.4)}
+.meterbar i:last-child{border-right:none}
+.figcap{margin-top:.7rem;font-size:.82rem;line-height:1.7;color:var(--mut);max-width:60rem}
 /* table */
-.tbl{margin-top:1.4rem;width:100%;border-collapse:collapse;border:1.5px solid var(--line);font-size:.9rem}
+.tbl{margin-top:1.4rem;width:100%;max-width:56rem;border-collapse:collapse;border:1.5px solid var(--line);font-size:.9rem}
 .tbl th,.tbl td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left}
 .tbl th{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);background:var(--panel2)}
 .tbl td{color:var(--mut)}
@@ -192,18 +199,25 @@ h1 .q{color:var(--acc)}
 
 <section class="sec rv" id="s3">
  <div class="sechead"><span class="no">03</span><h2>Результаты</h2><span class="rule"></span></div>
- <p class="txt" style="margin-bottom:0">рис. 1 · счётные полосы: длина полосы пропорциональна числу голосов по единой шкале 0-31 (деления под полосами); каждая клетка равна одному бюллетеню; наведите на клетку - увидите имя респондента</p>
- <div class="stripes">
-  <div class="stripe"><div class="sh"><span class="sn">BMW (разные модели)</span><span class="sv"><b>8</b> · 25,8%</span></div><div class="bar"><i style="background:#8fd8ff" title="Enderman Fawkes — БМВ"></i><i style="background:#8fd8ff" title="Alessandro Carrasco — BMW M5 F90"></i><i style="background:#8fd8ff" title="Karl Winstone — БМВ"></i><i style="background:#8fd8ff" title="Guff Clamore — BMW m5 e60"></i><i style="background:#8fd8ff" title="zushi — БМВ х7"></i><i style="background:#8fd8ff" title="Mayas Lavelas — БМВ М5 ф90"></i><i style="background:#8fd8ff" title="Dariana Laurent — BMW G90"></i><i style="background:#8fd8ff" title="Antony Hill — Ф10 (BMW M5 F10)"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Audi (разные модели)</span><span class="sv"><b>5</b> · 16,1%</span></div><div class="bar"><i style="background:#f2a33c" title="Jacob Deagle — Audi"></i><i style="background:#f2a33c" title="Carl Village — Audi RS6 C8"></i><i style="background:#f2a33c" title="Fujin Sunjiwan — Audi RS6 C8 Sport"></i><i style="background:#f2a33c" title="Brice Fox — ауди ку 7"></i><i style="background:#f2a33c" title="Maks Berezniak — Audi RS6"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Mercedes (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar"><i style="background:#7fe0b0" title="Mamaptica Exclame — чпс 63 (Mercedes C63)"></i><i style="background:#7fe0b0" title="Dutch Vanderlinde — Mercedes CLS 63 AMG"></i><i style="background:#7fe0b0" title="Alberto Hernandes — Мерседес"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Dodge (разные модели)</span><span class="sv"><b>3</b> · 9,7%</span></div><div class="bar"><i style="background:#ff8f86" title="Leonid Angelov — старенький додж"></i><i style="background:#ff8f86" title="Eddie Blore — Додж Чарджер 1069 года"></i><i style="background:#ff8f86" title="Aleksandra Suvorova — Додж Вайпер"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Другие марки и модели</span><span class="sv"><b>10</b> · 32,3%</span></div><div class="bar"><i style="background:#9db4ff" title="Hiromi Higumura — lamborghini Centanario"></i><i style="background:#9db4ff" title="Joel Evans — Скутер"></i><i style="background:#9db4ff" title="Julia Kill — Mayas Lavelas"></i><i style="background:#9db4ff" title="Lato Svirel — султан"></i><i style="background:#9db4ff" title="Ray Offset — Geely"></i><i style="background:#9db4ff" title="Kyle Crane — российский автопром"></i><i style="background:#9db4ff" title="Kurta Bein — шестерка (ВАЗ 2106)"></i><i style="background:#9db4ff" title="Karina Vspakova — шкода октавия"></i><i style="background:#9db4ff" title="Alya Fisher — Hotknife"></i><i style="background:#9db4ff" title="Merlin Monroe — банf"></i></div></div>
-  <div class="stripe"><div class="sh"><span class="sn">Воздержались / шутка</span><span class="sv"><b>2</b> · 6,5%</span></div><div class="bar"><i style="background:#8a97a5" title="Svetlana Luxery — шутка про бывшего"></i><i style="background:#8a97a5" title="Lloyd Coleman — не разбираюсь в авто, лучшая наша EMS"></i></div></div>
-  </div>
-  <div class="scale"><span style="left:0.0%">0</span><span style="left:16.13%">5</span><span style="left:32.26%">10</span><span style="left:48.39%">15</span><span style="left:64.52%">20</span><span style="left:80.65%">25</span><span style="left:96.77%">30</span><span style="left:100.0%">31</span></div>
+ <div class="txt"><p>Тридцать один ответ разложен на стенде в три слоя: сначала ранжир марок (квадратики-голоса и линия доли от 31), затем - что именно называли внутри каждой марки, и наконец итоговая лента долей и таблица.</p></div>
+ <p class="figcap" style="margin-top:1.4rem">рис. 1 · ранжир марок: каждый квадратик - один бюллетень, тонкая линия под ним - доля от 31 ответа; группы «другие» и «воздержались» вынесены из ранжира, потому что это не марки</p>
+ <div class="rank">
+  <div class="plate" style="--pc:#8fd8ff"><div class="rk">01</div><div><div class="nm">BMW (разные модели)</div><div class="sub">ядро - M5 в кузовах E60, F10, F90, G90 + один X7</div><div class="pips"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shr"><i style="width:25.8%"></i></div></div><div class="vt"><b>8</b>25,8%</div></div>
+  <div class="plate" style="--pc:#f2a33c"><div class="rk">02</div><div><div class="nm">Audi (разные модели)</div><div class="sub">ядро - RS6, включая формулировку C8 Sport</div><div class="pips"><i></i><i></i><i></i><i></i><i></i></div><div class="shr"><i style="width:16.1%"></i></div></div><div class="vt"><b>5</b>16,1%</div></div>
+  <div class="plate" style="--pc:#7fe0b0"><div class="rk">03</div><div><div class="nm">Mercedes (разные модели)</div><div class="sub">C63 и CLS 63 AMG - по голосу, ещё один марке</div><div class="pips"><i></i><i></i><i></i></div><div class="shr"><i style="width:9.7%"></i></div></div><div class="vt"><b>3</b>9,7%</div></div>
+  <div class="plate" style="--pc:#ff8f86"><div class="rk">03</div><div><div class="nm">Dodge (разные модели)</div><div class="sub">Чарджер, Вайпер и «старенький додж» - дележ места</div><div class="pips"><i></i><i></i><i></i></div><div class="shr"><i style="width:9.7%"></i></div></div><div class="vt"><b>3</b>9,7%</div></div>
+  <div class="plate out" style="--pc:#9db4ff"><div class="rk">вне</div><div><div class="nm">Другие марки и модели</div><div class="sub">десять разных мечт: от скутера до lamborghini Centanario</div><div class="pips"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shr"><i style="width:32.3%"></i></div></div><div class="vt"><b>10</b>32,3%</div></div>
+  <div class="plate out" style="--pc:#8a97a5"><div class="rk">вне</div><div><div class="nm">Воздержались / шутка</div><div class="sub">два бюллетеня зоны юмора и скромности</div><div class="pips"><i></i><i></i></div><div class="shr"><i style="width:6.5%"></i></div></div><div class="vt"><b>2</b>6,5%</div></div>
  </div>
-
+ <p class="figcap" style="margin-top:2rem">рис. 2 · внутри марок: какие модели называли дословно (число после имени - количество бюллетеней)</p>
+ <div class="models">
+  <div class="mcard" style="--pc:#8fd8ff"><h4>BMW · <span>8 голосов</span></h4><div class="chips"><span class="mchip">M5 F90 · <b>2</b></span><span class="mchip">M5 E60 · <b>1</b></span><span class="mchip">M5 F10 · <b>1</b></span><span class="mchip">M5 G90 · <b>1</b></span><span class="mchip">X7 · <b>1</b></span><span class="mchip">просто «БМВ» · <b>2</b></span></div></div>
+  <div class="mcard" style="--pc:#f2a33c"><h4>Audi · <span>5 голосов</span></h4><div class="chips"><span class="mchip">RS6 C8 · <b>1</b></span><span class="mchip">RS6 C8 Sport · <b>1</b></span><span class="mchip">RS6 · <b>1</b></span><span class="mchip">«ауди ку 7» · <b>1</b></span><span class="mchip">просто Audi · <b>1</b></span></div></div>
+  <div class="mcard" style="--pc:#7fe0b0"><h4>Mercedes · <span>3 голоса</span></h4><div class="chips"><span class="mchip">C63 («чпс 63») · <b>1</b></span><span class="mchip">CLS 63 AMG · <b>1</b></span><span class="mchip">просто «Мерседес» · <b>1</b></span></div></div>
+  <div class="mcard" style="--pc:#ff8f86"><h4>Dodge · <span>3 голоса</span></h4><div class="chips"><span class="mchip">«старенький додж» · <b>1</b></span><span class="mchip">Чарджер 1069 · <b>1</b></span><span class="mchip">Вайпер · <b>1</b></span></div></div>
+ </div>
+ <p class="figcap" style="margin-top:2rem">рис. 3 · итоговая лента: ширина сегмента - доля группы от 31 учтённого ответа</p>
+ <div class="meter"><div class="meterbar"><i style="width:25.8%;background:#8fd8ff">BMW 25,8%</i><i style="width:16.1%;background:#f2a33c">Audi 16,1%</i><i style="width:9.7%;background:#7fe0b0">Mercedes 9,7%</i><i style="width:9.7%;background:#ff8f86">Dodge 9,7%</i><i style="width:32.3%;background:#9db4ff">другие 32,3%</i><i style="width:6.4%;background:#8a97a5;color:#eaf4ff">6,5%</i></div></div>
  <table class="tbl">
   <tr><th>Вариант ответа</th><th>Бюллетеней</th><th>Доля</th><th>Округл.</th></tr>
   <tr><td><b>BMW (разные модели)</b></td><td>8</td><td>25,8%</td><td>≈26%</td></tr>
@@ -214,22 +228,7 @@ h1 .q{color:var(--acc)}
   <tr><td><b>Воздержались / шутка</b></td><td>2</td><td>6,5%</td><td>≈6%</td></tr>
   <tr><td><b>Итого</b></td><td><b>31</b></td><td><b>100,0%</b></td><td>100,1%*</td></tr>
  </table>
- <p class="txt" style="font-size:.8rem">Таблица 1 · доли считаются от 31 учтённого ответа; *сумма округлённых значений даёт 100,1% - погрешность округления.</p>
-
- <div class="charts">
-  <div class="donut" role="img" aria-label="Диаграмма: BMW 25,8%, Audi 16,1%, Mercedes 9,7%, Dodge 9,7%, другие 32,3%, воздержались 6,5%" style="--c1:#8fd8ff;--c2:#f2a33c;--c3:#7fe0b0;--c4:#ff8f86;--c5:#9db4ff;--c6:#8a97a5"><span class="c">31</span></div>
-  <div class="legend">
-   <span><i style="background:#8fd8ff"></i><b>BMW</b> · 8 · 25,8%</span>
-   <span><i style="background:#f2a33c"></i><b>Audi</b> · 5 · 16,1%</span>
-   <span><i style="background:#7fe0b0"></i><b>Mercedes</b> · 3 · 9,7%</span>
-   <span><i style="background:#ff8f86"></i><b>Dodge</b> · 3 · 9,7%</span>
-   <span><i style="background:#9db4ff"></i><b>другие марки</b> · 10 · 32,3%</span>
-   <span><i style="background:#8a97a5"></i><b>воздержались / шутка</b> · 2 · 6,5%</span>
-   <span style="margin-top:.4rem;color:var(--mut)">рис. 2 · кольцевая диаграмма, % от учтённых ответов</span>
-  </div>
- </div>
- <p class="txt" style="margin-bottom:0">рис. 3 · единая лента ответов (100%): ширина сегмента = доля группы</p>
- <div class="ribbon"><i style="width:25.8%;background:#8fd8ff">BMW 25,8%</i><i style="width:16.1%;background:#f2a33c">Audi 16,1%</i><i style="width:9.7%;background:#7fe0b0">Mercedes 9,7%</i><i style="width:9.7%;background:#ff8f86">Dodge 9,7%</i><i style="width:32.3%;background:#9db4ff">другие 32,3%</i><i style="width:6.4%;background:#8a97a5;color:#eaf4ff">6,5%</i></div>
+ <p class="figcap">Таблица 1 · доли считаются от 31 учтённого ответа; *сумма округлённых значений даёт 100,1% - погрешность округления.</p>
 </section>
 
 <section class="sec rv" id="s4">
