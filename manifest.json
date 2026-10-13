@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-11",
+ "generated": "2026-10-13",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 50,
+ "issues": 51,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -186,8 +186,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 118219,
-   "sha256": "8d196d12ce26f6dfa09b45e9d788fc782d90ccd735a0e5acc31f6634921c9f08"
+   "bytes": 124716,
+   "sha256": "a5e099812227effd536295a21cbf7997de2985a646799b2d8651b2c43451ddd9"
   },
   {
    "file": "opg-leader-interview.html",
@@ -213,6 +213,11 @@
    "file": "sfpd-precinct.html",
    "bytes": 4202004,
    "sha256": "290d916772e683a4c367a2de6db9c6a5b77c5a750351916f11ea9d9e3f4b4440"
+  },
+  {
+   "file": "socio-best-car-poll.html",
+   "bytes": 40942,
+   "sha256": "ba1230fe374746efaacf33526737b4301b279426ce127279363349259a9148a2"
   },
   {
    "file": "socio-best-newsroom-poll.html",
