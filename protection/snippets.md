@@ -95,6 +95,7 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 044 | fotoreport-effect-realty.html | effect-realty-group |
 | 045 | fotoreport-transport-co.html | transport-company-lv |
 | 046 | fotoreport-pegasus-yacht.html | pegasus-yacht-club |
+| 047 | socio-best-car-poll.html | garage-blueprint |
 | 035 | (следующий выпуск) | … |
 
 Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
