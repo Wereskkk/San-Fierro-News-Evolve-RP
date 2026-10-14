@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- © 2026 San Fierro News / Jonny Wilde. Дизайн и вёрстка защищены: CC BY-NC-ND 4.0. Копирование и переработка запрещены. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Как работать в новостных редакциях штата: маршрут новичка, восемь служебных ресурсов San Fierro News - дополнительные выплаты, рекламные контракты и слоганы, творческий раздел форума, правила объявлений и эфиров, работа папараци, рейтинг редакций с заданиями, таблица рейтинга и форма отчётов.">
+<title>San Fierro News · Как работать в новостных редакциях · кадровый раздел</title>
+<style>
+/* SFN-DESIGN-048: career-dossier · 13.10.2026 */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+:root{--bg:#221a12;--bg2:#2b2117;--paper:#f3ead6;--paper2:#e9dec4;--ink:#2a2118;--inkmut:#6b5d49;--brass:#d8a53f;--brass2:#f0c46a;--red:#b3392c;--mut:#c9b795;--line:rgba(216,165,63,.32);--line2:rgba(216,165,63,.55);--disp:"Bitter",Georgia,serif;--body:"Alegreya Sans","Segoe UI",sans-serif;--type:"Courier Prime",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--mut);font-family:var(--body);position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+ radial-gradient(1000px 480px at 82% -10%,rgba(216,165,63,.12),transparent 62%),
+ radial-gradient(800px 420px at 6% 42%,rgba(179,57,44,.08),transparent 60%),
+ repeating-linear-gradient(0deg,rgba(243,234,214,.028) 0 1px,transparent 1px 7px)}
+.wrap{max-width:82rem;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+.type{font-family:var(--type)}
+/* masthead */
+.mast{border-bottom:2px solid var(--line);background:var(--bg2);padding:1rem 0}
+.mast .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.seal{display:flex;align-items:center;gap:.9rem}
+.seal svg{width:52px;height:52px;flex:none;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal .nm{font-family:var(--disp);font-weight:900;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.seal .nm em{font-style:normal;color:var(--brass)}
+.seal .sb{font-family:var(--type);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);margin-top:.25rem}
+.mastmeta{font-family:var(--type);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);text-align:right;line-height:2}
+.mastmeta b{color:var(--brass2)}
+/* nav */
+.pnav{position:sticky;top:0;z-index:50;background:rgba(34,26,18,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.pnav .wrap{display:flex;gap:.2rem;overflow-x:auto;padding:.4rem 1.5rem}
+.pnav a{flex:none;font-family:var(--type);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);text-decoration:none;padding:.45rem .7rem;border:1px solid transparent}
+.pnav a:hover{color:var(--brass2);border-color:var(--line)}
+.pnav a.on{background:var(--brass);color:var(--bg);border-color:var(--brass)}
+/* hero */
+.hero{padding:3.4rem 0 2.4rem;display:grid;grid-template-columns:1.25fr .75fr;gap:2.4rem;align-items:start}
+@media(max-width:60rem){.hero{grid-template-columns:1fr}}
+.kick{font-family:var(--type);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass2)}
+h1{margin:1rem 0 0;font-family:var(--disp);font-weight:900;font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.06;color:var(--paper)}
+h1 .b{color:var(--brass)}
+.stand{margin-top:1.2rem;font-size:1.06rem;line-height:1.85;color:var(--mut);max-width:54rem}
+.stand b{color:var(--paper)}
+.dossier{border:1.5px solid var(--line2);background:var(--paper);color:var(--ink);padding:1.2rem 1.3rem;position:relative;box-shadow:10px 10px 0 rgba(0,0,0,.35);transform:rotate(-.6deg)}
+.dossier::before{content:"ЛИЧНОЕ ДЕЛО СОТРУДНИКА";position:absolute;top:-.7rem;left:1.1rem;background:var(--red);color:var(--paper);font-family:var(--type);font-size:.55rem;letter-spacing:.22em;padding:.2rem .6rem}
+.dossier .row{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--inkmut);padding:.45rem 0;font-family:var(--type);font-size:.68rem}
+.dossier .row:last-child{border-bottom:none}
+.dossier .row b{color:var(--red)}
+.dossier .stamp2{margin-top:.8rem;display:inline-block;border:2px double var(--red);color:var(--red);font-family:var(--type);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .7rem;transform:rotate(-2deg)}
+.herogrid{display:grid;grid-template-columns:1.25fr .75fr;gap:2.4rem;align-items:start}
+@media(max-width:60rem){.herogrid{grid-template-columns:1fr}}
+/* kpi */
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1.5px solid var(--line)}
+@media(max-width:52rem){.kpi{grid-template-columns:repeat(2,1fr)}}
+.kpi div{background:var(--bg2);padding:1rem 1.1rem}
+.kpi .n{font-family:var(--disp);font-weight:900;font-size:clamp(1.5rem,2.8vw,2.3rem);color:var(--brass2);line-height:1}
+.kpi .l{margin-top:.5rem;font-family:var(--type);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);line-height:1.8}
+/* sections */
+.sec{margin:3.2rem 0 0}
+.sechead{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:2px solid var(--line);padding-bottom:.6rem}
+.sechead .no{font-family:var(--type);font-size:.66rem;letter-spacing:.2em;color:var(--bg);background:var(--brass);padding:.35rem .6rem}
+.sechead h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.25rem,2.6vw,1.9rem);text-transform:uppercase;letter-spacing:.02em;color:var(--paper)}
+.sechead .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.sub{margin-top:1rem;font-size:.98rem;line-height:1.8;color:var(--mut);max-width:62rem}
+.sub b{color:var(--paper)}
+/* route */
+.route{margin-top:1.6rem;display:grid;gap:.9rem;counter-reset:st}
+.step{border:1.5px solid var(--line);background:var(--bg2);padding:1rem 1.2rem 1rem 4.2rem;position:relative}
+.step::before{counter-increment:st;content:"0" counter(st);position:absolute;left:1.1rem;top:1rem;font-family:var(--disp);font-weight:900;font-size:1.5rem;color:var(--brass)}
+.step h3{font-family:var(--disp);font-weight:700;font-size:1.08rem;text-transform:uppercase;letter-spacing:.04em;color:var(--paper)}
+.step p{margin-top:.4rem;font-size:.92rem;line-height:1.7;color:var(--mut)}
+.step p b{color:var(--brass2)}
+/* folders */
+.folders{margin-top:1.6rem;display:grid;gap:1.5rem}
+.folder{border:1.5px solid var(--line2);background:var(--bg2);position:relative;box-shadow:8px 8px 0 rgba(0,0,0,.35)}
+.folder .tab{position:absolute;top:-1.5rem;left:1.4rem;background:var(--brass);color:var(--bg);font-family:var(--type);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .9rem .45rem;box-shadow:4px 0 0 rgba(0,0,0,.3)}
+.folder .fin{padding:2.1rem 1.5rem 1.5rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1.6rem}
+@media(max-width:60rem){.folder .fin{grid-template-columns:1fr}}
+.folder h3{font-family:var(--disp);font-weight:900;font-size:1.35rem;text-transform:uppercase;color:var(--paper);line-height:1.2}
+.folder .what{margin-top:.7rem;font-size:.95rem;line-height:1.8;color:var(--mut)}
+.folder .what b{color:var(--paper)}
+.chips{margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font-family:var(--type);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line2);border-radius:999px;padding:.34rem .7rem;color:var(--brass2)}
+.chip.red{border-color:rgba(179,57,44,.7);color:#e8968a}
+.sheet{background:var(--paper);color:var(--ink);border:1px solid var(--inkmut);padding:.9rem 1rem;box-shadow:inset 0 0 0 1px rgba(107,93,73,.25);font-family:var(--type);font-size:.66rem;line-height:1.75;max-height:22rem;overflow:auto}
+.sheet h4{font-family:var(--type);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.sheet table{width:100%;border-collapse:collapse}
+.sheet td{border-bottom:1px dashed var(--inkmut);padding:.28rem .3rem;vertical-align:top}
+.sheet td:last-child{text-align:right;white-space:nowrap;font-weight:700}
+.sheet .note{margin-top:.6rem;color:var(--inkmut);font-style:italic}
+.golink{display:inline-block;margin-top:1rem;font-family:var(--type);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bg);background:var(--brass);padding:.6rem 1.1rem;text-decoration:none;transition:.15s;box-shadow:3px 3px 0 rgba(0,0,0,.4)}
+.golink:hover{background:var(--brass2);transform:translate(-1px,-1px)}
+.golink.alt{background:transparent;color:var(--brass2);border:1px solid var(--line2);box-shadow:none}
+.golink.alt:hover{border-color:var(--brass)}
+.copybtn{cursor:pointer;margin-left:.5rem}
+/* boards */
+.board{margin-top:1.6rem;border:1.5px solid var(--line2);background:var(--bg2);padding:1.3rem 1.4rem}
+.board h3{font-family:var(--disp);font-weight:900;font-size:1.2rem;text-transform:uppercase;color:var(--paper)}
+.board ul{margin-top:.9rem;list-style:none;display:grid;gap:.55rem;columns:2;column-gap:2.4rem}
+@media(max-width:56rem){.board ul{columns:1}}
+.board li{padding-left:1.5rem;position:relative;font-size:.92rem;line-height:1.65;break-inside:avoid}
+.board li::before{content:"›";position:absolute;left:0;color:var(--brass);font-weight:700}
+.board li b{color:var(--brass2)}
+/* footer */
+.foot{margin-top:3.4rem;background:var(--bg2);border-top:2px solid var(--line);padding:2.2rem 0}
+.foot .wrap{display:grid;gap:1.1rem;justify-items:center;text-align:center}
+.fcred{font-family:var(--type);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);line-height:2.1}
+.bigbtn{display:inline-block;font-family:var(--type);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);background:var(--brass);border-radius:999px;padding:.8rem 1.6rem;text-decoration:none;box-shadow:0 0 24px -6px var(--brass);transition:.2s}
+.bigbtn:hover{background:var(--brass2);transform:translateY(-2px)}
+.fline{font-family:var(--type);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--inkmut)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="mast"><div class="wrap">
+ <div class="seal">
+  <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#d8a53f" stroke-width="2"/><circle cx="32" cy="32" r="24" fill="none" stroke="#d8a53f" stroke-width="1" stroke-dasharray="3 4"/><path d="M32 14l4.6 9.8 10.4 1.4-7.6 7.2 1.9 10.4L32 37.9l-9.3 4.9 1.9-10.4-7.6-7.2 10.4-1.4z" fill="#d8a53f"/><text x="32" y="56" text-anchor="middle" font-family="Courier Prime,monospace" font-size="7" fill="#d8a53f" letter-spacing="2">SFN</text></svg>
+  <div><div class="nm">San Fierro <em>News</em> · кадровый раздел</div><div class="sb">служебная страница редакции · как работать в новостных редакциях</div></div>
+ </div>
+ <div class="mastmeta">Генеральный директор: <b>Jonny Wilde</b><br>чертёж 048 · career-dossier · лист 1/1</div>
+</div></header>
+
+<nav class="pnav" id="pnav" aria-label="Разделы страницы">
+ <div class="wrap">
+  <a href="#route" class="on">Маршрут</a><a href="#f1">01 · выплаты</a><a href="#f2">02 · контракты</a><a href="#f3">03 · творчество</a><a href="#f4">04 · правила эфиров</a><a href="#f5">05 · папараци</a><a href="#f6">06 · рейтинг</a><a href="#f7">07 · таблица</a><a href="#f8">08 · отчёты</a><a href="#rules">Правила отчётов</a><a href="#prizes">Награды</a>
+ </div>
+</nav>
+
+<section class="hero"><div class="wrap herogrid">
+ <div>
+  <div class="kick">Памятка сотрудника · обновлено 13.10.2026</div>
+  <h1>Как работать в <span class="b">новостных редакциях</span> штата</h1>
+  <p class="stand">Восемь служебных ресурсов редакции San Fierro News в одном личном деле: от дополнительных выплат и рекламных контрактов до рейтинга редакций и формы отчётов. Страница собрана для тех, кто впервые переступил порог офиса с вертолетной площадкой, - и для тех, кто давно здесь работает, но хочет держать все ссылки на одной полке. <b>Порядок разделов - это порядок рабочей недели.</b></p>
+  <div class="kpi" style="margin-top:1.6rem">
+   <div><div class="n">2 000</div><div class="l">баллов рейтинга - недельная норма редакции</div></div>
+   <div><div class="n">6 000$</div><div class="l">за минуту эфира · потолок выплаты 500 000$</div></div>
+   <div><div class="n">от 500 000$</div><div class="l">стоят еженедельная газета и расследование</div></div>
+   <div><div class="n">72 часа</div><div class="l">срок действия любых доказательств работы</div></div>
+  </div>
+ </div>
+ <div class="dossier">
+  <div class="row"><span>организация</span><b>San Fierro News</b></div>
+  <div class="row"><span>генеральный директор</span><b>Jonny Wilde</b></div>
+  <div class="row"><span>частота редакции</span><b>101.1 FM</b></div>
+  <div class="row"><span>приёмка отчётов</span><b>форма отчётов · раздел 08</b></div>
+  <div class="row"><span>выплаты</span><b>у гендиректора редакции</b></div>
+  <div class="row"><span>подпись</span><b>____________</b></div>
+  <span class="stamp2">К работе годен · читать до конца</span>
+ </div>
+</div></section>
+
+<section class="sec rv" id="route"><div class="wrap">
+ <div class="sechead"><span class="no">00</span><h2>Маршрут новичка: пять шагов первой недели</h2><span class="rule"></span></div>
+ <div class="route">
+  <div class="step"><h3>Войти в редакцию</h3><p>RP-собеседование в офисе и лекция «ПРО» после приёма - это не формальность, а первое задание рейтинга (<b>15 баллов</b>) и первая выплата стажировки (<b>400 000$</b> после 100 объявлений и должности «Звукооператор»).</p></div>
+  <div class="step"><h3>Выучить правила</h3><p>Раздел 04 - серверные правила редактирования объявлений, проведения эфиров и тем эфиров; внутри редакции по ним собрана своя служебная памятка. Без этого шага отчёты отклоняют чаще, чем принимают.</p></div>
+  <div class="step"><h3>Взять задания</h3><p>Раздел 06 - доска заданий рейтинга с баллами и лимитами: от «редакции часа» за 5 баллов до дня открытых дверей за 500. Выбирать по силам и по лимитам недели.</p></div>
+  <div class="step"><h3>Сдать отчёт</h3><p>Раздел 08 - форма отчётов: скриншоты с меткой времени, ссылки на фотохостинг, длительность эфиров. Что не открывается у проверяющего - то отклоняется автоматически.</p></div>
+  <div class="step"><h3>Проверить и получить</h3><p>Раздел 07 - таблица рейтинга: принято или отклонено, сколько баллов набрано. Раздел 01 - дополнительные выплаты по тем же доказательствам: к генеральному директору своей редакции.</p></div>
+ </div>
+</div></section>
+
+<section class="sec rv" id="f1"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 01</span><div class="fin">
+  <div>
+   <h3>Дополнительные выплаты и критерии их получения</h3>
+   <p class="what">Деньги за работу сверх должности: каждое задание имеет цену, лимит и формат доказательства. Отчёт подаётся генеральному директору своей редакции, статус заявления виден в отдельной таблице. Главное правило папки: <b>доказательства живут 72 часа</b>, объявления - день в день с 05:00 до 05:00, а низкое качество материалов - законный повод для отказа.</p>
+   <div class="chips"><span class="chip">метка времени /time 1</span><span class="chip">фотохостинг обязателен</span><span class="chip">72 часа годности</span><span class="chip red">лимиты заданий</span><span class="chip red">отчёт с двух аккаунтов = увольнение</span></div>
+   <a class="golink" href="https://evolve-rp.su/threads/515818/" target="_blank" rel="noopener">Тема форума · выплаты</a>
+   <a class="golink alt" href="https://docs.google.com/forms/d/e/1FAIpQLSewKbjmLMJN-tN1OeTnldbjjZw-CH1tlJ5FxJLaooNdmJ7SUQ/viewform" target="_blank" rel="noopener">Заявление на доп. выплату</a>
+   <a class="golink alt" href="https://docs.google.com/spreadsheets/d/17y-uTG_i24MojdlxigRSMmx8WotCJ7e1QhRsqlAUwOE/edit?gid=1899644978#gid=1899644978" target="_blank" rel="noopener">Статус заявления</a>
+  </div>
+  <div class="sheet">
+   <h4>Прейскурант папки · выборочно</h4>
+   <table>
+    <tr><td>Отредактированное объявление</td><td>2 000$</td></tr>
+    <tr><td>Эфир, за минуту (потолок 500 000$)</td><td>6 000$</td></tr>
+    <tr><td>Интервью в эфире</td><td>50 000$ + 6 000$/мин</td></tr>
+    <tr><td>Интервью с лидером гос. организации</td><td>350 000$ + 6 000$/мин</td></tr>
+    <tr><td>Суточный онлайн, за час</td><td>35 000$</td></tr>
+    <tr><td>Папараци: известная личность (до 25/нед)</td><td>20 000$</td></tr>
+    <tr><td>Папараци: красивое место (до 15/нед)</td><td>15 000$</td></tr>
+    <tr><td>Еженедельная газета / расследование</td><td>от 500 000$</td></tr>
+    <tr><td>Ежедневная газета (до 7/нед)</td><td>150 000$</td></tr>
+    <tr><td>Фоторепортаж (до 7/нед)</td><td>150 000$</td></tr>
+    <tr><td>Рекламная листовка (до 5/нед)</td><td>80 000$</td></tr>
+    <tr><td>Раздача листовок и газет, за человека (до 100)</td><td>5 000$</td></tr>
+    <tr><td>RolePlay ситуация (до 7/нед)</td><td>100 000$</td></tr>
+    <tr><td>Социологический опрос, за человека (до 100)</td><td>10 000$</td></tr>
+    <tr><td>Договор с гос. организацией / бизнесом</td><td>300 000$</td></tr>
+    <tr><td>60 минут в эфире</td><td>500 000$</td></tr>
+    <tr><td>Привести друга (после его недели и 500 объявлений)</td><td>300 000$</td></tr>
+    <tr><td>Пост медиа-карты штата (до 10/нед)</td><td>150 000$</td></tr>
+    <tr><td>Пост «Звёзды штата» (до 5/нед)</td><td>150 000$</td></tr>
+   </table>
+   <div class="note">Полный список с условиями и форматами доказательств - в теме форума.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f2"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 02</span><div class="fin">
+  <div>
+   <h3>Рекламное агентство: контракты и слоганы для пиара</h3>
+   <p class="what">Редакция - ещё и рекламное агентство: три вида контрактов (гос. организации до 7 дней и не более трёх одновременно, бизнес до 14 дней без лимита, агитация до 3 дней), все по <b>200 000$ за день</b>. В теме живут актуальные контракты редакции с датами окончания и готовые слоганы пиара кастинга и редакции под частоту 101.1 FM - бери и ставь в объявления.</p>
+   <div class="chips"><span class="chip">гос: 5 объявл./час · 2 эфира/час</span><span class="chip">бизнес: 15 объявл./час · 5 эфиров/час</span><span class="chip red">запрет цифр 1 и 2</span><span class="chip red">день выборов - табу</span><span class="chip red">флуд запрещён</span></div>
+   <a class="golink" href="https://evolve-rp.su/threads/493912/" target="_blank" rel="noopener">Тема форума · контракты и слоганы</a>
+  </div>
+  <div class="sheet">
+   <h4>Действующие контракты редакции</h4>
+   <table>
+    <tr><td>Бизнес · символ 14 · СТО San Fierro: CA$H, PS-3, ECG, неон, отстрелы, GPS 4-8</td><td>до 19.10.2026</td></tr>
+    <tr><td>Бизнес · символ 15 · автосервис Los Santos: CA$H, NEON, PS-3, ECG, отстрелы, GPS 4-7</td><td>до 20.10.2026</td></tr>
+    <tr><td>Гос. (1 из 3) · символ 4 · «В правительство нужны юристы и менеджеры…», GPS 5-0</td><td>до 23.10.2026</td></tr>
+    <tr><td>Агитационные</td><td>пусто</td></tr>
+   </table>
+   <h4 style="margin-top:.9rem">Слоганы пиара · образцы</h4>
+   <table>
+    <tr><td>SFN - Легкая работа - большие деньги! Подробности на оф. портале! [GPS: 5-12]</td><td>кастинг</td></tr>
+    <tr><td>SFN - Платим за «Стажировку» - 400.000$, от 3-ех лет в Штате - [GPS: 5-12]</td><td>кастинг</td></tr>
+    <tr><td>SFN - Моментальное редактирование: свободная строка объявлений - 101.1 FM</td><td>редакция</td></tr>
+    <tr><td>SFN - Мы работаем, вы отдыхаете! - 101.1 FM</td><td>редакция</td></tr>
+   </table>
+   <div class="note">Коды заявлений на контракт и весь список слоганов - в теме форума.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f3"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 03</span><div class="fin">
+  <div>
+   <h3>Творческий раздел форума: статьи, журналы, всё своё</h3>
+   <p class="what">Сюда редакция выносит то, что не входит в ежедневную ленту: статьи и журналы, фоторепортажи и прочие творческие работы. Для рейтинга это задание «Статьи и журналы» - <b>10-30 баллов</b>, до трёх работ от редакции в неделю: материал без привязки к серверу - 10, с привязкой - 20, ещё +10 за качественное визуальное оформление. Наш еженедельник и расследования оцениваются отдельными пунктами рейтинга.</p>
+   <div class="chips"><span class="chip">до 3 работ в неделю</span><span class="chip">10 / 20 / +10 баллов</span><span class="chip">оформление приносит баллы</span></div>
+   <a class="golink" href="https://evolve-rp.su/forums/85/" target="_blank" rel="noopener">Раздел форума · творчество</a>
+  </div>
+  <div class="sheet">
+   <h4>Что несём сюда из нашей практики</h4>
+   <table>
+    <tr><td>Еженедельная газета редакции</td><td>рейтинг: 50 баллов</td></tr>
+    <tr><td>Журналистское расследование</td><td>рейтинг: 50 баллов</td></tr>
+    <tr><td>Социологическое исследование с диаграммами</td><td>рейтинг: 100 баллов</td></tr>
+    <tr><td>Статьи, журналы, фоторепортажи-подшивки</td><td>10-30 баллов</td></tr>
+    <tr><td>Творческие работы с использованием ИИ</td><td>10-30 баллов, до 3/нед</td></tr>
+   </table>
+   <div class="note">Публикация в разделе - это и архив редакции, и строка отчёта в рейтинге.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f4"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 04</span><div class="fin">
+  <div>
+   <h3>Правила редактирования объявлений, проведения эфиров и темы эфиров</h3>
+   <p class="what">Базовый серверный свод, на котором держится вся ежедневная работа: что можно и чего нельзя править в объявлениях, как открывается и закрывается эфир, какие темы допустимы и что у эфира обязательно есть начало с объявленной темой и конец. Внутри редакции по этому своду собрана своя служебная памятка с нормами общения, типами эфиров, номерами станций и темами с призовым фондом - она дополняет тему форума, а не заменяет её.</p>
+   <div class="chips"><span class="chip">скриншоты эфира каждые 10 минут</span><span class="chip">тема объявляется в начале</span><span class="chip">интерактив фиксируется звонками и СМС</span><span class="chip red">приз вручается в кадре</span></div>
+   <a class="golink" href="https://evolve-rp.su/threads/475202/" target="_blank" rel="noopener">Тема форума · правила</a>
+   <a class="golink alt" href="efir-rules.html">Внутренняя памятка редакции</a>
+  </div>
+  <div class="sheet">
+   <h4>Выжимка из смежных правил рейтинга и выплат</h4>
+   <table>
+    <tr><td>Эфир в рейтинге: 1 балл за минуту, минимум 20 минут</td><td>лимит нет</td></tr>
+    <tr><td>Эфир в выплатах: 6 000$ за минуту</td><td>потолок 500 000$</td></tr>
+    <tr><td>Реклама в эфире о заявлениях и стажировке</td><td>10 000$, не чаще раза в 10 минут</td></tr>
+    <tr><td>Интервью в эфире</td><td>+10 баллов и 50 000$ + 6 000$/мин</td></tr>
+    <tr><td>Начало и окончание эфира</td><td>обязательные скриншоты</td></tr>
+   </table>
+   <div class="note">Полные формулировки и список тем - в теме форума и во внутренней памятке.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f5"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 05</span><div class="fin">
+  <div>
+   <h3>Работа папараци: охота с камерой по правилам</h3>
+   <p class="what">Штатная охота редакции за кадрами: фотография известной личности приносит <b>20 000$ и 5 баллов</b> (до 25 снимков от одного сотрудника в неделю), фотография красивого места - <b>15 000$ и 2 балла</b> (до 15 снимков). Доказательством считается скриншот в момент удачного снимка - с зелёным сообщением об удаче; кадры, сделанные позже «у офиса за наградой», не принимаются.</p>
+   <div class="chips"><span class="chip">личность: 20 000$ · 5 баллов · 25/нед</span><span class="chip">место: 15 000$ · 2 балла · 15/нед</span><span class="chip red">скрин в момент съёмки</span><span class="chip red">кадры за наградой не считаются</span></div>
+   <a class="golink" href="https://evolve-rp.su/threads/502152/" target="_blank" rel="noopener">Тема форума · папараци</a>
+  </div>
+  <div class="sheet">
+   <h4>Кодекс папараци редакции</h4>
+   <table>
+    <tr><td>Снимай событие, а не награду: зелёное сообщение об удаче в кадре</td><td>обязательно</td></tr>
+    <tr><td>Не публикуй имя и кадр до сдачи отчёта</td><td>правило редакции</td></tr>
+    <tr><td>Считай недельные лимиты: сверх лимита баллы и выплаты сгорают</td><td>25 / 15</td></tr>
+    <tr><td>Красивое место без людей - тоже работа</td><td>2 балла</td></tr>
+    <tr><td>Лучшие кадры недели уходят в контактный лист еженедельника</td><td>честь папараци</td></tr>
+   </table>
+   <div class="note">Кодекс - внутренняя практика San Fierro News; серверные правила - в теме форума.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f6"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 06</span><div class="fin">
+  <div>
+   <h3>Рейтинг новостных редакций: доска заданий с баллами</h3>
+   <p class="what">Система оценки активности редакций: за задания начисляются баллы, неделя редакции должна набирать <b>2 000 баллов</b>, иначе выговор лидеру. В теме - 32 задания с баллами, лимитами и форматами отчётов: от «редакции часа» за 5 баллов до дня открытых дверей за 500 и пресс-конференции за 200. Итоги подводятся в воскресенье вечером или в понедельник.</p>
+   <div class="chips"><span class="chip">норма 2 000 баллов/нед</span><span class="chip">32 задания</span><span class="chip">итоги в воскресенье-понедельник</span><span class="chip red">/time и фотохостинг в каждом отчёте</span></div>
+   <a class="golink" href="https://evolve-rp.su/threads/475208/" target="_blank" rel="noopener">Тема форума · рейтинг и задания</a>
+  </div>
+  <div class="sheet">
+   <h4>Доска заданий · выборочно из 32</h4>
+   <table>
+    <tr><td>RP-приём в офисе с лекцией</td><td>15</td></tr>
+    <tr><td>Эфир, за минуту (мин. 20 минут)</td><td>1</td></tr>
+    <tr><td>Редакция часа /ratingnews (до 3/день)</td><td>5</td></tr>
+    <tr><td>Фракционный квест / финальный квест</td><td>10 / 30</td></tr>
+    <tr><td>Статьи и журналы (до 3/нед)</td><td>10-30</td></tr>
+    <tr><td>Раздача листовок и газет, за человека (до 100)</td><td>5</td></tr>
+    <tr><td>Репортаж с ЧП, за минуту (мин. 10 минут)</td><td>3</td></tr>
+    <tr><td>Собрание редакции (5+ человек, 10+ минут)</td><td>20</td></tr>
+    <tr><td>RolePlay ситуация: соло / duo / три+ (до 7/нед)</td><td>30 / 40 / 50</td></tr>
+    <tr><td>Ежедневная газета (до 7/нед, дата обязательна)</td><td>10-30</td></tr>
+    <tr><td>Фоторепортаж (до 7/нед, логотип в кадре)</td><td>10-30</td></tr>
+    <tr><td>Договор с гос. организацией / с бизнесом</td><td>30 / 30</td></tr>
+    <tr><td>Еженедельная газета / журналистское расследование</td><td>50 / 50</td></tr>
+    <tr><td>Соц. опрос, за человека (до 100)</td><td>5</td></tr>
+    <tr><td>Папараци: личность / место</td><td>5 / 2</td></tr>
+    <tr><td>Интервью с лидером гос. фракции (до 2/нед)</td><td>100</td></tr>
+    <tr><td>Видеорепортаж: оператор + ведущий (до 3/нед)</td><td>50</td></tr>
+    <tr><td>Пресс-конференция (спикер, 5 вопросов, 8+ зрителей)</td><td>200</td></tr>
+    <tr><td>Интерактивная медиа-карта штата (10+ точек)</td><td>150</td></tr>
+    <tr><td>«Звёзды штата», за человека (до 5/нед)</td><td>20</td></tr>
+    <tr><td>Социологическое исследование с диаграммами</td><td>100</td></tr>
+    <tr><td>День открытых дверей в редакции (1/месяц)</td><td>500</td></tr>
+   </table>
+   <div class="note">Полные условия принятия отчётов по каждому пункту - в теме форума.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f7"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 07</span><div class="fin">
+  <div>
+   <h3>Таблица рейтинга: принято, отклонено, набрано</h3>
+   <p class="what">Живая google-таблица, где видна судьба каждого отчёта: какие задания приняты следящей администрацией, какие отклонены и сколько баллов набрала редакция суммарно. Сюда смотрят после отправки формы и перед разговором о выплатах: <b>одобрение выплаты возможно только по принятым в таблице заданиям</b>. Лидер редакции имеет право вносить в таблицу корректировки.</p>
+   <div class="chips"><span class="chip">статус каждого отчёта</span><span class="chip">сумма баллов редакции</span><span class="chip">корректировки - за лидером</span></div>
+   <a class="golink" href="https://docs.google.com/spreadsheets/d/1vFQleQkP-L6n6VAS0ZALwTS2q1doMznBgS4nXQ9SA7Y/edit?resourcekey=&gid=737863678#gid=737863678" target="_blank" rel="noopener">Открыть таблицу рейтинга</a>
+  </div>
+  <div class="sheet">
+   <h4>Как читать таблицу за 30 секунд</h4>
+   <table>
+    <tr><td>Нашли свой отчёт по дате и имени</td><td>шаг 1</td></tr>
+    <tr><td>Смотрите статус: принято или отклонено</td><td>шаг 2</td></tr>
+    <tr><td>Отклонено - читайте причину и пересдавайте в срок годности доказательств</td><td>шаг 3</td></tr>
+    <tr><td>Принято - баллы легли в сумму редакции</td><td>шаг 4</td></tr>
+    <tr><td>С суммой недели сверяйтесь с нормой 2 000 баллов</td><td>шаг 5</td></tr>
+   </table>
+   <div class="note">Таблица доступна сотрудникам редакции; при отсутствии доступа - к генеральному директору.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="f8"><div class="wrap">
+ <div class="folders"><div class="folder"><span class="tab">Папка 08</span><div class="fin">
+  <div>
+   <h3>Форма отчётов: куда уходят доказательства работы</h3>
+   <p class="what">Google-форма, через которую задания уходят на проверку следящей администрации: ник, редакция, пункт задания, ссылки на скриншоты с меткой времени на фотохостинге, длительность эфиров и всё, что требует формат отчёта. Ссылки, которые не открываются, отклоняются автоматически - проверяющий не будет ничего досылать за вас.</p>
+   <div class="chips"><span class="chip">один отчёт - одно задание</span><span class="chip">ссылки должны открываться</span><span class="chip red">без /time отчёт не жилец</span></div>
+   <a class="golink" href="https://docs.google.com/forms/d/e/1FAIpQLSfGKDAiF7cThK7_ib69EeNrWaMI2glaUMQaHRdk7NiDezvZ_w/viewform" target="_blank" rel="noopener">Открыть форму отчётов</a>
+   <button class="golink alt copybtn" type="button" data-copy="https://docs.google.com/forms/d/e/1FAIpQLSfGKDAiF7cThK7_ib69EeNrWaMI2glaUMQaHRdk7NiDezvZ_w/viewform">Скопировать ссылку</button>
+  </div>
+  <div class="sheet">
+   <h4>Чек-лист перед отправкой</h4>
+   <table>
+    <tr><td>Метка времени /time 1 на каждом скриншоте (онлайн - /time 2)</td><td>есть?</td></tr>
+    <tr><td>Скриншоты залиты на рабочий фотохостинг, ссылки открываются</td><td>есть?</td></tr>
+    <tr><td>Эфир: кадры каждые 10 минут + начало с темой + окончание</td><td>есть?</td></tr>
+    <tr><td>Интерактив эфира: скриншоты звонков и СМС зрителей</td><td>есть?</td></tr>
+    <tr><td>Приз конкурса вручён победителю в кадре</td><td>есть?</td></tr>
+    <tr><td>Лимит недели по заданию не превышен</td><td>проверено?</td></tr>
+    <tr><td>Доказательствам меньше 72 часов</td><td>проверено?</td></tr>
+   </table>
+   <div class="note">Отчёты с нескольких аккаунтов и любая попытка обмана - немедленное увольнение с занесением в чёрный список.</div>
+  </div>
+ </div></div></div>
+</div></section>
+
+<section class="sec rv" id="rules"><div class="wrap">
+ <div class="board">
+  <h3>Правила отчётности, выученные наизусть</h3>
+  <ul>
+   <li>Метка времени <b>/time 1</b> на скриншотах заданий; <b>/time 2</b> - для суточного онлайна.</li>
+   <li>Все доказательства - на рабочем фотохостинге; <b>битые ссылки отклоняются автоматически</b>.</li>
+   <li>Доказательства действительны <b>72 часа</b>; объявления - день в день, с 05:00 до 05:00.</li>
+   <li>Эфир: скриншоты каждые 10 минут, обязательные кадры начала с темой и окончания.</li>
+   <li>Лимиты заданий недели: сверх лимита выплаты отклоняются, даже если работа сделана.</li>
+   <li>Задания рейтинга сдаются в форму отчётов; выплаты сверх - отдельным заявлением гендиректору.</li>
+   <li>Один сотрудник - один аккаунт в отчётах; обман руководства - увольнение и чёрный список.</li>
+   <li>Низкое качество материалов - законная причина отказа: снимайте так, будто кадр уйдёт в газету.</li>
+  </ul>
+ </div>
+</div></section>
+
+<section class="sec rv" id="prizes"><div class="wrap">
+ <div class="board">
+  <h3>Награды рейтинга: за что редакция получает миллионы</h3>
+  <ul>
+   <li>Первое место по баллам рейтинга за неделю - <b>1 500 000$</b> лидеру редакции.</li>
+   <li>Лучшая еженедельная газета недели - <b>2 000 000$</b>.</li>
+   <li>Лучшее журналистское расследование недели - <b>2 000 000$</b>.</li>
+   <li>Первое место по онлайну редакции - <b>1 500 000$</b>.</li>
+   <li>Первое место по отредактированным объявлениям - <b>2 000 000$</b>.</li>
+   <li>Первое место по баллам за день - <b>1 000 000$</b> редакции.</li>
+   <li>Лучший сотрудник по итогам недели - <b>1 500 000$</b>.</li>
+   <li>Недельная норма редакции - <b>2 000 баллов</b>; нехватка - выговор лидеру.</li>
+  </ul>
+ </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+ <div class="fcred">Редакция San Fierro News · генеральный директор Jonny Wilde<br>Кадровый раздел редакции: служебная страница для сотрудников новостных редакций штата<br>дизайн и вёрстка - редакция San Fierro News</div>
+ <a class="bigbtn" href="newsroom.html">← Посмотреть все выпуски редакции</a>
+ <div class="fline">SFN-DESIGN-048 · career-dossier · 13.10.2026 · страницы-источники принадлежат форуму сервера и google-документам редакций</div>
+</div></footer>
+
+<!-- SFN · 2026 · 048 · career-dossier -->
+<script>
+(function(){
+"use strict";
+var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+var rv=[].slice.call(document.querySelectorAll(".rv"));
+if("IntersectionObserver" in window && !RM){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target);}});},{threshold:.06});rv.forEach(function(el){io.observe(el);});}else{rv.forEach(function(el){el.classList.add("on");});}
+var tabs=[].slice.call(document.querySelectorAll(".pnav a"));
+var pages=tabs.map(function(a){var h=a.getAttribute("href")||"";var k=h.indexOf("#");var sel=k>=0?h.slice(k):h;try{return sel?document.querySelector(sel):null;}catch(e){return null;}});
+function onScroll(){
+ var y=document.documentElement.scrollTop+document.documentElement.clientHeight*0.3, act=0;
+ pages.forEach(function(p,i){if(p&&p.offsetTop<=y)act=i;});
+ tabs.forEach(function(a,i){a.classList.toggle("on",i===act);});
+}
+addEventListener("scroll",onScroll,{passive:true}); onScroll();
+[].slice.call(document.querySelectorAll(".copybtn")).forEach(function(b){
+ b.addEventListener("click",function(){
+  var t=b.getAttribute("data-copy")||"";
+  function done(){var o=b.textContent;b.textContent="Скопировано";setTimeout(function(){b.textContent=o;},1600);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}
+  else{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}document.body.removeChild(ta);done();}
+ });
+});
+})();
+</script>
+</body>
+</html>
