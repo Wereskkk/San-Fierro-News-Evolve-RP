@@ -97,6 +97,11 @@ RP-чистота соблюдена: никаких «лицензия/CC/copyr
 | 046 | fotoreport-pegasus-yacht.html | pegasus-yacht-club |
 | 047 | socio-best-car-poll.html | garage-blueprint |
 | 048 | newsroom-career.html | career-dossier |
+| 049 | daily-12-10-2026.html | auction-blotter |
+| 050 | daily-13-10-2026.html | bank-ring |
+| 051 | daily-14-10-2026.html | ammu-second-raid |
+| 052 | daily-15-10-2026.html | night-road-tragedy |
+| 053 | daily-16-10-2026.html | car-meet-chronicle |
 | 035 | (следующий выпуск) | … |
 
 Примечание форензики: номер 029 первоначально собран со слагом `state-broadsheet`;
