@@ -1,8 +1,8 @@
 {
- "generated": "2026-10-13",
+ "generated": "2026-10-16",
  "repo": "Wereskkk/San-Fierro-News-Evolve-RP",
  "branch": "main",
- "issues": 51,
+ "issues": 56,
  "files": [
   {
    "file": "all-saints-hospital.html",
@@ -58,6 +58,31 @@
    "file": "daily-10-10-2026.html",
    "bytes": 1605442,
    "sha256": "e9dac26cddcf98ca725f415695eb2c4062a4bfbddeea860fbd918a738622aa11"
+  },
+  {
+   "file": "daily-12-10-2026.html",
+   "bytes": 211936,
+   "sha256": "0d64262fa811cbea351312696074b9275306c931fa11299030bfa1efc5dc0909"
+  },
+  {
+   "file": "daily-13-10-2026.html",
+   "bytes": 482937,
+   "sha256": "264cbb1cda55d72e3b5b10184c530796c5bf1ea3ff14340d12824c972ebf3cac"
+  },
+  {
+   "file": "daily-14-10-2026.html",
+   "bytes": 304943,
+   "sha256": "a1a2eb16838a31d5f7fa6425ea7f0b90af256ac6d66fda898db29153504518c5"
+  },
+  {
+   "file": "daily-15-10-2026.html",
+   "bytes": 274410,
+   "sha256": "bca10d5c845c28018bfeefec3cc66e07a8890373389a0583e0097d81be48097b"
+  },
+  {
+   "file": "daily-16-10-2026.html",
+   "bytes": 438920,
+   "sha256": "3de69be34a83bdc94d78905acae2470f5dea00a124af134fc398b4be54253b1e"
   },
   {
    "file": "daily-24-09-2026.html",
@@ -186,8 +211,8 @@
   },
   {
    "file": "newsroom.html",
-   "bytes": 124716,
-   "sha256": "a5e099812227effd536295a21cbf7997de2985a646799b2d8651b2c43451ddd9"
+   "bytes": 130076,
+   "sha256": "16378d9e37aedfb742e68b5a5cd7c47eb835e8b181fdda137ef61be9098ef7fd"
   },
   {
    "file": "opg-leader-interview.html",
