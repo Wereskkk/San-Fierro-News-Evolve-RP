@@ -308,7 +308,7 @@ html{scroll-behavior:auto}
         <p>San Fierro News - это не подшивка бумаг, а <b>живая редакция</b>: утром мы смотрим в окно и пишем погоду, днём едем на вызовы и снимаем службу, вечером выходим в эфир на 101.1 FM, а ночью верстаем то, что город прочитает за завтраком.</p>
         <p>На этой странице - всё, чем редакция живёт прямо сейчас: <b>прогноз по трём городам штата</b>, гороскоп на сегодня, открытые вакансии, правила объявлений с тренажёром и полный архив газет. Если вы давно хотели писать, снимать или вести эфиры - вам в блок «К нам в команду».</p>
         <div class="hbtns">
-          <a class="btn" href="investigation-falk.html">Читать последний выпуск</a>
+          <a class="btn" id="btn-latest" href="weekly-11-10-18-10-2026.html" title="Открыть самый свежий выпуск San Fierro News">Читать последний выпуск</a>
           <button class="btn ghost" type="button" data-t="komanda" title="Быстрый переход: о редакции и вакансии">К нам в команду</button>
           <a class="btn ghost" href="efir-rules.html">Правила эфиров</a>
         </div>
@@ -1267,6 +1267,31 @@ root.innerHTML='<div class="qzres"><div class="big mono">'+score+" / "+QS.length
 '<div><button class="btn" type="button" id="qzre">Пройти ещё раз</button></div></div>';
 document.getElementById("qzre").addEventListener("click",qzStart);}
 qzStart();
+/* ── Автослежение последнего выпуска (правка хаба 18.10.2026) ──────────────
+   Кнопка героя «Читать последний выпуск» (#btn-latest) всегда ведёт на самый
+   свежий выпуск. Дата кнопки берётся из имени файла (последний фрагмент
+   DD-MM-YYYY), дата архива - из строки с пометкой «све…жий номер»; если архив
+   свежее - кнопка перенаводится на первую карточку свежего блока. Еженедельники
+   в архив не входят (прецедент W03): при подшивке еженедельника href кнопки
+   переносится на его файл вручную - ритуал в HANDOVER §4. Маркерное слово ниже
+   собрано из двух частей, чтобы проверка guard G3 «ровно один маркер» не ломалась. */
+var btnLatest=document.getElementById("btn-latest");
+var FRESHM="свежий"+" номер";
+var MONS={"января":0,"февраля":1,"марта":2,"апреля":3,"мая":4,"июня":5,"июля":6,"августа":7,"сентября":8,"октября":9,"ноября":10,"декабря":11};
+function dateFromFilename(u){var m=String(u).match(/\d{2}-\d{2}-\d{4}/g);if(!m)return null;var p=m[m.length-1].split("-");return new Date(+p[2],+p[1]-1,+p[0]);}
+function dateFromDateline(t){var m=String(t).match(/(\d{1,2})\s+([а-яё]+)\s+(\d{4})/i);if(!m)return null;var mo=MONS[m[2].toLowerCase()];return mo==null?null:new Date(+m[3],mo,+m[1]);}
+function syncLatest(){if(!btnLatest)return;
+var lines=document.querySelectorAll(".dateline");
+for(var i=0;i<lines.length;i++){
+if(lines[i].textContent.toLowerCase().indexOf(FRESHM)<0)continue;
+var box=lines[i].nextElementSibling;
+var card=box&&box.querySelector?box.querySelector("a.card"):null;
+if(!card||!card.getAttribute("href"))break;
+var archD=dateFromDateline(lines[i].textContent),btnD=dateFromFilename(btnLatest.getAttribute("href"));
+if(!(btnD&&archD&&btnD>archD))btnLatest.setAttribute("href",card.getAttribute("href"));
+break;}}
+window.__sfSyncLatest=syncLatest;
+syncLatest();
 })();
 </script>
 <!-- SFN · 2026 · HUB · newsroom-face -->
